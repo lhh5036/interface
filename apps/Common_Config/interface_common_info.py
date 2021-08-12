@@ -8,10 +8,10 @@
 class InterfaceCommonInfo:
 
     # 测试环境接口地址
-    common_url_test = "http://192.168.3.162:80"
+    common_url = "http://192.168.3.162:80"
 
     # 生产环境接口地址
-    common_url_pro = "http://10.100.1.1:31100"
+    # common_url = "http://10.100.1.1:31100"
 
     # 公共请求头参数
     common_header = {"Content-Type":"application/json","Authorization":"5df26666b185fbf0b3437482125d340e"}
