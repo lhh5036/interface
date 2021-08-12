@@ -36,11 +36,19 @@ class ReadConfig:
                     return parseMySqlFile(cf,"erp_das_test")
                 elif projectname == "fmis": # 项目名称为财务系统
                     return parseMySqlFile(cf,"erp_fmis_test")
+                elif projectname == "erp_usermgt": # 旧用户系统
+                    return parseMySqlFile(cf,"erp_usermgt_test")
+                elif projectname == "erp_usermgt_new": # 新用户系统
+                    return parseMySqlFile(cf,"erp_usermgt_new_test")
             elif env == "release" or env == "RELEASE": # 当前环境为release
                 if projectname == "das":
                     return parseMySqlFile(cf,"erp_das_release")
                 elif projectname == "fmis":
                     return parseMySqlFile(cf,"erp_fmis_release")
+                elif projectname == "erp_usermgt":
+                    return parseMySqlFile(cf,"erp_usermgt_release")
+                elif projectname == "erp_usermgt_new":
+                    return parseMySqlFile(cf,"erp_usermgt_new_release")
 
 
 '''
