@@ -44,6 +44,12 @@ class ReadConfig:
                     return parseMySqlFile(cf,"erp_product_test")
                 elif projectname == "erp_pms": # 采购系统
                     return parseMySqlFile(cf,"erp_pms_test")
+                elif projectname == "erp_publish": # 刊登系统
+                    return parseMySqlFile(cf,"erp_publish_test")
+                elif projectname == "erp_oms": # 订单系统
+                    return parseMySqlFile(cf,"erp_oms_test")
+                elif projectname == "erp_wms": # 仓库系统
+                    return parseMySqlFile(cf,"erp_wms_test")
             elif env == "release" or env == "RELEASE": # 当前环境为release
                 if projectname == "das":
                     return parseMySqlFile(cf,"erp_das_release")
@@ -57,6 +63,12 @@ class ReadConfig:
                     return parseMySqlFile(cf,"erp_product_release")
                 elif projectname == "erp_pms":
                     return parseMySqlFile(cf,"erp_pms_release")
+                elif projectname == "erp_publish":
+                    return parseMySqlFile(cf,"erp_publish_release")
+                elif projectname == "erp_oms":
+                    return parseMySqlFile(cf,"erp_oms_release")
+                elif projectname == "erp_wms":
+                    return parseMySqlFile(cf,"erp_wms_release")
 
 
 '''

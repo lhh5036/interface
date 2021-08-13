@@ -11,7 +11,10 @@ import logging
 from apps.Das.das_config.das_common_header import DasCommonHeader
 from apps.Das.das_config.myData_manage.myDataAmazon_inter_body import MyDataAmazonInterParam
 from apps.Das.das_config.myData_manage.myDataAmazon_inter_url import MyDataAmazonInterUrl
+from apps.Das.logger import MyLog
 
+# 实例化日志类
+logger = MyLog("AmazonReleaseProductInfoInterface").getlog() # 初始化
 # 数据管理-我的数据Amazon查询接口
 class MyDataAmazonSelectInterface():
     # 我的数据-Amazon查询
