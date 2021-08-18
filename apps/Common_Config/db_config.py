@@ -14,7 +14,7 @@ from rediscluster import RedisCluster
 
 # 解析每个系统中的db_sources文件得到ES/MYSQL配置
 class ReadConfig:
-    def getDbConfig(env,projectname,dbtype): # 环境、项目名称、数据库类型（ES/mysql）
+    def getDbConfig(self,env,projectname,dbtype): # 环境、项目名称、数据库类型（es/mysql）
         if env == "" or projectname == "" or dbtype == "":
             logging.error("env or projectName or dbType is empty!")
             return
@@ -23,18 +23,16 @@ class ReadConfig:
         proDir = os.path.dirname(os.path.abspath(__file__))
         if dbtype == "es":
             configPath = os.path.join(proDir, "es_sources_config.ini")
-            cf.read(os.path.abspath(configPath))
-            if env == "test_case" or env == "TEST":
+            cf.read(os.path.abspath(configPath),encoding='utf-8')
+            if env == "test" or env == "TEST":
                 return parseEsFile(cf,"es_test")
             elif env == "release" or env == "RELEASE":
                 return parseEsFile(cf,"es_release")
         elif dbtype == "mysql":
             configPath = os.path.join(proDir, "mysql_sources_config.ini")
-            cf.read(os.path.abspath(configPath))
-            if env == "test_case" or env == "TEST": # 当前环境为test
-                if projectname == "das":  # 项目名称为数据分析系统
-                    return parseMySqlFile(cf,"erp_das_test")
-                elif projectname == "fmis": # 项目名称为财务系统
+            cf.read(os.path.abspath(configPath),encoding='utf-8')
+            if env == "test" or env == "TEST": # 当前环境为test
+                if projectname == "fmis": # 项目名称为财务系统
                     return parseMySqlFile(cf,"erp_fmis_test")
                 elif projectname == "erp_usermgt": # 旧用户系统
                     return parseMySqlFile(cf,"erp_usermgt_test")
@@ -135,3 +133,4 @@ def parseMySqlFile(cf,databasename):
     _user = cf.get(databasename, "mysql_user")
     _password = cf.get(databasename, "mysql_password")
     return _database,_host,_user,_password
+
