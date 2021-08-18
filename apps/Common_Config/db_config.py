@@ -85,6 +85,7 @@ nodes_test = [{"host": "192.168.3.4", "port": 7001},
               {"host": "192.168.3.5", "port": 7003},
               {"host": "192.168.3.5", "port": 7004}]
 
+# redis连接
 class Redis_User():
     def __init__(self, host, port=6379, decode_responses=True):
         self.host = host
