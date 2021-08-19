@@ -9,7 +9,7 @@ from apps.config import db_config
 #ES数据库操作工具
 class Es_database_util():
     def __init__(self):
-        esCofig = db_config.getEsConfig("test_case")
+        esCofig = db_config.getEsConfig("test_mydata_manage")
         self.hosts = esCofig[0]
         self.port = esCofig[1]
         self.timeout = int(esCofig[2])
