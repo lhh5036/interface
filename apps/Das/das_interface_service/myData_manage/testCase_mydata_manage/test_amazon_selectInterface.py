@@ -25,7 +25,6 @@ def test_amazonSelectInterface():
     testCaseRep_02 = MyDataAmazonSelectInterface().myDataAmazonSelect(testCaseReq_02)
     result.append(testCaseRep_02)
 
-
     # 将每条用例执行的结果返回
     return json.dumps(result,ensure_ascii=False)
 

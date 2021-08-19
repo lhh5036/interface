@@ -7,11 +7,12 @@
 
 from flask import Flask
 import random
-
+import time
 from apps.Common_Config.es_handleOperator import Es_handleOperator
+from apps.Das.das_interface_service.myData_manage.dataManageAmazon.amazonSelectInterface import MyDataAmazonSelectInterface
 from apps.Das.das_interface_service.myData_manage.dataManageAmazon.releaseProductInterface import AmazonReleaseProductInfoInterface
 from apps.Das.das_interface_service.myData_manage.myDataManageComConfig import Das_Common_Config
-
+import json
 
 app = Flask(__name__)
 
@@ -35,10 +36,11 @@ def test_amazonReleaseRroductInterface():
     result = Es_handleOperator("das","test").data_es(index,query)
     for i in range(len(result["hits"])):
         resultList.append(result["hits"][i]["_id"])
-
+    time.sleep(10)
     # 随机取出10条数据，作为入参调用释放产品接口
     responseResult = AmazonReleaseProductInfoInterface().releaseProductInfo(resultList)
     return responseResult
+
 
 if __name__ == '__main__':
     app.run(debug = True)
