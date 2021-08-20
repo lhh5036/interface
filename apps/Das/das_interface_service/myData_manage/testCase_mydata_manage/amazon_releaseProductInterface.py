@@ -1,5 +1,5 @@
 '''
-@File: testCase_amazon_releaseProductInterface.py
+@File: amazon_releaseProductInterface.py
 @time:2021/8/19
 @Author:quanliu 181324
 @Desc:数据管理-我的数据Amazon释放产品接口用例

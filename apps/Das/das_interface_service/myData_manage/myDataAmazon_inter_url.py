@@ -14,3 +14,7 @@ class MyDataAmazonInterUrl:
 
     # 我的数据-Amazon释放产品接口
     releaseProductInfo_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo"
+
+
+    # 我的数据-Amazon关联系统SKU接口
+    associateSySku_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo/associatedSystemSku"

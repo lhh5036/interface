@@ -6,8 +6,8 @@
 '''
 
 from flask import Flask,render_template
-from apps.Das.das_interface_service.myData_manage.testCase_mydata_manage.testCase_amazon_releaseProductInterface import testCase_amazonReleaseRroductInterface
-from apps.Das.das_interface_service.myData_manage.testCase_mydata_manage.testCase_amazon_selectInterface import testCase_amazonSelectInterface
+from apps.Das.das_interface_service.myData_manage.testCase_mydata_manage.amazon_releaseProductInterface import testCase_amazonReleaseRroductInterface
+from apps.Das.das_interface_service.myData_manage.testCase_mydata_manage.amazon_selectInterface import testCase_amazonSelectInterface
 
 app = Flask(__name__)
 

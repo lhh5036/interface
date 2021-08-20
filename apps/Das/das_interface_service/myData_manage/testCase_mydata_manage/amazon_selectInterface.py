@@ -1,5 +1,5 @@
 '''
-@File: testCase_amazon_selectInterface.py
+@File: amazon_selectInterface.py
 @time:2021/8/19
 @Author: quanliu 181324
 @Desc:数据管理-我的数据Amazon查询接口用例

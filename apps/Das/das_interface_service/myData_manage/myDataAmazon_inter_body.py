@@ -19,4 +19,6 @@ class MyDataAmazonInterParam:
     releaseProductInfo_param = {"method": "updateBaseListingByIds","args": "{args}"}
     releaseProductInfo_select = '{"ids":[{ids}],"dataStatus":0}'
 
-
+    # 我的数据-Amazon关联系统SKU接口入参
+    associateSySku_param = {"args":"{args}"}
+    associateSySku_select = '{"ids":[{ids}],"systemSku":"{systemSku}"}'
