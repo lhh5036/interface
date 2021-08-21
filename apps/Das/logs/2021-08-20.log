@@ -4,3 +4,75 @@
 [2021-08-20 10:40:25,211] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
 [2021-08-20 10:40:41,157] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
 [2021-08-20 10:41:29,366] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 11:53:13,420] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 11:53:13,904] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 11:53:14,027] associateSystemSkuInterface.py->associateSystemSku line:51 [ERROR]associateSystemSku -->response Data is wrong!
+[2021-08-20 14:28:47,729] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 14:28:48,218] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 14:28:48,345] associateSystemSkuInterface.py->associateSystemSku line:51 [ERROR]associateSystemSku -->response Data is wrong!
+[2021-08-20 14:29:10,174] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 14:29:10,561] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 14:29:10,693] associateSystemSkuInterface.py->associateSystemSku line:51 [ERROR]associateSystemSku -->response Data is wrong!
+[2021-08-20 14:42:09,271] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 14:42:09,644] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:53:13,081] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:53:13,081] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:53:13,863] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:53:13,863] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:54:57,932] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:54:57,932] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:54:58,189] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:54:58,189] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:55:07,244] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:55:07,244] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:55:07,531] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:55:07,531] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:55:26,075] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:55:26,075] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:55:26,465] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 16:55:26,465] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 17:08:19,086] releaseProductInterface.py->releaseProductInfo line:20 [INFO]releaseProductInfo ---->start!
+[2021-08-20 17:08:19,086] releaseProductInterface.py->releaseProductInfo line:20 [INFO]releaseProductInfo ---->start!
+[2021-08-20 17:09:17,793] releaseProductInterface.py->releaseProductInfo line:20 [INFO]releaseProductInfo ---->start!
+[2021-08-20 17:09:17,793] releaseProductInterface.py->releaseProductInfo line:20 [INFO]releaseProductInfo ---->start!
+[2021-08-20 18:31:37,266] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 18:31:37,771] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 18:31:37,880] associateSystemSkuInterface.py->associateSystemSku line:51 [ERROR]associateSystemSku -->response Data is wrong!
+[2021-08-20 18:51:42,224] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 18:51:42,396] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 18:51:42,510] associateSystemSkuInterface.py->associateSystemSku line:51 [ERROR]associateSystemSku -->response Data is wrong!
+[2021-08-20 18:51:59,802] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 18:52:00,114] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 18:52:00,242] associateSystemSkuInterface.py->associateSystemSku line:51 [ERROR]associateSystemSku -->response Data is wrong!
+[2021-08-20 18:53:55,106] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 18:53:55,617] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 18:53:55,733] associateSystemSkuInterface.py->associateSystemSku line:51 [ERROR]associateSystemSku -->response Data is wrong!
+[2021-08-20 18:54:30,470] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 18:54:30,979] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 18:54:31,098] associateSystemSkuInterface.py->associateSystemSku line:51 [ERROR]associateSystemSku -->response Data is wrong!
+[2021-08-20 18:56:35,419] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 18:56:35,419] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 18:56:35,733] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 18:56:35,733] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 18:56:45,884] releaseProductInterface.py->releaseProductInfo line:20 [INFO]releaseProductInfo ---->start!
+[2021-08-20 18:56:45,884] releaseProductInterface.py->releaseProductInfo line:20 [INFO]releaseProductInfo ---->start!
+[2021-08-20 18:56:50,884] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 18:56:51,338] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 18:56:51,450] associateSystemSkuInterface.py->associateSystemSku line:51 [ERROR]associateSystemSku -->response Data is wrong!
+[2021-08-20 18:57:10,435] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 18:57:10,435] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 18:57:10,764] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 18:57:10,764] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 19:01:09,911] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 19:01:09,911] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 19:01:10,215] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 19:01:10,215] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 19:02:12,464] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 19:02:12,464] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 19:02:12,800] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 19:02:12,800] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-20 19:02:17,037] releaseProductInterface.py->releaseProductInfo line:20 [INFO]releaseProductInfo ---->start!
+[2021-08-20 19:02:17,037] releaseProductInterface.py->releaseProductInfo line:20 [INFO]releaseProductInfo ---->start!
+[2021-08-20 19:02:27,829] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 19:02:28,314] associateSystemSkuInterface.py->associateSystemSku line:21 [INFO]associateSystemSku ---->start!
+[2021-08-20 19:02:28,444] associateSystemSkuInterface.py->associateSystemSku line:51 [ERROR]associateSystemSku -->response Data is wrong!

@@ -17,7 +17,7 @@ logger = MyLog("AmazonAssociateSystemSkuInterface").getlog() # 初始化
 
 # 我的数据Amazon-关联系统SKU接口
 class AmazonAssociateSystemSkuInterface():
-    def associateSystemSku(self,paramList,systemSkuStr): # 调用该接口使用入参为list和字符串类型
+    def associateSystemSku(self,casename,paramList,systemSkuStr): # 调用该接口使用入参为list和字符串类型
         logger.info("associateSystemSku ---->start!")
         if len(paramList) == 0 or systemSkuStr == "":
             logger.error("associateSystemSku --> request parameters is wrong!")
@@ -46,10 +46,10 @@ class AmazonAssociateSystemSkuInterface():
         resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
 
         if resp.json()["success"] == True:
-            return "响应结果:success,接口入参:{0}".format(reqParam)
+            return "{0}-->success".format(casename)
         else:
             logger.error("associateSystemSku -->response Data is wrong!")
-            return "响应结果有误,接口地址:{0},接口入参:{1}".format(url, reqParam)
+            return "{0}-->响应结果有误,接口地址:{1},接口入参:{2}".format(casename,url,json.dumps(reqParam))
 
 
         logger.info("associateSystemSku ---->end!")

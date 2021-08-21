@@ -15,7 +15,7 @@ import json
 logger = MyLog("AmazonReleaseProductInfoInterface").getlog() # 初始化
 # 我的数据Amazon-释放产品接口
 class AmazonReleaseProductInfoInterface():
-    def releaseProductInfo(self,paramList): # 调用该接口使用入参为字符串类型,如果有多个可以用,拼接'"123","234"'
+    def releaseProductInfo(self,casename,paramList): # 调用该接口使用入参为list
         paramStr = ""
         logger.info("releaseProductInfo ---->start!")
         if len(paramList) == 0:
@@ -43,9 +43,10 @@ class AmazonReleaseProductInfoInterface():
 
         resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
         if resp.json()["success"] == True:
-            return "响应结果:success,接口入参:{0}".format(paramList)
+            return "{0}-->success".format(casename)
         else:
             logger.error("releaseProductInfo -->response Data is wrong!")
-            return "响应结果有误,接口地址:{0},接口入参:{1}".format(url, paramList)
+            return "{0}-->响应结果有误,接口地址:{1},接口入参:{2}".format(casename,url, paramList)
+
         logger.info("releaseProductInfo ---->end!")
 
