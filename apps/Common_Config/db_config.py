@@ -86,35 +86,34 @@ nodes_test = [{"host": "192.168.3.4", "port": 7001},
 # redis连接
 class Redis_User():
     def __init__(self, host, port=6379, decode_responses=True):
-        self.host = host
-        self.port = port
-        self.decode_responses = decode_responses
+        self._host = host
+        self._port = port
+        self._decode_responses = decode_responses
 
     # 取出键对应的值(单节点)
     def redis_get(self, keys):
-        self.keys = keys
+        self._keys = keys
         # 创建连接的进程池
-        poll = redis.ConnectionPool(host=self.host, port=self.port)
+        poll = redis.ConnectionPool(host=self._host, port=self._port)
         # 选择需要连接的进程池
         r = redis.Redis(connection_pool=poll)
-        get_value = r.get(self.keys)
+        get_value = r.get(self._keys)
         return get_value
 
     # 取出键对应的值(集群)
     def redis_cluster(self, nodes, keys):           # nodes为redis集群
-        self.nodes = nodes
-        self.keys = keys
-        self.nodes = nodes
-        r = RedisCluster(startup_nodes=self.nodes, decode_responses=self.decode_responses)
-        get_values = r.get(self.keys)
+        self._nodes = nodes
+        self._keys = keys
+        r = RedisCluster(startup_nodes=self._nodes, decode_responses=self._decode_responses)
+        get_values = r.get(self._keys)
         return get_values
 
     def redis_zscore(self, nodes, name, value):     # nodes为redis集群
-        self.nodes = nodes
-        self.name = name
-        self.value = value
-        r = RedisCluster(startup_nodes=self.nodes, decode_responses=self.decode_responses)
-        get_values = r.zscore(self.name, self.value)
+        self._nodes = nodes
+        self._name = name
+        self._value = value
+        r = RedisCluster(startup_nodes=self._nodes, decode_responses=self._decode_responses)
+        get_values = r.zscore(self._name, self._value)
         return get_values
 
 
