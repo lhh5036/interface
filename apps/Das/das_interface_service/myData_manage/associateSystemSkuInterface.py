@@ -6,7 +6,6 @@
 '''
 from apps.Das.das_interface_service.das_common_header import DasCommonHeader
 from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 from apps.Das.logger import MyLog
 import requests
 import json
@@ -16,14 +15,13 @@ import json
 logger = MyLog("AmazonAssociateSystemSkuInterface").getlog() # 初始化
 
 # 我的数据Amazon-关联系统SKU接口
-class AmazonAssociateSystemSkuInterface():
-    def associateSystemSku(self,casename,paramList,systemSkuStr): # 调用该接口使用入参为list和字符串类型
+class AssociateSystemSkuInterface():
+    def associateSystemSku(self,casename,url,paramList,systemSkuStr): # 调用该接口使用入参为list和字符串类型
         logger.info("associateSystemSku ---->start!")
         if len(paramList) == 0 or systemSkuStr == "":
             logger.error("associateSystemSku --> request parameters is wrong!")
             return "请求参数为空"
-        # 接口地址
-        url = MyDataManageInterUrl.associateSySku_url
+
         # 将入参list转为string类型
         paramStr = ""
         for i in range(len(paramList)):

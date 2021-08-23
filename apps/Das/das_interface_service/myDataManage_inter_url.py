@@ -30,3 +30,6 @@ class MyDataManageInterUrl:
 
     # 我的数据-SMT释放产品接口
     smt_releaseProduct_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/releaseProduct"
+
+    # 我的数据-SMT关联系统SKU接口
+    smt_associateSySku_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/associatedSystemSku"

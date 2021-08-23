@@ -21,3 +21,6 @@
 [2021-08-23 14:41:58,829] releaseProductInterface.py->releaseProductInfo line:19 [INFO]releaseProductInfo ---->start!
 [2021-08-23 14:42:52,341] releaseProductInterface.py->releaseProductInfo line:19 [INFO]releaseProductInfo ---->start!
 [2021-08-23 14:42:52,341] releaseProductInterface.py->releaseProductInfo line:19 [INFO]releaseProductInfo ---->start!
+[2021-08-23 14:55:01,540] associateSystemSkuInterface.py->associateSystemSku line:20 [INFO]associateSystemSku ---->start!
+[2021-08-23 14:55:01,934] associateSystemSkuInterface.py->associateSystemSku line:20 [INFO]associateSystemSku ---->start!
+[2021-08-23 14:55:02,066] associateSystemSkuInterface.py->associateSystemSku line:49 [ERROR]associateSystemSku -->response Data is wrong!

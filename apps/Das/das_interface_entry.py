@@ -12,6 +12,7 @@ from apps.Das.test.case.test_amazon_productGetDijiaInterface import test_amazonP
 from apps.Das.test.case.test_amazon_productGetTongkuanInterface import test_amazonProductGetTongkuan
 from apps.Das.test.case.test_amazon_releaseProductInterface import test_amazonReleaseRroductInterface
 from apps.Das.test.case.test_amazon_selectInterface import test_amazonSelectInterface
+from apps.Das.test.case.test_smt_associateSystemSkuInterface import test_smtAssociateSySkuInterface
 from apps.Das.test.case.test_smt_releaseProductInterface import test_smtReleaseRroductInterface
 from apps.Das.test.case.test_smt_selectInterface import test_smtSelectInterface
 
@@ -64,6 +65,12 @@ def run_smtSelectProductInterface():
 def run_smtReleaseProductInterface():
     smtReleaseProductList = test_smtReleaseRroductInterface() # 调用SMT释放产品接口用例
     return render_template('das_error.html', smtReleaseProduct=smtReleaseProductList)
+
+# 数据管理-我的数据SMT关联系统SKU用例执行入口
+@app.route('/dataManage/smt/associateSystemSkuInterface')
+def run_smtAssociateSystemSkuInterface():
+    smtAssSySkuResultlist = test_smtAssociateSySkuInterface() # 调用smt关联系统SKU接口用例
+    return render_template('das_error.html',smtAssSySkuResult=smtAssSySkuResultlist)
 
 if __name__ == '__main__':
     app.run(debug=True)
