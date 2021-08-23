@@ -29,11 +29,13 @@ class InterfaceCommonInfo:
 '''
 获取新旧用户系统token
 '''
-def GetLoginToken(method):
+def GetLoginToken(method, account):
     header = {'Content-Type': 'application/json',
               'Authorization': InterfaceCommonInfo.token_currency}
-    form = {"method": "string","args": "{\"userName\":\"170110\",\"password\":\"123456abc\"}"}
-    form_new = {"args": "{\"employeeNo\":\"170110\",\"password\":\"MTIzNDU2YWJj\"}", "time": "1623037336864",
+    data = {"userName":"{0}".format(account),"password":"123456abc"}
+    form = {"method": "string","args": "{0}".format(data)}
+    data_new = {"employeeNo":"{0}".format(account),"password":"MTIzNDU2YWJj"}
+    form_new = {"args": "{0}".format(data_new), "time": "1623037336864",
             "signature": "bf8daed69ec2e5287e4515889abe361b"}
     if method == 'new':
         url = InterfaceCommonInfo.common_url + "/usermgt-n/login"
@@ -54,5 +56,5 @@ def GetLoginToken(method):
 
 
 if __name__ == '__main__':
-    tokens = GetLoginToken('new')
+    tokens = GetLoginToken('new', "170479")
     print(tokens)
