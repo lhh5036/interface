@@ -27,3 +27,6 @@ class MyDataManageInterUrl:
 
     # 我的数据-SMT查询接口
     querySmtListing_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/querySmtPageList"
+
+    # 我的数据-SMT释放产品接口
+    smt_releaseProduct_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/releaseProduct"

@@ -6,8 +6,6 @@
 '''
 from apps.Das.das_interface_service.das_common_header import DasCommonHeader
 from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
-
 from apps.Das.logger import MyLog
 import requests
 import json
@@ -15,15 +13,14 @@ import json
 # 实例化日志类
 logger = MyLog("AmazonReleaseProductInfoInterface").getlog() # 初始化
 # 我的数据Amazon-释放产品接口
-class AmazonReleaseProductInfoInterface():
-    def releaseProductInfo(self,casename,paramList): # 调用该接口使用入参为list
+class releaseProductInfoInterface():
+    def releaseProductInfo(self,casename,url,paramList): # 调用该接口使用入参为list
         paramStr = ""
         logger.info("releaseProductInfo ---->start!")
         if len(paramList) == 0:
             logger.error("releaseProductInfo --> request parameters is wrong!")
             return "请求参数为空"
-        # 接口地址
-        url = MyDataManageInterUrl.releaseProductInfo_url
+
         # 将入参list转为string类型
         for i in range(len(paramList)):
             paramStr += "'"+paramList[i]+"',"

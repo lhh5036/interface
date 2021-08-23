@@ -17,3 +17,7 @@
 [2021-08-23 14:27:46,667] smtProductSelectInterface.py->smtQueryProductListing line:20 [INFO]smtQueryProductListing ---->start!
 [2021-08-23 14:28:02,842] smtProductSelectInterface.py->smtQueryProductListing line:20 [INFO]smtQueryProductListing ---->start!
 [2021-08-23 14:28:03,154] smtProductSelectInterface.py->smtQueryProductListing line:20 [INFO]smtQueryProductListing ---->start!
+[2021-08-23 14:41:58,829] releaseProductInterface.py->releaseProductInfo line:19 [INFO]releaseProductInfo ---->start!
+[2021-08-23 14:41:58,829] releaseProductInterface.py->releaseProductInfo line:19 [INFO]releaseProductInfo ---->start!
+[2021-08-23 14:42:52,341] releaseProductInterface.py->releaseProductInfo line:19 [INFO]releaseProductInfo ---->start!
+[2021-08-23 14:42:52,341] releaseProductInterface.py->releaseProductInfo line:19 [INFO]releaseProductInfo ---->start!
