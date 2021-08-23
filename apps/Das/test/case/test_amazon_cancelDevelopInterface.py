@@ -2,7 +2,7 @@
 @File: test_amazon_cancelDevelopInterface.py
 @time:2021/8/23
 @Author:quanliu
-@Desc:我的数据-Amazon取消开发接口用例
+@Desc:我的数据-Amazon取消开发接口用例(SMT共用)
 '''
 import random
 
