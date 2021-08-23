@@ -22,3 +22,11 @@ class MyDataAmazonInterParam:
     # 我的数据-Amazon关联系统SKU接口入参
     associateSySku_param = {"args":"{args}"}
     associateSySku_select = '{"ids":[{ids}],"systemSku":"{systemSku}"}'
+
+    # 我的数据-Amazon低价接口入参
+    productGenDijia_param = {"args":"{args}"}
+    productGenDijia_select = '{"asinUrlStr":"{asinUrlStr}"}'
+
+    # 我的数据-Amazon同款接口入参
+    productGenTongkuan_param = {"args":"{args}"}
+    productGenTongkuan_select = '{"asinUrlStr":"{asinUrlStr}"}'

@@ -7,7 +7,6 @@
 
 import requests
 import json
-import logging
 from apps.Das.das_interface_service.das_common_header import DasCommonHeader
 from apps.Das.das_interface_service.myData_manage.myDataAmazon_inter_body import MyDataAmazonInterParam
 from apps.Das.das_interface_service.myData_manage.myDataAmazon_inter_url import MyDataAmazonInterUrl
@@ -25,7 +24,7 @@ class MyDataAmazonSelectInterface():
         # 请求入参
         country = parseRequestDatas("country",kwargs) # 国家
         if country == "":
-            logging.error("queryAmazonRankListing --> ReqParam:country is not null!")
+            logger.error("queryAmazonRankListing --> ReqParam:country is null!")
             return "请求参数:country字段不能为空"
         departmentName = parseRequestDatas("departmentName",kwargs)
         brand = parseRequestDatas("brand",kwargs)
@@ -64,7 +63,7 @@ class MyDataAmazonSelectInterface():
         if resp.json()["success"] == True:
             return "{0}-->success".format(casename)
         else:
-            logging.error("queryAmazonRankListing -->response Data is wrong!")
+            logger.error("queryAmazonRankListing -->response Data is wrong!")
             return "{0}-->响应结果有误,接口地址:{1},接口入参:{2}".format(casename,url, kwargs)
 
         logger.info("queryAmazonRankListing ---->end!")
