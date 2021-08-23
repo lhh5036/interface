@@ -36,3 +36,18 @@
 [2021-08-23 15:34:45,791] parameterConfig.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
 [2021-08-23 15:34:45,937] parameterConfig.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
 [2021-08-23 15:57:46,886] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 16:01:13,032] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 16:01:13,032] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 16:45:30,848] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 16:45:30,956] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:18 [INFO]cancelDevelopmentFunction ---->start!
+[2021-08-23 16:46:22,368] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 16:46:56,626] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:18 [INFO]cancelDevelopmentFunction ---->start!
+[2021-08-23 16:57:43,518] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 16:57:43,658] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:18 [INFO]cancelDevelopmentFunction ---->start!
+[2021-08-23 16:57:53,023] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 16:59:02,682] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:18 [INFO]cancelDevelopmentFunction ---->start!
+[2021-08-23 16:59:11,087] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 16:59:32,141] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:18 [INFO]cancelDevelopmentFunction ---->start!
+[2021-08-23 17:00:15,966] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 17:00:20,728] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:18 [INFO]cancelDevelopmentFunction ---->start!
+[2021-08-23 17:00:59,213] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:47 [ERROR]cancelDevelopmentFunction -->response Data is wrong!

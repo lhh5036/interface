@@ -18,7 +18,7 @@ logger = MyLog("AmazonAssociateSystemSkuInterface").getlog() # 初始化
 class AssociateSystemSkuInterface():
     def associateSystemSku(self,casename,url,paramList,systemSkuStr): # 调用该接口使用入参为list和字符串类型
         logger.info("associateSystemSku ---->start!")
-        if len(paramList) == 0 or systemSkuStr == "":
+        if len(paramList) == 0 or systemSkuStr == "" or url == "":
             logger.error("associateSystemSku --> request parameters is wrong!")
             return "请求参数为空"
 

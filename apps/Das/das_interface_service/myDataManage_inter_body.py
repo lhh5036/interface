@@ -15,19 +15,23 @@ class MyDataManageInterParam:
                                 '"startFirstListOnTime": "{startFirstListOnTime}", "endFirstListOnTime": "{endFirstListOnTime}"},"limit":50,"offset":0,"sort":"claimTime","order":"DESC"}'
 
 
-    # 我的数据-Amazon释放产品接口入参
+    # 我的数据-释放产品接口入参
     releaseProductInfo_param = {"method": "updateBaseListingByIds","args": "{args}"}
     releaseProductInfo_select = '{"ids":[{ids}],"dataStatus":0}'
 
-    # 我的数据-Amazon关联系统SKU接口入参
+    # 我的数据-关联系统SKU接口入参
     associateSySku_param = {"args":"{args}"}
     associateSySku_select = '{"ids":[{ids}],"systemSku":"{systemSku}"}'
 
-    # 我的数据-Amazon低价接口入参
+    # 我的数据-取消开发接口入参
+    cancelDevelop_param = {"args":"{args}"}
+    cancelDevelop_select = '{"ids":[{ids}],"cancelNotesInfo":"{cancelNotesInfo}"}'
+
+    # 我的数据-低价接口入参
     productGenDijia_param = {"args":"{args}"}
     productGenDijia_select = '{"asinUrlStr":"{asinUrlStr}"}'
 
-    # 我的数据-Amazon同款接口入参
+    # 我的数据-同款接口入参
     productGenTongkuan_param = {"args":"{args}"}
     productGenTongkuan_select = '{"asinUrlStr":"{asinUrlStr}"}'
 
