@@ -12,6 +12,7 @@ from apps.Das.test.case.test_amazon_productGetDijiaInterface import test_amazonP
 from apps.Das.test.case.test_amazon_productGetTongkuanInterface import test_amazonProductGetTongkuan
 from apps.Das.test.case.test_amazon_releaseProductInterface import test_amazonReleaseRroductInterface
 from apps.Das.test.case.test_amazon_selectInterface import test_amazonSelectInterface
+from apps.Das.test.case.test_paramConfigInterface import test_parameterConfigInterface
 from apps.Das.test.case.test_smt_associateSystemSkuInterface import test_smtAssociateSySkuInterface
 from apps.Das.test.case.test_smt_releaseProductInterface import test_smtReleaseRroductInterface
 from apps.Das.test.case.test_smt_selectInterface import test_smtSelectInterface
@@ -71,6 +72,11 @@ def run_smtReleaseProductInterface():
 def run_smtAssociateSystemSkuInterface():
     smtAssSySkuResultlist = test_smtAssociateSySkuInterface() # 调用smt关联系统SKU接口用例
     return render_template('das_error.html',smtAssSySkuResult=smtAssSySkuResultlist)
+
+@app.route('/das/parameterConfig/updateCancelDevNotesInfo')
+def run_parameterConfigInterface():
+    paramConfigResultList = test_parameterConfigInterface() # 调用参数配置页面保存接口用例
+    return render_template('das_error.html', paramConfigResult=paramConfigResultList)
 
 if __name__ == '__main__':
     app.run(debug=True)

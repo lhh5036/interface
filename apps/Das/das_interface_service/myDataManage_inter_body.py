@@ -39,3 +39,7 @@ class MyDataManageInterParam:
                             '"rating":"{rating}","merchantName":"{merchantName}","startCrawlTime":"{startCrawlTime}","endCrawlTime":"{endCrawlTime}","systemSku":"{systemSku}","distributor":"{distributor}",' \
                             '"startDistributionTime":"{startDistributionTime}","endDistributionTime":"{endDistributionTime}","startInfringementReviewTime":"{startInfringementReviewTime}","endInfringementReviewTime":"{endInfringementReviewTime}",' \
                             '"auditStatus":"{auditStatus}"},"limit":50,"offset":0,"sort":"claimTime","order":"DESC"}'
+
+    # 参数配置-取消开发备注保存接口
+    paramConfig_param = {"args":"{args}"}
+    paramConfig_select = '{"notesInfoList":[{notesInfoList}],"id":"datasystem-1234567895201314"}'
