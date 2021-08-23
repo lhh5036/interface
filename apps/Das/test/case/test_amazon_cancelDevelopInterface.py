@@ -42,6 +42,3 @@ def test_amazonCancelDevelopInterface():
     responseResult.append(responseResult01)
     return responseResult
 
-
-if __name__ == '__main__':
-    print(test_amazonCancelDevelopInterface())
