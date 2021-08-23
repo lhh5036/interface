@@ -41,7 +41,7 @@ def GetLoginToken(method, account):
         url = InterfaceCommonInfo.common_url + "/usermgt-n/login"
         r = requests.post(url, headers=header, data=json.dumps(form_new))
         try:
-            results =  r.json()["result"]['accessToken']
+            results = r.json()["result"]['accessToken']
             return results
         except KeyError:
             return "员工账号不存在或密码错误"
@@ -49,7 +49,7 @@ def GetLoginToken(method, account):
         url = InterfaceCommonInfo.common_url + "/usermgt/login"
         r = requests.post(url, headers=header, data=json.dumps(form))
         try:
-            results =  r.json()["result"]['accessToken']
+            results = r.json()["result"]['accessToken']
             return results
         except KeyError:
             return "员工账号不存在或密码错误"
