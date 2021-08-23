@@ -33,3 +33,6 @@
 [2021-08-23 15:33:34,475] parameterConfig.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
 [2021-08-23 15:33:39,982] parameterConfig.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
 [2021-08-23 15:34:02,622] parameterConfig.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
+[2021-08-23 15:34:45,791] parameterConfig.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
+[2021-08-23 15:34:45,937] parameterConfig.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
+[2021-08-23 15:57:46,886] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!

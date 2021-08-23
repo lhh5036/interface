@@ -4,10 +4,10 @@
 @Author:quanliu
 @Desc:参数配置保存接口用例
 '''
-from apps.Das.das_interface_service.param_config.parameterConfig import ParameterConfigInterface
+from apps.Das.das_interface_service.param_config.parameterConfigSave import ParameterConfigInterface
 
 
-def test_parameterConfigInterface():
+def test_parameterConfigSaveInterface():
 
     responseResult = []
     # 用例1接口第二个入参（单个参数）

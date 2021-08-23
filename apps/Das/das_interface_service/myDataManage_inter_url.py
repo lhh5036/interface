@@ -55,4 +55,7 @@ class MyDataManageInterUrl:
 
 
     # 参数配置-取消开发备注保存接口
-    paramConfig_url = InterfaceCommonInfo.common_url + "/das/parameterConfiguration/updateCancelDevNotesInfo"
+    paramConfigSave_url = InterfaceCommonInfo.common_url + "/das/parameterConfiguration/updateCancelDevNotesInfo"
+
+    # 参数配置-取消开发备注查询接口
+    paramConfigSelect_url = InterfaceCommonInfo.common_url + "/das/parameterConfiguration/queryCancelDevNotesInfo"

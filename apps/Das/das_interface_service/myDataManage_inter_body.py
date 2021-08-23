@@ -40,6 +40,9 @@ class MyDataManageInterParam:
                             '"startDistributionTime":"{startDistributionTime}","endDistributionTime":"{endDistributionTime}","startInfringementReviewTime":"{startInfringementReviewTime}","endInfringementReviewTime":"{endInfringementReviewTime}",' \
                             '"auditStatus":"{auditStatus}"},"limit":50,"offset":0,"sort":"claimTime","order":"DESC"}'
 
-    # 参数配置-取消开发备注保存接口
+    # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}
     paramConfig_select = '{"notesInfoList":[{notesInfoList}],"id":"datasystem-1234567895201314"}'
+
+    # 参数配置-取消开发备注查询接口入参
+    paramConfigQuery = {"args": "{\"id\":\"datasystem-1234567895201314\"}"}

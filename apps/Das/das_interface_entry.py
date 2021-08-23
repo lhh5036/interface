@@ -12,7 +12,8 @@ from apps.Das.test.case.test_amazon_productGetDijiaInterface import test_amazonP
 from apps.Das.test.case.test_amazon_productGetTongkuanInterface import test_amazonProductGetTongkuan
 from apps.Das.test.case.test_amazon_releaseProductInterface import test_amazonReleaseRroductInterface
 from apps.Das.test.case.test_amazon_selectInterface import test_amazonSelectInterface
-from apps.Das.test.case.test_paramConfigInterface import test_parameterConfigInterface
+from apps.Das.test.case.test_paramConfigInterface import test_parameterConfigSaveInterface
+from apps.Das.test.case.test_paramConfigQueryInterface import test_paramConfigQuery
 from apps.Das.test.case.test_smt_associateSystemSkuInterface import test_smtAssociateSySkuInterface
 from apps.Das.test.case.test_smt_releaseProductInterface import test_smtReleaseRroductInterface
 from apps.Das.test.case.test_smt_selectInterface import test_smtSelectInterface
@@ -73,10 +74,18 @@ def run_smtAssociateSystemSkuInterface():
     smtAssSySkuResultlist = test_smtAssociateSySkuInterface() # 调用smt关联系统SKU接口用例
     return render_template('das_error.html',smtAssSySkuResult=smtAssSySkuResultlist)
 
+# 参数配置-取消开发备注保存用例执行入口
 @app.route('/das/parameterConfig/updateCancelDevNotesInfo')
-def run_parameterConfigInterface():
-    paramConfigResultList = test_parameterConfigInterface() # 调用参数配置页面保存接口用例
+def run_parameterConfigSaveInterface():
+    paramConfigResultList = test_parameterConfigSaveInterface() # 调用参数配置页面保存接口用例
     return render_template('das_error.html', paramConfigResult=paramConfigResultList)
+
+
+# 参数配置-取消开发备注查询用例执行入口
+@app.route('/das/parameterConfig/queryCancelDevNotesInfo')
+def run_parameterConfigQueryInterface():
+    paramConfigQueryResultList = test_paramConfigQuery() # 调用参数配置页面保存接口用例
+    return render_template('das_error.html', paramConfigQueryResult=paramConfigQueryResultList)
 
 if __name__ == '__main__':
     app.run(debug=True)

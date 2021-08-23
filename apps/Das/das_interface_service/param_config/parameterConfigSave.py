@@ -1,5 +1,5 @@
 '''
-@File: parameterConfig.py
+@File: parameterConfigSave.py
 @time:2021/8/23
 @Author:quanliu
 @Desc:数据分析-参数配置页面接口服务
@@ -22,7 +22,7 @@ class ParameterConfigInterface():
             return "请求参数为空"
 
         # 接口地址
-        url = MyDataManageInterUrl.paramConfig_url
+        url = MyDataManageInterUrl.paramConfigSave_url
         # 拼接接口请求入参
         reqSelect = MyDataManageInterParam.paramConfig_select
         reqSelectStr = reqSelect.replace("{notesInfoList}", paramStr)  # 替换参数
