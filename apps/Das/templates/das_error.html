@@ -17,6 +17,10 @@
         {% for associateItem in assSySkuResult%}
         {{associateItem}}<br>
         {% endfor %}
+        <h4>我的数据Amazon-取消开发接口</h4>
+        {% for cancelDevelopResultItem in cancelDevelopResult%}
+        {{cancelDevelopResultItem}}<br>
+        {% endfor %}
         <h4>我的数据Amazon-低价接口</h4>
         {% for amazonProDijiaItem in amazonProDijia%}
         {{amazonProDijiaItem}}<br>
@@ -36,6 +40,14 @@
         <h4>我的数据SMT-关联系统SKU接口</h4>
         {% for smtAssSySkuResultItem in smtAssSySkuResult%}
         {{smtAssSySkuResultItem}}<br>
+        {% endfor %}
+        <h4>我的数据SMT-低价接口</h4>
+        {% for smtProDijiaItem in smtProDijia%}
+        {{smtProDijiaItem}}<br>
+        {% endfor %}
+        <h4>我的数据SMT-同款接口</h4>
+        {% for smtTongkuanItem in smtTongkuan%}
+        {{smtTongkuanItem}}<br>
         {% endfor %}
         <h4>参数配置-取消开发备注保存接口</h4>
         {% for paramConfigResultItem in paramConfigResult%}

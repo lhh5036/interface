@@ -51,3 +51,17 @@
 [2021-08-23 17:00:15,966] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
 [2021-08-23 17:00:20,728] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:18 [INFO]cancelDevelopmentFunction ---->start!
 [2021-08-23 17:00:59,213] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:47 [ERROR]cancelDevelopmentFunction -->response Data is wrong!
+[2021-08-23 17:11:07,658] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 17:11:07,658] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 17:11:07,939] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:18 [INFO]cancelDevelopmentFunction ---->start!
+[2021-08-23 17:11:14,031] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 17:11:14,031] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 17:11:14,277] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:18 [INFO]cancelDevelopmentFunction ---->start!
+[2021-08-23 17:11:18,636] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 17:11:18,636] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 17:11:18,741] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:18 [INFO]cancelDevelopmentFunction ---->start!
+[2021-08-23 17:11:25,155] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 17:11:25,155] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-23 17:11:25,266] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:18 [INFO]cancelDevelopmentFunction ---->start!
+[2021-08-23 17:11:25,463] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:47 [ERROR]cancelDevelopmentFunction -->response Data is wrong!
+[2021-08-23 17:47:27,370] productGetDijiaInterface.py->productDetDiJia line:21 [INFO]productGenDijia ---->start!

@@ -2,7 +2,7 @@
 @File: test_amazon_cancelDevelopInterface.py
 @time:2021/8/23
 @Author:quanliu
-@Desc:我的数据-Amazon取消开发接口用例
+@Desc:我的数据-Amazon取消开发接口用例(SMT共用)
 '''
 import random
 
@@ -42,6 +42,3 @@ def test_amazonCancelDevelopInterface():
     responseResult.append(responseResult01)
     return responseResult
 
-
-if __name__ == '__main__':
-    print(test_amazonCancelDevelopInterface())

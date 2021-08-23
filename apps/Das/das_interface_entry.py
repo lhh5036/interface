@@ -8,6 +8,7 @@
 from flask import Flask,render_template
 
 from apps.Das.test.case.test_amazon_associateSystemSkuInterface import test_amazonAssociateSySkuInterface
+from apps.Das.test.case.test_amazon_cancelDevelopInterface import test_amazonCancelDevelopInterface
 from apps.Das.test.case.test_amazon_productGetDijiaInterface import test_amazonProdcutGetDijia
 from apps.Das.test.case.test_amazon_productGetTongkuanInterface import test_amazonProductGetTongkuan
 from apps.Das.test.case.test_amazon_releaseProductInterface import test_amazonReleaseRroductInterface
@@ -15,6 +16,8 @@ from apps.Das.test.case.test_amazon_selectInterface import test_amazonSelectInte
 from apps.Das.test.case.test_paramConfigInterface import test_parameterConfigSaveInterface
 from apps.Das.test.case.test_paramConfigQueryInterface import test_paramConfigQuery
 from apps.Das.test.case.test_smt_associateSystemSkuInterface import test_smtAssociateSySkuInterface
+from apps.Das.test.case.test_smt_productGetDijiaInterface import test_smtProdcutGetDijia
+from apps.Das.test.case.test_smt_productGetTongkuanInterface import test_smtProductGetTongkuan
 from apps.Das.test.case.test_smt_releaseProductInterface import test_smtReleaseRroductInterface
 from apps.Das.test.case.test_smt_selectInterface import test_smtSelectInterface
 
@@ -43,6 +46,12 @@ def run_amazonReleaseRroductInterface():
 def run_amazonAssociateSystemSkuInterface():
     assSySkuResultlist = test_amazonAssociateSySkuInterface() # 调用Amazon关联系统SKU接口用例
     return render_template('das_error.html',assSySkuResult=assSySkuResultlist)
+
+# 数据管理-我的数据Amazon取消开发用例执行入口(SMT共用)
+@app.route('/dataManage/amazon/cancelDevelopment')
+def run_amazonCancelDevelopInterface():
+    cancelDevelopResultList = test_amazonCancelDevelopInterface() # 调用Amazon取消开发接口用例
+    return render_template('das_error.html',cancelDevelopResult=cancelDevelopResultList)
 
 # 数据管理-我的数据Amazon低价用例执行入口
 @app.route('/dataManage/amazon/productGenDijiaInterface')
@@ -74,6 +83,18 @@ def run_smtAssociateSystemSkuInterface():
     smtAssSySkuResultlist = test_smtAssociateSySkuInterface() # 调用smt关联系统SKU接口用例
     return render_template('das_error.html',smtAssSySkuResult=smtAssSySkuResultlist)
 
+# 数据管理-我的数据SMT低价用例执行入口
+@app.route('/dataManage/smt/productGenDijiaInterface')
+def run_smtProductGenDijaInterface():
+    smtProDijiaList = test_smtProdcutGetDijia() # 调用smt低价接口用例
+    return render_template('das_error.html',smtProDijia=smtProDijiaList)
+
+# 数据管理-我的数据SMT同款用例执行入口
+@app.route('/dataManage/smt/productGenTongkuanInterface')
+def run_smtProductGenTongkuanInterface():
+    smtTongkuanList = test_smtProductGetTongkuan() # 调用smt同款接口用例
+    return render_template('das_error.html', smtTongkuan=smtTongkuanList)
+
 # 参数配置-取消开发备注保存用例执行入口
 @app.route('/das/parameterConfig/updateCancelDevNotesInfo')
 def run_parameterConfigSaveInterface():
@@ -86,6 +107,7 @@ def run_parameterConfigSaveInterface():
 def run_parameterConfigQueryInterface():
     paramConfigQueryResultList = test_paramConfigQuery() # 调用参数配置页面保存接口用例
     return render_template('das_error.html', paramConfigQueryResult=paramConfigQueryResultList)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

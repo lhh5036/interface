@@ -45,6 +45,6 @@ class CancelDevelopmentInterface():
             return "{0}-->success".format(casename)
         else:
             logger.error("cancelDevelopmentFunction -->response Data is wrong!")
-            return "{0}-->响应结果有误,接口地址:{1},接口入参:{2}".format(casename, url, json.dumps(reqParam))
+            return "{0}-->取消开发失败,原因:开发状态必须为待开发,接口地址:{1},接口入参:{2}".format(casename, url, json.dumps(reqParam))
 
         logger.info("cancelDevelopmentFunction ---->end!")
