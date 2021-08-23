@@ -54,7 +54,7 @@ class SmtProductSelectInterface():
         replaceRepSelect = repSelect.replace("{mainSku}", mainSku).replace("{associatedSystemSku}", associatedSystemSku).replace("{skuMapStr}", skuMapStr).replace("{brand}", brand).replace("{keywords}", keywords).replace("{startPrice}", startPrice).replace("{endPrice}", endPrice).replace("{dataStatus}",dataStatus).replace(
             "{infringementReviewer}", infringementReviewer).replace("{productId}", productId).replace("{endOrders}", endOrders).replace("{developmentStatus}",developmentStatus).replace("{startOrders}",startOrders).replace("{Reviews}", Reviews).replace("{rating}", rating).replace("{merchantName}", merchantName).\
             replace("{startCrawlTime}",startCrawlTime).replace("{endCrawlTime}",endCrawlTime).replace("{systemSku}",systemSku).replace("{distributor}",distributor).replace("{startDistributionTime}",startDistributionTime).replace("{endDistributionTime}",endDistributionTime).replace("{startInfringementReviewTime}",startInfringementReviewTime)\
-            .replace("{endInfringementReviewTime}",endInfringementReviewTime).repalce("{auditStatus}",auditStatus)
+            .replace("{endInfringementReviewTime}",endInfringementReviewTime).replace("{auditStatus}",auditStatus)
         # 替换最外层参数
         reqParam = MyDataManageInterParam.smtProductInfo_param
         reqParam["args"] = replaceRepSelect  # 确保最后一层是dict格式
