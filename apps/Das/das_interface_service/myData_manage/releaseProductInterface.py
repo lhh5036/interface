@@ -5,8 +5,9 @@
 @Desc:我的数据Amazon-释放产品接口
 '''
 from apps.Das.das_interface_service.das_common_header import DasCommonHeader
-from apps.Das.das_interface_service.myData_manage.myDataAmazon_inter_body import MyDataAmazonInterParam
-from apps.Das.das_interface_service.myData_manage.myDataAmazon_inter_url import MyDataAmazonInterUrl
+from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
+from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
+
 from apps.Das.logger import MyLog
 import requests
 import json
@@ -22,15 +23,15 @@ class AmazonReleaseProductInfoInterface():
             logger.error("releaseProductInfo --> request parameters is wrong!")
             return "请求参数为空"
         # 接口地址
-        url = MyDataAmazonInterUrl.releaseProductInfo_url
+        url = MyDataManageInterUrl.releaseProductInfo_url
         # 将入参list转为string类型
         for i in range(len(paramList)):
             paramStr += "'"+paramList[i]+"',"
 
         # 拼接接口请求入参
-        reqSelect = MyDataAmazonInterParam.releaseProductInfo_select
+        reqSelect = MyDataManageInterParam.releaseProductInfo_select
         reqSelectStr = reqSelect.replace("{ids}",paramStr) # 替换参数
-        reqParam = MyDataAmazonInterParam.releaseProductInfo_param
+        reqParam = MyDataManageInterParam.releaseProductInfo_param
         reqParam["args"] = reqSelectStr
 
         # 接口请求头

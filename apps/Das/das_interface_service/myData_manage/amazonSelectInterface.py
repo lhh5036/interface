@@ -8,8 +8,8 @@
 import requests
 import json
 from apps.Das.das_interface_service.das_common_header import DasCommonHeader
-from apps.Das.das_interface_service.myData_manage.myDataAmazon_inter_body import MyDataAmazonInterParam
-from apps.Das.das_interface_service.myData_manage.myDataAmazon_inter_url import MyDataAmazonInterUrl
+from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
+from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 from apps.Das.logger import MyLog
 
 # 实例化日志类
@@ -20,7 +20,7 @@ class MyDataAmazonSelectInterface():
     def myDataAmazonSelect(self,casename,kwargs): # 设置动态入参，参数类型为字典{"name":"Jack","age":18}
         logger.info("queryAmazonRankListing ---->start!")
         # 接口地址
-        url = MyDataAmazonInterUrl.queryAmazonRankListing_url
+        url = MyDataManageInterUrl.queryAmazonRankListing_url
         # 请求入参
         country = parseRequestDatas("country",kwargs) # 国家
         if country == "":
@@ -43,14 +43,14 @@ class MyDataAmazonSelectInterface():
         endFirstListOnTime = parseRequestDatas("endFirstListOnTime",kwargs)
 
         # 获取请求参数的基本格式
-        repSelect = MyDataAmazonInterParam.accountProductInfo_select
+        repSelect = MyDataManageInterParam.accountProductInfo_select
         # 替换字符串里面的参数
         replaceRepSelect = repSelect.replace("{country}",country).replace("{departmentName}",departmentName).replace("{brand}",brand).replace("{keywords}",keywords).replace("{asin}",asin).\
             replace("{mainSku}",mainSku).replace("{associatedSystemSku}",associatedSystemSku).replace("{skuMapStr}",skuMapStr).replace("{startPrice}",startPrice).\
             replace("{endPrice}",endPrice).replace("{dataStatus}",dataStatus).replace("{sellerName}",sellerName).replace("{fba}",fba).replace("{isBrand}",isBrand).\
             replace("{startFirstListOnTime}",startFirstListOnTime).replace("{endFirstListOnTime}",endFirstListOnTime)
         # 替换最外层参数
-        reqParam = MyDataAmazonInterParam.accountProductInfo_param
+        reqParam = MyDataManageInterParam.accountProductInfo_param
         reqParam["args"] = replaceRepSelect # 确保最后一层是dict格式
 
         # 接口请求头

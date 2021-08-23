@@ -7,8 +7,8 @@
 
 import random
 
-from apps.Das.das_interface_service.myData_manage.dataManageAmazon.associateSystemSkuInterface import AmazonAssociateSystemSkuInterface
-from apps.Das.das_interface_service.myData_manage.myDataManageComConfig import Das_Common_Config
+from apps.Das.das_interface_service.myData_manage.associateSystemSkuInterface import AmazonAssociateSystemSkuInterface
+from apps.Das.das_interface_service.myDataManageComConfig import Das_Common_Config
 from apps.utils.es_database_util import Es_handleOperator
 
 # 数据管理-我的数据Amazon关联系统SKU接口用例类

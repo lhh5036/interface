@@ -6,8 +6,7 @@
 '''
 
 
-from apps.Das.das_interface_service.myData_manage.dataManageAmazon.amazonSelectInterface import MyDataAmazonSelectInterface
-import json
+from apps.Das.das_interface_service.myData_manage.amazonSelectInterface import MyDataAmazonSelectInterface
 
 
 # 数据管理-我的数据Amazon查询接口用例类

@@ -5,15 +5,15 @@
 @Desc:产品同款接口服务
 '''
 
-
-# 实例化日志类
 from apps.Das.das_interface_service.das_common_header import DasCommonHeader
-from apps.Das.das_interface_service.myData_manage.myDataAmazon_inter_body import MyDataAmazonInterParam
-from apps.Das.das_interface_service.myData_manage.myDataAmazon_inter_url import MyDataAmazonInterUrl
+from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
+from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
+
 from apps.Das.logger import MyLog
 import requests
 import json
 
+# 实例化日志类
 logger = MyLog("ProductGetTongkuanInterface").getlog() # 初始化
 
 # 数据管理-同款接口服务
@@ -25,12 +25,12 @@ class ProductGetTongkuanInterface():
             return "请求入参不能为空!"
 
         # 接口请求地址
-        url = MyDataAmazonInterUrl.productGenTongkuan_url
+        url = MyDataManageInterUrl.productGenTongkuan_url
 
         # 拼接接口请求入参
-        paramSelect = MyDataAmazonInterParam.productGenTongkuan_select
+        paramSelect = MyDataManageInterParam.productGenTongkuan_select
         replaceRepSelect = paramSelect.replace("{asinUrlStr}", paramStr)  # 替换接口里面的参数
-        reqParam = MyDataAmazonInterParam.productGenTongkuan_param
+        reqParam = MyDataManageInterParam.productGenTongkuan_param
         reqParam["args"] = replaceRepSelect  # 替换最外层参数
 
         # 接口请求头

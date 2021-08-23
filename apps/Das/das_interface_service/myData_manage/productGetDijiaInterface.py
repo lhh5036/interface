@@ -6,8 +6,9 @@
 '''
 import requests
 from apps.Das.das_interface_service.das_common_header import DasCommonHeader
-from apps.Das.das_interface_service.myData_manage.myDataAmazon_inter_body import MyDataAmazonInterParam
-from apps.Das.das_interface_service.myData_manage.myDataAmazon_inter_url import MyDataAmazonInterUrl
+from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
+from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
+
 from apps.Das.logger import MyLog
 import json
 
@@ -23,12 +24,12 @@ class ProductGetDijiaInterface():
             return "请求入参不能为空!"
 
         # 接口请求地址
-        url = MyDataAmazonInterUrl.productGenDijia_url
+        url = MyDataManageInterUrl.productGenDijia_url
 
         # 拼接接口请求入参
-        paramSelect = MyDataAmazonInterParam.productGenDijia_select
+        paramSelect = MyDataManageInterParam.productGenDijia_select
         replaceRepSelect = paramSelect.replace("{asinUrlStr}",paramStr) #替换接口里面的参数
-        reqParam = MyDataAmazonInterParam.productGenDijia_param
+        reqParam = MyDataManageInterParam.productGenDijia_param
         reqParam["args"] = replaceRepSelect # 替换最外层参数
 
         # 接口请求头

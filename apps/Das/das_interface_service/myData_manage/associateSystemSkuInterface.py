@@ -5,8 +5,8 @@
 @Desc:我的数据-Amazon关联系统SKU接口
 '''
 from apps.Das.das_interface_service.das_common_header import DasCommonHeader
-from apps.Das.das_interface_service.myData_manage.myDataAmazon_inter_body import MyDataAmazonInterParam
-from apps.Das.das_interface_service.myData_manage.myDataAmazon_inter_url import MyDataAmazonInterUrl
+from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
+from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 from apps.Das.logger import MyLog
 import requests
 import json
@@ -23,16 +23,16 @@ class AmazonAssociateSystemSkuInterface():
             logger.error("associateSystemSku --> request parameters is wrong!")
             return "请求参数为空"
         # 接口地址
-        url = MyDataAmazonInterUrl.associateSySku_url
+        url = MyDataManageInterUrl.associateSySku_url
         # 将入参list转为string类型
         paramStr = ""
         for i in range(len(paramList)):
             paramStr += "'"+paramList[i]+"',"
 
         # 拼接接口请求入参
-        reqSelect = MyDataAmazonInterParam.associateSySku_select
+        reqSelect = MyDataManageInterParam.associateSySku_select
         reqSelectStr = reqSelect.replace("{ids}",paramStr).replace("{systemSku}",systemSkuStr) # 替换接口入参
-        reqParam = MyDataAmazonInterParam.associateSySku_param
+        reqParam = MyDataManageInterParam.associateSySku_param
         reqParam["args"] = reqSelectStr
 
         # 接口请求头

@@ -6,8 +6,8 @@
 '''
 
 import random
-from apps.Das.das_interface_service.myData_manage.dataManageAmazon.releaseProductInterface import AmazonReleaseProductInfoInterface
-from apps.Das.das_interface_service.myData_manage.myDataManageComConfig import Das_Common_Config
+from apps.Das.das_interface_service.myData_manage.releaseProductInterface import AmazonReleaseProductInfoInterface
+from apps.Das.das_interface_service.myDataManageComConfig import Das_Common_Config
 from apps.utils.es_database_util import Es_handleOperator
 
 # 数据管理-我的数据Amazon释放产品接口用例
