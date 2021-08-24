@@ -13,10 +13,10 @@ class MyDataManageInterUrl:
     amazon_queryListing_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo"
 
     # 我的数据-Amazon释放产品接口
-    releaseProductInfo_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo"
+    amazon_releaseProduct_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo"
 
     # 我的数据-Amazon关联系统SKU接口
-    associateSySku_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo/associatedSystemSku"
+    amazon_associateSySku_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo/associatedSystemSku"
 
     # 我的数据-Amazon取消开发接口
     amazon_cancelDevelopment_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo/cancelDevelopment"
