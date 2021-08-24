@@ -17,3 +17,4 @@
 [2021-08-24 16:07:57,344] aliProductSelectInterface.py->aliProductListingInfo line:18 [INFO]aliProductListingInfo ---->start!
 [2021-08-24 16:08:03,620] aliProductSelectInterface.py->aliProductListingInfo line:18 [INFO]aliProductListingInfo ---->start!
 [2021-08-24 16:09:12,748] aliProductSelectInterface.py->aliProductListingInfo line:18 [INFO]aliProductListingInfo ---->start!
+[2021-08-24 16:24:18,148] smtProductSelectInterface.py->smtQueryProductListing line:20 [INFO]smtQueryProductListing ---->start!

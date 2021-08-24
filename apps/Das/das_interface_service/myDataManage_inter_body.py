@@ -36,8 +36,12 @@ class MyDataManageInterParam:
     productGenTongkuan_select = '{"asinUrlStr":"{asinUrlStr}"}'
 
     # 我的数据-SMT查询接口入参
-    smtProductInfo_param = {"args":"{args}"}
-    smtProductInfo_select = ''
+    smt_ProductInfo01 = {"args":"{args}"}
+    smt_ProductInfo02 = {"search":{0},"limit":50,"offset":0,"sort":"claimTime","order":"DESC"}
+    smt_ProductInfo03 = {"baseListingType":"followMark","mainSku":"","associatedSystemSku":"","skuMapStr":"","brand":"","keywords":"","startPrice":"","endPrice":"","dataStatus":"",
+                         "infringementReviewer":"","menuCode":"9010703","country":"US","productId":"","endOrders":"","developmentStatus":"","startOrders":"","Reviews":"","rating":"",
+                         "merchantName":"","startCrawlTime":"","endCrawlTime":"","systemSku":"","distributor":"","startDistributionTime":"","endDistributionTime":"","startInfringementReviewTime":"",
+                         "endInfringementReviewTime":"","auditStatus":""}
 
     # 我的数据-SMT侵权审核接口入参
     infringementReview_param = {"args":"{0}"}
