@@ -57,12 +57,26 @@ class MyDataManageInterUrl:
     # 我的数据-ebay查询接口
     ebay_queryListing_url = InterfaceCommonInfo.common_url + "/das/ebay/AccountProductInfo/queryEbayPageList"
 
+    # 我的数据-ebay释放产品接口
+    ebay_releaseProduct_url = InterfaceCommonInfo.common_url + "/das/ebay/AccountProductInfo/releaseProduct"
 
+    # 我的数据-ebay关联系统SKU接口
+    ebay_associateSySku_url = InterfaceCommonInfo.common_url + "/das/ebay/AccountProductInfo/associatedSystemSku"
 
+    # 我的数据-ebay取消开发接口
+    ebay_cancelDevelopment_url = InterfaceCommonInfo.common_url + "/das/ebay/AccountProductInfo/cancelDevelopment"
 
+    # 我的数据-shopee查询接口
+    shopee_queryListing_url = InterfaceCommonInfo.common_url + "/das/shopee/AccountProductInfo/queryShopeePageList"
 
+    # 我的数据-shopee释放产品接口
+    shopee_releaseProduct_url = InterfaceCommonInfo.common_url + "/das/shopee/AccountProductInfo/releaseProduct"
 
+    # 我的数据-shopee关联系统SKU接口
+    shopee_associateSySku_url = InterfaceCommonInfo.common_url + "/das/shopee/AccountProductInfo/associatedSystemSku"
 
+    # 我的数据-shopee取消开发接口
+    shopee_cancelDevelopment_url = InterfaceCommonInfo.common_url + "/das/shopee/AccountProductInfo/cancelDevelopment"
 
 
 

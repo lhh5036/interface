@@ -66,6 +66,13 @@ class MyDataManageInterParam:
                           "endTotalSold":"","productId":"","dataStatus":"","categoriesKw":"","title":"","startOnlineDate":"","endOnlineDate":"","count":"","startFirstListOnTime":"",
                           "endFirstListOnTime":"","developmentStatus":"","startDistributionTime":"","endDistributionTime":""}
 
+    # 我的数据-shopee查询接口入参
+    shopee_productInfo01 = {"args":"{0}"}
+    shopee_productInfo02 = {"search":{0},"sort":"crawlTime","order":"DESC","offset":0,"limit":50}
+    shopee_productInfo03 = {"associatedSystemSku":"","skuMapStr":"","baseListingType":"followMark","menuCode":"9010706","merchantUserName":"","rating":"","reviews":"","startTotalSold":"",
+                            "endTotalSold":"","productId":"","dataStatus":"","categoriesKw":"","title":"","startOnlineDate":"","endOnlineDate":"","startClaimTime":"","endClaimTime":"","account":"",
+                            "startOriginalPrice":"","endOriginalPrice":"","startDiscount":"","endDiscount":"","startPrice":"","endPrice":"","developmentStatus":"","startDistributionTime":"","endDistributionTime":"","systemSku":""}
+
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}
     paramConfig_select = '{"notesInfoList":[{notesInfoList}],"id":"datasystem-1234567895201314"}'
