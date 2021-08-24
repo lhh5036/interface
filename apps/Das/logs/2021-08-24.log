@@ -1,0 +1,6 @@
+[2021-08-24 12:36:26,056] smtInfringementAuditsInterface.py->infringementAuditFunction line:22 [INFO]infringementAuditFunction-------->start
+[2021-08-24 12:36:26,180] smtInfringementAuditsInterface.py->infringementAuditFunction line:76 [ERROR]cancelDevelopmentFunction -->response Data is wrong!
+[2021-08-24 12:37:18,680] smtInfringementAuditsInterface.py->infringementAuditFunction line:22 [INFO]infringementAuditFunction-------->start
+[2021-08-24 12:37:43,385] smtInfringementAuditsInterface.py->infringementAuditFunction line:22 [INFO]infringementAuditFunction-------->start
+[2021-08-24 12:37:50,517] smtInfringementAuditsInterface.py->infringementAuditFunction line:22 [INFO]infringementAuditFunction-------->start
+[2021-08-24 12:37:50,667] smtInfringementAuditsInterface.py->infringementAuditFunction line:76 [ERROR]cancelDevelopmentFunction -->response Data is wrong!
