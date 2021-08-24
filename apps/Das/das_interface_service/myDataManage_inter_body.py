@@ -44,6 +44,13 @@ class MyDataManageInterParam:
                             '"startDistributionTime":"{startDistributionTime}","endDistributionTime":"{endDistributionTime}","startInfringementReviewTime":"{startInfringementReviewTime}","endInfringementReviewTime":"{endInfringementReviewTime}",' \
                             '"auditStatus":"{auditStatus}"},"limit":50,"offset":0,"sort":"claimTime","order":"DESC"}'
 
+    # 我的数据-SMT侵权审核接口入参
+    infringementReview_param = {"args":"{0}"}
+    infringementReview_select = {"ids":{0},"infringementObj":"{1}","auditNotesInfo":"{2}","infringementTypeName":"{3}","salesProhibition":{4},"auditStatus":{5}}
+    infringementReview_plat = {"plat":"{0}","sites":{1}}
+    infringmentReview_site = {"site":{0},"isAuthority":0}
+
+
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}
     paramConfig_select = '{"notesInfoList":[{notesInfoList}],"id":"datasystem-1234567895201314"}'

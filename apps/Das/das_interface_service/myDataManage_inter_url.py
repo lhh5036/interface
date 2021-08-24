@@ -36,7 +36,8 @@ class MyDataManageInterUrl:
     # 我的数据-SMT关联系统SKU接口
     smt_associateSySku_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/associatedSystemSku"
 
-
+    # 我的数据-SMT侵权审核接口
+    smt_infringementAudit_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/infringementReview"
 
 
 

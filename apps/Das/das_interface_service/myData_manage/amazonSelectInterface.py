@@ -13,7 +13,7 @@ from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageIn
 from apps.Das.logger import MyLog
 
 # 实例化日志类
-logger = MyLog("AmazonReleaseProductInfoInterface").getlog() # 初始化
+logger = MyLog("MyDataAmazonSelectInterface").getlog() # 初始化
 # 数据管理-我的数据Amazon查询接口
 class MyDataAmazonSelectInterface():
     # 我的数据-Amazon查询
@@ -54,7 +54,7 @@ class MyDataAmazonSelectInterface():
         reqParam["args"] = replaceRepSelect # 确保最后一层是dict格式
 
         # 接口请求头
-        header = DasCommonHeader().getDasCommonHeader()
+        header = DasCommonHeader().getDasCommonHeader("new","181324")
         self.url = url
         self.formData = reqParam
         self.header = header

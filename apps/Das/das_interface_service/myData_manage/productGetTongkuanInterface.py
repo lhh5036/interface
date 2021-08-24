@@ -34,7 +34,7 @@ class ProductGetTongkuanInterface():
         reqParam["args"] = replaceRepSelect  # 替换最外层参数
 
         # 接口请求头
-        header = DasCommonHeader().getDasCommonHeader()
+        header = DasCommonHeader().getDasCommonHeader("new","181324")
 
         self.header = header
         self.formData = reqParam
