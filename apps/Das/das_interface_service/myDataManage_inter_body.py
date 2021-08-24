@@ -37,12 +37,7 @@ class MyDataManageInterParam:
 
     # 我的数据-SMT查询接口入参
     smtProductInfo_param = {"args":"{args}"}
-    smtProductInfo_select = '{"search":{"baseListingType":"followMark","mainSku":"{mainSku}","associatedSystemSku":"{associatedSystemSku}","skuMapStr":"{skuMapStr}",' \
-                            '"brand":"{brand}","keywords":"{keywords}","startPrice":"{startPrice}","endPrice":"{endPrice}","dataStatus":"{dataStatus}","infringementReviewer":"{infringementReviewer}",' \
-                            '"menuCode":"9010703","country":"US","productId":"{productId}","endOrders":"{endOrders}","developmentStatus":"{developmentStatus}","startOrders":"{startOrders}","Reviews":"{Reviews}",' \
-                            '"rating":"{rating}","merchantName":"{merchantName}","startCrawlTime":"{startCrawlTime}","endCrawlTime":"{endCrawlTime}","systemSku":"{systemSku}","distributor":"{distributor}",' \
-                            '"startDistributionTime":"{startDistributionTime}","endDistributionTime":"{endDistributionTime}","startInfringementReviewTime":"{startInfringementReviewTime}","endInfringementReviewTime":"{endInfringementReviewTime}",' \
-                            '"auditStatus":"{auditStatus}"},"limit":50,"offset":0,"sort":"claimTime","order":"DESC"}'
+    smtProductInfo_select = ''
 
     # 我的数据-SMT侵权审核接口入参
     infringementReview_param = {"args":"{0}"}

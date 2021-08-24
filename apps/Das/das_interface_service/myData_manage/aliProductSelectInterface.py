@@ -18,48 +18,18 @@ class AliProductSelectInterface():
         logger.info("aliProductListingInfo ---->start!")
         # 接口地址
         url = MyDataManageInterUrl.ali_queryListing_url
-        # 解析参数
-        brand = parseRequestDatas("brand",kwargs)
-        keywords = parseRequestDatas("keywords",kwargs)
-        startPrice = parseRequestDatas("startPrice",kwargs)
-        endPrice = parseRequestDatas("endPrice",kwargs)
-        dataStatus = parseRequestDatas("dataStatus",kwargs)
-        mainSku = parseRequestDatas("mainSku",kwargs)
-        associatedSystemSku = parseRequestDatas("associatedSystemSku",kwargs)
-        skuMapStr = parseRequestDatas("skuMapStr",kwargs)
-        productId = parseRequestDatas("productId",kwargs)
-        endOrders = parseRequestDatas("endOrders",kwargs)
-        startOrders = parseRequestDatas("startOrders",kwargs)
-        Reviews = parseRequestDatas("Reviews",kwargs)
-        rating = parseRequestDatas("rating",kwargs)
-        merchantName = parseRequestDatas("merchantName",kwargs)
-        startCrawlTime = parseRequestDatas("startCrawlTime",kwargs)
-        endCrawlTime = parseRequestDatas("endCrawlTime",kwargs)
-        startDistributionTime = parseRequestDatas("startDistributionTime",kwargs)
-        endDistributionTime = parseRequestDatas("endDistributionTime",kwargs)
-        developmentStatus = parseRequestDatas("developmentStatus",kwargs)
 
         # 拼接接口入参
         aliProductInfoSelect = MyDataManageInterParam.ali_productInfo03
-        aliProductInfoSelect["brand"] = brand
-        aliProductInfoSelect["keywords"] = keywords
-        aliProductInfoSelect["startPrice"] = startPrice
-        aliProductInfoSelect["endPrice"] = endPrice
-        aliProductInfoSelect["dataStatus"] = dataStatus
-        aliProductInfoSelect["mainSku"] = mainSku
-        aliProductInfoSelect["associatedSystemSku"] = associatedSystemSku
-        aliProductInfoSelect["skuMapStr"] = skuMapStr
-        aliProductInfoSelect["productId"] = productId
-        aliProductInfoSelect["endOrders"] = endOrders
-        aliProductInfoSelect["startOrders"] = startOrders
-        aliProductInfoSelect["Reviews"] = Reviews
-        aliProductInfoSelect["rating"] = rating
-        aliProductInfoSelect["merchantName"] = merchantName
-        aliProductInfoSelect["startCrawlTime"] = startCrawlTime
-        aliProductInfoSelect["endCrawlTime"] = endCrawlTime
-        aliProductInfoSelect["startDistributionTime"] = startDistributionTime
-        aliProductInfoSelect["endDistributionTime"] = endDistributionTime
-        aliProductInfoSelect["developmentStatus"]= developmentStatus
+
+        keyList = []
+        if kwargs != "":
+            for key in kwargs.keys():
+                keyList.append(key)
+        if len(keyList) != 0:
+            for i in range(len(keyList)):
+                value = parseRequestDatas(keyList[i],kwargs)
+                aliProductInfoSelect[keyList[i]] = value
 
         # 替换中间层
         ali_productInfo02 = MyDataManageInterParam.ali_productInfo02
@@ -95,4 +65,4 @@ def parseRequestDatas(keyname,kwargs):
     return valueName
 
 if __name__ == '__main__':
-    print(AliProductSelectInterface().aliProductListingInfo("第一个用例",{"productId":"642127417745"}))
+    print(AliProductSelectInterface().aliProductListingInfo("第一个用例",{}))
