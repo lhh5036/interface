@@ -7,6 +7,7 @@
 
 import requests
 import json
+import logging
 
 class InterfaceCommonInfo:
 
@@ -19,19 +20,20 @@ class InterfaceCommonInfo:
     # 生产环境接口地址
     # common_url = "http://10.100.1.1:31100"
 
+
+class Common_TokenHeader:
     # 公共token
     token_currency = "5df26666b185fbf0b3437482125d340e"
 
     # 公共请求头参数
     common_header = {"Content-Type":"application/json","Authorization":token_currency}
 
-
 '''
 获取新旧用户系统token
 '''
 def GetLoginToken(method, account):
     header = {'Content-Type': 'application/json',
-              'Authorization': InterfaceCommonInfo.token_currency}
+              'Authorization': Common_TokenHeader.token_currency}
     data = {"userName":"{0}".format(account),"password":"123456abc"}
     form = {"method": "string","args": "{0}".format(data)}
     data_new = {"employeeNo":"{0}".format(account),"password":"MTIzNDU2YWJj"}
@@ -44,6 +46,7 @@ def GetLoginToken(method, account):
             results = r.json()["result"]['accessToken']
             return results
         except KeyError:
+            logging.error("员工账号不存在或密码错误")
             return "员工账号不存在或密码错误"
     elif method == 'old':
         url = InterfaceCommonInfo.common_url + "/usermgt/login"
@@ -52,6 +55,7 @@ def GetLoginToken(method, account):
             results = r.json()["result"]['accessToken']
             return results
         except KeyError:
+            logging.error("员工账号不存在或密码错误")
             return "员工账号不存在或密码错误"
 
 
