@@ -60,7 +60,7 @@ class SmtProductSelectInterface():
         reqParam["args"] = replaceRepSelect  # 确保最后一层是dict格式
 
         # 接口请求头
-        header = DasCommonHeader().getDasCommonHeader()
+        header = DasCommonHeader().getDasCommonHeader("new","181324")
         self.url = url
         self.formData = reqParam
         self.header = header

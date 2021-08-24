@@ -30,7 +30,7 @@ class ParameterConfigInterface():
         reqParam["args"] = reqSelectStr
 
         # 接口请求头
-        header = DasCommonHeader().getDasCommonHeader()
+        header = DasCommonHeader().getDasCommonHeader("new","181324")
 
         # 组装接口所需要的参数
         self.url = url

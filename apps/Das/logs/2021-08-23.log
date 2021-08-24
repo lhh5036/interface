@@ -65,3 +65,5 @@
 [2021-08-23 17:11:25,266] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:18 [INFO]cancelDevelopmentFunction ---->start!
 [2021-08-23 17:11:25,463] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:47 [ERROR]cancelDevelopmentFunction -->response Data is wrong!
 [2021-08-23 17:47:27,370] productGetDijiaInterface.py->productDetDiJia line:21 [INFO]productGenDijia ---->start!
+[2021-08-23 17:58:34,114] productGetDijiaInterface.py->productDetDiJia line:21 [INFO]productGenDijia ---->start!
+[2021-08-23 17:58:43,721] productGetTongkuanInterface.py->productGetTongkuan line:22 [INFO]productGetTongkuan ---->start!

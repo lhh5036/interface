@@ -23,7 +23,7 @@ class ParameterConfigQueryInterface():
         # 接口请求参数
         formData = MyDataManageInterParam.paramConfigQuery
         # 接口请求头
-        header = DasCommonHeader().getDasCommonHeader()
+        header = DasCommonHeader().getDasCommonHeader("new","181324")
 
         self.url = url
         self.formData = formData
