@@ -19,7 +19,7 @@ class SmtProductSelectInterface():
     def smtQueryProductListing(self,casename,kwargs):# 设置动态入参，参数类型为字典{"name":"Jack","age":18}
         logger.info("smtQueryProductListing ---->start!")
         # 接口地址
-        url = MyDataManageInterUrl.querySmtListing_url
+        url = MyDataManageInterUrl.smt_queryListing_url
 
         # 最内层参数
         smtProductInfoSelect = MyDataManageInterParam.smt_ProductInfo03

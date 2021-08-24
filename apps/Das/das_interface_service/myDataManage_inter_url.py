@@ -10,7 +10,7 @@ from apps.Common_Config.interface_common_info import InterfaceCommonInfo
 class MyDataManageInterUrl:
 
     # 我的数据-Amazon查询接口
-    queryAmazonRankListing_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo"
+    amazon_queryListing_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo"
 
     # 我的数据-Amazon释放产品接口
     releaseProductInfo_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo"
@@ -28,7 +28,7 @@ class MyDataManageInterUrl:
     productGenTongkuan_url = InterfaceCommonInfo.common_url + "/das/ali/productGenTongkuan"
 
     # 我的数据-SMT查询接口
-    querySmtListing_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/querySmtPageList"
+    smt_queryListing_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/querySmtPageList"
 
     # 我的数据-SMT释放产品接口
     smt_releaseProduct_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/releaseProduct"
@@ -53,6 +53,9 @@ class MyDataManageInterUrl:
 
     # 我的数据-1688取消开发接口
     ali_cancelDevelopment_url = InterfaceCommonInfo.common_url + "/das/ali1688/AccountProductInfo/cancelDevelopment"
+
+    # 我的数据-ebay查询接口
+    ebay_queryListing_url = InterfaceCommonInfo.common_url + "/das/ebay/AccountProductInfo/queryEbayPageList"
 
 
 

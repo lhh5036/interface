@@ -20,7 +20,7 @@ class MyDataAmazonSelectInterface():
     def myDataAmazonSelect(self,casename,kwargs): # 设置动态入参，参数类型为字典{"name":"Jack","age":18}
         logger.info("queryAmazonRankListing ---->start!")
         # 接口地址
-        url = MyDataManageInterUrl.queryAmazonRankListing_url
+        url = MyDataManageInterUrl.amazon_queryListing_url
         # 请求入参
         country = parseRequestDatas("country",kwargs) # 国家
         if country == "":
