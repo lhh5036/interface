@@ -21,10 +21,10 @@ class MyDataManageInterUrl:
     # 我的数据-Amazon取消开发接口
     amazon_cancelDevelopment_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo/cancelDevelopment"
 
-    # 我的数据-Amazon低价接口
+    # 我的数据-低价接口
     productGenDijia_url = InterfaceCommonInfo.common_url + "/das/ali/productGenDijia"
 
-    # 我的数据-Amazon同款接口
+    # 我的数据-同款接口
     productGenTongkuan_url = InterfaceCommonInfo.common_url + "/das/ali/productGenTongkuan"
 
     # 我的数据-SMT查询接口
@@ -36,9 +36,23 @@ class MyDataManageInterUrl:
     # 我的数据-SMT关联系统SKU接口
     smt_associateSySku_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/associatedSystemSku"
 
+    # 我的数据-SMT取消开发接口
+    smt_cancelDevelopment_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo/cancelDevelopment"
+
     # 我的数据-SMT侵权审核接口
     smt_infringementAudit_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/infringementReview"
 
+    # 我的数据-1688查询接口
+    ali_queryListing_url = InterfaceCommonInfo.common_url + "/das/ali1688/AccountProductInfo"
+
+    # 我的数据-1688释放产品接口
+    ali_releaseProduct_url = InterfaceCommonInfo.common_url + "/das/ali1688/AccountProductInfo"
+
+    # 我的数据-1688关联系统SKU接口
+    ali_associateSySku_url = InterfaceCommonInfo.common_url + "/das/ali1688/AccountProductInfo/associatedSystemSku"
+
+    # 我的数据-1688取消开发接口
+    ali_cancelDevelopment_url = InterfaceCommonInfo.common_url + "/das/ali1688/AccountProductInfo/cancelDevelopment"
 
 
 

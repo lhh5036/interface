@@ -4,3 +4,10 @@
 [2021-08-24 12:37:43,385] smtInfringementAuditsInterface.py->infringementAuditFunction line:22 [INFO]infringementAuditFunction-------->start
 [2021-08-24 12:37:50,517] smtInfringementAuditsInterface.py->infringementAuditFunction line:22 [INFO]infringementAuditFunction-------->start
 [2021-08-24 12:37:50,667] smtInfringementAuditsInterface.py->infringementAuditFunction line:76 [ERROR]cancelDevelopmentFunction -->response Data is wrong!
+[2021-08-24 15:30:46,237] aliProductSelectInterface.py->aliProductListingInfo line:18 [INFO]aliProductListingInfo ---->start!
+[2021-08-24 15:31:46,097] aliProductSelectInterface.py->aliProductListingInfo line:18 [INFO]aliProductListingInfo ---->start!
+[2021-08-24 15:44:32,303] aliProductSelectInterface.py->aliProductListingInfo line:18 [INFO]aliProductListingInfo ---->start!
+[2021-08-24 15:51:20,193] aliProductSelectInterface.py->aliProductListingInfo line:18 [INFO]aliProductListingInfo ---->start!
+[2021-08-24 15:51:26,887] aliProductSelectInterface.py->aliProductListingInfo line:18 [INFO]aliProductListingInfo ---->start!
+[2021-08-24 15:52:15,926] aliProductSelectInterface.py->aliProductListingInfo line:18 [INFO]aliProductListingInfo ---->start!
+[2021-08-24 15:52:19,789] aliProductSelectInterface.py->aliProductListingInfo line:18 [INFO]aliProductListingInfo ---->start!
