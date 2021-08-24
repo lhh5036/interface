@@ -11,7 +11,7 @@ import requests
 import json
 
 # 实例化日志类
-logger = MyLog("AmazonReleaseProductInfoInterface").getlog() # 初始化
+logger = MyLog("releaseProductInfoInterface").getlog() # 初始化
 # 我的数据Amazon-释放产品接口
 class releaseProductInfoInterface():
     def releaseProductInfo(self,casename,url,paramList): # 调用该接口使用入参为list

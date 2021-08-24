@@ -59,6 +59,13 @@ class MyDataManageInterParam:
                                         "endDistributionTime":"","developmentStatus":""}
 
 
+    # 我的数据-ebay查询接口入参
+    ebay_productInfo01 = {"args":"{0}"}
+    ebay_productInfo02 = {"search":{0},"sort":"claimTime","order":"DESC","offset":0,"limit":50}
+    ebay_productInfo03 = {"mainSku":"","associatedSystemSku":"","skuMapStr":"","baseListingType":"followMark","menuCode":"9010705","merchantUserName":"","rating":"","startTotalSold":"",
+                          "endTotalSold":"","productId":"","dataStatus":"","categoriesKw":"","title":"","startOnlineDate":"","endOnlineDate":"","count":"","startFirstListOnTime":"",
+                          "endFirstListOnTime":"","developmentStatus":"","startDistributionTime":"","endDistributionTime":""}
+
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}
     paramConfig_select = '{"notesInfoList":[{notesInfoList}],"id":"datasystem-1234567895201314"}'

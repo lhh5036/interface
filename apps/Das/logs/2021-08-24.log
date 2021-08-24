@@ -29,3 +29,5 @@
 [2021-08-24 16:37:53,191] amazonSelectInterface.py->myDataAmazonSelect line:21 [INFO]queryAmazonRankListing ---->start!
 [2021-08-24 16:38:29,801] amazonSelectInterface.py->myDataAmazonSelect line:21 [INFO]queryAmazonRankListing ---->start!
 [2021-08-24 16:38:41,044] amazonSelectInterface.py->myDataAmazonSelect line:21 [INFO]queryAmazonRankListing ---->start!
+[2021-08-24 16:56:58,585] ebayProductSelectInterface.py->ebayProductListingInfo line:18 [INFO]ebayProductListingInfo ---->start!
+[2021-08-24 16:58:05,507] ebayProductSelectInterface.py->ebayProductListingInfo line:18 [INFO]ebayProductListingInfo ---->start!

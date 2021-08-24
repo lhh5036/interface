@@ -13,7 +13,7 @@ from apps.Das.logger import MyLog
 
 
 # 实例化日志类
-logger = MyLog("SmtProductSelectInterface").getlog() # 初始化
+logger = MyLog("ParameterConfigQueryInterface").getlog() # 初始化
 
 class ParameterConfigQueryInterface():
     def paramConfigQuery(self,casename):
