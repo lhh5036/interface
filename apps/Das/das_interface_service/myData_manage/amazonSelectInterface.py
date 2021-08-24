@@ -26,37 +26,29 @@ class MyDataAmazonSelectInterface():
         if country == "":
             logger.error("queryAmazonRankListing --> ReqParam:country is null!")
             return "请求参数:country字段不能为空"
-        departmentName = parseRequestDatas("departmentName",kwargs)
-        brand = parseRequestDatas("brand",kwargs)
-        keywords = parseRequestDatas("keywords",kwargs) # 关键词
-        asin = parseRequestDatas("asin",kwargs) # 产品asin
-        mainSku = parseRequestDatas("mainSku",kwargs) # 主SKU
-        associatedSystemSku = parseRequestDatas("associatedSystemSku",kwargs) # 关联系统SKU
-        skuMapStr = parseRequestDatas("skuMapStr",kwargs) # 试卖SKU
-        startPrice = parseRequestDatas("startPrice",kwargs)
-        endPrice = parseRequestDatas("endPrice",kwargs)
-        dataStatus = parseRequestDatas("dataStatus",kwargs)
-        sellerName = parseRequestDatas("sellerName",kwargs)
-        fba = parseRequestDatas("fba",kwargs)
-        isBrand = parseRequestDatas("isBrand",kwargs)
-        startFirstListOnTime = parseRequestDatas("startFirstListOnTime",kwargs)
-        endFirstListOnTime = parseRequestDatas("endFirstListOnTime",kwargs)
+        # 最内层参数
+        amazonProductInfoSelect = MyDataManageInterParam.amazon_ProductInfo03
+        keyList =[]
+        if kwargs != "":
+            for key in kwargs.keys():
+                keyList.append(key)
 
-        # 获取请求参数的基本格式
-        repSelect = MyDataManageInterParam.accountProductInfo_select
-        # 替换字符串里面的参数
-        replaceRepSelect = repSelect.replace("{country}",country).replace("{departmentName}",departmentName).replace("{brand}",brand).replace("{keywords}",keywords).replace("{asin}",asin).\
-            replace("{mainSku}",mainSku).replace("{associatedSystemSku}",associatedSystemSku).replace("{skuMapStr}",skuMapStr).replace("{startPrice}",startPrice).\
-            replace("{endPrice}",endPrice).replace("{dataStatus}",dataStatus).replace("{sellerName}",sellerName).replace("{fba}",fba).replace("{isBrand}",isBrand).\
-            replace("{startFirstListOnTime}",startFirstListOnTime).replace("{endFirstListOnTime}",endFirstListOnTime)
-        # 替换最外层参数
-        reqParam = MyDataManageInterParam.accountProductInfo_param
-        reqParam["args"] = replaceRepSelect # 确保最后一层是dict格式
+        if len(keyList) != 0:
+            for i in range(len(keyList)):
+                value = parseRequestDatas(keyList[i], kwargs)
+                amazonProductInfoSelect[keyList[i]] = value
+        # 替换中间层
+        amazon_ProductInfo02 = MyDataManageInterParam.amazon_ProductInfo02
+        amazon_ProductInfo02["search"] = amazonProductInfoSelect
+
+        # 替换外层
+        amazonProductInfoParam = MyDataManageInterParam.amazon_ProductInfo01
+        amazonProductInfoParam["args"] = json.dumps(amazon_ProductInfo02)
 
         # 接口请求头
         header = DasCommonHeader().getDasCommonHeader("new","181324")
         self.url = url
-        self.formData = reqParam
+        self.formData = amazonProductInfoParam
         self.header = header
 
         resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
@@ -75,3 +67,5 @@ def parseRequestDatas(keyname,kwargs):
         valueName = kwargs.get(keyname)
     return valueName
 
+if __name__ == '__main__':
+    print(MyDataAmazonSelectInterface().myDataAmazonSelect("第一个用例",{"country":"US","asin":"B07SW7PVWW"}))

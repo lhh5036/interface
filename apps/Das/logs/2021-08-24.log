@@ -18,3 +18,14 @@
 [2021-08-24 16:08:03,620] aliProductSelectInterface.py->aliProductListingInfo line:18 [INFO]aliProductListingInfo ---->start!
 [2021-08-24 16:09:12,748] aliProductSelectInterface.py->aliProductListingInfo line:18 [INFO]aliProductListingInfo ---->start!
 [2021-08-24 16:24:18,148] smtProductSelectInterface.py->smtQueryProductListing line:20 [INFO]smtQueryProductListing ---->start!
+[2021-08-24 16:35:15,843] amazonSelectInterface.py->myDataAmazonSelect line:21 [INFO]queryAmazonRankListing ---->start!
+[2021-08-24 16:35:15,843] amazonSelectInterface.py->myDataAmazonSelect line:27 [ERROR]queryAmazonRankListing --> ReqParam:country is null!
+[2021-08-24 16:35:29,082] amazonSelectInterface.py->myDataAmazonSelect line:21 [INFO]queryAmazonRankListing ---->start!
+[2021-08-24 16:35:30,207] amazonSelectInterface.py->myDataAmazonSelect line:58 [ERROR]queryAmazonRankListing -->response Data is wrong!
+[2021-08-24 16:36:07,781] amazonSelectInterface.py->myDataAmazonSelect line:21 [INFO]queryAmazonRankListing ---->start!
+[2021-08-24 16:37:16,569] amazonSelectInterface.py->myDataAmazonSelect line:58 [ERROR]queryAmazonRankListing -->response Data is wrong!
+[2021-08-24 16:37:24,530] amazonSelectInterface.py->myDataAmazonSelect line:21 [INFO]queryAmazonRankListing ---->start!
+[2021-08-24 16:37:47,453] amazonSelectInterface.py->myDataAmazonSelect line:58 [ERROR]queryAmazonRankListing -->response Data is wrong!
+[2021-08-24 16:37:53,191] amazonSelectInterface.py->myDataAmazonSelect line:21 [INFO]queryAmazonRankListing ---->start!
+[2021-08-24 16:38:29,801] amazonSelectInterface.py->myDataAmazonSelect line:21 [INFO]queryAmazonRankListing ---->start!
+[2021-08-24 16:38:41,044] amazonSelectInterface.py->myDataAmazonSelect line:21 [INFO]queryAmazonRankListing ---->start!
