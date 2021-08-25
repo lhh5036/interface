@@ -1,0 +1,5 @@
+[2021-08-25 17:32:41,736] amazonSelectInterface.py->myDataAmazonSelect line:21 [INFO]queryAmazonRankListing ---->start!
+[2021-08-25 17:32:42,025] amazonSelectInterface.py->myDataAmazonSelect line:21 [INFO]queryAmazonRankListing ---->start!
+[2021-08-25 18:17:18,179] associateSystemSkuInterface.py->associateSystemSku line:20 [INFO]associateSystemSku ---->start!
+[2021-08-25 18:17:18,362] associateSystemSkuInterface.py->associateSystemSku line:20 [INFO]associateSystemSku ---->start!
+[2021-08-25 18:17:18,492] associateSystemSkuInterface.py->associateSystemSku line:49 [ERROR]associateSystemSku -->response Data is wrong!
