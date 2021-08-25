@@ -5,15 +5,12 @@
 @Desc:参数配置-取消开发备注查询用例
 '''
 from apps.Das.das_interface_service.param_config.parameterConfigSelect import ParameterConfigQueryInterface
+import unittest
 
+# 参数配置-取消开发备注查询用例类
+class Test_paramConfigQuery(unittest.TestCase):
 
-def test_paramConfigQuery():
-
-    responseResult = []
-    # 第一个用例
-    responseResult01 = ParameterConfigQueryInterface().paramConfigQuery("第一个用例")
-    responseResult.append(responseResult01)
-
-    return responseResult
-
+    def test01(self):
+        responseResult01 = ParameterConfigQueryInterface().paramConfigQuery("第一个用例")
+        return responseResult01
 

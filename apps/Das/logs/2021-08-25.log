@@ -3,3 +3,4 @@
 [2021-08-25 18:17:18,179] associateSystemSkuInterface.py->associateSystemSku line:20 [INFO]associateSystemSku ---->start!
 [2021-08-25 18:17:18,362] associateSystemSkuInterface.py->associateSystemSku line:20 [INFO]associateSystemSku ---->start!
 [2021-08-25 18:17:18,492] associateSystemSkuInterface.py->associateSystemSku line:49 [ERROR]associateSystemSku -->response Data is wrong!
+[2021-08-25 18:21:31,888] associateSystemSkuInterface.py->associateSystemSku line:20 [INFO]associateSystemSku ---->start!
