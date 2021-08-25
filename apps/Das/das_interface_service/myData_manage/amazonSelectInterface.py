@@ -33,7 +33,6 @@ class MyDataAmazonSelectInterface():
             for key in kwargs.keys():
                 keyList.append(key)
 
-        if len(keyList) != 0:
             for i in range(len(keyList)):
                 value = parseRequestDatas(keyList[i], kwargs)
                 amazonProductInfoSelect[keyList[i]] = value
