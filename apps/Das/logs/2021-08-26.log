@@ -174,3 +174,25 @@
 [2021-08-26 16:38:52,657] releaseProductInterface.py->releaseProductInfo line:19 [INFO]releaseProductInfo ---->start!
 [2021-08-26 16:38:53,356] smtProductSelectInterface.py->smtQueryProductListing line:20 [INFO]smtQueryProductListing ---->start!
 [2021-08-26 16:38:53,655] smtProductSelectInterface.py->smtQueryProductListing line:20 [INFO]smtQueryProductListing ---->start!
+[2021-08-26 16:46:02,211] associateSystemSkuInterface.py->associateSystemSku line:20 [INFO]associateSystemSku ---->start!
+[2021-08-26 16:46:02,439] associateSystemSkuInterface.py->associateSystemSku line:20 [INFO]associateSystemSku ---->start!
+[2021-08-26 16:46:02,577] associateSystemSkuInterface.py->associateSystemSku line:44 [ERROR]associateSystemSku -->response Data is wrong!
+[2021-08-26 16:46:02,577] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-26 16:46:02,693] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:18 [INFO]cancelDevelopmentFunction ---->start!
+[2021-08-26 16:46:02,878] cancelDevelopmentInterface.py->cancelDevelopmentFunction line:43 [ERROR]cancelDevelopmentFunction -->response Data is wrong!
+[2021-08-26 16:46:02,897] productGetDijiaInterface.py->productDetDiJia line:22 [INFO]productGenDijia ---->start!
+[2021-08-26 16:46:03,167] productGetTongkuanInterface.py->productGetTongkuan line:21 [INFO]productGetTongkuan ---->start!
+[2021-08-26 16:46:03,399] releaseProductInterface.py->releaseProductInfo line:19 [INFO]releaseProductInfo ---->start!
+[2021-08-26 16:46:04,015] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-26 16:46:04,307] amazonSelectInterface.py->myDataAmazonSelect line:22 [INFO]queryAmazonRankListing ---->start!
+[2021-08-26 16:46:04,640] parameterConfigSave.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
+[2021-08-26 16:46:04,770] parameterConfigSave.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
+[2021-08-26 16:46:04,904] parameterConfigSelect.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2021-08-26 16:46:05,037] associateSystemSkuInterface.py->associateSystemSku line:20 [INFO]associateSystemSku ---->start!
+[2021-08-26 16:46:05,729] associateSystemSkuInterface.py->associateSystemSku line:20 [INFO]associateSystemSku ---->start!
+[2021-08-26 16:46:05,853] associateSystemSkuInterface.py->associateSystemSku line:44 [ERROR]associateSystemSku -->response Data is wrong!
+[2021-08-26 16:46:05,891] productGetDijiaInterface.py->productDetDiJia line:22 [INFO]productGenDijia ---->start!
+[2021-08-26 16:46:06,079] productGetTongkuanInterface.py->productGetTongkuan line:21 [INFO]productGetTongkuan ---->start!
+[2021-08-26 16:46:06,293] releaseProductInterface.py->releaseProductInfo line:19 [INFO]releaseProductInfo ---->start!
+[2021-08-26 16:46:06,796] smtProductSelectInterface.py->smtQueryProductListing line:20 [INFO]smtQueryProductListing ---->start!
+[2021-08-26 16:46:07,073] smtProductSelectInterface.py->smtQueryProductListing line:20 [INFO]smtQueryProductListing ---->start!
