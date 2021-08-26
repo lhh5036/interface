@@ -84,8 +84,8 @@ class MyDataManageInterUrl:
     # 我的数据-shopee取消开发接口
     shopee_cancelDevelopment_url = InterfaceCommonInfo.common_url + "/das/shopee/AccountProductInfo/cancelDevelopment"
 
-
-
+    # 数据采集-Amazon认领产品接口
+    amazon_claimProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/claimAmazonRankListing"
 
 
 

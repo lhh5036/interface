@@ -77,6 +77,10 @@ class MyDataManageInterParam:
     checkAccountProductByRank01 = {"args":"{0}"}
     checkAccountProductByRank02 = {"saleChannel": {0}, "baseIdList": {1}}
 
+    # 数据采集-Amazon认领产品接口入参
+    amazon_claimProduct01 = {"args":"{0}"}
+    amazon_claimProduct02 = {"ids":{0}}
+
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}
     paramConfig_select = '{"notesInfoList":[{notesInfoList}],"id":"datasystem-1234567895201314"}'
