@@ -21,19 +21,27 @@ class InterfaceCommonInfo:
     # common_url = "http://10.100.1.1:31100"
 
 
-class Common_TokenHeader:
+class Common_TokenHeader():
     # 公共token
     token_currency = "5df26666b185fbf0b3437482125d340e"
 
-    # 公共请求头参数
+    # 公共请求头参数(公共token)
     common_header = {"Content-Type":"application/json","Authorization":token_currency}
+
+    # 公共请求头参数(账号token)
+    def token_header(self, method, account):
+        self.method = method
+        self.account = account
+        account_header = {"Content-Type":"application/json","Authorization":GetLoginToken(self.method, self.account)}
+
+        return account_header
 
 '''
 获取新旧用户系统token
 '''
 def GetLoginToken(method, account):
     header = {'Content-Type': 'application/json',
-              'Authorization': Common_TokenHeader.token_currency}
+              'Authorization': Common_TokenHeader().token_currency}
     data = {"userName":"{0}".format(account),"password":"123456abc"}
     form = {"method": "string","args": "{0}".format(data)}
     data_new = {"employeeNo":"{0}".format(account),"password":"MTIzNDU2YWJj"}
@@ -60,5 +68,4 @@ def GetLoginToken(method, account):
 
 
 if __name__ == '__main__':
-    tokens = GetLoginToken('new', "170479")
-    print(tokens)
+    print(Common_TokenHeader().token_header('new', '170479'))
