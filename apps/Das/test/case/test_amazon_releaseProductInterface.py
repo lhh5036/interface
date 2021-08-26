@@ -36,7 +36,7 @@ class Test_amazonReleaseRroductInterface(unittest.TestCase):
     def test01(self):
         resultList = self.firstInputParam()
         # 接口地址
-        url = MyDataManageInterUrl.releaseProductInfo_url
+        url = MyDataManageInterUrl.amazon_releaseProduct_url
         responseResult = releaseProductInfoInterface().releaseProductInfo("第一个用例",url,resultList)
         return responseResult
 

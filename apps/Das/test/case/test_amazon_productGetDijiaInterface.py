@@ -1,6 +1,7 @@
 '''
-@File: test_amazon_productGetDijiaInterface.py
-@time:2021/8/23
+
+File: test_amazon_productGetDijiaInterface.py
+@ bme:2021/8/23
 @Author:quanliu
 @Desc:数据管理-我的数据Amazon页面低价接口用例
 '''
