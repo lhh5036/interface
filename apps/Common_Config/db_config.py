@@ -133,6 +133,19 @@ def parseMySqlFile(cf,databasename):
     _password = cf.get(databasename, "mysql_password")
     return _database,_host,_user,_password
 
+# 解析redis_sources_config文件中REDIS配置
+class parseRedisFile():
+    def __init__(self, cf, databasename):
+        self.cf = cf
+        self.databasename = databasename
+
+    def host(self):
+        _host = cf.get(self.databasename, "redis_host")
+        return _host
+    def port(self):
+        _port = cf.get(self.databasename, "redis_port")
+        return _port
+
 
 if __name__ == '__main__':
     cf = configparser.ConfigParser()
