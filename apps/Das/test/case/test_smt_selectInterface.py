@@ -15,10 +15,10 @@ class Test_smtSelectInterface(unittest.TestCase):
     def test01(self):
         # 用例1
         testCaseReq_01 = {"productId": "4000032062735"}
-        testCaseRep_01 = SmtProductSelectInterface().smtQueryProductListing("第一个用例",testCaseReq_01)
+        testCaseRep_01 = SmtProductSelectInterface().smtQueryProductListing(testCaseReq_01)
         return testCaseRep_01
 
     def test02(self):
         testCaseReq_02 = {"mainSku": "9SD400194","productId":"4000032062735"}
-        testCaseRep_02 = SmtProductSelectInterface().smtQueryProductListing("第二个用例",testCaseReq_02)
+        testCaseRep_02 = SmtProductSelectInterface().smtQueryProductListing(testCaseReq_02)
         return testCaseRep_02

@@ -32,5 +32,5 @@ class Test_smtProdcutGetDijia(unittest.TestCase):
 
     def test01(self):
         reqParam = self.firstInputParam()
-        responseResult = ProductGetDijiaInterface().productDetDiJia("第一个用例",reqParam)
+        responseResult = ProductGetDijiaInterface().productDetDiJia(reqParam)
         return responseResult

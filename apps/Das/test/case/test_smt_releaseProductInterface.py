@@ -36,7 +36,7 @@ class Test_smtReleaseRroductInterface(unittest.TestCase):
         # 接口地址
         url = MyDataManageInterUrl.smt_releaseProduct_url
         resultList = self.firstInputParam()
-        responseResult = releaseProductInfoInterface().releaseProductInfo("第一个用例",url,resultList)
+        responseResult = releaseProductInfoInterface().releaseProductInfo(url,resultList)
         return responseResult
 
 

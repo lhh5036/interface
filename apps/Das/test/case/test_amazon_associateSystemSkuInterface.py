@@ -40,7 +40,7 @@ class Test_amazonAssociateSySkuInterface(unittest.TestCase):
         url = MyDataManageInterUrl.amazon_associateSySku_url
         systemSkuStr01 = "8ZZ800161-S-B"
         paramList = self.firstInputParam()
-        responseResult01 = AssociateSystemSkuInterface().associateSystemSku("第一个用例", url, paramList, systemSkuStr01)
+        responseResult01 = AssociateSystemSkuInterface().associateSystemSku(url, paramList, systemSkuStr01)
         return responseResult01
 
     # 用例2接口第二个入参（输入不存在SKU）
@@ -49,7 +49,7 @@ class Test_amazonAssociateSySkuInterface(unittest.TestCase):
         url = MyDataManageInterUrl.amazon_associateSySku_url
         systemSkuStr02 = "8ZZ800161S"
         paramList = self.firstInputParam()
-        responseResult02 = AssociateSystemSkuInterface().associateSystemSku("第二个用例",url,paramList, systemSkuStr02)
+        responseResult02 = AssociateSystemSkuInterface().associateSystemSku(url,paramList, systemSkuStr02)
         return responseResult02
 
 

@@ -34,11 +34,11 @@ class Test_amazonCancelDevelopInterface(unittest.TestCase):
 
     def test01(self):
         # 接口第二个入参
-        responseData = ParameterConfigQueryInterface().paramConfigQuery("第一个用例")
+        responseData = ParameterConfigQueryInterface().paramConfigQuery()
         secondParam = ",".join(random.sample(responseData.split('[')[1].rstrip("]").split(","),1))
         # 接口地址
         url = MyDataManageInterUrl.amazon_cancelDevelopment_url
         resultList = self.firstInputParam()
-        responseResult01 = CancelDevelopmentInterface().cancelDevelopmentFunction("第一个用例", url, resultList, secondParam)
+        responseResult01 = CancelDevelopmentInterface().cancelDevelopmentFunction(url, resultList, secondParam)
         return responseResult01
 

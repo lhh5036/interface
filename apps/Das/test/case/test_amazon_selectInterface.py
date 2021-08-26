@@ -13,12 +13,12 @@ class Test_amazonSelectInterface(unittest.TestCase):
 
     def test01(self):
         testCaseReq_01 = {"country": "11US"}
-        testCaseRep_01 = MyDataAmazonSelectInterface().myDataAmazonSelect("第一个用例",testCaseReq_01)
+        testCaseRep_01 = MyDataAmazonSelectInterface().myDataAmazonSelect(testCaseReq_01)
         return testCaseRep_01
 
     def test02(self):
         testCaseReq_02 = {"country": "US","sellerName":"Gardenwed"}
-        testCaseRep_02 = MyDataAmazonSelectInterface().myDataAmazonSelect("第二个用例",testCaseReq_02)
+        testCaseRep_02 = MyDataAmazonSelectInterface().myDataAmazonSelect(testCaseReq_02)
         return testCaseRep_02
 
 

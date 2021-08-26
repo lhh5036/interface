@@ -32,5 +32,5 @@ class Test_smtProductGetTongkuan(unittest.TestCase):
 
     def test01(self):
         reqParam = self.firstInputParam()
-        responseResult = ProductGetTongkuanInterface().productGetTongkuan("第一个用例",reqParam)
+        responseResult = ProductGetTongkuanInterface().productGetTongkuan(reqParam)
         return responseResult
