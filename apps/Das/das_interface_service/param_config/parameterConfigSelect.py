@@ -16,7 +16,7 @@ from apps.Das.logger import MyLog
 logger = MyLog("ParameterConfigQueryInterface").getlog() # 初始化
 
 class ParameterConfigQueryInterface():
-    def paramConfigQuery(self,casename):
+    def paramConfigQuery(self):
         logger.info("paramConfigQuery ---->start!")
         # 接口地址
         url = MyDataManageInterUrl.paramConfigSelect_url
@@ -24,19 +24,16 @@ class ParameterConfigQueryInterface():
         formData = MyDataManageInterParam.paramConfigQuery
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")
-
         self.url = url
         self.formData = formData
         self.header = header
-
         respResult = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
         # 响应值
         responseData = respResult.json()["result"]["cancelDevNotesInfoList"]
-
         if respResult.status_code == 200:
-            return "{0}-->success,接口返回值:{1}".format(casename,responseData)
+            return "接口响应成功,接口返回值:{0}".format(responseData)
         else:
             logger.error("paramConfigQuery -->response Data is wrong!")
-            return "{0}-->响应结果有误,接口地址:{1},接口入参:{2}".format(casename, url, json.dumps(self.formData))
+            return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(respResult.json()["errorMsg"], url, formData)
 
         logger.info("paramConfigQuery ---->end!")

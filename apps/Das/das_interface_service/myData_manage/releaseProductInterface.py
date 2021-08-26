@@ -14,7 +14,7 @@ import json
 logger = MyLog("releaseProductInfoInterface").getlog() # 初始化
 # 我的数据Amazon-释放产品接口
 class releaseProductInfoInterface():
-    def releaseProductInfo(self,casename,url,paramList): # 调用该接口使用入参为list
+    def releaseProductInfo(self,url,paramList): # 调用该接口使用入参为list
         paramStr = ""
         logger.info("releaseProductInfo ---->start!")
         if len(paramList) == 0:
@@ -24,27 +24,23 @@ class releaseProductInfoInterface():
         # 将入参list转为string类型
         for i in range(len(paramList)):
             paramStr += "'"+paramList[i]+"',"
-
         # 拼接接口请求入参
         reqSelect = MyDataManageInterParam.releaseProductInfo_select
         reqSelectStr = reqSelect.replace("{ids}",paramStr) # 替换参数
         reqParam = MyDataManageInterParam.releaseProductInfo_param
         reqParam["args"] = reqSelectStr
-
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")
-
         # 组装接口所需要的参数
         self.url = url
         self.formData = reqParam
         self.header = header
-
         resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
         if resp.json()["success"] == True:
-            return "{0}-->success".format(casename)
+            return "接口释放产品--->success"
         else:
             logger.error("releaseProductInfo -->response Data is wrong!")
-            return "{0}-->响应结果有误,接口地址:{1},接口入参:{2}".format(casename,url, paramList)
+            return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,reqParam)
 
         logger.info("releaseProductInfo ---->end!")
 

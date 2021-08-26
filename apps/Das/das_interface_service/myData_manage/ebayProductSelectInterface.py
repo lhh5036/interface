@@ -14,7 +14,7 @@ import requests
 # 实例化日志类
 logger = MyLog("EbayProductSelectInterface").getlog() # 初始化
 class EbayProductSelectInterface():
-    def ebayProductListingInfo(self,casename,kwargs):
+    def ebayProductListingInfo(self,kwargs):
         logger.info("ebayProductListingInfo ---->start!")
         # 接口地址
         url = MyDataManageInterUrl.ebay_queryListing_url
@@ -24,32 +24,27 @@ class EbayProductSelectInterface():
         if kwargs != "":
             for key in kwargs.keys():
                 keyList.append(key)
-        if len(keyList) != 0:
+
             for i in range(len(keyList)):
                 value = parseRequestDatas(keyList[i],kwargs)
                 ebayProductInfoSelect[keyList[i]] = value
-
         # 替换中间层
         ebay_productInfo02 = MyDataManageInterParam.ebay_productInfo02
         ebay_productInfo02["search"] = ebayProductInfoSelect
-
         # 替换外层
         ebayProductInfoParam = MyDataManageInterParam.ebay_productInfo01
         ebayProductInfoParam["args"] = json.dumps(ebay_productInfo02)
-
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")
-
         self.url = url
         self.formData = ebayProductInfoParam
         self.header = header
-
         resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
         if resp.json()["success"] == True:
-            return "{0}----->success".format(casename)
+            return "接口响应成功,响应结果:{0}".format(resp.json()["rows"])
         else:
             logger.error("ebayProductListingInfo -->response Data is wrong!")
-            return "{0}-->响应结果有误,接口地址:{1},接口入参:{2}".format(casename, url, kwargs)
+            return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"], url, kwargs)
 
         logger.info("ebayProductListingInfo---->end!")
 

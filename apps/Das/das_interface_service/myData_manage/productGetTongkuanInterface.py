@@ -17,10 +17,10 @@ logger = MyLog("ProductGetTongkuanInterface").getlog() # 初始化
 
 # 数据管理-同款接口服务
 class ProductGetTongkuanInterface():
-    def productGetTongkuan(self,casename,paramStr):
+    def productGetTongkuan(self,paramStr):
         logger.info("productGetTongkuan ---->start!")
-        if paramStr == "" or casename == "":
-            logger.error("productGetTongkuan --> ReqParam:paramStr and casename is null!")
+        if paramStr == "":
+            logger.error("productGetTongkuan --> ReqParam:paramStr is null!")
             return "请求入参不能为空!"
 
         # 接口请求地址
@@ -41,9 +41,9 @@ class ProductGetTongkuanInterface():
 
         respResult = requests.post(url=self.url, headers=self.header, data=json.dumps(self.formData))
         if respResult.json()["success"] == True:
-            return "{0}-->success".format(casename)
+            return "接口响应成功,响应结果:{0}".format(respResult.json()["result"])
         else:
             logger.error("productGetTongkuan -->response Data is wrong!")
-            return "{0}-->响应结果有误,接口地址:{1},接口入参:{2}".format(casename, url, json.dumps(self.formData))
+            return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(respResult.json()["errorMsg"], url,reqParam)
 
         logger.info("productGetTongkuan ---->end!")

@@ -18,7 +18,7 @@ logger = MyLog("MyDataAmazonSelectInterface").getlog() # 初始化
 # 数据管理-我的数据Amazon查询接口
 class MyDataAmazonSelectInterface():
     # 我的数据-Amazon查询
-    def myDataAmazonSelect(self,casename,kwargs): # 设置动态入参，参数类型为字典{"name":"Jack","age":18}
+    def myDataAmazonSelect(self,kwargs): # 设置动态入参，参数类型为字典{"name":"Jack","age":18}
         logger.info("queryAmazonRankListing ---->start!")
         # 接口地址
         url = MyDataManageInterUrl.amazon_queryListing_url
@@ -33,7 +33,6 @@ class MyDataAmazonSelectInterface():
         if kwargs != "":
             for key in kwargs.keys():
                 keyList.append(key)
-
             for i in range(len(keyList)):
                 value = parseRequestDatas(keyList[i], kwargs)
                 amazonProductInfoSelect[keyList[i]] = value
@@ -53,10 +52,10 @@ class MyDataAmazonSelectInterface():
 
         resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
         if resp.json()["success"] == True:
-            return "{0}-->success".format(casename)
+            return "接口响应成功,响应结果:{0}".format(resp.json()["rows"])
         else:
             logger.error("queryAmazonRankListing -->response Data is wrong!")
-            return "{0}-->响应结果有误,接口地址:{1},接口入参:{2}".format(casename,url, kwargs)
+            return "接口响应失败原因:{0},地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,amazonProductInfoParam)
 
         logger.info("queryAmazonRankListing ---->end!")
 # 解析每一个入参
@@ -68,4 +67,4 @@ def parseRequestDatas(keyname,kwargs):
     return valueName
 
 if __name__ == '__main__':
-    print(MyDataAmazonSelectInterface().myDataAmazonSelect("第一个用例",{"country":"US","asin":"B07SW7PVWW"}))
+    print(MyDataAmazonSelectInterface().myDataAmazonSelect({"country":"US","asin":"B07SW7PVWW"}))

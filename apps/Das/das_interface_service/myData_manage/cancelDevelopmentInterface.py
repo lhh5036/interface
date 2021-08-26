@@ -14,7 +14,7 @@ import json
 logger = MyLog("CancelDevelopmentInterface").getlog() # 初始化
 # 我的数据-取消开发接口服务类
 class CancelDevelopmentInterface():
-    def cancelDevelopmentFunction(self,casename,url,paramList,cancelNotesInfoStr):
+    def cancelDevelopmentFunction(self,url,paramList,cancelNotesInfoStr):
         logger.info("cancelDevelopmentFunction ---->start!")
         if len(paramList) == 0 or cancelNotesInfoStr == "" or url == "":
             logger.error("cancelDevelopmentFunction --> request parameters is wrong!")
@@ -30,21 +30,17 @@ class CancelDevelopmentInterface():
         reqSelectStr = reqSelect.replace("{ids}", paramStr).replace("{cancelNotesInfo}", cancelNotesInfoStr)  # 替换接口入参
         reqParam = MyDataManageInterParam.cancelDevelop_param
         reqParam["args"] = reqSelectStr
-
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")
-
         # 组装接口所需要的参数
         self.url = url
         self.formData = reqParam
         self.header = header
-
         resp = requests.post(url=self.url, headers=self.header, data=json.dumps(self.formData))
-
         if resp.json()["success"] == True:
-            return "{0}-->success".format(casename)
+            return "接口取消开发-->success"
         else:
             logger.error("cancelDevelopmentFunction -->response Data is wrong!")
-            return "{0}-->取消开发失败,原因:开发状态必须为待开发,接口地址:{1},接口入参:{2}".format(casename, url, json.dumps(reqParam))
+            return "接口响应失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"], url, reqParam)
 
         logger.info("cancelDevelopmentFunction ---->end!")

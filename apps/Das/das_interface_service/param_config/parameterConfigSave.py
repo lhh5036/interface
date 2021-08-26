@@ -15,7 +15,7 @@ import json
 logger = MyLog("ParameterConfigInterface").getlog() # 初始化
 # 参数配置页面接口服务
 class ParameterConfigInterface():
-    def paramConfigFunction(self,casename,paramStr):
+    def paramConfigFunction(self,paramStr):
         logger.info("paramConfigFunction ---->start!")
         if paramStr == "":
             logger.error("paramConfigFunction --> request parameters is wrong!")
@@ -31,7 +31,6 @@ class ParameterConfigInterface():
 
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")
-
         # 组装接口所需要的参数
         self.url = url
         self.formData = reqParam
@@ -39,9 +38,9 @@ class ParameterConfigInterface():
 
         resp = requests.post(url=self.url, headers=self.header, data=json.dumps(self.formData))
         if resp.status_code == 200:
-            return "{0}-->success".format(casename)
+            return "接口--取消开发备注保存成功"
         else:
             logger.error("paramConfigFunction -->response Data is wrong!")
-            return "{0}-->响应结果有误,接口地址:{1},接口入参:{2}".format(casename, url, paramStr)
+            return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,reqParam)
 
         logger.info("paramConfigFunction ---->end!")
