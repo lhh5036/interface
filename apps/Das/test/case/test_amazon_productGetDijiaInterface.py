@@ -34,5 +34,5 @@ class Test_amazonProdcutGetDijia(unittest.TestCase):
     def test01(self):
         reqParam = self.firstInputParam()
         responseResult = ProductGetDijiaInterface().productDetDiJia(reqParam)
-        return responseResult
+        print(responseResult)
 

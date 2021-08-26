@@ -40,5 +40,5 @@ class Test_amazonCancelDevelopInterface(unittest.TestCase):
         url = MyDataManageInterUrl.amazon_cancelDevelopment_url
         resultList = self.firstInputParam()
         responseResult01 = CancelDevelopmentInterface().cancelDevelopmentFunction(url, resultList, secondParam)
-        return responseResult01
+        print(responseResult01)
 

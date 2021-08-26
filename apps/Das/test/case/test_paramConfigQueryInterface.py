@@ -12,5 +12,5 @@ class Test_paramConfigQuery(unittest.TestCase):
 
     def test01(self):
         responseResult01 = ParameterConfigQueryInterface().paramConfigQuery()
-        return responseResult01
+        print(responseResult01)
 

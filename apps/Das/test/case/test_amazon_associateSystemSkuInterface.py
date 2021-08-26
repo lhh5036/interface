@@ -41,7 +41,7 @@ class Test_amazonAssociateSySkuInterface(unittest.TestCase):
         systemSkuStr01 = "8ZZ800161-S-B"
         paramList = self.firstInputParam()
         responseResult01 = AssociateSystemSkuInterface().associateSystemSku(url, paramList, systemSkuStr01)
-        return responseResult01
+        print(responseResult01)
 
     # 用例2接口第二个入参（输入不存在SKU）
     def test02(self):
@@ -50,7 +50,7 @@ class Test_amazonAssociateSySkuInterface(unittest.TestCase):
         systemSkuStr02 = "8ZZ800161S"
         paramList = self.firstInputParam()
         responseResult02 = AssociateSystemSkuInterface().associateSystemSku(url,paramList, systemSkuStr02)
-        return responseResult02
+        print(responseResult02)
 
 
 

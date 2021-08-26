@@ -39,7 +39,7 @@ class Test_smtAssociateSySkuInterface(unittest.TestCase):
         url = MyDataManageInterUrl.smt_associateSySku_url
         systemSkuStr01 = "8ZZ800161-S-B"
         responseResult01 = AssociateSystemSkuInterface().associateSystemSku(url,resultList, systemSkuStr01)
-        return responseResult01
+        print(responseResult01)
 
     #用例2接口第二个入参（输入不存在SKU）
     def test02(self):
@@ -48,4 +48,4 @@ class Test_smtAssociateSySkuInterface(unittest.TestCase):
         url = MyDataManageInterUrl.smt_associateSySku_url
         systemSkuStr02 = "8ZZ800161S"
         responseResult02 = AssociateSystemSkuInterface().associateSystemSku(url,resultList, systemSkuStr02)
-        return responseResult02
+        print(responseResult02)

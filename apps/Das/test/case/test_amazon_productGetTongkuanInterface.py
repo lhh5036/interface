@@ -33,4 +33,4 @@ class Test_amazonProductGetTongkuan(unittest.TestCase):
     def test01(self):
         reqParam = self.firstInputParam()
         responseResult = ProductGetTongkuanInterface().productGetTongkuan(reqParam)
-        return responseResult
+        print(responseResult)

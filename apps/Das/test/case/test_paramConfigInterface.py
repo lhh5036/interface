@@ -14,14 +14,14 @@ class Test_parameterConfigSaveInterface(unittest.TestCase):
         # 用例2接口第二个入参（单个参数）
         paramStr01 = "'test01'"
         responseResult01 = ParameterConfigInterface().paramConfigFunction(paramStr01)
-        return responseResult01
+        print(responseResult01)
 
 
     def test02(self):
         # 用例2接口第二个入参（多个参数）
         paramStr02 = "'test01','test02'"
         responseResult02 = ParameterConfigInterface().paramConfigFunction(paramStr02)
-        return responseResult02
+        print(responseResult02)
 
 
 

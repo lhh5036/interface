@@ -37,6 +37,6 @@ class Test_smtReleaseRroductInterface(unittest.TestCase):
         url = MyDataManageInterUrl.smt_releaseProduct_url
         resultList = self.firstInputParam()
         responseResult = releaseProductInfoInterface().releaseProductInfo(url,resultList)
-        return responseResult
+        print(responseResult)
 
 
