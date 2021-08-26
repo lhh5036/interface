@@ -6,7 +6,8 @@
 '''
 import json
 import requests
-from apps.Das.das_interface_service.das_common_header import DasCommonHeader
+
+from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
 from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 from apps.Das.logger import MyLog
@@ -38,7 +39,7 @@ class ShopeeProductSelectInterface():
         shopeeProductInfoParam["args"] = json.dumps(shopee_productInfo02)
 
         # 接口请求头
-        header = DasCommonHeader().getDasCommonHeader("new","181324")
+        header = Common_TokenHeader().token_header("new","181324")
 
         self.url = url
         self.formData = shopeeProductInfoParam

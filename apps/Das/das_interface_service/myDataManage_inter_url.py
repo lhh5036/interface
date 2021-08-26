@@ -21,6 +21,9 @@ class MyDataManageInterUrl:
     # 我的数据-Amazon取消开发接口
     amazon_cancelDevelopment_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo/cancelDevelopment"
 
+    # Amazon校验产品是否已经认领接口地址
+    amazon_checkProductByRank_url = InterfaceCommonInfo.common_url + "/das/account/checkAmazonAccountProductByRank"
+
     # 我的数据-低价接口
     productGenDijia_url = InterfaceCommonInfo.common_url + "/das/ali/productGenDijia"
 
@@ -41,6 +44,9 @@ class MyDataManageInterUrl:
 
     # 我的数据-SMT侵权审核接口
     smt_infringementAudit_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/infringementReview"
+
+    # SMT校验产品是否已经认领接口地址
+    smt_checkProductByRank_url = InterfaceCommonInfo.common_url + "/das/account/checkAccountProductInfo"
 
     # 我的数据-1688查询接口
     ali_queryListing_url = InterfaceCommonInfo.common_url + "/das/ali1688/AccountProductInfo"

@@ -4,7 +4,7 @@
 @Author:quanliu
 @Desc:数据分析-参数配置页面接口服务
 '''
-from apps.Das.das_interface_service.das_common_header import DasCommonHeader
+from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
 from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 from apps.Das.logger import MyLog
@@ -30,7 +30,7 @@ class ParameterConfigInterface():
         reqParam["args"] = reqSelectStr
 
         # 接口请求头
-        header = DasCommonHeader().getDasCommonHeader("new","181324")
+        header = Common_TokenHeader().token_header("new","181324")
 
         # 组装接口所需要的参数
         self.url = url

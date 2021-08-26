@@ -7,7 +7,8 @@
 
 import requests
 import json
-from apps.Das.das_interface_service.das_common_header import DasCommonHeader
+
+from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
 from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 from apps.Das.logger import MyLog
@@ -45,7 +46,7 @@ class MyDataAmazonSelectInterface():
         amazonProductInfoParam["args"] = json.dumps(amazon_ProductInfo02)
 
         # 接口请求头
-        header = DasCommonHeader().getDasCommonHeader("new","181324")
+        header = Common_TokenHeader().token_header("new","181324")
         self.url = url
         self.formData = amazonProductInfoParam
         self.header = header

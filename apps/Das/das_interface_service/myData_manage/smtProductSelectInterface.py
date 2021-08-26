@@ -4,7 +4,7 @@
 @Author:quanliu
 @Desc:我的数据SMT页面查询接口
 '''
-from apps.Das.das_interface_service.das_common_header import DasCommonHeader
+from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
 from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 
@@ -41,7 +41,7 @@ class SmtProductSelectInterface():
         smtProductInfoParam["args"] = json.dumps(smt_ProductInfo02)
 
         # 接口请求头
-        header = DasCommonHeader().getDasCommonHeader("new","181324")
+        header = Common_TokenHeader().token_header("new","181324")
         self.url = url
         self.formData = smtProductInfoParam
         self.header = header

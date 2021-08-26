@@ -73,6 +73,10 @@ class MyDataManageInterParam:
                             "endTotalSold":"","productId":"","dataStatus":"","categoriesKw":"","title":"","startOnlineDate":"","endOnlineDate":"","startClaimTime":"","endClaimTime":"","account":"",
                             "startOriginalPrice":"","endOriginalPrice":"","startDiscount":"","endDiscount":"","startPrice":"","endPrice":"","developmentStatus":"","startDistributionTime":"","endDistributionTime":"","systemSku":""}
 
+    # 校验产品是否已经认领接口入参
+    checkAccountProductByRank01 = {"args":"{0}"}
+    checkAccountProductByRank02 = {"saleChannel": {0}, "baseIdList": {1}}
+
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}
     paramConfig_select = '{"notesInfoList":[{notesInfoList}],"id":"datasystem-1234567895201314"}'

@@ -4,7 +4,7 @@
 @Author:quanliu 181324
 @Desc:我的数据-Amazon关联系统SKU接口
 '''
-from apps.Das.das_interface_service.das_common_header import DasCommonHeader
+from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
 from apps.Das.logger import MyLog
 import requests
@@ -34,7 +34,7 @@ class AssociateSystemSkuInterface():
         reqParam["args"] = reqSelectStr
 
         # 接口请求头
-        header = DasCommonHeader().getDasCommonHeader("new","181324")
+        header = Common_TokenHeader().token_header("new","181324")
 
         # 组装接口所需要的参数
         self.url = url
