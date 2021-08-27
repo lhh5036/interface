@@ -14,3 +14,11 @@ class Das_Common_Config:
     ali_account_product_info = "ali_account_product_info"  # 我的数据-1688
     ebay_account_product_info = "ebay_account_product_info"  # 我的数据-ebay
     shopee_account_product_info = "shopee_account_product_info"  # 我的数据-shopee
+
+
+    # 数据采集（所有页面）
+    amazon_base_listing = "amazon_base_listing"
+    smt_base_listing = "smt_base_listing"
+    ali_base_listing = "ali_base_listing"
+    ebay_base_listing = "ebay_base_listing"
+    shopee_base_listing = "shopee_base_listing"
