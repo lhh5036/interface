@@ -83,21 +83,25 @@ class DasApiInputParam:
     amazon_dataSampleListing03 = {"baseListingType":"","menuCode":"","developmentClaim":"","salesTrialSale":"","startCrawlTime":"","endCrawlTime":"","country":"","asin":"","dataStatus":"","keywords":"","sellerName":"",
                                   "rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","Reviews":""}
 
-    # 数据采集-Amazon认领产品接口入参
-    amazon_claimProduct01 = {"args":"{0}"}
-    amazon_claimProduct02 = {"ids":{0}}
+    # 数据采集-认领产品接口入参
+    claimProduct01 = {"args":"{0}"}
+    claimProduct02 = {"ids":{0}}
 
-    # 数据采集-Amazon禁用接口入参
-    amazon_disableProduct01 = {"args":"{0}"}
-    amazon_disableProduct02 = {"ids":{0}}
+    # 数据采集-禁用接口入参
+    disableProduct01 = {"args":"{0}"}
+    disableProduct02 = {"ids":{0}}
 
-    # 数据采集-Amazon启用接口入参
-    amazon_enableProduct01 = {"args":"{0}"}
-    amazon_enableProduct02 = {"ids":{0}}
+    # 数据采集-启用接口入参
+    enableProduct01 = {"args":"{0}"}
+    enableProduct02 = {"ids":{0}}
 
-    # 数据采集-Amazon删除接口入参
-    amazon_deleteProduct01 = {"args":"{0}"}
-    amazon_deleteProduct02 = {"ids":{0}}
+    # 数据采集-删除接口入参
+    deleteProduct01 = {"args":"{0}"}
+    deleteProduct02 = {"ids":{0}}
+
+    # 数据采集-分配接口入参
+    allocationProduct01 = {"args":"{0}"}
+    allocationProduct02 = {"ids":{0},"claimant":{1}}
 
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}

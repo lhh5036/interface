@@ -99,7 +99,8 @@ class DasApiUrl:
     # 数据采集-Amazon删除接口
     amazon_deleteProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/deleteAmazonRankListing"
 
-    # 数据采集-Amazon分配
+    # 数据采集-Amazon分配接口
+    amazon_allocationProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/allocationAmazonRankListing"
 
 
 
