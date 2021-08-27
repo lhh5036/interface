@@ -7,7 +7,7 @@ File: test_amazon_productGetDijiaInterface.py
 '''
 from apps.Das.das_interface_service.myData_manage.productGetDijiaInterface import \
     ProductGetDijiaInterface
-from apps.Das.das_interface_service.myDataManageComConfig import Das_Common_Config
+from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
 from apps.utils.es_database_util import Es_handleOperator
 import random
 import unittest

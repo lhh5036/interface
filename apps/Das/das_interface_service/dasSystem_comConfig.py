@@ -1,5 +1,5 @@
 '''
-@File: myDataManageComConfig.py
+@File: dasSystem_comConfig.py
 @time:2021/8/5
 @Author:quanliu 181324
 @Desc:数据管理页面涉及ES索引，SQL语句等
