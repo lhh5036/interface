@@ -96,7 +96,8 @@ class DasApiUrl:
     # 数据采集-Amazon启用接口
     amazon_enableProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/enableAmazonRankListing"
 
-
+    # 数据采集-Amazon删除接口
+    amazon_deleteProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/deleteAmazonRankListing"
 
 
 

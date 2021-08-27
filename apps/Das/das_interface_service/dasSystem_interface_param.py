@@ -95,6 +95,10 @@ class DasApiInputParam:
     amazon_enableProduct01 = {"args":"{0}"}
     amazon_enableProduct02 = {"ids":{0}}
 
+    # 数据采集-Amazon删除接口入参
+    amazon_deleteProduct01 = {"args":"{0}"}
+    amazon_deleteProduct02 = {"ids":{0}}
+
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}
     paramConfig_select = '{"notesInfoList":[{notesInfoList}],"id":"datasystem-1234567895201314"}'
