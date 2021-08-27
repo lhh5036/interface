@@ -33,10 +33,11 @@ class AmazonClaimRankLinstingApi():
         self.formData = amazon_claimProduct01
         resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
         if resp.json()["success"] == True:
-            return "认领产品接口执行-->success"
+            logger.info("claimAmazonRankListingFun -------->end")
+            return "认领产品接口调用成功"
         else:
             logger.error("claimAmazonRankListingFun -->response Data is wrong!")
-            return "接口响应失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,amazon_claimProduct01)
-        logger.info("claimAmazonRankListingFun -------->end")
+            return "接口调用失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,amazon_claimProduct01)
+
 
 

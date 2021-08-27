@@ -64,12 +64,13 @@ class InfringementAuditsInterface():
             self.formData = resultReplace
             response = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
             if response.json()["success"] == True:
-                return "接口侵权审核--->success"
+                logger.info("infringementAuditFunction-------->end")
+                return "侵权审核---接口响应成功"
             else:
                 logger.error("cancelDevelopmentFunction -->response Data is wrong!")
                 return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(response.json()["errorMsg"],url,resultReplace)
 
-            logger.info("infringementAuditFunction-------->end")
+
 
 
 if __name__ == '__main__':

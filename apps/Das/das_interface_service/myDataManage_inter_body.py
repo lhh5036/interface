@@ -77,6 +77,12 @@ class MyDataManageInterParam:
     checkAccountProductByRank01 = {"args":"{0}"}
     checkAccountProductByRank02 = {"saleChannel": {0}, "baseIdList": {1}}
 
+    # 数据采集-Amazon查询接口入参（数据采集Amazon所有页面共用）
+    amazon_dataSampleListing01 = {"args":"{0}"}
+    amazon_dataSampleListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC"}
+    amazon_dataSampleListing03 = {"baseListingType":"","menuCode":"","developmentClaim":"","salesTrialSale":"","startCrawlTime":"","endCrawlTime":"","country":"","asin":"","dataStatus":"","keywords":"","sellerName":"",
+                                  "rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","Reviews":""}
+
     # 数据采集-Amazon认领产品接口入参
     amazon_claimProduct01 = {"args":"{0}"}
     amazon_claimProduct02 = {"ids":{0}}

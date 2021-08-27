@@ -37,10 +37,11 @@ class releaseProductInfoInterface():
         self.header = header
         resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
         if resp.json()["success"] == True:
-            return "接口释放产品--->success"
+            logger.info("releaseProductInfo ---->end!")
+            return "释放产品---接口响应成功"
         else:
             logger.error("releaseProductInfo -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,reqParam)
 
-        logger.info("releaseProductInfo ---->end!")
+
 

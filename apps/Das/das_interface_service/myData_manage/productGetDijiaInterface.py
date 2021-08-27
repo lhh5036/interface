@@ -37,11 +37,12 @@ class ProductGetDijiaInterface():
         self.url = url
         respResult = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
         if respResult.json()["success"] == True:
+            logger.info("productGenDijia ---->end!")
             return "接口响应成功,响应结果:{0}".format(respResult.json()["result"])
         else:
             logger.error("productGenDijia -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(respResult.json()["errorMsg"], url,reqParam)
 
-        logger.info("productGenDijia ---->end!")
+
 
 

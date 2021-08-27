@@ -38,9 +38,9 @@ class ParameterConfigInterface():
 
         resp = requests.post(url=self.url, headers=self.header, data=json.dumps(self.formData))
         if resp.status_code == 200:
-            return "接口--取消开发备注保存成功"
+            logger.info("paramConfigFunction ---->end!")
+            return "取消开发备注---保存接口响应成功"
         else:
             logger.error("paramConfigFunction -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,reqParam)
 
-        logger.info("paramConfigFunction ---->end!")

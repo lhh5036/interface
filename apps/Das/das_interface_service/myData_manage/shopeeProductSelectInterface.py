@@ -44,12 +44,13 @@ class ShopeeProductSelectInterface():
         self.header = header
         resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
         if resp.json()["success"] == True:
+            logger.info("shopeeProductListingInfo---->end!")
             return "接口响应成功,响应结果:{0}".format(resp.json()["rows"])
         else:
             logger.error("shopeeProductListingInfo -->response Data is wrong!")
-            return "接口响应失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,shopeeProductInfoParam)
+            return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,shopeeProductInfoParam)
 
-        logger.info("shopeeProductListingInfo---->end!")
+
 
 
 if __name__ == '__main__':

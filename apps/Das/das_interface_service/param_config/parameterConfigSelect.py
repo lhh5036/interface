@@ -31,9 +31,9 @@ class ParameterConfigQueryInterface():
         # 响应值
         responseData = respResult.json()["result"]["cancelDevNotesInfoList"]
         if respResult.status_code == 200:
+            logger.info("paramConfigQuery ---->end!")
             return "接口响应成功,接口返回值:{0}".format(responseData)
         else:
             logger.error("paramConfigQuery -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(respResult.json()["errorMsg"], url, formData)
 
-        logger.info("paramConfigQuery ---->end!")
