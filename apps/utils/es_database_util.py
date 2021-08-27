@@ -2,7 +2,7 @@
 @File: es_handleOperator.py
 @time:2021/8/19
 @Author:quanliu
-@Desc:数据库操作工具类
+@Desc:ES数据库操作工具类
 '''
 from elasticsearch6 import Elasticsearch
 from apps.Common_Config.db_config import ReadConfig

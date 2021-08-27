@@ -2,7 +2,7 @@
 @File: mysql_handleOperator.py
 @time:2021/8/19
 @Author:quanliu 181324
-@Desc:mysql数据库操作工具类
+@Desc:MySQL数据库操作工具类
 '''
 
 
