@@ -14,7 +14,7 @@ import json
 # 实例化日志类
 logger = MyLog("AmazonAssociateSystemSkuInterface").getlog() # 初始化
 
-# 我的数据Amazon-关联系统SKU接口
+# 关联系统SKU接口
 class AssociateSystemSkuInterface():
     def associateSystemSku(self,url,paramList,systemSkuStr): # 调用该接口使用入参为list和字符串类型
         logger.info("associateSystemSku ---->start!")

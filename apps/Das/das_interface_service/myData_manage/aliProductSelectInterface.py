@@ -14,8 +14,8 @@ import json
 import requests
 
 # 实例化日志类
-logger = MyLog("AliProductSelectInterface").getlog() # 初始化
-class AliProductSelectInterface():
+logger = MyLog("AliProductSelectApi").getlog() # 初始化
+class AliProductSelectApi():
     def aliProductListingInfo(self,kwargs):
         logger.info("aliProductListingInfo ---->start!")
         # 接口地址

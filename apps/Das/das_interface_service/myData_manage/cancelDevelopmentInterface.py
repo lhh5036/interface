@@ -11,9 +11,9 @@ import requests
 import json
 
 # 实例化日志类
-logger = MyLog("CancelDevelopmentInterface").getlog() # 初始化
+logger = MyLog("CancelDevelopmentApi").getlog() # 初始化
 # 我的数据-取消开发接口服务类
-class CancelDevelopmentInterface():
+class CancelDevelopmentApi():
     def cancelDevelopmentFunction(self,url,paramList,cancelNotesInfoStr):
         logger.info("cancelDevelopmentFunction ---->start!")
         if len(paramList) == 0 or cancelNotesInfoStr == "" or url == "":

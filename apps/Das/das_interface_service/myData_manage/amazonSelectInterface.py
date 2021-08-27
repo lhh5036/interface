@@ -14,9 +14,9 @@ from apps.Das.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 
 # 实例化日志类
-logger = MyLog("MyDataAmazonSelectInterface").getlog() # 初始化
+logger = MyLog("MyDataAmazonSelectApi").getlog() # 初始化
 # 数据管理-我的数据Amazon查询接口
-class MyDataAmazonSelectInterface():
+class MyDataAmazonSelectApi():
     # 我的数据-Amazon查询
     def myDataAmazonSelect(self,kwargs): # 设置动态入参，参数类型为字典{"name":"Jack","age":18}
         logger.info("queryAmazonRankListing ---->start!")
