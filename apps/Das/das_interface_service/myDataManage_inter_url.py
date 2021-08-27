@@ -40,7 +40,7 @@ class MyDataManageInterUrl:
     smt_associateSySku_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/associatedSystemSku"
 
     # 我的数据-SMT取消开发接口
-    smt_cancelDevelopment_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo/cancelDevelopment"
+    smt_cancelDevelopment_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/cancelDevelopment"
 
     # 我的数据-SMT侵权审核接口
     smt_infringementAudit_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/infringementReview"
@@ -89,6 +89,9 @@ class MyDataManageInterUrl:
 
     # 数据采集-Amazon认领产品接口
     amazon_claimProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/claimAmazonRankListing"
+
+    # 数据采集-Amazon禁用接口
+    amazon_disableProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/disableAmazonRankListing"
 
 
 
