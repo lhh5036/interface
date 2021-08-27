@@ -9,6 +9,7 @@ from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageI
 import requests
 import json
 from apps.Das.logger import MyLog
+from apps.Common_Config.parseRequestDatas import parseRequestDatas
 from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 
 
@@ -69,18 +70,6 @@ class InfringementAuditsInterface():
                 return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(response.json()["errorMsg"],url,resultReplace)
 
             logger.info("infringementAuditFunction-------->end")
-
-
-
-
-
-# 解析每一个入参
-def parseRequestDatas(keyname, kwargs):
-    if kwargs.get(keyname) is None:
-        valueName = ""
-    else:
-        valueName = kwargs.get(keyname)
-    return valueName
 
 
 if __name__ == '__main__':

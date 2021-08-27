@@ -12,6 +12,7 @@ from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
 from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 from apps.Das.logger import MyLog
+from apps.Common_Config.parseRequestDatas import parseRequestDatas
 
 # 实例化日志类
 logger = MyLog("MyDataAmazonSelectInterface").getlog() # 初始化
@@ -58,13 +59,7 @@ class MyDataAmazonSelectInterface():
             return "接口响应失败原因:{0},地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,amazonProductInfoParam)
 
         logger.info("queryAmazonRankListing ---->end!")
-# 解析每一个入参
-def parseRequestDatas(keyname,kwargs):
-    if kwargs.get(keyname) is None:
-        valueName = ""
-    else:
-        valueName = kwargs.get(keyname)
-    return valueName
+
 
 if __name__ == '__main__':
     print(MyDataAmazonSelectInterface().myDataAmazonSelect({"country":"US","asin":"B07SW7PVWW"}))

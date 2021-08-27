@@ -9,6 +9,7 @@ from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageI
 from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 
 from apps.Das.logger import MyLog
+from apps.Common_Config.parseRequestDatas import parseRequestDatas
 import requests
 import json
 
@@ -55,13 +56,6 @@ class SmtProductSelectInterface():
 
         logger.info("smtQueryProductListing ---->end!")
 
-# 解析每一个入参
-def parseRequestDatas(keyname, kwargs):
-    if kwargs.get(keyname) is None:
-        valueName = ""
-    else:
-        valueName = kwargs.get(keyname)
-    return valueName
 
 if __name__ == '__main__':
     print(SmtProductSelectInterface().smtQueryProductListing({}))
