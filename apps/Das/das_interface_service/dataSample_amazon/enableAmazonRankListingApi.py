@@ -5,8 +5,8 @@
 @Desc:数据采集-Amazon启用接口服务类
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.dasSystem_interface_param import MyDataManageInterParam
-from apps.Das.das_interface_service.dasSystem_interface_url import MyDataManageInterUrl
+from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.logger import MyLog
 import json
 import requests
@@ -20,12 +20,12 @@ class AmazonEnableRankListingApi():
             logger.error("enableRankListingFunction----->InputParameter is null")
             return "请求参数为空!"
         # 对入参进行参数化
-        amazon_enableProduct02 = MyDataManageInterParam.amazon_enableProduct02
+        amazon_enableProduct02 = DasApiInputParam.amazon_enableProduct02
         amazon_enableProduct02["ids"] = paramList
-        amazon_enableProduct01 = MyDataManageInterParam.amazon_enableProduct01
+        amazon_enableProduct01 = DasApiInputParam.amazon_enableProduct01
         amazon_enableProduct01["args"] = json.dumps(amazon_enableProduct02)
         # 请求地址
-        url = MyDataManageInterUrl.amazon_enableProduct_url
+        url = DasApiUrl.amazon_enableProduct_url
         # 获取请求头信息
         header = Common_TokenHeader().token_header("new", "181324")
         self.header = header

@@ -5,8 +5,8 @@
 @Desc:数据采集Amazon-认领产品接口类
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.dasSystem_interface_param import MyDataManageInterParam
-from apps.Das.das_interface_service.dasSystem_interface_url import MyDataManageInterUrl
+from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.logger import MyLog
 import json
 import requests
@@ -20,12 +20,12 @@ class AmazonClaimRankLinstingApi():
             logger.error("claimAmazonRankListingFun----->Input Parameter is null")
             return "请求参数为空"
         # 参数化接口入参
-        amazon_claimProduct02 = MyDataManageInterParam.amazon_claimProduct02
+        amazon_claimProduct02 = DasApiInputParam.amazon_claimProduct02
         amazon_claimProduct02["ids"] = paramList
-        amazon_claimProduct01 = MyDataManageInterParam.amazon_claimProduct01
+        amazon_claimProduct01 = DasApiInputParam.amazon_claimProduct01
         amazon_claimProduct01["args"] = json.dumps(amazon_claimProduct02)
         # 获取请求地址
-        url = MyDataManageInterUrl.amazon_claimProduct_url
+        url = DasApiUrl.amazon_claimProduct_url
         # 获取请求头信息
         header = Common_TokenHeader().token_header("new","181324")
         self.url = url

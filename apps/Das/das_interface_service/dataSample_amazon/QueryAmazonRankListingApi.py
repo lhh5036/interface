@@ -5,8 +5,8 @@
 @Desc:数据采集-Amazon查询页面
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.dasSystem_interface_param import MyDataManageInterParam
-from apps.Das.das_interface_service.dasSystem_interface_url import MyDataManageInterUrl
+from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 import json
@@ -18,7 +18,7 @@ class AmazonRankListingQueryApi():
     def amazonRankListingFunction(self,kwargs):
         logger.info("amazonRankListingFunction ---->start!")
         # 拼接接口最内层入参
-        amazon_dataSampleListing03 = MyDataManageInterParam.amazon_dataSampleListing03
+        amazon_dataSampleListing03 = DasApiInputParam.amazon_dataSampleListing03
         # 校验入参必填项
         baseListingType = parseRequestDatas("baseListingType",kwargs)
         menuCode = parseRequestDatas("menuCode",kwargs)
@@ -33,15 +33,15 @@ class AmazonRankListingQueryApi():
                 value = parseRequestDatas(keyList[i], kwargs)
                 amazon_dataSampleListing03[keyList[i]] = value
         # 替换中间层
-        amazon_dataSampleListing02 = MyDataManageInterParam.amazon_dataSampleListing02
+        amazon_dataSampleListing02 = DasApiInputParam.amazon_dataSampleListing02
         amazon_dataSampleListing02["search"] = amazon_dataSampleListing03
         # 替换外层
-        amazon_dataSampleListing03 = MyDataManageInterParam.amazon_dataSampleListing03
+        amazon_dataSampleListing03 = DasApiInputParam.amazon_dataSampleListing03
         amazon_dataSampleListing03["args"] = json.dumps(amazon_dataSampleListing02)
         # 接口请求头
         header = Common_TokenHeader().token_header("new", "181324")
         # 请求地址
-        url = MyDataManageInterUrl.amazon_dataSampleListing_url
+        url = DasApiUrl.amazon_dataSampleListing_url
         self.url = url
         self.formData = amazon_dataSampleListing03
         self.header = header
