@@ -53,7 +53,3 @@ class Test_amazonAssociateSySkuApi(unittest.TestCase):
         responseResult02 = AssociateSystemSkuApi().associateSystemSku(url,paramList, systemSkuStr02)
         print(responseResult02)
 
-
-
-if __name__ == '__main__':
-    print(Test_amazonAssociateSySkuInterface().test01())
