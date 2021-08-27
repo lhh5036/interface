@@ -1,5 +1,5 @@
 '''
-@File: parameterConfigSave.py
+@File: parameterConfigSaveApi.py
 @time:2021/8/23
 @Author:quanliu
 @Desc:数据分析-参数配置页面接口服务
@@ -12,9 +12,9 @@ import requests
 import json
 
 # 实例化日志类
-logger = MyLog("ParameterConfigInterface").getlog() # 初始化
+logger = MyLog("ParameterConfigApi").getlog() # 初始化
 # 参数配置页面接口服务
-class ParameterConfigInterface():
+class ParameterConfigApi():
     def paramConfigFunction(self,paramStr):
         logger.info("paramConfigFunction ---->start!")
         if paramStr == "":

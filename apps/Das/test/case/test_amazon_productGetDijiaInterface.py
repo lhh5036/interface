@@ -5,7 +5,7 @@ File: test_amazon_productGetDijiaInterface.py
 @Author:quanliu
 @Desc:数据管理-我的数据Amazon页面低价接口用例
 '''
-from apps.Das.das_interface_service.myData_manage.productGetDijiaInterface import \
+from apps.Das.das_interface_service.myData_manage.productGetDijiaApi import \
     ProductGetDijiaInterface
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
 from apps.utils.es_database_util import Es_handleOperator

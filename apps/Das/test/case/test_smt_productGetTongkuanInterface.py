@@ -8,7 +8,7 @@
 import random
 import unittest
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
-from apps.Das.das_interface_service.myData_manage.productGetTongkuanInterface import ProductGetTongkuanInterface
+from apps.Das.das_interface_service.myData_manage.productGetTongkuanApi import ProductGetTongkuanInterface
 from apps.utils.es_database_util import Es_handleOperator
 
 # 数据管理-我的数据SMT页面同款接口用例类

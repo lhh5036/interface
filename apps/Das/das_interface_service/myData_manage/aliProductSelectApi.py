@@ -1,5 +1,5 @@
 '''
-@File: aliProductSelectInterface.py
+@File: aliProductSelectApi.py
 @time:2021/8/24
 @Author:quanliu
 @Desc:我的数据-1688查询页面服务类

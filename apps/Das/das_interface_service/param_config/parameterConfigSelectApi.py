@@ -1,5 +1,5 @@
 '''
-@File: parameterConfigSelect.py
+@File: parameterConfigSelectApi.py
 @time:2021/8/23
 @Author:quanliu
 @Desc:参数配置-取消开发备注查询接口服务
@@ -14,9 +14,9 @@ from apps.Das.logger import MyLog
 
 
 # 实例化日志类
-logger = MyLog("ParameterConfigQueryInterface").getlog() # 初始化
+logger = MyLog("ParameterConfigQueryApi").getlog() # 初始化
 
-class ParameterConfigQueryInterface():
+class ParameterConfigQueryApi():
     def paramConfigQuery(self):
         logger.info("paramConfigQuery ---->start!")
         # 接口地址

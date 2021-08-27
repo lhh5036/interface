@@ -1,5 +1,5 @@
 '''
-@File: shopeeProductSelectInterface.py
+@File: shopeeProductSelectApi.py
 @time:2021/8/24
 @Author:quanliu
 @Desc:我的数据-shopee页面查询接口服务类
@@ -14,8 +14,8 @@ from apps.Das.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 
 # 实例化日志类
-logger = MyLog("ShopeeProductSelectInterface").getlog() # 初始化
-class ShopeeProductSelectInterface():
+logger = MyLog("ShopeeProductSelectApi").getlog() # 初始化
+class ShopeeProductSelectApi():
     def shopeeProductListingInfo(self,kwargs):
         logger.info("shopeeProductListingInfo ---->start!")
         # 接口地址

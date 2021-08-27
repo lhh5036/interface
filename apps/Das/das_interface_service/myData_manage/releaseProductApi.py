@@ -1,5 +1,5 @@
 '''
-@File: releaseProductInterface.py
+@File: releaseProductApi.py
 @time:2021/8/7
 @Author:quanliu 181324
 @Desc:我的数据Amazon-释放产品接口
@@ -11,9 +11,9 @@ import requests
 import json
 
 # 实例化日志类
-logger = MyLog("releaseProductInfoInterface").getlog() # 初始化
+logger = MyLog("releaseProductInfoApi").getlog() # 初始化
 # 我的数据Amazon-释放产品接口
-class releaseProductInfoInterface():
+class releaseProductInfoApi():
     def releaseProductInfo(self,url,paramList): # 调用该接口使用入参为list
         paramStr = ""
         logger.info("releaseProductInfo ---->start!")

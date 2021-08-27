@@ -1,5 +1,5 @@
 '''
-@File: cancelDevelopmentInterface.py
+@File: cancelDevelopmentApi.py
 @time:2021/8/23
 @Author:quanliu
 @Desc:取消开发接口服务

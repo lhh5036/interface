@@ -1,5 +1,5 @@
 '''
-@File: ebayProductSelectInterface.py
+@File: ebayProductSelectApi.py
 @time:2021/8/24
 @Author:quanliu
 @Desc:我的数据-ebay页面查询接口服务类
@@ -13,8 +13,8 @@ import json
 import requests
 
 # 实例化日志类
-logger = MyLog("EbayProductSelectInterface").getlog() # 初始化
-class EbayProductSelectInterface():
+logger = MyLog("EbayProductSelectApi").getlog() # 初始化
+class EbayProductSelectApi():
     def ebayProductListingInfo(self,kwargs):
         logger.info("ebayProductListingInfo ---->start!")
         # 接口地址

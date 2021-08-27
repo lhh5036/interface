@@ -5,7 +5,7 @@
 @Desc:数据管理-我的数据Amazon页面同款接口用例
 '''
 import random
-from apps.Das.das_interface_service.myData_manage.productGetTongkuanInterface import \
+from apps.Das.das_interface_service.myData_manage.productGetTongkuanApi import \
     ProductGetTongkuanInterface
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
 from apps.utils.es_database_util import Es_handleOperator

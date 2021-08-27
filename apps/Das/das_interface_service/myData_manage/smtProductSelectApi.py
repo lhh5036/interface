@@ -1,5 +1,5 @@
 '''
-@File: smtProductSelectInterface.py
+@File: smtProductSelectApi.py
 @time:2021/8/23
 @Author:quanliu
 @Desc:我的数据SMT页面查询接口
@@ -13,9 +13,9 @@ import requests
 import json
 
 # 实例化日志类
-logger = MyLog("SmtProductSelectInterface").getlog() # 初始化
+logger = MyLog("SmtProductSelectApi").getlog() # 初始化
 # 数据管理-我的数据SMT查询接口
-class SmtProductSelectInterface():
+class SmtProductSelectApi():
     def smtQueryProductListing(self,kwargs):# 设置动态入参，参数类型为字典{"name":"Jack","age":18}
         logger.info("smtQueryProductListing ---->start!")
         # 接口地址

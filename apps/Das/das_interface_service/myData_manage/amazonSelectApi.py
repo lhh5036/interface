@@ -1,5 +1,5 @@
 '''
-@File: amazonSelectInterface.py
+@File: amazonSelectApi.py
 @time:2021/8/5
 @Author:quanliu 181324
 @Desc:我的数据-Amazon查询接口

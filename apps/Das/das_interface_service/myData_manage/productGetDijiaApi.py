@@ -1,5 +1,5 @@
 '''
-@File: productGetDijiaInterface.py
+@File: productGetDijiaApi.py
 @time:2021/8/23
 @Author:quanliu
 @Desc:低价接口服务
@@ -12,10 +12,10 @@ from apps.Das.logger import MyLog
 import json
 
 # 实例化日志类
-logger = MyLog("ProductGetDijiaInterface").getlog() # 初始化
+logger = MyLog("ProductGetDijiaApi").getlog() # 初始化
 
 # 数据管理-低价接口
-class ProductGetDijiaInterface():
+class ProductGetDijiaApi():
     def productDetDiJia(self,paramStr): # 请求入参为用例名称，string类型的参数
         logger.info("productGenDijia ---->start!")
         if paramStr == "":

@@ -1,5 +1,5 @@
 '''
-@File: smtInfringementAuditsInterface.py
+@File: smtInfringementAuditsApi.py
 @time:2021/8/23
 @Author:quanliu
 @Desc:侵权审核接口服务类
@@ -14,8 +14,8 @@ from apps.Common_Config.parseRequestDatas import parseRequestDatas
 
 
 # 实例化日志类
-logger = MyLog("InfringementAuditsInterface").getlog() # 初始化
-class InfringementAuditsInterface():
+logger = MyLog("InfringementAuditsApi").getlog() # 初始化
+class InfringementAuditsApi():
     
     def infringementAuditFunction(self,url,idsList,auditStatus,salesProhibitionList,infringementInfoMap):
         # 入参地址:url,idsList--id集合  auditStatus--审核状态（通过，不通过）salesProhibitionList--禁售平台和站点list infringementInfoMap--禁售信息dict

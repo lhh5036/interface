@@ -5,7 +5,7 @@
 @Desc:数据管理-我的数据Amazon查询接口用例
 '''
 
-from apps.Das.das_interface_service.myData_manage.amazonSelectInterface import MyDataAmazonSelectInterface
+from apps.Das.das_interface_service.myData_manage.amazonSelectApi import MyDataAmazonSelectInterface
 import unittest
 
 # 数据管理-我的数据Amazon查询接口用例类

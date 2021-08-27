@@ -4,7 +4,7 @@
 @Author:quanliu
 @Desc:参数配置保存接口用例
 '''
-from apps.Das.das_interface_service.param_config.parameterConfigSave import ParameterConfigInterface
+from apps.Das.das_interface_service.param_config.parameterConfigSaveApi import ParameterConfigInterface
 import unittest
 
 # 参数配置保存接口用例类

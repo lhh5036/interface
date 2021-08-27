@@ -8,8 +8,8 @@ import random
 
 from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
-from apps.Das.das_interface_service.myData_manage.cancelDevelopmentInterface import CancelDevelopmentInterface
-from apps.Das.das_interface_service.param_config.parameterConfigSelect import ParameterConfigQueryInterface
+from apps.Das.das_interface_service.myData_manage.cancelDevelopmentApi import CancelDevelopmentInterface
+from apps.Das.das_interface_service.param_config.parameterConfigSelectApi import ParameterConfigQueryInterface
 from apps.utils.es_database_util import Es_handleOperator
 import unittest
 

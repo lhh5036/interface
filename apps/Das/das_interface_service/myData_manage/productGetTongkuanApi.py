@@ -1,5 +1,5 @@
 '''
-@File: productGetTongkuanInterface.py
+@File: productGetTongkuanApi.py
 @time:2021/8/23
 @Author:quanliu
 @Desc:产品同款接口服务
@@ -12,10 +12,10 @@ import requests
 import json
 
 # 实例化日志类
-logger = MyLog("ProductGetTongkuanInterface").getlog() # 初始化
+logger = MyLog("ProductGetTongkuanApi").getlog() # 初始化
 
 # 数据管理-同款接口服务
-class ProductGetTongkuanInterface():
+class ProductGetTongkuanApi():
     def productGetTongkuan(self,paramStr):
         logger.info("productGetTongkuan ---->start!")
         if paramStr == "":

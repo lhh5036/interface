@@ -4,7 +4,7 @@
 @Author:quanliu
 @Desc:参数配置-取消开发备注查询用例
 '''
-from apps.Das.das_interface_service.param_config.parameterConfigSelect import ParameterConfigQueryInterface
+from apps.Das.das_interface_service.param_config.parameterConfigSelectApi import ParameterConfigQueryInterface
 import unittest
 
 # 参数配置-取消开发备注查询用例类

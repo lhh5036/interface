@@ -9,12 +9,12 @@ import random
 
 from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
-from apps.Das.das_interface_service.publicServiceConfig.associateSystemSkuInterface import AssociateSystemSkuInterface
+from apps.Das.das_interface_service.publicServiceConfig.associateSystemSkuApi import AssociateSystemSkuApi
 from apps.utils.es_database_util import Es_handleOperator
 import unittest
 
 # 数据管理-我的数据Amazon关联系统SKU接口用例类
-class Test_amazonAssociateSySkuInterface(unittest.TestCase):
+class Test_amazonAssociateSySkuApi(unittest.TestCase):
 
     # 生成第一个入参
     def firstInputParam(self):
@@ -41,7 +41,7 @@ class Test_amazonAssociateSySkuInterface(unittest.TestCase):
         url = DasApiUrl.amazon_associateSySku_url
         systemSkuStr01 = "8ZZ800161-S-B"
         paramList = self.firstInputParam()
-        responseResult01 = AssociateSystemSkuInterface().associateSystemSku(url, paramList, systemSkuStr01)
+        responseResult01 = AssociateSystemSkuApi().associateSystemSku(url, paramList, systemSkuStr01)
         print(responseResult01)
 
     # 用例2接口第二个入参（输入不存在SKU）
@@ -50,7 +50,7 @@ class Test_amazonAssociateSySkuInterface(unittest.TestCase):
         url = DasApiUrl.amazon_associateSySku_url
         systemSkuStr02 = "8ZZ800161S"
         paramList = self.firstInputParam()
-        responseResult02 = AssociateSystemSkuInterface().associateSystemSku(url,paramList, systemSkuStr02)
+        responseResult02 = AssociateSystemSkuApi().associateSystemSku(url,paramList, systemSkuStr02)
         print(responseResult02)
 
 

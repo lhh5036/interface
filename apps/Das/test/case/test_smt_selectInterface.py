@@ -5,7 +5,7 @@
 @Desc:数据管理-我的数据smt查询接口用例
 '''
 
-from apps.Das.das_interface_service.myData_manage.smtProductSelectInterface import \
+from apps.Das.das_interface_service.myData_manage.smtProductSelectApi import \
     SmtProductSelectInterface
 import unittest
 

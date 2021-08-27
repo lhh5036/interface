@@ -1,5 +1,5 @@
 '''
-@File: associateSystemSkuInterface.py
+@File: associateSystemSkuApi.py
 @time:2021/8/20
 @Author:quanliu 181324
 @Desc:我的数据-Amazon关联系统SKU接口
@@ -12,10 +12,10 @@ import json
 
 
 # 实例化日志类
-logger = MyLog("AmazonAssociateSystemSkuInterface").getlog() # 初始化
+logger = MyLog("AssociateSystemSkuApi").getlog() # 初始化
 
 # 关联系统SKU接口
-class AssociateSystemSkuInterface():
+class AssociateSystemSkuApi():
     def associateSystemSku(self,url,paramList,systemSkuStr): # 调用该接口使用入参为list和字符串类型
         logger.info("associateSystemSku ---->start!")
         if len(paramList) == 0 or systemSkuStr == "" or url == "":
