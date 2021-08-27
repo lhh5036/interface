@@ -93,6 +93,8 @@ class MyDataManageInterUrl:
     # 数据采集-Amazon禁用接口
     amazon_disableProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/disableAmazonRankListing"
 
+    # 数据采集-Amazon启用接口
+    amazon_enableProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/enableAmazonRankListing"
 
 
 
