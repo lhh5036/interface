@@ -6,7 +6,8 @@
 '''
 
 import random
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
+
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.das_interface_service.myDataManageComConfig import Das_Common_Config
 from apps.Das.das_interface_service.myData_manage.associateSystemSkuInterface import AssociateSystemSkuInterface
 from apps.utils.es_database_util import Es_handleOperator
@@ -37,7 +38,7 @@ class Test_amazonAssociateSySkuInterface(unittest.TestCase):
     # 用例1接口第二个入参（输入存在SKU）
     def testCase01(self):
         # 接口地址
-        url = MyDataManageInterUrl.amazon_associateSySku_url
+        url = DasApiUrl.amazon_associateSySku_url
         systemSkuStr01 = "8ZZ800161-S-B"
         paramList = self.firstInputParam()
         responseResult01 = AssociateSystemSkuInterface().associateSystemSku(url, paramList, systemSkuStr01)
@@ -46,7 +47,7 @@ class Test_amazonAssociateSySkuInterface(unittest.TestCase):
     # 用例2接口第二个入参（输入不存在SKU）
     def testCase02(self):
         # 接口地址
-        url = MyDataManageInterUrl.amazon_associateSySku_url
+        url = DasApiUrl.amazon_associateSySku_url
         systemSkuStr02 = "8ZZ800161S"
         paramList = self.firstInputParam()
         responseResult02 = AssociateSystemSkuInterface().associateSystemSku(url,paramList, systemSkuStr02)

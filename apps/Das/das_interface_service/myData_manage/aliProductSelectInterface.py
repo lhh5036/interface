@@ -5,8 +5,9 @@
 @Desc:我的数据-1688查询页面服务类
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
+from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
+
 from apps.Das.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 import json
@@ -18,9 +19,9 @@ class AliProductSelectInterface():
     def aliProductListingInfo(self,kwargs):
         logger.info("aliProductListingInfo ---->start!")
         # 接口地址
-        url = MyDataManageInterUrl.ali_queryListing_url
+        url = DasApiUrl.ali_queryListing_url
         # 拼接接口入参
-        aliProductInfoSelect = MyDataManageInterParam.ali_productInfo03
+        aliProductInfoSelect = DasApiInputParam.ali_productInfo03
         keyList = []
         if kwargs != "":
             for key in kwargs.keys():
@@ -29,10 +30,10 @@ class AliProductSelectInterface():
                 value = parseRequestDatas(keyList[i],kwargs)
                 aliProductInfoSelect[keyList[i]] = value
         # 替换中间层
-        ali_productInfo02 = MyDataManageInterParam.ali_productInfo02
+        ali_productInfo02 = DasApiInputParam.ali_productInfo02
         ali_productInfo02["search"] = aliProductInfoSelect
         # 替换外层
-        aliProductInfoParam = MyDataManageInterParam.ali_productInfo01
+        aliProductInfoParam = DasApiInputParam.ali_productInfo01
         aliProductInfoParam["args"] = json.dumps(ali_productInfo02)
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")

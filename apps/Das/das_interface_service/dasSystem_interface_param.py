@@ -1,11 +1,11 @@
 '''
-@File: myDataManage_inter_body.py
+@File: dasSystem_interface_param.py
 @time:2021/8/5
 @Author:quanliu 181324
 @Desc:数据管理页面接口请求入参
 '''
 
-class MyDataManageInterParam:
+class DasApiInputParam:
 
     # 我的数据-Amazon查询接口入参
     amazon_ProductInfo01 = {"method":"listBaseListing","args":"{args}"}

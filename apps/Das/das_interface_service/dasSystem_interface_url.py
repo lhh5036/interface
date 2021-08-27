@@ -1,5 +1,5 @@
 '''
-@File: myDataManage_inter_url.py
+@File: dasSystem_interface_url.py
 @time:2021/8/5
 @Author:quanliu 181324
 @Desc:数据管理页面接口地址
@@ -7,7 +7,7 @@
 from apps.Common_Config.interface_common_info import InterfaceCommonInfo
 
 
-class MyDataManageInterUrl:
+class DasApiUrl:
 
     # 我的数据-Amazon查询接口
     amazon_queryListing_url = InterfaceCommonInfo.common_url + "/das/amazon/AccountProductInfo"

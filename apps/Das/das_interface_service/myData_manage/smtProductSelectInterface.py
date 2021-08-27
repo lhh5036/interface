@@ -5,9 +5,8 @@
 @Desc:我的数据SMT页面查询接口
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
-
+from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 import requests
@@ -20,10 +19,10 @@ class SmtProductSelectInterface():
     def smtQueryProductListing(self,kwargs):# 设置动态入参，参数类型为字典{"name":"Jack","age":18}
         logger.info("smtQueryProductListing ---->start!")
         # 接口地址
-        url = MyDataManageInterUrl.smt_queryListing_url
+        url = DasApiUrl.smt_queryListing_url
 
         # 最内层参数
-        smtProductInfoSelect = MyDataManageInterParam.smt_ProductInfo03
+        smtProductInfoSelect = DasApiInputParam.smt_ProductInfo03
 
         keyList = [] #获取当前请求参数的keylist
         if kwargs != "":
@@ -34,11 +33,11 @@ class SmtProductSelectInterface():
                 value = parseRequestDatas(keyList[i], kwargs)
                 smtProductInfoSelect[keyList[i]] = value
         # 替换中间层
-        smt_ProductInfo02 = MyDataManageInterParam.smt_ProductInfo02
+        smt_ProductInfo02 = DasApiInputParam.smt_ProductInfo02
         smt_ProductInfo02["search"] = smtProductInfoSelect
 
         # 替换外层
-        smtProductInfoParam = MyDataManageInterParam.smt_ProductInfo01
+        smtProductInfoParam = DasApiInputParam.smt_ProductInfo01
         smtProductInfoParam["args"] = json.dumps(smt_ProductInfo02)
 
         # 接口请求头

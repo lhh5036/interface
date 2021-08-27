@@ -5,8 +5,8 @@
 @Desc:数据采集-Amazon启用接口服务类
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
+from apps.Das.das_interface_service.dasSystem_interface_param import MyDataManageInterParam
+from apps.Das.das_interface_service.dasSystem_interface_url import MyDataManageInterUrl
 from apps.Das.logger import MyLog
 import json
 import requests

@@ -6,8 +6,9 @@
 '''
 import random
 import unittest
+
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.das_interface_service.myDataManageComConfig import Das_Common_Config
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 from apps.Das.das_interface_service.myData_manage.releaseProductInterface import releaseProductInfoInterface
 from apps.utils.es_database_util import Es_handleOperator
 
@@ -34,7 +35,7 @@ class Test_smtReleaseRroductInterface(unittest.TestCase):
 
     def testCase01(self):
         # 接口地址
-        url = MyDataManageInterUrl.smt_releaseProduct_url
+        url = DasApiUrl.smt_releaseProduct_url
         resultList = self.firstInputParam()
         responseResult = releaseProductInfoInterface().releaseProductInfo(url,resultList)
         print(responseResult)

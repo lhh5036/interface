@@ -8,8 +8,8 @@ import json
 import requests
 
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
+from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 
@@ -19,9 +19,9 @@ class ShopeeProductSelectInterface():
     def shopeeProductListingInfo(self,kwargs):
         logger.info("shopeeProductListingInfo ---->start!")
         # 接口地址
-        url = MyDataManageInterUrl.shopee_queryListing_url
+        url = DasApiUrl.shopee_queryListing_url
         # 拼接接口入参
-        shopeeProductInfoSelect = MyDataManageInterParam.shopee_productInfo03
+        shopeeProductInfoSelect = DasApiInputParam.shopee_productInfo03
         keyList = []
         if kwargs != "":
             for key in kwargs.keys():
@@ -32,10 +32,10 @@ class ShopeeProductSelectInterface():
                 shopeeProductInfoSelect[keyList[i]] = value
 
         # 替换中间层
-        shopee_productInfo02 = MyDataManageInterParam.shopee_productInfo02
+        shopee_productInfo02 = DasApiInputParam.shopee_productInfo02
         shopee_productInfo02["search"] = shopeeProductInfoSelect
         # 替换外层
-        shopeeProductInfoParam = MyDataManageInterParam.shopee_productInfo03
+        shopeeProductInfoParam = DasApiInputParam.shopee_productInfo03
         shopeeProductInfoParam["args"] = json.dumps(shopee_productInfo02)
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")

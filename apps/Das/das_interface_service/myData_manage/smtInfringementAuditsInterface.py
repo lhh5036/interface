@@ -5,12 +5,12 @@
 @Desc:侵权审核接口服务类
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
 import requests
 import json
+
+from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
 from apps.Das.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 
 
 # 实例化日志类
@@ -40,14 +40,14 @@ class InfringementAuditsInterface():
                 else:
                     for siteNum in range(len(sitesList)):
                         itemSite = sitesList[siteNum]
-                        siteReplace = MyDataManageInterParam.infringmentReview_site
+                        siteReplace = DasApiInputParam.infringmentReview_site
                         siteReplace["site"] = itemSite
                         siteReplaceList.append(siteReplace)
-                platSiteReplace = MyDataManageInterParam.infringementReview_plat
+                platSiteReplace = DasApiInputParam.infringementReview_plat
                 platSiteReplace["plat"] = plat
                 platSiteReplace["sites"] = siteReplaceList
                 platSiteReplaceList.append(platSiteReplace)
-            infringementReviewReplace = MyDataManageInterParam.infringementReview_select
+            infringementReviewReplace = DasApiInputParam.infringementReview_select
             infringementReviewReplace["ids"] = idsList
             infringementReviewReplace["infringementObj"] = infringementObj
             infringementReviewReplace["auditNotesInfo"] = auditNotesInfo
@@ -55,7 +55,7 @@ class InfringementAuditsInterface():
             infringementReviewReplace["salesProhibition"] = platSiteReplaceList
             infringementReviewReplace["auditStatus"] = auditStatus
             infringementReviewReplace0 = json.dumps(infringementReviewReplace,ensure_ascii=False) # 转为string类型
-            resultReplace = MyDataManageInterParam.infringementReview_param
+            resultReplace = DasApiInputParam.infringementReview_param
             resultReplace["args"] = infringementReviewReplace0
             # 接口请求头
             header = Common_TokenHeader().token_header("new","181324")

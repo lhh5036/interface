@@ -5,10 +5,11 @@
 @Desc:参数配置-取消开发备注查询接口服务
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 import requests
 import json
+
+from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.logger import MyLog
 
 
@@ -19,9 +20,9 @@ class ParameterConfigQueryInterface():
     def paramConfigQuery(self):
         logger.info("paramConfigQuery ---->start!")
         # 接口地址
-        url = MyDataManageInterUrl.paramConfigSelect_url
+        url = DasApiUrl.paramConfigSelect_url
         # 接口请求参数
-        formData = MyDataManageInterParam.paramConfigQuery
+        formData = DasApiInputParam.paramConfigQuery
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")
         self.url = url

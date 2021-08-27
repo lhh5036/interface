@@ -6,8 +6,9 @@
 '''
 
 import random
+
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.das_interface_service.myDataManageComConfig import Das_Common_Config
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
 from apps.Das.das_interface_service.myData_manage.associateSystemSkuInterface import AssociateSystemSkuInterface
 from apps.utils.es_database_util import Es_handleOperator
 import unittest
@@ -36,7 +37,7 @@ class Test_smtAssociateSySkuInterface(unittest.TestCase):
     def testCase01(self):
         resultList = self.firstInputParam()
         # 接口地址
-        url = MyDataManageInterUrl.smt_associateSySku_url
+        url = DasApiUrl.smt_associateSySku_url
         systemSkuStr01 = "8ZZ800161-S-B"
         responseResult01 = AssociateSystemSkuInterface().associateSystemSku(url,resultList, systemSkuStr01)
         print(responseResult01)
@@ -45,7 +46,7 @@ class Test_smtAssociateSySkuInterface(unittest.TestCase):
     def testCase02(self):
         resultList = self.firstInputParam()
         # 接口地址
-        url = MyDataManageInterUrl.smt_associateSySku_url
+        url = DasApiUrl.smt_associateSySku_url
         systemSkuStr02 = "8ZZ800161S"
         responseResult02 = AssociateSystemSkuInterface().associateSystemSku(url,resultList, systemSkuStr02)
         print(responseResult02)

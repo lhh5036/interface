@@ -5,7 +5,7 @@
 @Desc:我的数据Amazon-释放产品接口
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
+from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
 from apps.Das.logger import MyLog
 import requests
 import json
@@ -25,9 +25,9 @@ class releaseProductInfoInterface():
         for i in range(len(paramList)):
             paramStr += "'"+paramList[i]+"',"
         # 拼接接口请求入参
-        reqSelect = MyDataManageInterParam.releaseProductInfo_select
+        reqSelect = DasApiInputParam.releaseProductInfo_select
         reqSelectStr = reqSelect.replace("{ids}",paramStr) # 替换参数
-        reqParam = MyDataManageInterParam.releaseProductInfo_param
+        reqParam = DasApiInputParam.releaseProductInfo_param
         reqParam["args"] = reqSelectStr
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")

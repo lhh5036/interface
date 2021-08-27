@@ -5,8 +5,8 @@
 @Desc:数据分析-参数配置页面接口服务
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
+from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.logger import MyLog
 import requests
 import json
@@ -22,11 +22,11 @@ class ParameterConfigInterface():
             return "请求参数为空"
 
         # 接口地址
-        url = MyDataManageInterUrl.paramConfigSave_url
+        url = DasApiUrl.paramConfigSave_url
         # 拼接接口请求入参
-        reqSelect = MyDataManageInterParam.paramConfig_select
+        reqSelect = DasApiInputParam.paramConfig_select
         reqSelectStr = reqSelect.replace("{notesInfoList}", paramStr)  # 替换参数
-        reqParam = MyDataManageInterParam.paramConfig_param
+        reqParam = DasApiInputParam.paramConfig_param
         reqParam["args"] = reqSelectStr
 
         # 接口请求头

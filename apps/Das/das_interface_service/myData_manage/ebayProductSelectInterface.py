@@ -5,8 +5,8 @@
 @Desc:我的数据-ebay页面查询接口服务类
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
+from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 import json
@@ -18,9 +18,9 @@ class EbayProductSelectInterface():
     def ebayProductListingInfo(self,kwargs):
         logger.info("ebayProductListingInfo ---->start!")
         # 接口地址
-        url = MyDataManageInterUrl.ebay_queryListing_url
+        url = DasApiUrl.ebay_queryListing_url
         # 拼接接口入参
-        ebayProductInfoSelect = MyDataManageInterParam.ebay_productInfo03
+        ebayProductInfoSelect = DasApiInputParam.ebay_productInfo03
         keyList = []
         if kwargs != "":
             for key in kwargs.keys():
@@ -30,10 +30,10 @@ class EbayProductSelectInterface():
                 value = parseRequestDatas(keyList[i],kwargs)
                 ebayProductInfoSelect[keyList[i]] = value
         # 替换中间层
-        ebay_productInfo02 = MyDataManageInterParam.ebay_productInfo02
+        ebay_productInfo02 = DasApiInputParam.ebay_productInfo02
         ebay_productInfo02["search"] = ebayProductInfoSelect
         # 替换外层
-        ebayProductInfoParam = MyDataManageInterParam.ebay_productInfo01
+        ebayProductInfoParam = DasApiInputParam.ebay_productInfo01
         ebayProductInfoParam["args"] = json.dumps(ebay_productInfo02)
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")
@@ -52,4 +52,4 @@ class EbayProductSelectInterface():
 
 
 if __name__ == '__main__':
-    print(EbayProductSelectInterface().ebayProductListingInfo("第一个用例",{"productId":"223609848242","mainSku":"9SD400151"}))
+    print(EbayProductSelectInterface().ebayProductListingInfo({"productId":"223609848242","mainSku":"9SD400151"}))

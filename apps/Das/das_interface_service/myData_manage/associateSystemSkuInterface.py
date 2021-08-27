@@ -5,7 +5,7 @@
 @Desc:我的数据-Amazon关联系统SKU接口
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
+from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
 from apps.Das.logger import MyLog
 import requests
 import json
@@ -26,9 +26,9 @@ class AssociateSystemSkuInterface():
         for i in range(len(paramList)):
             paramStr += "'"+paramList[i]+"',"
         # 拼接接口请求入参
-        reqSelect = MyDataManageInterParam.associateSySku_select
+        reqSelect = DasApiInputParam.associateSySku_select
         reqSelectStr = reqSelect.replace("{ids}",paramStr).replace("{systemSku}",systemSkuStr) # 替换接口入参
-        reqParam = MyDataManageInterParam.associateSySku_param
+        reqParam = DasApiInputParam.associateSySku_param
         reqParam["args"] = reqSelectStr
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")

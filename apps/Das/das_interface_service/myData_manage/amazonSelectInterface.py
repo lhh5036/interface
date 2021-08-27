@@ -7,10 +7,9 @@
 
 import requests
 import json
-
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.myDataManage_inter_body import MyDataManageInterParam
-from apps.Das.das_interface_service.myDataManage_inter_url import MyDataManageInterUrl
+from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 
@@ -22,14 +21,14 @@ class MyDataAmazonSelectInterface():
     def myDataAmazonSelect(self,kwargs): # 设置动态入参，参数类型为字典{"name":"Jack","age":18}
         logger.info("queryAmazonRankListing ---->start!")
         # 接口地址
-        url = MyDataManageInterUrl.amazon_queryListing_url
+        url = DasApiUrl.amazon_queryListing_url
         # 请求入参
         country = parseRequestDatas("country",kwargs) # 国家
         if country == "":
             logger.error("queryAmazonRankListing --> ReqParam:country is null!")
             return "请求参数:country字段不能为空"
         # 最内层参数
-        amazonProductInfoSelect = MyDataManageInterParam.amazon_ProductInfo03
+        amazonProductInfoSelect = DasApiInputParam.amazon_ProductInfo03
         keyList =[]
         if kwargs != "":
             for key in kwargs.keys():
@@ -38,11 +37,11 @@ class MyDataAmazonSelectInterface():
                 value = parseRequestDatas(keyList[i], kwargs)
                 amazonProductInfoSelect[keyList[i]] = value
         # 替换中间层
-        amazon_ProductInfo02 = MyDataManageInterParam.amazon_ProductInfo02
+        amazon_ProductInfo02 = DasApiInputParam.amazon_ProductInfo02
         amazon_ProductInfo02["search"] = amazonProductInfoSelect
 
         # 替换外层
-        amazonProductInfoParam = MyDataManageInterParam.amazon_ProductInfo01
+        amazonProductInfoParam = DasApiInputParam.amazon_ProductInfo01
         amazonProductInfoParam["args"] = json.dumps(amazon_ProductInfo02)
 
         # 接口请求头
