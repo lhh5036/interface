@@ -32,7 +32,7 @@ class Test_smtReleaseRroductInterface(unittest.TestCase):
             resultList.append(result["hits"][i]["_id"])
         return resultList
 
-    def test01(self):
+    def testCase01(self):
         # 接口地址
         url = MyDataManageInterUrl.smt_releaseProduct_url
         resultList = self.firstInputParam()

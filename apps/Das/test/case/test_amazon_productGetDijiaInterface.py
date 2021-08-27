@@ -31,7 +31,7 @@ class Test_amazonProdcutGetDijia(unittest.TestCase):
         reqParam = result["hits"][0]["_source"]["amazonAsinIncrementInfos"][0]["imageUrls"][0] # 接口第一个入参string
         return reqParam
 
-    def test01(self):
+    def testCase01(self):
         reqParam = self.firstInputParam()
         responseResult = ProductGetDijiaInterface().productDetDiJia(reqParam)
         print(responseResult)

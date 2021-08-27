@@ -10,7 +10,7 @@ import unittest
 # 参数配置-取消开发备注查询用例类
 class Test_paramConfigQuery(unittest.TestCase):
 
-    def test01(self):
+    def testCase01(self):
         responseResult01 = ParameterConfigQueryInterface().paramConfigQuery()
         print(responseResult01)
 

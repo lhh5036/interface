@@ -32,7 +32,7 @@ class Test_amazonCancelDevelopInterface(unittest.TestCase):
             resultList.append(result["hits"][i]["_id"]) # 接口第一个入参
         return resultList
 
-    def test01(self):
+    def testCase01(self):
         # 接口第二个入参
         responseData = ParameterConfigQueryInterface().paramConfigQuery()
         secondParam = ",".join(random.sample(responseData.split('[')[1].rstrip("]").split(","),1))

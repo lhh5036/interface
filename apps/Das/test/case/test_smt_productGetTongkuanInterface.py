@@ -30,7 +30,7 @@ class Test_smtProductGetTongkuan(unittest.TestCase):
         reqParam = result["hits"][0]["_source"]["incrementInfo"][0]["imageUrls"][0]  # 接口第一个入参string
         return reqParam
 
-    def test01(self):
+    def testCase01(self):
         reqParam = self.firstInputParam()
         responseResult = ProductGetTongkuanInterface().productGetTongkuan(reqParam)
         print(responseResult)

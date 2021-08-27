@@ -33,7 +33,7 @@ class Test_smtAssociateSySkuInterface(unittest.TestCase):
         return resultList
 
     # 用例1接口第二个入参（输入存在SKU）
-    def test01(self):
+    def testCase01(self):
         resultList = self.firstInputParam()
         # 接口地址
         url = MyDataManageInterUrl.smt_associateSySku_url
@@ -42,7 +42,7 @@ class Test_smtAssociateSySkuInterface(unittest.TestCase):
         print(responseResult01)
 
     #用例2接口第二个入参（输入不存在SKU）
-    def test02(self):
+    def testCase02(self):
         resultList = self.firstInputParam()
         # 接口地址
         url = MyDataManageInterUrl.smt_associateSySku_url

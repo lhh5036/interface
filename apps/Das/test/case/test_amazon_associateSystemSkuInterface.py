@@ -35,7 +35,7 @@ class Test_amazonAssociateSySkuInterface(unittest.TestCase):
         return resultList
 
     # 用例1接口第二个入参（输入存在SKU）
-    def test01(self):
+    def testCase01(self):
         # 接口地址
         url = MyDataManageInterUrl.amazon_associateSySku_url
         systemSkuStr01 = "8ZZ800161-S-B"
@@ -44,7 +44,7 @@ class Test_amazonAssociateSySkuInterface(unittest.TestCase):
         print(responseResult01)
 
     # 用例2接口第二个入参（输入不存在SKU）
-    def test02(self):
+    def testCase02(self):
         # 接口地址
         url = MyDataManageInterUrl.amazon_associateSySku_url
         systemSkuStr02 = "8ZZ800161S"

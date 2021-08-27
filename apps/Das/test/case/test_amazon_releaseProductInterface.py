@@ -33,7 +33,7 @@ class Test_amazonReleaseRroductInterface(unittest.TestCase):
             resultList.append(result["hits"][i]["_id"])
         return resultList
 
-    def test01(self):
+    def testCase01(self):
         resultList = self.firstInputParam()
         # 接口地址
         url = MyDataManageInterUrl.amazon_releaseProduct_url
