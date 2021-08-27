@@ -1,5 +1,5 @@
 '''
-@File: test_amazon_associateSystemSkuInterface.py
+@File: test_amazon_associateSystemSkuApi.py
 @time:2021/8/20
 @Author:quanliu 181324
 @Desc:数据管理-我的数据Amazon关联系统SKU接口用例

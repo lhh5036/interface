@@ -1,5 +1,5 @@
 '''
-@File: test_smt_associateSystemSkuInterface.py
+@File: test_smt_associateSystemSkuApi.py
 @time:2021/8/23
 @Author:quanliu
 @Desc:我的数据SMT关联系统SKU接口用例
@@ -9,12 +9,12 @@ import random
 
 from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
-from apps.Das.das_interface_service.publicServiceConfig.associateSystemSkuApi import AssociateSystemSkuInterface
+from apps.Das.das_interface_service.publicServiceConfig.associateSystemSkuApi import AssociateSystemSkuApi
 from apps.utils.es_database_util import Es_handleOperator
 import unittest
 
 # 数据管理-我的数据SMT关联系统SKU接口用例类
-class Test_smtAssociateSySkuInterface(unittest.TestCase):
+class Test_smtAssociateSySkuApi(unittest.TestCase):
     def firstInputParam(self):
         # 生成随机数
         num = random.randint(1,20)
@@ -39,7 +39,7 @@ class Test_smtAssociateSySkuInterface(unittest.TestCase):
         # 接口地址
         url = DasApiUrl.smt_associateSySku_url
         systemSkuStr01 = "8ZZ800161-S-B"
-        responseResult01 = AssociateSystemSkuInterface().associateSystemSku(url,resultList, systemSkuStr01)
+        responseResult01 = AssociateSystemSkuApi().associateSystemSku(url,resultList, systemSkuStr01)
         print(responseResult01)
 
     #用例2接口第二个入参（输入不存在SKU）
@@ -48,5 +48,5 @@ class Test_smtAssociateSySkuInterface(unittest.TestCase):
         # 接口地址
         url = DasApiUrl.smt_associateSySku_url
         systemSkuStr02 = "8ZZ800161S"
-        responseResult02 = AssociateSystemSkuInterface().associateSystemSku(url,resultList, systemSkuStr02)
+        responseResult02 = AssociateSystemSkuApi().associateSystemSku(url,resultList, systemSkuStr02)
         print(responseResult02)

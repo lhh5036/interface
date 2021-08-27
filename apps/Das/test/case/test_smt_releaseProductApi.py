@@ -1,20 +1,19 @@
 '''
-@File: test_amazon_releaseProductInterface.py
-@time:2021/8/19
-@Author:quanliu 181324
-@Desc:数据管理-我的数据Amazon释放产品接口用例
+@File: test_smt_releaseProductApi.py
+@time:2021/8/23
+@Author:quanliu
+@Desc:我的数据smt释放产品接口用例
 '''
-
 import random
 import unittest
 
 from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
-from apps.Das.das_interface_service.myData_manage.releaseProductApi import releaseProductInfoInterface
+from apps.Das.das_interface_service.myData_manage.releaseProductApi import releaseProductInfoApi
 from apps.utils.es_database_util import Es_handleOperator
 
-# 数据管理-我的数据Amazon释放产品接口用例
-class Test_amazonReleaseRroductInterface(unittest.TestCase):
+# 数据管理-我的数据SMT释放产品接口用例
+class Test_smtReleaseRroductApi(unittest.TestCase):
     def firstInputParam(self):
         resultList = []
         # 用例,封装接口入参
@@ -27,7 +26,7 @@ class Test_amazonReleaseRroductInterface(unittest.TestCase):
                 "match_all": {}
               }
             }
-        index = Das_Common_Config.amazon_account_product_info
+        index = Das_Common_Config.smt_account_product_info
         # 连接数据库从ES数据库随机取出数据
         result = Es_handleOperator("das","test").data_es(index,query)
         for i in range(len(result["hits"])):
@@ -35,9 +34,10 @@ class Test_amazonReleaseRroductInterface(unittest.TestCase):
         return resultList
 
     def testCase01(self):
-        resultList = self.firstInputParam()
         # 接口地址
-        url = DasApiUrl.amazon_releaseProduct_url
-        responseResult = releaseProductInfoInterface().releaseProductInfo(url,resultList)
+        url = DasApiUrl.smt_releaseProduct_url
+        resultList = self.firstInputParam()
+        responseResult = releaseProductInfoApi().releaseProductInfo(url,resultList)
         print(responseResult)
+
 

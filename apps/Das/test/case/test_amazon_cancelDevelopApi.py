@@ -1,5 +1,5 @@
 '''
-@File: test_amazon_cancelDevelopInterface.py
+@File: test_amazon_cancelDevelopApi.py
 @time:2021/8/23
 @Author:quanliu
 @Desc:我的数据-Amazon取消开发接口用例(SMT共用)
@@ -8,12 +8,12 @@ import random
 
 from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
-from apps.Das.das_interface_service.myData_manage.cancelDevelopmentApi import CancelDevelopmentInterface
-from apps.Das.das_interface_service.param_config.parameterConfigSelectApi import ParameterConfigQueryInterface
+from apps.Das.das_interface_service.myData_manage.cancelDevelopmentApi import CancelDevelopmentApi
+from apps.Das.das_interface_service.param_config.parameterConfigSelectApi import ParameterConfigQueryApi
 from apps.utils.es_database_util import Es_handleOperator
 import unittest
 
-class Test_amazonCancelDevelopInterface(unittest.TestCase):
+class Test_amazonCancelDevelopApi(unittest.TestCase):
     # 生成第一个入参
     def firstInputParam(self):
         # 生成随机数
@@ -35,11 +35,11 @@ class Test_amazonCancelDevelopInterface(unittest.TestCase):
 
     def testCase01(self):
         # 接口第二个入参
-        responseData = ParameterConfigQueryInterface().paramConfigQuery()
+        responseData = ParameterConfigQueryApi().paramConfigQuery()
         secondParam = ",".join(random.sample(responseData.split('[')[1].rstrip("]").split(","),1))
         # 接口地址
         url = DasApiUrl.amazon_cancelDevelopment_url
         resultList = self.firstInputParam()
-        responseResult01 = CancelDevelopmentInterface().cancelDevelopmentFunction(url, resultList, secondParam)
+        responseResult01 = CancelDevelopmentApi().cancelDevelopmentFunction(url, resultList, secondParam)
         print(responseResult01)
 
