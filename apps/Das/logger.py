@@ -20,7 +20,7 @@ class MyLog():
         # 创建一个handler，用于写入日志文件
         self.log_time = time.strftime("%Y-%m-%d")
         self.log_path = garder_path + "\\logs\\"
-        self.log_name = self.log_path+"{0}.log".format(self.log_time)
+        self.log_name = self.log_path+"das_{0}.log".format(self.log_time)
 
         fh = logging.handlers.TimedRotatingFileHandler(self.log_name, 'D', 1, 10)
         fh.setLevel(logging.INFO)
