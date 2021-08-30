@@ -54,4 +54,4 @@ class ShopeeProductSelectApi():
 
 
 if __name__ == '__main__':
-    print(ShopeeProductSelectInterface().shopeeProductListingInfo("第一个用例",{"productId":"7567527309","mainSku":"9SD400200"}))
+    print(ShopeeProductSelectApi().shopeeProductListingInfo("第一个用例",{"productId":"7567527309","mainSku":"9SD400200"}))

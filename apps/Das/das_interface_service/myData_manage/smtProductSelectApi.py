@@ -58,4 +58,4 @@ class SmtProductSelectApi():
 
 
 if __name__ == '__main__':
-    print(SmtProductSelectInterface().smtQueryProductListing({}))
+    print(SmtProductSelectApi().smtQueryProductListing({}))

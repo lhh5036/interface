@@ -11,6 +11,7 @@ import json
 from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
 from apps.Das.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
+from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 
 
 # 实例化日志类
@@ -74,9 +75,9 @@ class InfringementAuditsApi():
 
 
 if __name__ == '__main__':
-    url = MyDataManageInterUrl.smt_infringementAudit_url
+    url = DasApiUrl.smt_infringementAudit_url
     idsList = ["fc4764f3-aaaa-46bd-b932-14750c685078"]
     auditStatus = "2"
     salesProhibitionList = [{"plat":"Amazon","sites":"US,UK,IT"},{"plat":"Ebay","sites":"US,UK,AU"}]
     infringementInfoMap = {"infringementTypeName":"cjz测试的禁售类型","infringementObj":"cjz测试的禁售原因","auditNotesInfo":"禁售备注"}
-    print(InfringementAuditsInterface().infringementAuditFunction(url,idsList,auditStatus,salesProhibitionList,infringementInfoMap))
+    print(InfringementAuditsApi().infringementAuditFunction(url,idsList,auditStatus,salesProhibitionList,infringementInfoMap))

@@ -54,4 +54,4 @@ class AliProductSelectApi():
 
 
 if __name__ == '__main__':
-    print(AliProductSelectInterface().aliProductListingInfo({}))
+    print(AliProductSelectApi().aliProductListingInfo({}))

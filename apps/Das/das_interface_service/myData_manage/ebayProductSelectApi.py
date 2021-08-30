@@ -52,4 +52,4 @@ class EbayProductSelectApi():
 
 
 if __name__ == '__main__':
-    print(EbayProductSelectInterface().ebayProductListingInfo({"productId":"223609848242","mainSku":"9SD400151"}))
+    print(EbayProductSelectApi().ebayProductListingInfo({"productId":"223609848242","mainSku":"9SD400151"}))

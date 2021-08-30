@@ -62,4 +62,4 @@ class MyDataAmazonSelectApi():
 
 
 if __name__ == '__main__':
-    print(MyDataAmazonSelectInterface().myDataAmazonSelect({"country":"US","asin":"B07SW7PVWW"}))
+    print(MyDataAmazonSelectApi().myDataAmazonSelect({"country":"US","asin":"B07SW7PVWW"}))
