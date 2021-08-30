@@ -29,6 +29,7 @@ class SmtInfringementAuditsPersonApi():
             logger.info("smtInfringementAuditsPersonFun------------------>end")
             return "接口响应成功,响应结果:{0}".format(resp.json()["result"])
         else:
+            logger.error("smtInfringementAuditsPersonFun -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,formData)
 
 

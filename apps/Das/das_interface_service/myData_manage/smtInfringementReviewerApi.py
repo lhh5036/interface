@@ -37,7 +37,7 @@ class SmtInfringementReviewerApi():
             logger.info("smtInfringementReviewerFun--------------->end")
             return "分配侵权审核人---接口响应成功"
         else:
-            logger.info("smtInfringementReviewerFun--------------->end")
+            logger.error("smtInfringementReviewerFun -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,smt_infringementReviewer01)
 
 if __name__ == '__main__':
