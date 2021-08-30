@@ -49,6 +49,9 @@ class DasApiInputParam:
     infringementReview_plat = {"plat":"{0}","sites":{1}} # 存放禁用平台和站点
     infringmentReview_site = {"site":{0},"isAuthority":0} # 存放禁用站点
 
+    # 我的数据-SMT获取侵权审核人信息入参
+    infringementAduitsPerson_param = {}
+
 
     # 我的数据-1688查询接口入参
     ali_productInfo01 = {"method":"listBaseListing","args":"{args}"}
