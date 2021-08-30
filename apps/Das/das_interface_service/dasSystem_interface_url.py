@@ -48,6 +48,9 @@ class DasApiUrl:
     # 我的数据-SMT获取侵权审核人信息
     smt_infringementAuditPerson_url = InterfaceCommonInfo.common_url + "/das/usermgtn/getSMTLeaderList"
 
+    # 我的数据-SMT分配侵权审核人接口
+    smt_infringementReviewer_url = InterfaceCommonInfo.common_url + "/das/smt/AccountProductInfo/allocationInfringementReviewer"
+
     # SMT校验产品是否已经认领接口地址
     smt_checkProductByRank_url = InterfaceCommonInfo.common_url + "/das/account/checkAccountProductInfo"
 

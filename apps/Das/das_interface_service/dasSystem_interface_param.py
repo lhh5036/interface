@@ -52,6 +52,11 @@ class DasApiInputParam:
     # 我的数据-SMT获取侵权审核人信息入参
     infringementAduitsPerson_param = {}
 
+    # 我的数据-SMT分配侵权审核人入参
+    smt_infringementReviewer01 = {"args": "{0}"}
+    smt_infringementReviewer02 = {"ids":{0},"infringementReviewer":{1}}
+
+
 
     # 我的数据-1688查询接口入参
     ali_productInfo01 = {"method":"listBaseListing","args":"{args}"}
