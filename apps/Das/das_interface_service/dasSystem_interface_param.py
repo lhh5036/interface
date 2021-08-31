@@ -85,11 +85,34 @@ class DasApiInputParam:
     checkAccountProductByRank01 = {"args":"{0}"}
     checkAccountProductByRank02 = {"saleChannel": {0}, "baseIdList": {1}}
 
-    # 数据采集-Amazon查询接口入参（数据采集bestsellers/NewRelease/MoversShakers/MostWishedFor/Giftldeas页面共用）
-    amazon_dataSampleListing01 = {"args":"{0}"}
-    amazon_dataSampleListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC"}
-    amazon_dataSampleListing03 = {"baseListingType":"","menuCode":"","developmentClaim":"","salesTrialSale":"","startCrawlTime":"","endCrawlTime":"","country":"","asin":"","dataStatus":"","keywords":"","sellerName":"",
-                                  "rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","Reviews":""}
+    # 数据采集-Amazon查询接口入参（数据采集bestsellers页面）
+    amazon_bestsellersListing01 = {"args":"{0}"}
+    amazon_bestsellersListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC"}
+    amazon_bestsellersListing03 = {"baseListingType":"bestsellerMark","menuCode":"9010802","developmentClaim":"","salesTrialSale":"","startCrawlTime":"","endCrawlTime":"","country":"","asin":"","dataStatus":"","keywords":"",
+                                   "sellerName":"","rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","Reviews":""}
+
+    # 数据采集-Amazon查询接口入参（数据采集NewRelease页面）
+    amazon_NewReleaseListing01 = {"args":"{0}"}
+    amazon_NewReleaseListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC"}
+    amazon_NewReleaseListing03 = {"baseListingType":"newReleasesMark","menuCode":"9010803","developmentClaim":"","salesTrialSale":"","startCrawlTime":"","endCrawlTime":"","country":"","asin":"","dataStatus":"","keywords":"",
+                                  "sellerName":"","rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","Reviews":""}
+
+    # 数据采集-Amazon查询接口入参（数据采集MoversShakers页面）
+    amazon_MoversShakersListing01 = {"args":"{0}"}
+    amazon_MoversShakersListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC"}
+    amazon_MoversShakersListing03 = {"baseListingType":"moverShakerMark","menuCode":"9010804","developmentClaim":"","salesTrialSale":"","startCrawlTime":"","endCrawlTime":"","country":"","asin":"","dataStatus":"","keywords":"",
+                                     "sellerName":"","rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","Reviews":""}
+
+    # 数据采集-Amazon查询接口入参（数据采集MostWishedFor页面）
+    amazon_MostWishedForListing01 = {"args":"{0}"}
+    amazon_MostWishedForListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC"}
+    amazon_MostWishedForListing03 = {"baseListingType":"mostWishMark","menuCode":"9010805","developmentClaim":"","salesTrialSale":"","startCrawlTime":"","endCrawlTime":"","country":"","asin":"","dataStatus":"","keywords":"",
+                                     "sellerName":"","rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","Reviews":""}
+    # 数据采集-Amazon查询接口入参（数据采集Giftldeas页面）
+    amazon_GiftldeasListing01 = {"args":"{0}"}
+    amazon_GiftldeasListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC"}
+    amazon_GiftldeasListing03 = {"baseListingType":"giftIdeasMark","menuCode":"9010806","developmentClaim":"","salesTrialSale":"","startCrawlTime":"","endCrawlTime":"","country":"","asin":"","dataStatus":"","keywords":"",
+                                 "sellerName":"","rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","Reviews":""}
 
     # 数据采集-Amazon查询接口入参（关注店铺数据页面）
     amazon_attentStoreListing01 = {"method":"listBaseListing","args":"{0}"}
