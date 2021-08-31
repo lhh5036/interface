@@ -64,15 +64,15 @@ class PublicCommonServiceClass():
 
     # 判断哪个页面的数据需要对入参进行判空
     def needJudgeEmpty(searchType):
-        if searchType=="bestsellerMark":
+        if searchType == "bestsellerMark":
             return True
-        elif searchType=="newReleasesMark":
+        elif searchType == "newReleasesMark":
             return True
-        elif searchType=="moverShakerMark":
+        elif searchType == "moverShakerMark":
             return True
-        elif searchType=="mostWishMark":
+        elif searchType == "mostWishMark":
             return True
-        elif searchType=="giftIdeasMark":
+        elif searchType == "giftIdeasMark":
             return True
         else:
             return False
