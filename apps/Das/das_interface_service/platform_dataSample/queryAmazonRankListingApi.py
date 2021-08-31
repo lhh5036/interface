@@ -20,11 +20,11 @@ class AmazonOtherListingQueryApi():
         # 判断哪个页面的数据需要对入参进行判空
         isNeedEmpty = PublicCommonServiceClass().needJudgeEmpty(searchType)
         if isNeedEmpty == True:
-            country = parseRequestDatas("country",kwargs)
+            country = parseRequestDatas("country",kwargs) # 站点判空
             if country == "" or searchType == "":
                 logger.error("amazonOtherListingFunction--------->InputParam:country or searchType is null")
                 return "请求参数country或searchType为空"
-        amazon_otherTypeListing03,amazon_otherTypeListing02,amazon_otherTypeListing01 = PublicCommonServiceClass().getApiInputParam(searchType)
+        amazon_otherTypeListing03,amazon_otherTypeListing02,amazon_otherTypeListing01 = PublicCommonServiceClass().getApiInputParam(platform,searchType)
         url = PublicCommonServiceClass().getApiUrl(platform,searchType) # 获取请求地址
         keyList = []
         for key in kwargs.keys():
