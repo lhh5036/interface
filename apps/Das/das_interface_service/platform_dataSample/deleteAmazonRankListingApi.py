@@ -6,7 +6,7 @@
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
-from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
+from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
 from apps.Das.logger import MyLog
 import requests
 import json
@@ -14,7 +14,7 @@ import json
 # 实例化日志类
 logger = MyLog("AmazonDeleteRankListingApi").getlog() # 初始化
 class AmazonDeleteRankListingApi():
-    def deleteRankListingFunction(self,url,paramList): # 请求参数为List
+    def deleteRankListingFunction(self,platform,searchType,paramList): # 请求参数为List
         logger.info("deleteRankListingFunction--------->start")
         if len(paramList) == 0:
             logger.error("deleteRankListingFunction----->InputParameter is null")
@@ -26,6 +26,7 @@ class AmazonDeleteRankListingApi():
         deleteProduct01["args"] = json.dumps(deleteProduct02)
         # 获取请求头信息
         header = Common_TokenHeader().token_header("new","181324")
+        url = PublicCommonServiceClass().getApiUrl(platform,searchType)
         self.header = header
         self.formData = deleteProduct01
         self.url = url

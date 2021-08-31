@@ -15,15 +15,16 @@ from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 
 
 # 实例化日志类
+from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
+
 logger = MyLog("InfringementAuditsApi").getlog() # 初始化
 class InfringementAuditsApi():
-    
-    def infringementAuditFunction(self,url,idsList,auditStatus,salesProhibitionList,infringementInfoMap):
+    def infringementAuditFunction(self,platform,searchType,idsList,auditStatus,salesProhibitionList,infringementInfoMap):
         # 入参地址:url,idsList--id集合  auditStatus--审核状态（通过，不通过）salesProhibitionList--禁售平台和站点list infringementInfoMap--禁售信息dict
         # salesProhibitionList 格式[{"plat":"Amazon","sites":"US,UK,IT"},{"plat":"Ebay","sites":"US,UK,AU"}]
         # infringementInfoMap 格式 {"infringementTypeName":"cjz测试的禁售类型","infringementObj":"cjz测试的禁售原因","auditNotesInfo":"禁售备注"}
         logger.info("infringementAuditFunction-------->start")
-        if url == "" or auditStatus == "" or len(idsList) == 0:
+        if searchType == "" or auditStatus == "" or len(idsList) == 0:
             logger.error("infringementAuditFunction---->Input Parameters is NULL!")
             return "接口入参为空!"
         if infringementInfoMap != "":
@@ -60,6 +61,8 @@ class InfringementAuditsApi():
             resultReplace["args"] = infringementReviewReplace0
             # 接口请求头
             header = Common_TokenHeader().token_header("new","181324")
+            url = PublicCommonServiceClass().getApiUrl(platform,searchType) # 请求地址
+
             self.url = url
             self.header = header
             self.formData = resultReplace
@@ -71,13 +74,3 @@ class InfringementAuditsApi():
                 logger.error("cancelDevelopmentFunction -->response Data is wrong!")
                 return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(response.json()["errorMsg"],url,resultReplace)
 
-
-
-
-if __name__ == '__main__':
-    url = DasApiUrl.smt_infringementAudit_url
-    idsList = ["fc4764f3-aaaa-46bd-b932-14750c685078"]
-    auditStatus = "2"
-    salesProhibitionList = [{"plat":"Amazon","sites":"US,UK,IT"},{"plat":"Ebay","sites":"US,UK,AU"}]
-    infringementInfoMap = {"infringementTypeName":"cjz测试的禁售类型","infringementObj":"cjz测试的禁售原因","auditNotesInfo":"禁售备注"}
-    print(InfringementAuditsApi().infringementAuditFunction(url,idsList,auditStatus,salesProhibitionList,infringementInfoMap))

@@ -58,8 +58,3 @@ class MyDataAmazonSelectApi():
             logger.error("queryAmazonRankListing -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,amazonProductInfoParam)
 
-
-
-
-if __name__ == '__main__':
-    print(MyDataAmazonSelectApi().myDataAmazonSelect({"country":"US","asin":"B07SW7PVWW"}))

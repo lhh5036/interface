@@ -48,8 +48,3 @@ class EbayProductSelectApi():
             logger.error("ebayProductListingInfo -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"], url, kwargs)
 
-
-
-
-if __name__ == '__main__':
-    print(EbayProductSelectApi().ebayProductListingInfo({"productId":"223609848242","mainSku":"9SD400151"}))

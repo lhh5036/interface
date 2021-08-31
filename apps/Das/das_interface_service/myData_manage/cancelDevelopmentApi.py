@@ -11,12 +11,14 @@ import requests
 import json
 
 # 实例化日志类
+from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
+
 logger = MyLog("CancelDevelopmentApi").getlog() # 初始化
 # 我的数据-取消开发接口服务类
 class CancelDevelopmentApi():
-    def cancelDevelopmentFunction(self,url,paramList,cancelNotesInfoStr):
+    def cancelDevelopmentFunction(self,platform,searchType,paramList,cancelNotesInfoStr):
         logger.info("cancelDevelopmentFunction ---->start!")
-        if len(paramList) == 0 or cancelNotesInfoStr == "" or url == "":
+        if len(paramList) == 0 or cancelNotesInfoStr == "" or searchType == "" or platform == "":
             logger.error("cancelDevelopmentFunction --> request parameters is wrong!")
             return "请求参数为空"
 
@@ -32,6 +34,7 @@ class CancelDevelopmentApi():
         reqParam["args"] = reqSelectStr
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")
+        url = PublicCommonServiceClass().getApiUrl(platform,searchType)
         # 组装接口所需要的参数
         self.url = url
         self.formData = reqParam

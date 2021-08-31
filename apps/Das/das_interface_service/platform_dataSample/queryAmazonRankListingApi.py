@@ -11,11 +11,11 @@ import json
 import requests
 
 # 实例化日志类
-from apps.Das.publicCommonService import PublicCommonServiceClass
+from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
 
 logger = MyLog("AmazonOtherListingQueryApi").getlog() # 初始化
 class AmazonOtherListingQueryApi():
-    def amazonOtherListingFunction(self,searchType,kwargs):
+    def amazonOtherListingFunction(self,platform,searchType,kwargs):
         logger.info("amazonOtherListingFunction------------------->start")
         # 判断哪个页面的数据需要对入参进行判空
         isNeedEmpty = PublicCommonServiceClass().needJudgeEmpty(searchType)
@@ -25,7 +25,7 @@ class AmazonOtherListingQueryApi():
                 logger.error("amazonOtherListingFunction--------->InputParam:country or searchType is null")
                 return "请求参数country或searchType为空"
         amazon_otherTypeListing03,amazon_otherTypeListing02,amazon_otherTypeListing01 = PublicCommonServiceClass().getApiInputParam(searchType)
-        url = PublicCommonServiceClass().getApiUrl(searchType) # 获取请求地址
+        url = PublicCommonServiceClass().getApiUrl(platform,searchType) # 获取请求地址
         keyList = []
         for key in kwargs.keys():
             keyList.append(key)

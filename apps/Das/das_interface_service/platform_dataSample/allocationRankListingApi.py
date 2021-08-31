@@ -6,6 +6,7 @@
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
 from apps.Das.logger import MyLog
 import json
 import requests
@@ -13,11 +14,11 @@ import requests
 # 实例化日志类
 logger = MyLog("AllocationRankLinstingApi").getlog() # 初始化
 class AllocationRankLinstingApi():
-    def allocationRankListingFunction(self,url,idsList,claimantStr):
+    def allocationRankListingFunction(self,platform,searchType,idsList,claimantStr):
         logger.info("allocationRankListingFunction -------->start")
-        if len(idsList) == 0 or url == "" or claimantStr == "":
+        if len(idsList) == 0 or searchType == "" or claimantStr == "":
             logger.error("allocationRankListingFunction----->Input Parameter is null")
-            return "请求参数url或ids或分配人字段为空!"
+            return "请求参数searchType或ids或分配人字段为空!"
         # 拼接请求参数
         allocationProduct02 = DasApiInputParam.allocationProduct02
         allocationProduct02["ids"] = idsList
@@ -26,6 +27,7 @@ class AllocationRankLinstingApi():
         allocationProduct01["args"] = json.dumps(allocationProduct02)
         # 获取接口请求头信息
         header = Common_TokenHeader().token_header("new","181324")
+        url = PublicCommonServiceClass().getApiUrl(platform,searchType) # 请求地址
         self.url = url # 接口地址
         self.header = header
         self.formData = allocationProduct01

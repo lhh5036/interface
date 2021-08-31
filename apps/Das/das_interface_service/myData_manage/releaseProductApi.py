@@ -10,11 +10,13 @@ from apps.Das.logger import MyLog
 import requests
 import json
 
+from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
+
 # 实例化日志类
 logger = MyLog("releaseProductInfoApi").getlog() # 初始化
 # 我的数据Amazon-释放产品接口
 class releaseProductInfoApi():
-    def releaseProductInfo(self,url,paramList): # 调用该接口使用入参为list
+    def releaseProductInfo(self,platform,searchType,paramList): # 调用该接口使用入参为list
         paramStr = ""
         logger.info("releaseProductInfo ---->start!")
         if len(paramList) == 0:
@@ -32,6 +34,7 @@ class releaseProductInfoApi():
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")
         # 组装接口所需要的参数
+        url = PublicCommonServiceClass().getApiUrl(platform,searchType)
         self.url = url
         self.formData = reqParam
         self.header = header

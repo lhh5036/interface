@@ -37,9 +37,7 @@ class Test_amazonCancelDevelopApi(unittest.TestCase):
         # 接口第二个入参
         responseData = ParameterConfigQueryApi().paramConfigQuery()
         secondParam = ",".join(random.sample(responseData.split('[')[1].rstrip("]").split(","),1))
-        # 接口地址
-        url = DasApiUrl.amazon_cancelDevelopment_url
         resultList = self.firstInputParam()
-        responseResult01 = CancelDevelopmentApi().cancelDevelopmentFunction(url, resultList, secondParam)
+        responseResult01 = CancelDevelopmentApi().cancelDevelopmentFunction("amazon_cancelDevelopment", resultList, secondParam)
         print(responseResult01)
 

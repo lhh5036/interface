@@ -36,8 +36,6 @@ class Test_amazonReleaseRroductApi(unittest.TestCase):
 
     def testCase01(self):
         resultList = self.firstInputParam()
-        # 接口地址
-        url = DasApiUrl.amazon_releaseProduct_url
-        responseResult = releaseProductInfoApi().releaseProductInfo(url,resultList)
+        responseResult = releaseProductInfoApi().releaseProductInfo("amazon_releaseProduct",resultList)
         print(responseResult)
 

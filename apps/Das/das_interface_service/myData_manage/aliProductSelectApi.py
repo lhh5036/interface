@@ -51,7 +51,3 @@ class AliProductSelectApi():
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,aliProductInfoParam)
 
 
-
-
-if __name__ == '__main__':
-    print(AliProductSelectApi().aliProductListingInfo({}))

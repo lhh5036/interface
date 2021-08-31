@@ -6,6 +6,7 @@
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
 from apps.Das.logger import MyLog
 import json
 import requests
@@ -13,7 +14,7 @@ import requests
 # 实例化日志类
 logger = MyLog("AmazonEnableRankListingApi").getlog() # 初始化
 class AmazonEnableRankListingApi():
-    def enableRankListingFunction(self,url,paramList): # 请求参数为List
+    def enableRankListingFunction(self,platform,searchType,paramList): # 请求参数为List
         logger.info("enableRankListingFunction--------->start")
         if len(paramList) == 0:
             logger.error("enableRankListingFunction----->InputParameter is null")
@@ -25,6 +26,7 @@ class AmazonEnableRankListingApi():
         enableProduct01["args"] = json.dumps(enableProduct02)
         # 获取请求头信息
         header = Common_TokenHeader().token_header("new", "181324")
+        url = PublicCommonServiceClass().getApiUrl(platform,searchType)
         self.header = header
         self.formData = enableProduct01
         self.url = url

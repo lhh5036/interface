@@ -6,6 +6,7 @@
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
 from apps.Das.logger import MyLog
 import json
 import requests
@@ -13,7 +14,7 @@ import requests
 # 实例化日志类
 logger = MyLog("AmazonClaimRankLinstingApi").getlog() # 初始化
 class AmazonClaimRankLinstingApi():
-    def claimAmazonRankListingFun(self,url,paramList):
+    def claimAmazonRankListingFun(self,platform,searchType,paramList):
         logger.info("claimAmazonRankListingFun -------->start")
         if len(paramList) == 0:
             logger.error("claimAmazonRankListingFun----->Input Parameter is null")
@@ -25,6 +26,7 @@ class AmazonClaimRankLinstingApi():
         claimProduct01["args"] = json.dumps(claimProduct02)
         # 获取请求头信息
         header = Common_TokenHeader().token_header("new","181324")
+        url = PublicCommonServiceClass().getApiUrl(platform,searchType)
         self.url = url
         self.header = header
         self.formData = claimProduct01

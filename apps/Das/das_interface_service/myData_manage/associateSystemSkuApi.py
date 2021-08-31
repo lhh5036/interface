@@ -9,15 +9,15 @@ from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInput
 from apps.Das.logger import MyLog
 import requests
 import json
-from apps.Das.publicCommonService import PublicCommonServiceClass
+from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
 # 实例化日志类
 logger = MyLog("AssociateSystemSkuApi").getlog() # 初始化
 
 # 关联系统SKU接口
 class AssociateSystemSkuApi():
-    def associateSystemSku(self,searchType,paramList,systemSkuStr): # 调用该接口使用入参为list和字符串类型
+    def associateSystemSku(self,platform,searchType,paramList,systemSkuStr): # 调用该接口使用入参为list和字符串类型
         logger.info("associateSystemSku ---->start!")
-        if len(paramList) == 0 or systemSkuStr == "" or searchType == "":
+        if len(paramList) == 0 or systemSkuStr == "" or searchType == "" or platform == "":
             logger.error("associateSystemSku --> request parameters is wrong!")
             return "请求参数为空"
         # 将入参list转为string类型
@@ -31,8 +31,9 @@ class AssociateSystemSkuApi():
         reqParam["args"] = reqSelectStr
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")
+        url = PublicCommonServiceClass().getApiUrl(platform,searchType)
         # 组装接口所需要的参数
-        self.url = PublicCommonServiceClass().getApiUrl(searchType)
+        self.url = url
         self.formData = reqParam
         self.header = header
 

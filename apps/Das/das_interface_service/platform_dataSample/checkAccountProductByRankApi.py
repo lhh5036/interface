@@ -6,7 +6,7 @@
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
-from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
+from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
 from apps.Das.logger import MyLog
 import json
 import requests
@@ -16,7 +16,7 @@ import requests
 logger = MyLog("CheckAccountProductByRankApi").getlog() # 初始化
 # 校验哪些产品已经被认领过接口类
 class CheckAccountProductByRankApi():
-    def checkProductByRankFunction(self,url,salechannelname,idsList):
+    def checkProductByRankFunction(self,platform,searchType,salechannelname,idsList):
         logger.info("checkProductByRankFunction------>start")
         if salechannelname == "" or len(idsList) == 0:
             logger.error("checkProductByRankFunction --> request parameters is wrong!")
@@ -26,14 +26,12 @@ class CheckAccountProductByRankApi():
         checkAccountProductByRank02 = DasApiInputParam.checkAccountProductByRank02
         checkAccountProductByRank02["saleChannel"] = salechannelname
         checkAccountProductByRank02["baseIdList"] = idsList
-
         # 拼接外层参数
         checkAccountProductByRank01 = DasApiInputParam.checkAccountProductByRank01
         checkAccountProductByRank01["args"] = json.dumps(checkAccountProductByRank02)
-
         # 获取请求头
         header = Common_TokenHeader().token_header("new","181324")
-
+        url = PublicCommonServiceClass().getApiUrl(platform,searchType)
         # 拼接请求地址
         self.url = url
         self.fromData = checkAccountProductByRank01
@@ -49,7 +47,3 @@ class CheckAccountProductByRankApi():
 
 
 
-
-if __name__ == '__main__':
-    url = DasApiUrl.amazon_checkProductByRank_url
-    print(CheckAccountProductByRankApi().checkProductByRankFunction(url,"Amazon",["8fcd751a-052c-11ec-ab99-000000000316","06daecdc-052c-11ec-9f1d-00000000039f"]))
