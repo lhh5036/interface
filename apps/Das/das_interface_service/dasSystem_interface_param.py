@@ -85,11 +85,28 @@ class DasApiInputParam:
     checkAccountProductByRank01 = {"args":"{0}"}
     checkAccountProductByRank02 = {"saleChannel": {0}, "baseIdList": {1}}
 
-    # 数据采集-Amazon查询接口入参（数据采集Amazon所有页面共用）
+    # 数据采集-Amazon查询接口入参（数据采集bestsellers/NewRelease/MoversShakers/MostWishedFor/Giftldeas页面共用）
     amazon_dataSampleListing01 = {"args":"{0}"}
     amazon_dataSampleListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC"}
     amazon_dataSampleListing03 = {"baseListingType":"","menuCode":"","developmentClaim":"","salesTrialSale":"","startCrawlTime":"","endCrawlTime":"","country":"","asin":"","dataStatus":"","keywords":"","sellerName":"",
                                   "rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","Reviews":""}
+
+    # 数据采集-Amazon查询接口入参（关注店铺数据页面）
+    amazon_attentStoreListing01 = {"method":"listBaseListing","args":"{0}"}
+    amazon_attentStoreListing02 = {"search":{0},"limit":50,"offset":0,"sort":"crawlTime","order":"DESC"}
+    amazon_attentStoreListing03 = {"baseListingType":"shopMark","developmentClaim":"","country":"","Reviews":"","rating":"","menuCode":"9010807","brand":"","startCrawlTime":"","endCrawlTime":"","isBrand":"","departmentName":"",
+                                   "keywords":"","asin":"","startPrice":"","endPrice":"","dataStatus":"","sellerName":"","fba":"","startFirstListOnTime":"","endFirstListOnTime":""}
+    # 数据采集-Amazon查询接口入参（关注分类数据页面）
+    amazon_categoryListing01 = {"method":"listBaseListing","args":"{0}"}
+    amazon_categoryListing02 = {"search":{0},"limit":50,"offset":0,"sort":"crawlTime","order":"DESC"}
+    amazon_categoryListing03 = {"baseListingType":"categoryMark","nodes":"","salesTrialSale":"","developmentClaim":"","startCrawlTime":"","endCrawlTime":"","country":"","menuCode":"9010808","departmentName":"","brand":"",
+                                "Reviews":"","rating":"","keywords":"","asin":"","startPrice":"","endPrice":"","dataStatus":"","sellerName":"","fba":"","isBrand":"","startFirstListOnTime":"","endFirstListOnTime":""}
+
+    # 数据采集-Amazon查询接口入参（关注关键词数据页面）
+    amazon_keywordsListing01 = {"method":"listBaseListing","args":"{0}"}
+    amazon_keywordsListing02 = {"search":{0},"limit":50,"offset":0,"sort":"crawlTime","order":"DESC"}
+    amazon_keywordsListing03 = {"baseListingType":"keywordMark","taskKeyword":"","Reviews":"","rating":"","searchKeywords":"","developmentClaim":"","menuCode":"9010809","country":"","departmentName":"","keywords":"",
+                                "brand":"","isBrand":"","asin":"","startPrice":"","endPrice":"","sellerName":"","fba":"","startFirstListOnTime":"","endFirstListOnTime":"","startCrawlTime":"","endCrawlTime":""}
 
     # 数据采集-认领产品接口入参
     claimProduct01 = {"args":"{0}"}
@@ -110,6 +127,9 @@ class DasApiInputParam:
     # 数据采集-分配接口入参
     allocationProduct01 = {"args":"{0}"}
     allocationProduct02 = {"ids":{0},"claimant":{1}}
+
+
+
 
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}

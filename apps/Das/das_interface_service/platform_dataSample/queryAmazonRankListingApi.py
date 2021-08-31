@@ -1,5 +1,5 @@
 '''
-@File: QueryAmazonRankListingApi.py
+@File: queryAmazonRankListingApi.py
 @time:2021/8/27
 @Author:quanliu
 @Desc:数据采集-Amazon查询页面

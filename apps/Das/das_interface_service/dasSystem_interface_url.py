@@ -90,8 +90,11 @@ class DasApiUrl:
     # 我的数据-shopee取消开发接口
     shopee_cancelDevelopment_url = InterfaceCommonInfo.common_url + "/das/shopee/AccountProductInfo/cancelDevelopment"
 
-    # 数据采集-Amazon查询接口
+    # 数据采集-Amazon查询接口（bestsellers/NewRelease/MoversShakers/MostWishedFor/Giftldeas）
     amazon_dataSampleListing_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/queryAmazonRankListing"
+
+    # 数据采集-Amazon关注店铺数据/关注分类数据查询接口
+    amazon_attentStoreListing_url = InterfaceCommonInfo.common_url + "/das/amazon/baselisting"
 
     # 数据采集-Amazon认领产品接口
     amazon_claimProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/claimAmazonRankListing"
@@ -108,6 +111,20 @@ class DasApiUrl:
     # 数据采集-Amazon分配接口
     amazon_allocationProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/allocationAmazonRankListing"
 
+    # 数据采集-SMT查询接口
+    smt_dataSampleListing_url = InterfaceCommonInfo.common_url + "/das/smt/querySmtBaseListingPageList"
+
+    # 数据采集-SMT认领产品接口
+    smt_claimProduct_url = InterfaceCommonInfo.common_url + "/das/smt/claimSmtBaseListing"
+
+    # 数据采集-1688认领产品接口
+    ali_claimProduct_url = InterfaceCommonInfo.common_url + "/das/ali1688/claimAli1688BaseListing"
+
+    # 数据采集-ebay认领产品接口
+    ebay_claimProduct_url = InterfaceCommonInfo.common_url + "/das/ebay/claimEbayBaseListing"
+
+    # 数据采集-shopee认领产品接口
+    shopee_claimProduct_url = InterfaceCommonInfo.common_url + "/das/shopee/claimShopeeBaseListing"
 
 
     # 参数配置-取消开发备注保存接口
