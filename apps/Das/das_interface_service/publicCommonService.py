@@ -162,6 +162,8 @@ class PublicCommonServiceClass():
             url = DasApiUrl.smt_checkProductByRank_url
         elif searchType == "smt_claimProduct" : # SMT认领产品接口
             url = DasApiUrl.smt_claimProduct_url
+        elif searchType == "": # SMT
+            url = DasApiUrl.smt_dataSampleListing_url
         return url
     # 获取1688平台的URL
     def getAliApiUrl(self,searchType):
