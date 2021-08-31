@@ -1,4 +1,0 @@
-[2021-08-30 14:14:21,775] smtInfringementAuditsPersonApi.py->smtInfringementAuditsPersonFun line:20 [INFO]smtInfringementAuditsPersonFun------------------>start
-[2021-08-30 14:56:37,590] smtInfringementReviewerApi.py->smtInfringementReviewerFun line:18 [INFO]smtInfringementReviewerFun--------------->start
-[2021-08-30 14:56:49,643] smtInfringementReviewerApi.py->smtInfringementReviewerFun line:18 [INFO]smtInfringementReviewerFun--------------->start
-[2021-08-30 14:56:49,769] smtInfringementReviewerApi.py->smtInfringementReviewerFun line:37 [INFO]smtInfringementReviewerFun--------------->end
