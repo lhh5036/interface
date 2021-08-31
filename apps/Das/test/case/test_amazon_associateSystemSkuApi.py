@@ -37,19 +37,15 @@ class Test_amazonAssociateSySkuApi(unittest.TestCase):
 
     # 用例1接口第二个入参（输入存在SKU）
     def testCase01(self):
-        # 接口地址
-        url = DasApiUrl.amazon_associateSySku_url
         systemSkuStr01 = "8ZZ800161-S-B"
         paramList = self.firstInputParam()
-        responseResult01 = AssociateSystemSkuApi().associateSystemSku(url, paramList, systemSkuStr01)
+        responseResult01 = AssociateSystemSkuApi().associateSystemSku("amazon_associateSystemSku", paramList, systemSkuStr01)
         print(responseResult01)
 
     # 用例2接口第二个入参（输入不存在SKU）
     def testCase02(self):
-        # 接口地址
-        url = DasApiUrl.amazon_associateSySku_url
         systemSkuStr02 = "8ZZ800161S"
         paramList = self.firstInputParam()
-        responseResult02 = AssociateSystemSkuApi().associateSystemSku(url,paramList, systemSkuStr02)
+        responseResult02 = AssociateSystemSkuApi().associateSystemSku("amazon_associateSystemSku",paramList, systemSkuStr02)
         print(responseResult02)
 

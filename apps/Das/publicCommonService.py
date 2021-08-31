@@ -14,53 +14,69 @@ class PublicCommonServiceClass():
         otherTypeListing03 = ""
         otherTypeListing02 = ""
         otherTypeListing01 = ""
-        url = ""
         if searchType == "bestsellerMark":  # bestseller页面
             otherTypeListing03 = DasApiInputParam.amazon_bestsellersListing03
             otherTypeListing02 = DasApiInputParam.amazon_bestsellersListing02
             otherTypeListing01 = DasApiInputParam.amazon_bestsellersListing01
-            url = DasApiUrl.amazon_dataSampleListing_url
         elif searchType == "newReleasesMark":  # newReleases页面
             otherTypeListing03 = DasApiInputParam.amazon_NewReleaseListing03
             otherTypeListing02 = DasApiInputParam.amazon_NewReleaseListing02
             otherTypeListing01 = DasApiInputParam.amazon_NewReleaseListing01
-            url = DasApiUrl.amazon_dataSampleListing_url
         elif searchType == "moverShakerMark":  # moversShakers页面
             otherTypeListing03 = DasApiInputParam.amazon_MoversShakersListing03
             otherTypeListing02 = DasApiInputParam.amazon_MoversShakersListing02
             otherTypeListing01 = DasApiInputParam.amazon_MoversShakersListing01
-            url = DasApiUrl.amazon_dataSampleListing_url
         elif searchType == "mostWishMark":  # MostWishedFor页面
             otherTypeListing03 = DasApiInputParam.amazon_MostWishedForListing03
             otherTypeListing02 = DasApiInputParam.amazon_MostWishedForListing02
             otherTypeListing01 = DasApiInputParam.amazon_MostWishedForListing01
-            url = DasApiUrl.amazon_dataSampleListing_url
         elif searchType == "giftIdeasMark":  # Giftldeas页面
             otherTypeListing03 = DasApiInputParam.amazon_GiftldeasListing03
             otherTypeListing02 = DasApiInputParam.amazon_GiftldeasListing02
             otherTypeListing01 = DasApiInputParam.amazon_GiftldeasListing01
-            url = DasApiUrl.amazon_dataSampleListing_url
         elif searchType == "shopMark":  # 关注店铺数据页面
             otherTypeListing03 = DasApiInputParam.amazon_attentStoreListing03
             otherTypeListing02 = DasApiInputParam.amazon_attentStoreListing02
             otherTypeListing01 = DasApiInputParam.amazon_attentStoreListing01
-            url = DasApiUrl.amazon_attentStoreListing_url
         elif searchType == "categoryMark":  # 关注分类数据页面
             otherTypeListing03 = DasApiInputParam.amazon_categoryListing03
             otherTypeListing02 = DasApiInputParam.amazon_categoryListing02
             otherTypeListing01 = DasApiInputParam.amazon_categoryListing01
-            url = DasApiUrl.amazon_attentStoreListing_url
         elif searchType == "keywordMark":  # 关注关键词数据页面
             otherTypeListing03 = DasApiInputParam.amazon_keywordsListing03
             otherTypeListing02 = DasApiInputParam.amazon_keywordsListing02
             otherTypeListing01 = DasApiInputParam.amazon_keywordsListing01
-            url = DasApiUrl.amazon_attentStoreListing_url
         elif searchType == "jungleScoutKeywordMark":  # JungleScout关键词数据页面
             otherTypeListing03 = DasApiInputParam.amazon_jungleScoutListing03
             otherTypeListing02 = DasApiInputParam.amazon_jungleScoutListing02
             otherTypeListing01 = DasApiInputParam.amazon_jungleScoutListing01
+        return otherTypeListing03, otherTypeListing02, otherTypeListing01
+    # 获取请求地址
+    def getApiUrl(searchType):
+        url = ""
+        if searchType == "bestsellerMark":  # bestseller页面
+            url = DasApiUrl.amazon_dataSampleListing_url
+        elif searchType == "newReleasesMark":  # newReleases页面
+            url = DasApiUrl.amazon_dataSampleListing_url
+        elif searchType == "moverShakerMark":  # moversShakers页面
+            url = DasApiUrl.amazon_dataSampleListing_url
+        elif searchType == "mostWishMark":  # MostWishedFor页面
+            url = DasApiUrl.amazon_dataSampleListing_url
+        elif searchType == "giftIdeasMark":  # Giftldeas页面
+            url = DasApiUrl.amazon_dataSampleListing_url
+        elif searchType == "shopMark":  # 关注店铺数据页面
             url = DasApiUrl.amazon_attentStoreListing_url
-        return otherTypeListing03, otherTypeListing02, otherTypeListing01, url
+        elif searchType == "categoryMark":  # 关注分类数据页面
+            url = DasApiUrl.amazon_attentStoreListing_url
+        elif searchType == "keywordMark":  # 关注关键词数据页面
+            url = DasApiUrl.amazon_attentStoreListing_url
+        elif searchType == "jungleScoutKeywordMark":  # JungleScout关键词数据页面
+            url = DasApiUrl.amazon_attentStoreListing_url
+        elif searchType == "amazon_associateSystemSku": # Amazon关联系统SKU
+            url = DasApiUrl.amazon_associateSySku_url
+        elif searchType == "smt_associateSystemSku":# SMT关联系统SKU
+            url = DasApiUrl.smt_associateSySku_url
+        return url
 
     # 判断哪个页面的数据需要对入参进行判空
     def needJudgeEmpty(searchType):

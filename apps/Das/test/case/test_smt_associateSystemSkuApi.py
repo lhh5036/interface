@@ -36,17 +36,13 @@ class Test_smtAssociateSySkuApi(unittest.TestCase):
     # 用例1接口第二个入参（输入存在SKU）
     def testCase01(self):
         resultList = self.firstInputParam()
-        # 接口地址
-        url = DasApiUrl.smt_associateSySku_url
         systemSkuStr01 = "8ZZ800161-S-B"
-        responseResult01 = AssociateSystemSkuApi().associateSystemSku(url,resultList, systemSkuStr01)
+        responseResult01 = AssociateSystemSkuApi().associateSystemSku("smt_associateSystemSku",resultList, systemSkuStr01)
         print(responseResult01)
 
     #用例2接口第二个入参（输入不存在SKU）
     def testCase02(self):
         resultList = self.firstInputParam()
-        # 接口地址
-        url = DasApiUrl.smt_associateSySku_url
         systemSkuStr02 = "8ZZ800161S"
-        responseResult02 = AssociateSystemSkuApi().associateSystemSku(url,resultList, systemSkuStr02)
+        responseResult02 = AssociateSystemSkuApi().associateSystemSku("smt_associateSystemSku",resultList, systemSkuStr02)
         print(responseResult02)

@@ -24,7 +24,8 @@ class AmazonOtherListingQueryApi():
             if country == "" or searchType == "":
                 logger.error("amazonOtherListingFunction--------->InputParam:country or searchType is null")
                 return "请求参数country或searchType为空"
-        amazon_otherTypeListing03,amazon_otherTypeListing02,amazon_otherTypeListing01,url = PublicCommonServiceClass().getApiInputParam(searchType)
+        amazon_otherTypeListing03,amazon_otherTypeListing02,amazon_otherTypeListing01 = PublicCommonServiceClass().getApiInputParam(searchType)
+        url = PublicCommonServiceClass().getApiUrl(searchType) # 获取请求地址
         keyList = []
         for key in kwargs.keys():
             keyList.append(key)
