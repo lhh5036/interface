@@ -108,6 +108,12 @@ class DasApiInputParam:
     amazon_keywordsListing03 = {"baseListingType":"keywordMark","taskKeyword":"","Reviews":"","rating":"","searchKeywords":"","developmentClaim":"","menuCode":"9010809","country":"","departmentName":"","keywords":"",
                                 "brand":"","isBrand":"","asin":"","startPrice":"","endPrice":"","sellerName":"","fba":"","startFirstListOnTime":"","endFirstListOnTime":"","startCrawlTime":"","endCrawlTime":""}
 
+    # 数据采集-Amazon查询接口入参（Jungle Scout关键词数据页面）
+    amazon_jungleScoutListing01 = {"method":"listBaseListing","args":"{0}"}
+    amazon_jungleScoutListing02 = {"search":{0},"limit":50,"offset":0,"sort":"rank","order":"DESC"}
+    amazon_jungleScoutListing03 = {"baseListingType":"jungleScoutKeywordMark","taskKeyword":"","salesTrialSale":"","developmentClaim":"","Reviews":"","rating":"","searchKeywords":"","menuCode":"9010808","country":"",
+                                   "departmentName":"","keywords":"","brand":"","isBrand":"","asin":"","startPrice":"","endPrice":"","dataStatus":"","sellerName":"","fba":"","startFirstListOnTime":"","endFirstListOnTime":"","startCrawlTime":"","endCrawlTime":""}
+
     # 数据采集-认领产品接口入参
     claimProduct01 = {"args":"{0}"}
     claimProduct02 = {"ids":{0}}
