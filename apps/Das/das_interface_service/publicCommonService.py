@@ -65,6 +65,10 @@ class PublicCommonServiceClass():
             otherTypeListing03 = DasApiInputParam.amazon_jungleScoutListing03
             otherTypeListing02 = DasApiInputParam.amazon_jungleScoutListing02
             otherTypeListing01 = DasApiInputParam.amazon_jungleScoutListing01
+        elif searchType == "amazon_queryListing":# 我的数据amazon查询
+            otherTypeListing03 = DasApiInputParam.amazon_ProductInfo03
+            otherTypeListing02 = DasApiInputParam.amazon_ProductInfo02
+            otherTypeListing01 = DasApiInputParam.amazon_ProductInfo01
         return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
     # 获取SMT平台入参
@@ -92,6 +96,10 @@ class PublicCommonServiceClass():
             otherTypeListing03 = DasApiInputParam.smt_keywordMarkListing03
             otherTypeListing02 = DasApiInputParam.smt_keywordMarkListing02
             otherTypeListing01 = DasApiInputParam.smt_keywordMarkListing01
+        elif searchType == "smt_queryListing":  # 我的数据SMT查询
+            otherTypeListing03 = DasApiInputParam.smt_ProductInfo03
+            otherTypeListing02 = DasApiInputParam.smt_ProductInfo02
+            otherTypeListing01 = DasApiInputParam.smt_ProductInfo01
         return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
     # 获取1688平台入参
@@ -119,6 +127,10 @@ class PublicCommonServiceClass():
             otherTypeListing03 = DasApiInputParam.ali_shopMarkListing03
             otherTypeListing02 = DasApiInputParam.ali_shopMarkListing02
             otherTypeListing01 = DasApiInputParam.ali_shopMarkListing01
+        elif searchType == "ali_queryListing": # 我的数据1688查询接口
+            otherTypeListing03 = DasApiInputParam.ali_productInfo03
+            otherTypeListing02 = DasApiInputParam.ali_productInfo02
+            otherTypeListing01 = DasApiInputParam.ali_productInfo01
         return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
     # 获取ebay平台入参
@@ -126,14 +138,19 @@ class PublicCommonServiceClass():
         otherTypeListing03 = ""
         otherTypeListing02 = ""
         otherTypeListing01 = ""
-        if searchType == "": # 自定义采集-ebay页面查询
+        if searchType == "followMark_query": # 自定义采集-ebay页面查询
             otherTypeListing03 = DasApiInputParam.ebay_followMarkListing03
             otherTypeListing02 = DasApiInputParam.ebay_followMarkListing02
             otherTypeListing01 = DasApiInputParam.ebay_followMarkListing01
-        elif searchType == "": # 数据采集-ebay页面查询
+        elif searchType == "categoryMark_query": # 数据采集-ebay页面查询
             otherTypeListing03 = DasApiInputParam.ebay_categoryMarkListing03
             otherTypeListing02 = DasApiInputParam.ebay_categoryMarkListing02
             otherTypeListing01 = DasApiInputParam.ebay_categoryMarkListing01
+        elif searchType == "ebay_queryListing": # 我的数据ebay查询
+            otherTypeListing03 = DasApiInputParam.ebay_productInfo03
+            otherTypeListing02 = DasApiInputParam.ebay_productInfo02
+            otherTypeListing01 = DasApiInputParam.ebay_productInfo02
+
         return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
     # 获取shopee平台入参
@@ -157,6 +174,10 @@ class PublicCommonServiceClass():
             otherTypeListing03 = DasApiInputParam.shopee_keywordMarkListing03
             otherTypeListing02 = DasApiInputParam.shopee_keywordMarkListing02
             otherTypeListing01 = DasApiInputParam.shopee_keywordMarkListing01
+        elif searchType == "shopee_queryListing":  # 我的数据shopee查询
+            otherTypeListing03 = DasApiInputParam.shopee_productInfo03
+            otherTypeListing02 = DasApiInputParam.shopee_productInfo02
+            otherTypeListing01 = DasApiInputParam.shopee_productInfo01
         return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
     # 获取请求地址
@@ -217,6 +238,8 @@ class PublicCommonServiceClass():
             url = DasApiUrl.amazon_enableProduct_url
         elif searchType == "amazon_dataSample_associate": # 数据采集Amazon关联系统SKU
             url = DasApiUrl.amazon_dataSample_associate_url
+        elif searchType == "amazon_queryListing": # 我的数据amazon查询
+            url = DasApiUrl.amazon_queryListing_url
         return url
 
     # 获取SMT平台的url
@@ -256,6 +279,8 @@ class PublicCommonServiceClass():
             url = DasApiUrl.smt_allocationPerson_url
         elif searchType == "smt_allocation": # 数据采集SMT分配接口
             url = DasApiUrl.smt_allocationProduct_url
+        elif searchType == "smt_queryListing": # 我的数据SMT查询
+            url = DasApiUrl.smt_queryListing_url
         return url
     # 获取1688平台的URL
     def getAliApiUrl(self,searchType):
@@ -286,6 +311,8 @@ class PublicCommonServiceClass():
             url = DasApiUrl.ali_allocationPerson_url
         elif searchType == "ali_allocationProduct": # 数据采集-1688分配接口
             url = DasApiUrl.ali_allocationProduct_url
+        elif searchType == "ali_queryListing":# 我的数据1688查询
+            url = DasApiUrl.ali_queryListing_url
         return url
 
     # 获取ebay平台的URL
@@ -293,9 +320,9 @@ class PublicCommonServiceClass():
         url = ""
         if searchType == "ebay_claimProduct":  # ebay认领产品接口
             url = DasApiUrl.ebay_claimProduct_url
-        elif searchType == "": # 自定义采集-ebay页面查询
+        elif searchType == "followMark_query": # 自定义采集-ebay页面查询
             url = DasApiUrl.ebay_dataSampleListing_url
-        elif searchType == "": # 数据采集-ebay页面查询
+        elif searchType == "categoryMark_query": # 数据采集-ebay页面查询
             url = DasApiUrl.ebay_dataSampleListing_url
         elif searchType == "ebay_disableProduct": # 数据采集-ebay禁用
             url = DasApiUrl.ebay_disableProduct_url
@@ -309,6 +336,8 @@ class PublicCommonServiceClass():
             url = DasApiUrl.ebay_allocationPerson_url
         elif searchType == "ebay_allocationProduct": # 数据采集-ebay分配接口
             url = DasApiUrl.ebay_allocationProduct_url
+        elif searchType == "ebay_queryListing": # 我的数据ebay查询
+            url = DasApiUrl.ebay_queryListing_url
         return url
     # 获取shopee平台URL
     def getShopeeApiUrl(self,searchType):
@@ -335,6 +364,8 @@ class PublicCommonServiceClass():
             url = DasApiUrl.shopee_allocationPerson_url
         elif searchType == "shopee_allocationProduct": # 数据采集-shopee分配接口
             url = DasApiUrl.shopee_allocationProduct_url
+        elif searchType == "shopee_queryListing": # 我的数据shopee查询
+            url = DasApiUrl.shopee_queryListing_url
         return url
 
     # 判断哪个页面的数据需要对入参进行判空
