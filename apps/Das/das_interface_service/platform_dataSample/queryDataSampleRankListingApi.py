@@ -22,7 +22,7 @@ class DataSmapleRankListingQueryApi():
         if isNeedEmpty == True:
             country = parseRequestDatas("country", kwargs)  # 站点判空
             if country == "" or searchType == "":
-                logger.error("amazonOtherListingFunction--------->InputParam:country or searchType is null")
+                logger.error("dataSampleRankListingFunction--------->InputParam:country or searchType is null")
                 return "请求参数country或searchType为空"
         # 获取请求参数
         rankListing03,rankListing02,rankListing01 = PublicCommonServiceClass().getApiInputParam(platform,searchType)
