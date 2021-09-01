@@ -2,7 +2,7 @@
 @File: queryDataSampleRankListingApi.py
 @time:2021/9/1
 @Author:quanliu
-@Desc:数据采集-查询接口服务类
+@Desc:数据采集-查询接口服务类(amazon/smt/1688/ebay/shopee全部页面共用)
 '''
 
 from apps.Common_Config.interface_common_info import Common_TokenHeader
