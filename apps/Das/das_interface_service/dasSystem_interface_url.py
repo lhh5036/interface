@@ -147,6 +147,23 @@ class DasApiUrl:
     # 数据采集-1688认领产品接口
     ali_claimProduct_url = InterfaceCommonInfo.common_url + "/das/ali1688/claimAli1688BaseListing"
 
+    # 1688校验产品是否已经认领接口地址
+    ali_checkProductByRank_url = InterfaceCommonInfo.common_url + "/das/account/checkAccountProductInfo"
+
+    # 数据采集-1688禁用接口
+    ali_disableProduct_url = InterfaceCommonInfo.common_url + "/das/ali1688/unenableAli1688BaseListing"
+    # 数据采集-1688启用接口
+    ali_enableProduct_url = InterfaceCommonInfo.common_url + "/das/ali1688/enableAli1688BaseListing"
+    # 数据采集-1688删除接口
+    ali_deleteProduct_url = InterfaceCommonInfo.common_url + "/das/ali1688/deleteAli1688BaseListing"
+    # 数据采集-1688关联系统SKU
+    ali_dataSample_associate_url = InterfaceCommonInfo.common_url + "/das/ali1688/associatedSystemSku"
+    # 数据采集-1688获取分配人接口
+    ali_allocationPerson_url = InterfaceCommonInfo.common_url + "/das/usermgtn/getAli1688UserListByJobNumber"
+    # 数据采集-1688分配接口
+    ali_allocationProduct_url = InterfaceCommonInfo.common_url + "das/ali1688/allocationAli1688BaseListing"
+
+
     # 数据采集-ebay查询接口
     ebay_dataSampleListing_url = InterfaceCommonInfo.common_url + "/das/ebay/queryEbayPageList"
 

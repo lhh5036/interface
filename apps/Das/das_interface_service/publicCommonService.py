@@ -262,6 +262,8 @@ class PublicCommonServiceClass():
         url = ""
         if searchType == "ali_claimProduct": # 1688认领产品接口
             url = DasApiUrl.ali_claimProduct_url
+        elif searchType == "ali_checkProductByRank":# 1688判断产品是否已经认领
+            url = DasApiUrl.ali_checkProductByRank_url
         elif searchType == "categoryMark_query": # 数据采集-1688分类数据页面查询
             url = DasApiUrl.ali_dataSampleListing_url
         elif searchType == "shopMark_query":# 数据采集-1688关注店铺数据页面查询
@@ -272,6 +274,18 @@ class PublicCommonServiceClass():
             url = DasApiUrl.ali_dataSampleListing_url
         elif searchType == "shopTopOneMark_query":# 数据采集-1688镇店之宝页面查询
             url = DasApiUrl.ali_dataSampleListing_url
+        elif searchType == "ali_disableProduct":# 数据采集-1688禁用
+            url = DasApiUrl.ali_disableProduct_url
+        elif searchType == "ali_enableProduct": # 数据采集-1688启用
+            url = DasApiUrl.ali_enableProduct_url
+        elif searchType == "ali_deleteProduct":# 数据采集-1688删除
+            url = DasApiUrl.ali_deleteProduct_url
+        elif searchType == "ali_dataSample_associate": # 数据采集-1688关联系统SKU
+            url = DasApiUrl.ali_dataSample_associate_url
+        elif searchType == "ali_allocationPerson": # 数据采集-1688获取分配人信息接口
+            url = DasApiUrl.ali_allocationPerson_url
+        elif searchType == "ali_allocationProduct": # 数据采集-1688分配接口
+            url = DasApiUrl.ali_allocationProduct_url
         return url
 
     # 获取ebay平台的URL
