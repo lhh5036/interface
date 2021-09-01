@@ -297,6 +297,18 @@ class PublicCommonServiceClass():
             url = DasApiUrl.ebay_dataSampleListing_url
         elif searchType == "": # 数据采集-ebay页面查询
             url = DasApiUrl.ebay_dataSampleListing_url
+        elif searchType == "ebay_disableProduct": # 数据采集-ebay禁用
+            url = DasApiUrl.ebay_disableProduct_url
+        elif searchType == "ebay_enableProduct": # 数据采集-ebay启用
+            url = DasApiUrl.ebay_enableProduct_url
+        elif searchType == "ebay_deleteProduct":# 数据采集-ebay删除
+            url = DasApiUrl.ebay_deleteProduct_url
+        elif searchType == "ebay_dataSample_associate":# 数据采集-ebay关联系统SKU
+            url = DasApiUrl.ebay_dataSample_associate_url
+        elif searchType == "ebay_allocationPerson": # 数据采集-ebay获取分配人接口
+            url = DasApiUrl.ebay_allocationPerson_url
+        elif searchType == "ebay_allocationProduct": # 数据采集-ebay分配接口
+            url = DasApiUrl.ebay_allocationProduct_url
         return url
     # 获取shopee平台URL
     def getShopeeApiUrl(self,searchType):
@@ -311,6 +323,18 @@ class PublicCommonServiceClass():
             url = DasApiUrl.shopee_dataSampleListing_url
         elif searchType == "keywordMark_query": # 关注关键词数据
             url = DasApiUrl.shopee_dataSampleListing_url
+        elif searchType == "shopee_disableProduct": # 数据采集-shopee禁用
+            url = DasApiUrl.shopee_disableProduct_url
+        elif searchType == "shopee_enableProduct": # 数据采集-shopee启用
+            url = DasApiUrl.shopee_enableProduct_url
+        elif searchType == "shopee_deleteProduct":# 数据采集-shopee删除
+            url = DasApiUrl.shopee_deleteProduct_url
+        elif searchType == "shopee_dataSample_associate":# 数据采集-shopee关联系统SKU
+            url = DasApiUrl.shopee_dataSample_associate_url
+        elif searchType == "shopee_allocationPerson": # 数据采集-shopee获取分配人接口
+            url = DasApiUrl.shopee_allocationPerson_url
+        elif searchType == "shopee_allocationProduct": # 数据采集-shopee分配接口
+            url = DasApiUrl.shopee_allocationProduct_url
         return url
 
     # 判断哪个页面的数据需要对入参进行判空

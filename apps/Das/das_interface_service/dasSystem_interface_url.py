@@ -149,7 +149,6 @@ class DasApiUrl:
 
     # 1688校验产品是否已经认领接口地址
     ali_checkProductByRank_url = InterfaceCommonInfo.common_url + "/das/account/checkAccountProductInfo"
-
     # 数据采集-1688禁用接口
     ali_disableProduct_url = InterfaceCommonInfo.common_url + "/das/ali1688/unenableAli1688BaseListing"
     # 数据采集-1688启用接口
@@ -166,16 +165,38 @@ class DasApiUrl:
 
     # 数据采集-ebay查询接口
     ebay_dataSampleListing_url = InterfaceCommonInfo.common_url + "/das/ebay/queryEbayPageList"
-
     # 数据采集-ebay认领产品接口
     ebay_claimProduct_url = InterfaceCommonInfo.common_url + "/das/ebay/claimEbayBaseListing"
+    # 数据采集-ebay禁用接口
+    ebay_disableProduct_url = InterfaceCommonInfo.common_url + "/das/ebay/unenableEbayBaseListing"
+    # 数据采集-ebay启用接口
+    ebay_enableProduct_url = InterfaceCommonInfo.common_url + "/das/ebay/enableEbayBaseListing"
+    # 数据采集-ebay删除接口
+    ebay_deleteProduct_url = InterfaceCommonInfo.common_url + "/das/ebay/deleteEbayBaseListing"
+    # 数据采集-ebay关联系统SKU
+    ebay_dataSample_associate_url = InterfaceCommonInfo.common_url + "/das/ebay/associatedSystemSku"
+    # 数据采集-ebay获取分配人接口
+    ebay_allocationPerson_url = InterfaceCommonInfo.common_url + "/das/usermgtn/getEbayUserListByJobNumber"
+    # 数据采集-ebay分配接口
+    ebay_allocationProduct_url = InterfaceCommonInfo.common_url + "/das/ebay/allocationEbayBaseListing"
+
 
     # 数据采集-shopee查询接口
     shopee_dataSampleListing_url = InterfaceCommonInfo.common_url + "/das/shopee/queryShopeePageList"
-
-
     # 数据采集-shopee认领产品接口
     shopee_claimProduct_url = InterfaceCommonInfo.common_url + "/das/shopee/claimShopeeBaseListing"
+    # 数据采集-shopee禁用接口
+    shopee_disableProduct_url = InterfaceCommonInfo.common_url + "/das/shopee/unenableShopeeBaseListing"
+    # 数据采集-shopee启用接口
+    shopee_enableProduct_url = InterfaceCommonInfo.common_url + "/das/shopee/enableShopeeBaseListing"
+    # 数据采集-shopee删除接口
+    shopee_deleteProduct_url = InterfaceCommonInfo.common_url + "/das/shopee/deleteShopeeBaseListing"
+    # 数据采集-shopee关联系统SKU
+    shopee_dataSample_associate_url = InterfaceCommonInfo.common_url + "/das/shopee/associatedSystemSku"
+    # 数据采集-shopee获取分配人接口
+    shopee_allocationPerson_url = InterfaceCommonInfo.common_url + "/das/usermgtn/getShopeeUserListByJobNumber"
+    # 数据采集-ebay分配接口
+    shopee_allocationProduct_url = InterfaceCommonInfo.common_url + "/das/shopee/allocationShopeeBaseListing"
 
 
 
