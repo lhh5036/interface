@@ -129,6 +129,10 @@ class DasApiUrl:
     # 数据采集-ebay认领产品接口
     ebay_claimProduct_url = InterfaceCommonInfo.common_url + "/das/ebay/claimEbayBaseListing"
 
+    # 数据采集-shopee查询接口
+    shopee_dataSampleListing_url = InterfaceCommonInfo.common_url + "/das/shopee/queryShopeePageList"
+
+
     # 数据采集-shopee认领产品接口
     shopee_claimProduct_url = InterfaceCommonInfo.common_url + "/das/shopee/claimShopeeBaseListing"
 

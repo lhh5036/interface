@@ -141,6 +141,22 @@ class PublicCommonServiceClass():
         otherTypeListing03 = ""
         otherTypeListing02 = ""
         otherTypeListing01 = ""
+        if searchType == "customizeMark_query": # 自定义采集-shopee
+            otherTypeListing03 = DasApiInputParam.shopee_customizeMarkListing03
+            otherTypeListing02 = DasApiInputParam.shopee_customizeMarkListing02
+            otherTypeListing01 = DasApiInputParam.shopee_customizeMarkListing01
+        elif searchType == "shopMark_query": # 关注店铺数据
+            otherTypeListing03 = DasApiInputParam.shopee_shopMarkListing03
+            otherTypeListing02 = DasApiInputParam.shopee_shopMarkListing02
+            otherTypeListing01 = DasApiInputParam.shopee_shopMarkListing01
+        elif searchType == "attentionCategoryMark_query": # 关注分类数据
+            otherTypeListing03 = DasApiInputParam.shopee_attentionCategoryMarkListing03
+            otherTypeListing02 = DasApiInputParam.shopee_attentionCategoryMarkListing02
+            otherTypeListing01 = DasApiInputParam.shopee_attentionCategoryMarkListing01
+        elif searchType == "keywordMark_query": # 关注关键词数据
+            otherTypeListing03 = DasApiInputParam.shopee_keywordMarkListing03
+            otherTypeListing02 = DasApiInputParam.shopee_keywordMarkListing02
+            otherTypeListing01 = DasApiInputParam.shopee_keywordMarkListing01
         return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
     # 获取请求地址
@@ -253,6 +269,14 @@ class PublicCommonServiceClass():
         url = ""
         if searchType == "shopee_claimProduct":  # shopee认领产品接口
             url = DasApiUrl.shopee_claimProduct_url
+        elif searchType == "customizeMark_query": # 自定义采集-shopee
+            url = DasApiUrl.shopee_dataSampleListing_url
+        elif searchType == "shopMark_query": # 关注店铺数据
+            url = DasApiUrl.shopee_dataSampleListing_url
+        elif searchType == "attentionCategoryMark_query": # 关注分类数据
+            url = DasApiUrl.shopee_dataSampleListing_url
+        elif searchType == "keywordMark_query": # 关注关键词数据
+            url = DasApiUrl.shopee_dataSampleListing_url
         return url
 
     # 判断哪个页面的数据需要对入参进行判空

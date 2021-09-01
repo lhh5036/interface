@@ -205,6 +205,29 @@ class DasApiInputParam:
     ebay_categoryMarkListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC","dataStatus":0}
     ebay_categoryMarkListing03 = {"menuCode":"9011202","developmentClaim":"","salesTrialSale":"","productId":"","country":"","baseListingType":"categoryMark","merchantUserName":"","startTotalSold":"","endTotalSold":"","title":"","categoriesKw":"",
                                   "itemLocation":"","merchantAddress":"","dataStatus":"","startOnlineDate":"","endOnlineDate":"","startCrawlTime":"","endCrawlTime":""}
+    # 数据采集-shopee查询接口入参（自定义采集-shopee）
+    shopee_customizeMarkListing01 = {"args":"{0}"}
+    shopee_customizeMarkListing02 = {"search":{0},"sort":"crawlTime","order":"DESC","offset":0,"limit":50}
+    shopee_customizeMarkListing03 = {"baseListingType":"customizeMark","menuCode":"9011301","developmentClaim":"","salesTrialSale":"","reviews":"","merchantUserName":"","rating":"","startTotalSold":"","endTotalSold":"","productId":"","dataStatus":"",
+                                     "categoriesKw":"","title":"","startOnlineDate":"","endOnlineDate":"","startCrawlTime":"","endCrawlTime":"","operator":"","startOriginalPrice":"","endOriginalPrice":"","startDiscount":"","endDiscount":"","startPrice":"","endPrice":""}
+
+    # 数据采集-shopee查询接口入参(关注店铺数据)
+    shopee_shopMarkListing01 = {"args":"{0}"}
+    shopee_shopMarkListing02 = {"search":{0},"sort":"crawlTime","order":"DESC","offset":0,"limit":50}
+    shopee_shopMarkListing03 = {"baseListingType":"shopMark","menuCode":"9011302","developmentClaim":"","salesTrialSale":"","reviews":"","merchantUserName":"","rating":"","startTotalSold":"","endTotalSold":"","productId":"","dataStatus":"","categoriesKw":"","title":"",
+                                "startOnlineDate":"","endOnlineDate":"","startCrawlTime":"","endCrawlTime":"","operator":"","startOriginalPrice":"","endOriginalPrice":"","startDiscount":"","endDiscount":"","startPrice":"","endPrice":""}
+
+    # 数据采集-shopee查询接口入参（关注分类数据）
+    shopee_attentionCategoryMarkListing01 = {"args":"{0}"}
+    shopee_attentionCategoryMarkListing02 = {"search":{0},"sort":"crawlTime","order":"DESC","offset":0,"limit":50}
+    shopee_attentionCategoryMarkListing03 = {"baseListingType":"attentionCategoryMark","menuCode":"9011303","developmentClaim":"","salesTrialSale":"","reviews":"","merchantUserName":"","rating":"","startTotalSold":"","endTotalSold":"","productId":"","dataStatus":"",
+                                             "categoriesKw":"","title":"","startOnlineDate":"","endOnlineDate":"","startCrawlTime":"","endCrawlTime":"","operator":"","startOriginalPrice":"","endOriginalPrice":"","startDiscount":"","endDiscount":"","startPrice":"","endPrice":""}
+
+    # 数据采集-shopee查询接口入参（关注关键词数据）
+    shopee_keywordMarkListing01 = {"args":"{0}"}
+    shopee_keywordMarkListing02 = {"search":{0},"sort":"crawlTime","order":"DESC","offset":0,"limit":50}
+    shopee_keywordMarkListing03 = {"baseListingType":"keywordMark","menuCode":"9011303","developmentClaim":"","salesTrialSale":"","reviews":"","merchantUserName":"","rating":"","searchKeywords":"","startTotalSold":"","endTotalSold":"","productId":"","dataStatus":"",
+                                   "categoriesKw":"","title":"","startOnlineDate":"","endOnlineDate":"","startCrawlTime":"","endCrawlTime":"","operator":"","startOriginalPrice":"","endOriginalPrice":"","startDiscount":"","endDiscount":"","startPrice":"","endPrice":"","searchKeyword":""}
 
     # 数据采集-认领产品接口入参
     claimProduct01 = {"args":"{0}"}
