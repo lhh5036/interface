@@ -99,6 +99,26 @@ class PublicCommonServiceClass():
         otherTypeListing03 = ""
         otherTypeListing02 = ""
         otherTypeListing01 = ""
+        if searchType == "categoryMark_query":  # 数据采集-1688分类数据页面查询
+            otherTypeListing03 = DasApiInputParam.ali_categoryMarkListing03
+            otherTypeListing02 = DasApiInputParam.ali_categoryMarkListing02
+            otherTypeListing01 = DasApiInputParam.ali_categoryMarkListing01
+        elif searchType == "shopMark_query":# 数据采集-1688关注店铺数据页面查询
+            otherTypeListing03 = DasApiInputParam.ali_shopMarkListing03
+            otherTypeListing02 = DasApiInputParam.ali_shopMarkListing02
+            otherTypeListing01 = DasApiInputParam.ali_shopMarkListing01
+        elif searchType == "attentionCategoryMark_query":# 数据采集-1688关注分类数据页面查询
+            otherTypeListing03 = DasApiInputParam.ali_attentionCategoryMarkListing03
+            otherTypeListing02 = DasApiInputParam.ali_attentionCategoryMarkListing02
+            otherTypeListing01 = DasApiInputParam.ali_attentionCategoryMarkListing01
+        elif searchType == "keywordMark_query":# 数据采集-1688关注关键词数据页面查询
+            otherTypeListing03 = DasApiInputParam.ali_keywordMarkListing03
+            otherTypeListing02 = DasApiInputParam.ali_keywordMarkListing02
+            otherTypeListing01 = DasApiInputParam.ali_keywordMarkListing01
+        elif searchType == "shopTopOneMark_query":# 数据采集-1688镇店之宝页面查询
+            otherTypeListing03 = DasApiInputParam.ali_shopMarkListing03
+            otherTypeListing02 = DasApiInputParam.ali_shopMarkListing02
+            otherTypeListing01 = DasApiInputParam.ali_shopMarkListing01
         return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
     # 获取ebay平台入参
@@ -198,6 +218,16 @@ class PublicCommonServiceClass():
         url = ""
         if searchType == "ali_claimProduct": # 1688认领产品接口
             url = DasApiUrl.ali_claimProduct_url
+        elif searchType == "categoryMark_query": # 数据采集-1688分类数据页面查询
+            url = DasApiUrl.ali_dataSampleListing_url
+        elif searchType == "shopMark_query":# 数据采集-1688关注店铺数据页面查询
+            url = DasApiUrl.ali_dataSampleListing_url
+        elif searchType == "attentionCategoryMark_query":# 数据采集-1688关注分类数据页面查询
+            url = DasApiUrl.ali_dataSampleListing_url
+        elif searchType == "keywordMark_query":# 数据采集-1688关注关键词数据页面查询
+            url = DasApiUrl.ali_dataSampleListing_url
+        elif searchType == "shopTopOneMark_query":# 数据采集-1688镇店之宝页面查询
+            url = DasApiUrl.ali_dataSampleListing_url
         return url
 
     # 获取ebay平台的URL

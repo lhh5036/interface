@@ -167,12 +167,32 @@ class DasApiInputParam:
     smt_keywordMarkListing03 = {"salesTrialSale":"","developmentClaim":"","searchKeywords":"","baseListingType":"keywordMark","menuCode":"9011005","productId":"","startCrawlTime":"","endCrawlTime":"","asin":"","dataStatus":"","integrality":"","keywords":"",
                                 "merchantName":"","rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","startOrders":"","endOrders":"","Reviews":""}
 
+    # 数据采集-1688查询接口入参（分类数据）
+    ali_categoryMarkListing01 = {"method":"listBaseListing","args":"{0}"}
+    ali_categoryMarkListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC","dataStatus":0}
+    ali_categoryMarkListing03 = {"baseListingType":"categoryMark","menuCode":"9010401","productId":"","startCrawlTime":"","endCrawlTime":"","developmentClaim":"","salesTrialSale":"","asin":"","dataStatus":"","title":"","merchantName":"","rating":"",
+                                 "nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","startOrders":"","endOrders":"","Reviews":""}
 
-
-
-
-
-
+    # 数据采集-1688查询接口入参（关注店铺数据）
+    ali_shopMarkListing01 = {"method":"listBaseListing","args":"{0}"}
+    ali_shopMarkListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC","dataStatus":0}
+    ali_shopMarkListing03 = {"baseListingType":"shopMark","menuCode":"9010402","developmentClaim":"","salesTrialSale":"","productId":"","startCrawlTime":"","endCrawlTime":"","asin":"","dataStatus":"","title":"","merchantName":"","rating":"","nodes":"",
+                             "brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","startOrders":"","endOrders":"","Reviews":""}
+    # 数据采集-1688查询接口入参（关注分类数据）
+    ali_attentionCategoryMarkListing01 = {"method":"listBaseListing","args":"{0}"}
+    ali_attentionCategoryMarkListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC","dataStatus":0}
+    ali_attentionCategoryMarkListing03 = {"baseListingType":"attentionCategoryMark","menuCode":"9010403","developmentClaim":"","salesTrialSale":"","productId":"","startCrawlTime":"","endCrawlTime":"","asin":"","dataStatus":"","title":"","merchantName":"",
+                                          "rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","startOrders":"","endOrders":"","Reviews":""}
+    # 数据采集-1688查询接口入参（关注关键词数据）
+    ali_keywordMarkListing01 = {"method":"listBaseListing","args":"{0}"}
+    ali_keywordMarkListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC","dataStatus":0}
+    ali_keywordMarkListing03 = {"searchKeywords":"","developmentClaim":"","salesTrialSale":"","baseListingType":"keywordMark","menuCode":"9010404","productId":"","startCrawlTime":"","endCrawlTime":"","asin":"","dataStatus":"","title":"","merchantName":"",
+                                "rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","startOrders":"","endOrders":"","Reviews":""}
+    # 数据采集-1688查询接口入参（镇店之宝）
+    ali_shopTopOneMarkListing01 = {"method":"listBaseListing","args":"{0}"}
+    ali_shopTopOneMarkListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC","dataStatus":0}
+    ali_shopTopOneMarkListing03 = {"baseListingType":"shopTopOneMark","menuCode":"9010401","developmentClaim":"","salesTrialSale":"","productId":"","startCrawlTime":"","endCrawlTime":"","asin":"","dataStatus":"","title":"","merchantName":"","nodes":"",
+                                   "brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","startOrders":"","endOrders":"","Reviews":"","rating":"","searchKeywords":""}
 
     # 数据采集-认领产品接口入参
     claimProduct01 = {"args":"{0}"}

@@ -117,6 +117,9 @@ class DasApiUrl:
     # 数据采集-SMT认领产品接口
     smt_claimProduct_url = InterfaceCommonInfo.common_url + "/das/smt/claimSmtBaseListing"
 
+    # 数据采集-1688查询接口
+    ali_dataSampleListing_url = InterfaceCommonInfo.common_url + "/das/ali1688/queryAli1688PageList"
+
     # 数据采集-1688认领产品接口
     ali_claimProduct_url = InterfaceCommonInfo.common_url + "/das/ali1688/claimAli1688BaseListing"
 
@@ -125,6 +128,8 @@ class DasApiUrl:
 
     # 数据采集-shopee认领产品接口
     shopee_claimProduct_url = InterfaceCommonInfo.common_url + "/das/shopee/claimShopeeBaseListing"
+
+
 
 
     # 参数配置-取消开发备注保存接口
