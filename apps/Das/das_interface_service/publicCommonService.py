@@ -13,13 +13,13 @@ class PublicCommonServiceClass():
     def getApiInputParam(self,platform,searchType):
         if platform == "Amazon":
             return self.getAmazonApiInputParam(searchType)
-        elif platform == "SMT":
+        elif platform == "Smt":
             return self.getSmtApiInputParam(searchType)
-        elif platform == "ali":
+        elif platform == "Ali":
             return self.getAliApiInputParam(searchType)
-        elif platform == "ebay":
+        elif platform == "Ebay":
             return self.getEbayApiInputParam(searchType)
-        elif platform == "shopee":
+        elif platform == "Shopee":
             return self.getShopeeApiInputParam(searchType)
         else:
             return ""
@@ -126,6 +126,14 @@ class PublicCommonServiceClass():
         otherTypeListing03 = ""
         otherTypeListing02 = ""
         otherTypeListing01 = ""
+        if searchType == "": # 自定义采集-ebay页面查询
+            otherTypeListing03 = DasApiInputParam.ebay_followMarkListing03
+            otherTypeListing02 = DasApiInputParam.ebay_followMarkListing02
+            otherTypeListing01 = DasApiInputParam.ebay_followMarkListing01
+        elif searchType == "": # 数据采集-ebay页面查询
+            otherTypeListing03 = DasApiInputParam.ebay_categoryMarkListing03
+            otherTypeListing02 = DasApiInputParam.ebay_categoryMarkListing02
+            otherTypeListing01 = DasApiInputParam.ebay_categoryMarkListing01
         return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
     # 获取shopee平台入参
@@ -139,13 +147,13 @@ class PublicCommonServiceClass():
     def getApiUrl(self,platform,searchType):
         if platform == "Amazon":
             return self.getAmazonApiUrl(searchType)
-        elif platform == "SMT":
+        elif platform == "Smt":
             return self.getSmtApiUrl(searchType)
-        elif platform == "ali":
+        elif platform == "Ali":
             return self.getAliApiUrl(searchType)
-        elif platform == "ebay":
+        elif platform == "Ebay":
             return self.getEbayApiUrl(searchType)
-        elif platform == "shopee":
+        elif platform == "Shopee":
             return self.getShopeeApiUrl(searchType)
         else:
             return ""
@@ -235,6 +243,10 @@ class PublicCommonServiceClass():
         url = ""
         if searchType == "ebay_claimProduct":  # ebay认领产品接口
             url = DasApiUrl.ebay_claimProduct_url
+        elif searchType == "": # 自定义采集-ebay页面查询
+            url = DasApiUrl.ebay_dataSampleListing_url
+        elif searchType == "": # 数据采集-ebay页面查询
+            url = DasApiUrl.ebay_dataSampleListing_url
         return url
     # 获取shopee平台URL
     def getShopeeApiUrl(self,searchType):
@@ -247,13 +259,13 @@ class PublicCommonServiceClass():
     def needJudgeEmpty(self,platform,searchType):
         if platform == "Amazon":
             return self.amazonNeedJudgeEmpty(searchType)
-        elif platform == "SMT":
+        elif platform == "Smt":
             return self.smtNeedJudgeEmpty(searchType)
-        elif platform == "ali":
+        elif platform == "Ali":
             return self.aliNeedJudgeEmpty(searchType)
-        elif platform == "ebay":
+        elif platform == "Ebay":
             return self.ebayNeedJudgeEmpty(searchType)
-        elif platform == "shopee":
+        elif platform == "Shopee":
             return self.shopeeNeedJudgeEmpty(searchType)
         else:
             return ""

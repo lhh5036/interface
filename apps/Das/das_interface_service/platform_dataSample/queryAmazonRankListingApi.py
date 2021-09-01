@@ -14,17 +14,17 @@ from apps.Das.das_interface_service.publicCommonService import PublicCommonServi
 # 实例化日志类
 logger = MyLog("AmazonOtherListingQueryApi").getlog() # 初始化
 class AmazonOtherListingQueryApi():
-    def amazonOtherListingFunction(self,platform,searchType,kwargs):
+    def amazonOtherListingFunction(self,searchType,kwargs):
         logger.info("amazonOtherListingFunction------------------->start")
         # 判断哪个页面的数据需要对入参进行判空
-        isNeedEmpty = PublicCommonServiceClass().needJudgeEmpty(searchType)
+        isNeedEmpty = PublicCommonServiceClass().needJudgeEmpty("Amazon",searchType)
         if isNeedEmpty == True:
             country = parseRequestDatas("country",kwargs) # 站点判空
             if country == "" or searchType == "":
                 logger.error("amazonOtherListingFunction--------->InputParam:country or searchType is null")
                 return "请求参数country或searchType为空"
-        amazon_otherTypeListing03,amazon_otherTypeListing02,amazon_otherTypeListing01 = PublicCommonServiceClass().getApiInputParam(platform,searchType)
-        url = PublicCommonServiceClass().getApiUrl(platform,searchType) # 获取请求地址
+        amazon_otherTypeListing03,amazon_otherTypeListing02,amazon_otherTypeListing01 = PublicCommonServiceClass().getApiInputParam("Amazon",searchType)
+        url = PublicCommonServiceClass().getApiUrl("Amazon",searchType) # 获取请求地址
         keyList = []
         if kwargs != "":
             for key in kwargs.keys():

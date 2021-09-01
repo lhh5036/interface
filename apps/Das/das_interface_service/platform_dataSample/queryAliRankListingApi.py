@@ -15,11 +15,11 @@ from apps.Das.das_interface_service.publicCommonService import PublicCommonServi
 # 实例化日志类
 logger = MyLog("AliRankListingQueryApi").getlog() # 初始化
 class AliRankListingQueryApi():
-    def aliRankListingFunction(self,platform,searchType,kwargs):
+    def aliRankListingFunction(self,searchType,kwargs):
         logger.info("aliRankListingFunction------------------->start")
         # 获取请求参数
-        aliRankListing03,aliRankListing02,aliRankListing01 = PublicCommonServiceClass().getApiInputParam(platform,searchType)
-        url = PublicCommonServiceClass().getApiUrl(platform,searchType) # 获取请求地址
+        aliRankListing03,aliRankListing02,aliRankListing01 = PublicCommonServiceClass().getApiInputParam("Ali",searchType)
+        url = PublicCommonServiceClass().getApiUrl("Ali",searchType) # 获取请求地址
         keyList = []
         if kwargs != "":
             for key in kwargs.keys():

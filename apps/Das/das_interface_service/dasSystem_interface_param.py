@@ -194,6 +194,18 @@ class DasApiInputParam:
     ali_shopTopOneMarkListing03 = {"baseListingType":"shopTopOneMark","menuCode":"9010401","developmentClaim":"","salesTrialSale":"","productId":"","startCrawlTime":"","endCrawlTime":"","asin":"","dataStatus":"","title":"","merchantName":"","nodes":"",
                                    "brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","startOrders":"","endOrders":"","Reviews":"","rating":"","searchKeywords":""}
 
+    # 数据采集-ebay查询接口入参（自定义采集-ebay）
+    ebay_followMarkListing01 = {"args":"{0}"}
+    ebay_followMarkListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC","dataStatus":0}
+    ebay_followMarkListing03 = {"menuCode":"9011201","productId":"","developmentClaim":"","salesTrialSale":"","country":"","operator":"","baseListingType":"followMark","merchantUserName":"","startTotalSold":"","endTotalSold":"","title":"","categoriesKw":"",
+                                "itemLocation":"","merchantAddress":"","dataStatus":"","startOnlineDate":"","endOnlineDate":"","startCrawlTime":"","endCrawlTime":""}
+
+    # 数据采集-ebay查询接口入参（数据采集-ebay）
+    ebay_categoryMarkListing01 = {"args":"{0}"}
+    ebay_categoryMarkListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC","dataStatus":0}
+    ebay_categoryMarkListing03 = {"menuCode":"9011202","developmentClaim":"","salesTrialSale":"","productId":"","country":"","baseListingType":"categoryMark","merchantUserName":"","startTotalSold":"","endTotalSold":"","title":"","categoriesKw":"",
+                                  "itemLocation":"","merchantAddress":"","dataStatus":"","startOnlineDate":"","endOnlineDate":"","startCrawlTime":"","endCrawlTime":""}
+
     # 数据采集-认领产品接口入参
     claimProduct01 = {"args":"{0}"}
     claimProduct02 = {"ids":{0}}

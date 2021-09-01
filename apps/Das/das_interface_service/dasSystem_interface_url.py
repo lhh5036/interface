@@ -123,6 +123,9 @@ class DasApiUrl:
     # 数据采集-1688认领产品接口
     ali_claimProduct_url = InterfaceCommonInfo.common_url + "/das/ali1688/claimAli1688BaseListing"
 
+    # 数据采集-ebay查询接口
+    ebay_dataSampleListing_url = InterfaceCommonInfo.common_url + "/das/ebay/queryEbayPageList"
+
     # 数据采集-ebay认领产品接口
     ebay_claimProduct_url = InterfaceCommonInfo.common_url + "/das/ebay/claimEbayBaseListing"
 
