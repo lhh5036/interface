@@ -162,11 +162,18 @@ class DasApiUrl:
     # 数据采集-ebay分配接口
     shopee_allocationProduct_url = InterfaceCommonInfo.common_url + "/das/shopee/allocationShopeeBaseListing"
 
-    #
-
-
-
-
+    # 任务中心-自定义采集查询接口(amazon)
+    amazon_customizeMarkListing_url = InterfaceCommonInfo.common_url + "/das/amazon/baselisting"
+    # 任务中心-自定义采集查询接口（smt）
+    smt_customizeMarkListing_url = InterfaceCommonInfo.common_url + "/das/smt/querySmtBaseListingPageList"
+    # 任务中心-自定义采集查询接口（1688）
+    ali_customizeMarkListing_url = InterfaceCommonInfo.common_url + "/das/ali1688/queryAli1688PageList"
+    # 任务中心-分类监控（Amazon/smt/shopee）
+    classificateMonitor_url = InterfaceCommonInfo.common_url + "/das/task/queryTaskList"
+    # 任务中心-关键词监控（Amazon/smt/1688/shopee）
+    keyWordsMonitor_url = InterfaceCommonInfo.common_url + "/das/task/queryTaskList"
+    # 任务中心-店铺监控（Amazon/smt/1688/shopee）
+    shopMonitor_url = InterfaceCommonInfo.common_url + "/das/task/queryTaskList"
 
     # 参数配置-取消开发备注保存接口
     paramConfigSave_url = InterfaceCommonInfo.common_url + "/das/parameterConfiguration/updateCancelDevNotesInfo"

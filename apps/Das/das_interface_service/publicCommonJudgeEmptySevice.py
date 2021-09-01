@@ -10,7 +10,7 @@ class PublicCommonJudgeEmptySevice():
     def needJudgeEmpty(self, platform, searchType):
         if platform == "Amazon":
             return amazonNeedJudgeEmpty(searchType)
-        elif platform == "Smt":
+        elif platform == "SMT":
             return smtNeedJudgeEmpty(searchType)
         elif platform == "Ali":
             return aliNeedJudgeEmpty(searchType)

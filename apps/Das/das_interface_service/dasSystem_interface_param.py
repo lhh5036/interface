@@ -261,7 +261,27 @@ class DasApiInputParam:
     allocationPerson01 = {"args": "{0}"}
     allocationPerson02 = {"jobNumber":{0}}
 
+    # 任务中心-查询接口（自定义采集-Amazon/SMT/1688页面)
+    customizeMarkListing01 = {"method":"listBaseListing","args":"{0}"}
+    customizeMarkListing02 = {"search":{0},"limit":10,"offset":0,"sort":"crawlTime","order":"DESC"}
+    customizeMarkListing03 = {"baseListingType": "customizeMark", "menuCode": "9010901", "productId": "", "operator": "",
+                                    "saleChannel": "", "country": "", "startCrawlTime": "", "endCrawlTime": "", "integrality": ""}
 
+    # 任务中心-查询接口（分类监控）
+    classificateMonitorListing01 = {"args":"{0}"}
+    classificateMonitorListing02 = {"search":{0},"limit":10,"offset":0,"sort":"createdTime","order":"DESC"}
+    classificateMonitorListing03 = {"taskType":1,"menuCode":"9010902","country":"","listNodes":[],"saleChannel":"","attentioner":"","taskStatus":""}
+
+    # 任务中心-查询接口（关键词监控）
+    keyWordsMonitorListing01 = {"args":"{0}"}
+    keyWordsMonitorListing02 = {"search":{0},"limit":10,"offset":0,"sort":"createdTime","order":"DESC"}
+    keyWordsMonitorListing03 = {"attentioner":"","taskType":2,"country":"","keyword":"","taskStatus":"","saleChannel":"","menuCode":"9010903"}
+
+    # 任务中心-查询接口（店铺监控）
+    shopMonitorListing01 = {"args":"{0}"}
+    shopMonitorListing02 = {"search":{0},"limit":10,"offset":0,"sort":"createdTime","order":"DESC"}
+    shopMonitorListing03 = {"menuCode":"9010904","taskType":3,"country":"","sellerName":"","sellerStatus":"","taskStatus":"","saleChannel":"",
+                            "attentioner":"","sellerUrl":"","operator":"","startCreatedTime":"","endCreatedTime":"","notesInfo":"","attentionStatus":""}
 
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}

@@ -12,7 +12,7 @@ class PublicCommonUrlServiceClass():
     def getApiUrl(self, platform, searchType):
         if platform == "Amazon":
             return getAmazonApiUrl(searchType)
-        elif platform == "Smt":
+        elif platform == "SMT":
             return getSmtApiUrl(searchType)
         elif platform == "Ali":
             return getAliApiUrl(searchType)
@@ -70,6 +70,14 @@ def getAmazonApiUrl(searchType):
         url = DasApiUrl.amazon_queryListing_url
     elif searchType == "amazon_unavailableListing": # 数据采集amazon死贴查询
         url = DasApiUrl.amazon_unavailableListing_url
+    elif searchType == "amazon_customizeMarkListing": # 任务中心-自定义采集Amazon查询
+        url = DasApiUrl.amazon_customizeMarkListing_url
+    elif searchType == "amazon_classificateMonitor":# 任务中心-分类监控Amazon查询
+        url = DasApiUrl.classificateMonitor_url
+    elif searchType == "amazon_keyWordsMonitor":# 任务中心-关键词监控Amazon查询
+        url = DasApiUrl.keyWordsMonitor_url
+    elif searchType == "amazon_shopMonitor":# 任务中心-店铺监控Amazon查询
+        url = DasApiUrl.shopMonitor_url
     return url
 
 # 获取SMT平台的url
@@ -111,6 +119,14 @@ def getSmtApiUrl(searchType):
         url = DasApiUrl.smt_allocationProduct_url
     elif searchType == "smt_queryListing":  # 我的数据SMT查询
         url = DasApiUrl.smt_queryListing_url
+    elif searchType == "smt_customizeMarkListing": # 任务中心-自定义采集SMT查询
+        url = DasApiUrl.smt_customizeMarkListing_url
+    elif searchType == "smt_classificateMonitor":# 任务中心-分类监控SMT查询
+        url = DasApiUrl.classificateMonitor_url
+    elif searchType == "smt_keyWordsMonitor":# 任务中心-关键词监控SMT查询
+        url = DasApiUrl.keyWordsMonitor_url
+    elif searchType == "smt_shopMonitor":# 任务中心-店铺监控SMT查询
+        url = DasApiUrl.shopMonitor_url
     return url
 
 # 获取1688平台的URL
@@ -144,6 +160,12 @@ def getAliApiUrl(searchType):
         url = DasApiUrl.ali_allocationProduct_url
     elif searchType == "ali_queryListing":  # 我的数据1688查询
         url = DasApiUrl.ali_queryListing_url
+    elif searchType == "ali_customizeMarkListing": # 任务中心-自定义采集1688查询
+        url = DasApiUrl.ali_customizeMarkListing_url
+    elif searchType == "ali_keyWordsMonitor":# 任务中心-关键词监控1688查询
+        url = DasApiUrl.keyWordsMonitor_url
+    elif searchType == "ali_shopMonitor":# 任务中心-店铺监控1688查询
+        url = DasApiUrl.shopMonitor_url
     return url
 
 # 获取ebay平台的URL
@@ -198,4 +220,10 @@ def getShopeeApiUrl(searchType):
         url = DasApiUrl.shopee_allocationProduct_url
     elif searchType == "shopee_queryListing":  # 我的数据shopee查询
         url = DasApiUrl.shopee_queryListing_url
+    elif searchType == "shopee_classificateMonitor":# 任务中心-分类监控shopee查询
+        url = DasApiUrl.classificateMonitor_url
+    elif searchType == "shopee_keyWordsMonitor":# 任务中心-关键词监控Shopee查询
+        url = DasApiUrl.keyWordsMonitor_url
+    elif searchType == "shopee_shopMonitor":# 任务中心-店铺监控shopee查询
+        url = DasApiUrl.shopMonitor_url
     return url

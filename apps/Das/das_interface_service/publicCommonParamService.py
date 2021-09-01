@@ -12,7 +12,7 @@ class PublicCommonParamServiceClass():
     def getApiInputParam(self,platform,searchType):
         if platform == "Amazon":
             return getAmazonApiInputParam(searchType)
-        elif platform == "Smt":
+        elif platform == "SMT":
             return getSmtApiInputParam(searchType)
         elif platform == "Ali":
             return getAliApiInputParam(searchType)
@@ -72,6 +72,22 @@ def getAmazonApiInputParam(searchType):
         otherTypeListing03 = DasApiInputParam.amazon_unavailableListing03
         otherTypeListing02 = DasApiInputParam.amazon_unavailableListing02
         otherTypeListing01 = DasApiInputParam.amazon_unavailableListing01
+    elif searchType == "amazon_customizeMarkListing": # 任务中心-自定义采集amazon查询
+        otherTypeListing03 = DasApiInputParam.customizeMarkListing03
+        otherTypeListing02 = DasApiInputParam.customizeMarkListing02
+        otherTypeListing01 = DasApiInputParam.customizeMarkListing01
+    elif searchType == "amazon_classificateMonitor":# 任务中心-分类监控Amazon查询
+        otherTypeListing03 = DasApiInputParam.classificateMonitorListing03
+        otherTypeListing02 = DasApiInputParam.classificateMonitorListing02
+        otherTypeListing01 = DasApiInputParam.classificateMonitorListing01
+    elif searchType == "amazon_keyWordsMonitor":# 任务中心-关键词监控amazon查询
+        otherTypeListing03 = DasApiInputParam.keyWordsMonitorListing03
+        otherTypeListing02 = DasApiInputParam.keyWordsMonitorListing02
+        otherTypeListing01 = DasApiInputParam.keyWordsMonitorListing01
+    elif searchType == "amazon_shopMonitor":# 任务中心-店铺监控amazon查询
+        otherTypeListing03 = DasApiInputParam.shopMonitorListing03
+        otherTypeListing02 = DasApiInputParam.shopMonitorListing02
+        otherTypeListing01 = DasApiInputParam.shopMonitorListing01
     return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
 # 获取SMT平台入参
@@ -103,6 +119,22 @@ def getSmtApiInputParam(searchType):
         otherTypeListing03 = DasApiInputParam.smt_ProductInfo03
         otherTypeListing02 = DasApiInputParam.smt_ProductInfo02
         otherTypeListing01 = DasApiInputParam.smt_ProductInfo01
+    elif searchType == "smt_customizeMarkListing": # 任务中心-自定义采集smt查询
+        otherTypeListing03 = DasApiInputParam.customizeMarkListing03
+        otherTypeListing02 = DasApiInputParam.customizeMarkListing02
+        otherTypeListing01 = DasApiInputParam.customizeMarkListing01
+    elif searchType == "smt_classificateMonitor":# 任务中心-分类监控SMT查询
+        otherTypeListing03 = DasApiInputParam.classificateMonitorListing03
+        otherTypeListing02 = DasApiInputParam.classificateMonitorListing02
+        otherTypeListing01 = DasApiInputParam.classificateMonitorListing01
+    elif searchType == "smt_keyWordsMonitor":# 任务中心-关键词监控SMT查询
+        otherTypeListing03 = DasApiInputParam.keyWordsMonitorListing03
+        otherTypeListing02 = DasApiInputParam.keyWordsMonitorListing02
+        otherTypeListing01 = DasApiInputParam.keyWordsMonitorListing01
+    elif searchType == "smt_shopMonitor":# 任务中心-店铺监控SMT查询
+        otherTypeListing03 = DasApiInputParam.shopMonitorListing03
+        otherTypeListing02 = DasApiInputParam.shopMonitorListing02
+        otherTypeListing01 = DasApiInputParam.shopMonitorListing01
     return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
 # 获取1688平台入参
@@ -134,6 +166,18 @@ def getAliApiInputParam(searchType):
         otherTypeListing03 = DasApiInputParam.ali_productInfo03
         otherTypeListing02 = DasApiInputParam.ali_productInfo02
         otherTypeListing01 = DasApiInputParam.ali_productInfo01
+    elif searchType == "ali_customizeMarkListing": # 任务中心-自定义采集1688查询
+        otherTypeListing03 = DasApiInputParam.customizeMarkListing03
+        otherTypeListing02 = DasApiInputParam.customizeMarkListing02
+        otherTypeListing01 = DasApiInputParam.customizeMarkListing01
+    elif searchType == "ali_keyWordsMonitor":# 任务中心-关键词监控1688查询
+        otherTypeListing03 = DasApiInputParam.keyWordsMonitorListing03
+        otherTypeListing02 = DasApiInputParam.keyWordsMonitorListing02
+        otherTypeListing01 = DasApiInputParam.keyWordsMonitorListing01
+    elif searchType == "ali_shopMonitor":# 任务中心-店铺监控1688查询
+        otherTypeListing03 = DasApiInputParam.shopMonitorListing03
+        otherTypeListing02 = DasApiInputParam.shopMonitorListing02
+        otherTypeListing01 = DasApiInputParam.shopMonitorListing01
     return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
 # 获取ebay平台入参
@@ -181,5 +225,17 @@ def getShopeeApiInputParam(searchType):
         otherTypeListing03 = DasApiInputParam.shopee_productInfo03
         otherTypeListing02 = DasApiInputParam.shopee_productInfo02
         otherTypeListing01 = DasApiInputParam.shopee_productInfo01
+    elif searchType == "shopee_classificateMonitor":# 任务中心-分类监控shopee查询
+        otherTypeListing03 = DasApiInputParam.classificateMonitorListing03
+        otherTypeListing02 = DasApiInputParam.classificateMonitorListing02
+        otherTypeListing01 = DasApiInputParam.classificateMonitorListing01
+    elif searchType == "shopee_keyWordsMonitor":# 任务中心-关键词监控shopee查询
+        otherTypeListing03 = DasApiInputParam.keyWordsMonitorListing03
+        otherTypeListing02 = DasApiInputParam.keyWordsMonitorListing02
+        otherTypeListing01 = DasApiInputParam.keyWordsMonitorListing01
+    elif searchType == "shopee_shopMonitor":# 任务中心-店铺监控shopee查询
+        otherTypeListing03 = DasApiInputParam.shopMonitorListing03
+        otherTypeListing02 = DasApiInputParam.shopMonitorListing02
+        otherTypeListing01 = DasApiInputParam.shopMonitorListing01
     return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
