@@ -249,6 +249,9 @@ class DasApiInputParam:
     allocationProduct01 = {"args":"{0}"}
     allocationProduct02 = {"ids":{0},"claimant":{1}}
 
+    # 数据采集-根据当前登录人获取分配人员接口入参
+    allocationPerson01 = {"args": "{0}"}
+    allocationPerson02 = {"jobNumber":{0}}
 
 
 

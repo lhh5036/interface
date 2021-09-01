@@ -1,5 +1,5 @@
 '''
-@File: enableAmazonRankListingApi.py
+@File: enableRankListingApi.py
 @time:2021/8/27
 @Author:quanliu
 @Desc:数据采集-启用接口服务类
@@ -12,8 +12,8 @@ import json
 import requests
 
 # 实例化日志类
-logger = MyLog("AmazonEnableRankListingApi").getlog() # 初始化
-class AmazonEnableRankListingApi():
+logger = MyLog("EnableRankListingApi").getlog() # 初始化
+class EnableRankListingApi():
     def enableRankListingFunction(self,platform,searchType,paramList): # 请求参数为List
         logger.info("enableRankListingFunction--------->start")
         if len(paramList) == 0:

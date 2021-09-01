@@ -108,14 +108,38 @@ class DasApiUrl:
     # 数据采集-Amazon删除接口
     amazon_deleteProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/deleteAmazonRankListing"
 
+    # 数据采集-Amazon获取分配人接口
+    amazon_allocationPerson_url = InterfaceCommonInfo.common_url + "/das/usermgtn/getAmazonUserListByJobNumber"
+
     # 数据采集-Amazon分配接口
     amazon_allocationProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/allocationAmazonRankListing"
+
+    # 数据采集-Amazon关联系统SKU接口
+    amazon_dataSample_associate_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/associatedSystemSku"
 
     # 数据采集-SMT查询接口
     smt_dataSampleListing_url = InterfaceCommonInfo.common_url + "/das/smt/querySmtBaseListingPageList"
 
     # 数据采集-SMT认领产品接口
     smt_claimProduct_url = InterfaceCommonInfo.common_url + "/das/smt/claimSmtBaseListing"
+
+    # 数据采集-SMT删除接口
+    smt_deleteProduct_url = InterfaceCommonInfo.common_url + "/das/smt/deleteSmtBaseListing"
+
+    # 数据采集-SMT禁用接口
+    smt_disableProduct_url = InterfaceCommonInfo.common_url + "/das/smt/unenableSmtBaseListing"
+
+    # 数据采集-SMT启用接口
+    smt_enableProduct_url = InterfaceCommonInfo.common_url + "/das/smt/enableSmtBaseListing"
+
+    # 数据采集-SMT关联系统SKU接口
+    smt_dataSample_associate_url = InterfaceCommonInfo.common_url + "/das/smt/associatedSystemSku"
+
+    # 数据采集-SMT获取分配人接口
+    smt_allocationPerson_url = InterfaceCommonInfo.common_url + "/das/usermgtn/getUserListByJobNumber"
+
+    # 数据采集-SMT分配接口
+    smt_allocationProduct_url = InterfaceCommonInfo.common_url + "/das/smt/allocationSmtBaseListing"
 
     # 数据采集-1688查询接口
     ali_dataSampleListing_url = InterfaceCommonInfo.common_url + "/das/ali1688/queryAli1688PageList"

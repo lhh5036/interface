@@ -1,5 +1,5 @@
 '''
-@File: deleteAmazonRankListingApi.py
+@File: deleteRankListingApi.py
 @time:2021/8/27
 @Author:quanliu
 @Desc:数据采集-删除接口服务类
@@ -12,8 +12,8 @@ import requests
 import json
 
 # 实例化日志类
-logger = MyLog("AmazonDeleteRankListingApi").getlog() # 初始化
-class AmazonDeleteRankListingApi():
+logger = MyLog("DeleteRankListingApi").getlog() # 初始化
+class DeleteRankListingApi():
     def deleteRankListingFunction(self,platform,searchType,paramList): # 请求参数为List
         logger.info("deleteRankListingFunction--------->start")
         if len(paramList) == 0:

@@ -1,5 +1,5 @@
 '''
-@File: disableAmazonRankListingApi.py
+@File: disableRankListingApi.py
 @time:2021/8/27
 @Author:quanliu
 @Desc:数据采集-禁用接口类
@@ -12,8 +12,8 @@ import json
 import requests
 
 # 实例化日志类
-logger = MyLog("AmazonDisableRankListingApi").getlog() # 初始化
-class AmazonDisableRankListingApi():
+logger = MyLog("DisableRankListingApi").getlog() # 初始化
+class DisableRankListingApi():
     def disableRankListingFunction(self,platform,searchType,paramList): # 请求参数为List
         logger.info("disableRankListingFunction--------->start")
         if len(paramList) == 0:

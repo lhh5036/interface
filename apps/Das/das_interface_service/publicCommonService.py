@@ -201,18 +201,22 @@ class PublicCommonServiceClass():
             url = DasApiUrl.amazon_cancelDevelopment_url
         elif searchType == "amazon_releaseProduct": # Amazon释放产品
             url = DasApiUrl.amazon_releaseProduct_url
-        elif searchType == "bestseller_allocation": # Amazon-bestsellers分配接口
+        elif searchType == "amazon_allocationPerson": # 数据采集Amazon获取分配人信息接口
+            url = DasApiUrl.amazon_allocationPerson_url
+        elif searchType == "amazon_allocation": # 数据采集Amazon分配接口
             url = DasApiUrl.amazon_allocationProduct_url
-        elif searchType == "amazon_checkProductByRank": # Amazon判断产品是否认领接口
+        elif searchType == "amazon_checkProductByRank": # 数据采集Amazon判断产品是否认领接口
             url = DasApiUrl.amazon_checkProductByRank_url
-        elif searchType == "amazon_claimProduct": # Amazon认领产品接口
+        elif searchType == "amazon_claimProduct": # 数据采集Amazon认领产品接口
             url = DasApiUrl.amazon_claimProduct_url
-        elif searchType == "amazon_deleteProduct": # Amazon删除产品接口
+        elif searchType == "amazon_deleteProduct": # 数据采集Amazon删除产品接口
             url = DasApiUrl.amazon_deleteProduct_url
-        elif searchType == "amazon_disableProduct": # Amazon禁用产品接口
+        elif searchType == "amazon_disableProduct": # 数据采集Amazon禁用产品接口
             url = DasApiUrl.amazon_disableProduct_url
         elif searchType == "amazon_enableProduct": # Amazon启用产品接口
             url = DasApiUrl.amazon_enableProduct_url
+        elif searchType == "amazon_dataSample_associate": # 数据采集Amazon关联系统SKU
+            url = DasApiUrl.amazon_dataSample_associate_url
         return url
 
     # 获取SMT平台的url
@@ -220,12 +224,22 @@ class PublicCommonServiceClass():
         url = ""
         if searchType == "smt_associateSystemSku":  # SMT关联系统SKU
             url = DasApiUrl.smt_associateSySku_url
+        elif searchType == "smt_cancelDevelopment": # SMT取消开发
+            url = DasApiUrl.smt_cancelDevelopment_url
+        elif searchType == "smt_releaseProduct": # SMT释放产品
+            url = DasApiUrl.smt_releaseProduct_url
         elif searchType == "smt_infringementAudits": # SMT侵权审核接口
             url = DasApiUrl.smt_infringementAudit_url
         elif searchType == "smt_checkProductByRank": # SMT判断产品是否认领接口
             url = DasApiUrl.smt_checkProductByRank_url
         elif searchType == "smt_claimProduct" : # SMT认领产品接口
             url = DasApiUrl.smt_claimProduct_url
+        elif searchType == "smt_deleteProduct": #SMT删除产品
+            url = DasApiUrl.smt_deleteProduct_url
+        elif searchType == "smt_disableProduct": # SMT禁用产品
+            url = DasApiUrl.smt_disableProduct_url
+        elif searchType == "smt_enableProduct": # SMT启用产品
+            url = DasApiUrl.smt_enableProduct_url
         elif searchType == "categoryMark_query": # 数据采集-SMTorder大于100查询页面
             url = DasApiUrl.smt_dataSampleListing_url
         elif searchType == "bestsellerMark_query": # 数据采集-SMTtopselling查询页面
@@ -236,6 +250,12 @@ class PublicCommonServiceClass():
             url = DasApiUrl.smt_dataSampleListing_url
         elif searchType == "keywordMark_query": # 数据采集SMT关注关键词数据查询页面
             url = DasApiUrl.smt_dataSampleListing_url
+        elif searchType == "smt_dataSample_associate": # 数据采集SMT关联系统SKU
+            url = DasApiUrl.smt_dataSample_associate_url
+        elif searchType == "smt_allocationPerson": # 数据采集SMT获取分配人信息接口
+            url = DasApiUrl.smt_allocationPerson_url
+        elif searchType == "smt_allocation": # 数据采集SMT分配接口
+            url = DasApiUrl.smt_allocationProduct_url
         return url
     # 获取1688平台的URL
     def getAliApiUrl(self,searchType):
