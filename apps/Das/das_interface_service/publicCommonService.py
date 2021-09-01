@@ -72,6 +72,26 @@ class PublicCommonServiceClass():
         otherTypeListing03 = ""
         otherTypeListing02 = ""
         otherTypeListing01 = ""
+        if searchType == "categoryMark_query":# 数据采集-SMTorder大于100查询页面
+            otherTypeListing03 = DasApiInputParam.smt_categoryMarkListing03
+            otherTypeListing02 = DasApiInputParam.smt_categoryMarkListing02
+            otherTypeListing01 = DasApiInputParam.smt_categoryMarkListing01
+        elif searchType == "bestsellerMark_query":# 数据采集-SMTtopselling查询页面
+            otherTypeListing03 = DasApiInputParam.smt_bestsellerMarkListing03
+            otherTypeListing02 = DasApiInputParam.smt_bestsellerMarkListing02
+            otherTypeListing01 = DasApiInputParam.smt_bestsellerMarkListing01
+        elif searchType == "shopMark_query":# 数据采集SMT关注店铺数据查询页面
+            otherTypeListing03 = DasApiInputParam.smt_shopMarkListing03
+            otherTypeListing02 = DasApiInputParam.smt_shopMarkListing02
+            otherTypeListing01 = DasApiInputParam.smt_shopMarkListing01
+        elif searchType == "attentionCategoryMark_query":# 数据采集SMT关注分类数据查询页面
+            otherTypeListing03 = DasApiInputParam.smt_attentionCategoryMarkListing03
+            otherTypeListing02 = DasApiInputParam.smt_attentionCategoryMarkListing02
+            otherTypeListing01 = DasApiInputParam.smt_attentionCategoryMarkListing01
+        elif searchType == "keywordMark_query":# 数据采集SMT关注关键词数据查询页面
+            otherTypeListing03 = DasApiInputParam.smt_keywordMarkListing03
+            otherTypeListing02 = DasApiInputParam.smt_keywordMarkListing02
+            otherTypeListing01 = DasApiInputParam.smt_keywordMarkListing01
         return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
     # 获取1688平台入参
@@ -162,7 +182,15 @@ class PublicCommonServiceClass():
             url = DasApiUrl.smt_checkProductByRank_url
         elif searchType == "smt_claimProduct" : # SMT认领产品接口
             url = DasApiUrl.smt_claimProduct_url
-        elif searchType == "": # SMT
+        elif searchType == "categoryMark_query": # 数据采集-SMTorder大于100查询页面
+            url = DasApiUrl.smt_dataSampleListing_url
+        elif searchType == "bestsellerMark_query": # 数据采集-SMTtopselling查询页面
+            url = DasApiUrl.smt_dataSampleListing_url
+        elif searchType == "shopMark_query": # 数据采集SMT关注店铺数据查询页面
+            url = DasApiUrl.smt_dataSampleListing_url
+        elif searchType == "attentionCategoryMark_query": # 数据采集SMT关注分类数据查询页面
+            url = DasApiUrl.smt_dataSampleListing_url
+        elif searchType == "keywordMark_query": # 数据采集SMT关注关键词数据查询页面
             url = DasApiUrl.smt_dataSampleListing_url
         return url
     # 获取1688平台的URL

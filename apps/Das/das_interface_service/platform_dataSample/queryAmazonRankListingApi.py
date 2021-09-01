@@ -2,17 +2,16 @@
 @File: queryAmazonOtherListingApi.py
 @time:2021/8/31
 @Author:quanliu
-@Desc:数据采集-Amazon关注关键词数据页面接口服务类
+@Desc:数据采集-Amazon页面查询接口服务类
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 import json
 import requests
-
-# 实例化日志类
 from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
 
+# 实例化日志类
 logger = MyLog("AmazonOtherListingQueryApi").getlog() # 初始化
 class AmazonOtherListingQueryApi():
     def amazonOtherListingFunction(self,platform,searchType,kwargs):
@@ -27,11 +26,12 @@ class AmazonOtherListingQueryApi():
         amazon_otherTypeListing03,amazon_otherTypeListing02,amazon_otherTypeListing01 = PublicCommonServiceClass().getApiInputParam(platform,searchType)
         url = PublicCommonServiceClass().getApiUrl(platform,searchType) # 获取请求地址
         keyList = []
-        for key in kwargs.keys():
-            keyList.append(key)
-        for i in range(len(keyList)):
-            value = parseRequestDatas(keyList[i],kwargs)
-            amazon_otherTypeListing03[keyList[i]] = value
+        if kwargs != "":
+            for key in kwargs.keys():
+                keyList.append(key)
+            for i in range(len(keyList)):
+                value = parseRequestDatas(keyList[i],kwargs)
+                amazon_otherTypeListing03[keyList[i]] = value
         # 替换中间层
         amazon_otherTypeListing02["search"] = amazon_otherTypeListing03
         # 替换最外层参数

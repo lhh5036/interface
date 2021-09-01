@@ -137,6 +137,43 @@ class DasApiInputParam:
     amazon_jungleScoutListing03 = {"baseListingType":"jungleScoutKeywordMark","taskKeyword":"","salesTrialSale":"","developmentClaim":"","Reviews":"","rating":"","searchKeywords":"","menuCode":"9010808","country":"",
                                    "departmentName":"","keywords":"","brand":"","isBrand":"","asin":"","startPrice":"","endPrice":"","dataStatus":"","sellerName":"","fba":"","startFirstListOnTime":"","endFirstListOnTime":"","startCrawlTime":"","endCrawlTime":""}
 
+    # 数据采集-SMT查询接口入参（order大于100页面）
+    smt_categoryMarkListing01 = {"method":"listBaseListing","args":"{0}"}
+    smt_categoryMarkListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC","dataStatus":0}
+    smt_categoryMarkListing03 = {"baseListingType":"categoryMark","menuCode":"9011001","salesTrialSale":"","developmentClaim":"","productId":"","startCrawlTime":"","endCrawlTime":"","asin":"","dataStatus":"","keywords":"",
+                                 "merchantName":"","rating":"","nodes":"","brand":"","integrality":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","startOrders":"","endOrders":"","Reviews":""}
+
+    # 数据采集-SMT查询接口入参（TOPselling页面）
+    smt_bestsellerMarkListing01 = {"method":"listBaseListing","args":"{0}"}
+    smt_bestsellerMarkListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC","dataStatus":0}
+    smt_bestsellerMarkListing03 = {"salesTrialSale":"","developmentClaim":"","baseListingType":"bestsellerMark","menuCode":"9011002","productId":"","startCrawlTime":"","endCrawlTime":"","asin":"","dataStatus":"","integrality":"",
+                                   "keywords":"","merchantName":"","rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","startOrders":"","endOrders":"","Reviews":""}
+
+    # 数据采集-SMT查询接口入参（关注店铺数据页面）
+    smt_shopMarkListing01 = {"method":"listBaseListing","args":"{0}"}
+    smt_shopMarkListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC","dataStatus":0}
+    smt_shopMarkListing03 = {"salesTrialSale":"","baseListingType":"shopMark","menuCode":"9011003","productId":"","startCrawlTime":"","endCrawlTime":"","asin":"","dataStatus":"","integrality":"","keywords":"","merchantName":"",
+                             "rating":"","nodes":"","brand":"","isSKU":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","startOrders":"","endOrders":"","Reviews":"","orderType":"","isAssociatedSystemSku":"","developmentClaim":""}
+
+    # 数据采集-SMT查询接口入参（关注分类数据页面）
+    smt_attentionCategoryMarkListing01 = {"method":"listBaseListing","args":"{0}"}
+    smt_attentionCategoryMarkListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC","dataStatus":0}
+    smt_attentionCategoryMarkListing03 = {"salesTrialSale":"","developmentClaim":"","baseListingType":"attentionCategoryMark","menuCode":"9011004","productId":"","startCrawlTime":"","endCrawlTime":"","asin":"","dataStatus":"","keywords":"","merchantName":"",
+                                          "rating":"","nodes":"","brand":"","integrality":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","startOrders":"","endOrders":"","Reviews":""}
+
+    # 数据采集-SMT查询接口入参（关注关键词数据）
+    smt_keywordMarkListing01 = {"method":"listBaseListing","args":"{0}"}
+    smt_keywordMarkListing02 = {"search":{0},"offset":0,"limit":50,"sort":"crawlTime","order":"DESC","dataStatus":0}
+    smt_keywordMarkListing03 = {"salesTrialSale":"","developmentClaim":"","searchKeywords":"","baseListingType":"keywordMark","menuCode":"9011005","productId":"","startCrawlTime":"","endCrawlTime":"","asin":"","dataStatus":"","integrality":"","keywords":"",
+                                "merchantName":"","rating":"","nodes":"","brand":"","startFirstListOnTime":"","endFirstListOnTime":"","startPrice":"","endPrice":"","startOrders":"","endOrders":"","Reviews":""}
+
+
+
+
+
+
+
+
     # 数据采集-认领产品接口入参
     claimProduct01 = {"args":"{0}"}
     claimProduct02 = {"ids":{0}}
