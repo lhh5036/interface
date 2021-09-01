@@ -7,16 +7,12 @@
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 import requests
 import json
-
 from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
+from apps.Das.das_interface_service.publicCommonUrlSevice import PublicCommonUrlServiceClass
 from apps.Das.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
-from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
-
 
 # 实例化日志类
-from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
-
 logger = MyLog("InfringementAuditsApi").getlog() # 初始化
 class InfringementAuditsApi():
     def infringementAuditFunction(self,platform,searchType,idsList,auditStatus,salesProhibitionList,infringementInfoMap):
@@ -61,7 +57,7 @@ class InfringementAuditsApi():
             resultReplace["args"] = infringementReviewReplace0
             # 接口请求头
             header = Common_TokenHeader().token_header("new","181324")
-            url = PublicCommonServiceClass().getApiUrl(platform,searchType) # 请求地址
+            url = PublicCommonUrlServiceClass().getApiUrl(platform,searchType) # 请求地址
 
             self.url = url
             self.header = header

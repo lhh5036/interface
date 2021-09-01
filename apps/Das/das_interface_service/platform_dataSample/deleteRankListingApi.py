@@ -6,7 +6,8 @@
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
-from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
+from apps.Das.das_interface_service.publicCommonUrlSevice import PublicCommonUrlServiceClass
+
 from apps.Das.logger import MyLog
 import requests
 import json
@@ -26,7 +27,7 @@ class DeleteRankListingApi():
         deleteProduct01["args"] = json.dumps(deleteProduct02)
         # 获取请求头信息
         header = Common_TokenHeader().token_header("new","181324")
-        url = PublicCommonServiceClass().getApiUrl(platform,searchType)
+        url = PublicCommonUrlServiceClass().getApiUrl(platform,searchType)
         self.header = header
         self.formData = deleteProduct01
         self.url = url

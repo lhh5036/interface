@@ -7,9 +7,6 @@
 
 import unittest
 
-
-from apps.Das.das_interface_service.myData_manage.amazonSelectApi import MyDataAmazonSelectApi
-
 # 数据管理-我的数据Amazon查询接口用例类
 class Test_amazonSelectApi(unittest.TestCase):
 

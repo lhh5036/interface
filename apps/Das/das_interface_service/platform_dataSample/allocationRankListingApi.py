@@ -6,7 +6,7 @@
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
-from apps.Das.das_interface_service.publicCommonService import PublicCommonServiceClass
+from apps.Das.das_interface_service.publicCommonUrlSevice import PublicCommonUrlServiceClass
 from apps.Das.logger import MyLog
 import json
 import requests
@@ -27,7 +27,7 @@ class AllocationRankLinstingApi():
         allocationProduct01["args"] = json.dumps(allocationProduct02)
         # 获取接口请求头信息
         header = Common_TokenHeader().token_header("new","181324")
-        url = PublicCommonServiceClass().getApiUrl(platform,searchType) # 请求地址
+        url = PublicCommonUrlServiceClass().getApiUrl(platform,searchType) # 请求地址
         self.url = url # 接口地址
         self.header = header
         self.formData = allocationProduct01
