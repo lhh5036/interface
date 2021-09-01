@@ -136,6 +136,14 @@ class DasApiInputParam:
     amazon_jungleScoutListing02 = {"search":{0},"limit":50,"offset":0,"sort":"rank","order":"DESC"}
     amazon_jungleScoutListing03 = {"baseListingType":"jungleScoutKeywordMark","taskKeyword":"","salesTrialSale":"","developmentClaim":"","Reviews":"","rating":"","searchKeywords":"","menuCode":"9010808","country":"",
                                    "departmentName":"","keywords":"","brand":"","isBrand":"","asin":"","startPrice":"","endPrice":"","dataStatus":"","sellerName":"","fba":"","startFirstListOnTime":"","endFirstListOnTime":"","startCrawlTime":"","endCrawlTime":""}
+    # 数据采集-Amazon死贴数据查询入参
+    amazon_unavailableListing01 = {"method":"listUnavailable2Listing","args":"{0}"}
+    amazon_unavailableListing02 = {"search":{0},"limit":50,"offset":0,"sort":"crawl_time","order":"desc"}
+    amazon_unavailableListing03 = {"country":"","asin":"","menuCode":"9010810","brand":"","keywords":"","dataStatus":"","endFirstListOnTime":""}
+
+    # 数据采集-Amazon死贴数据删除接口入参
+    amazon_deleteUnavailable01 = {"method":"updateUnavailable2Listing","args":"{0}"}
+    amazon_deleteUnavailable02 = {"ids":{0},"dataStatus":4}
 
     # 数据采集-SMT查询接口入参（order大于100页面）
     smt_categoryMarkListing01 = {"method":"listBaseListing","args":"{0}"}

@@ -68,6 +68,8 @@ def getAmazonApiUrl(searchType):
         url = DasApiUrl.amazon_dataSample_associate_url
     elif searchType == "amazon_queryListing":  # 我的数据amazon查询
         url = DasApiUrl.amazon_queryListing_url
+    elif searchType == "amazon_unavailableListing": # 数据采集amazon死贴查询
+        url = DasApiUrl.amazon_unavailableListing_url
     return url
 
 # 获取SMT平台的url

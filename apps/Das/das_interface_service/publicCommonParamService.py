@@ -68,6 +68,10 @@ def getAmazonApiInputParam(searchType):
         otherTypeListing03 = DasApiInputParam.amazon_ProductInfo03
         otherTypeListing02 = DasApiInputParam.amazon_ProductInfo02
         otherTypeListing01 = DasApiInputParam.amazon_ProductInfo01
+    elif searchType == "amazon_unavailableListing": # 数据采集amazon死贴查询
+        otherTypeListing03 = DasApiInputParam.amazon_unavailableListing03
+        otherTypeListing02 = DasApiInputParam.amazon_unavailableListing02
+        otherTypeListing01 = DasApiInputParam.amazon_unavailableListing01
     return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
 # 获取SMT平台入参

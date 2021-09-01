@@ -70,8 +70,12 @@ class DasApiUrl:
 
     # 数据采集-Amazon查询接口（bestsellers/NewRelease/MoversShakers/MostWishedFor/Giftldeas）
     amazon_dataSampleListing_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/queryAmazonRankListing"
-    # 数据采集-Amazon关注店铺数据/关注分类数据查询接口
+    # 数据采集-Amazon关注店铺数据/关注分类数据查询/关注关键词数据/JS关键词数据接口
     amazon_attentStoreListing_url = InterfaceCommonInfo.common_url + "/das/amazon/baselisting"
+    # 数据采集-Amazon死贴数据查询接口
+    amazon_unavailableListing_url = InterfaceCommonInfo.common_url + "/das/amazon/unavailable2listing"
+    # 数据采集-Amazon死贴数据删除接口
+    amazon_deleteUnavailable_url = InterfaceCommonInfo.common_url + "/das/amazon/unavailable2listing"
     # 数据采集-Amazon认领产品接口
     amazon_claimProduct_url = InterfaceCommonInfo.common_url + "/das/amazonRankListing/claimAmazonRankListing"
     # 数据采集-Amazon禁用接口
@@ -158,11 +162,13 @@ class DasApiUrl:
     # 数据采集-ebay分配接口
     shopee_allocationProduct_url = InterfaceCommonInfo.common_url + "/das/shopee/allocationShopeeBaseListing"
 
+    #
+
+
 
 
 
     # 参数配置-取消开发备注保存接口
     paramConfigSave_url = InterfaceCommonInfo.common_url + "/das/parameterConfiguration/updateCancelDevNotesInfo"
-
     # 参数配置-取消开发备注查询接口
     paramConfigSelect_url = InterfaceCommonInfo.common_url + "/das/parameterConfiguration/queryCancelDevNotesInfo"
