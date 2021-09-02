@@ -178,7 +178,12 @@ class DasApiUrl:
     queryCustomizeTask_url = InterfaceCommonInfo.common_url + "/das/task/queryCustomizeTaskList"
     # 任务中心-自定义采集-添加采集接口
     addCustomizeTask_url = InterfaceCommonInfo.common_url + "/das/task/addCustomizeTaskList"
-
+    # 任务中心-分类监控-新增分类接口（Amazon）
+    amazon_taskCenterNewCategory_url = InterfaceCommonInfo.common_url + "/das/amazon/newCategory"
+    # 任务中心-分类监控-新增分类接口（SMT）
+    smt_checkProductByRank_url = InterfaceCommonInfo.common_url + "/das/smt/category/queryCategoryList"
+    # 任务中心-分类监控-新增分类接口（Shopee）
+    shopee_checkProductByRank_url = InterfaceCommonInfo.common_url + "/das/shopee/category"
 
 
     # 参数配置-取消开发备注保存接口

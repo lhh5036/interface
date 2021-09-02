@@ -287,8 +287,15 @@ class DasApiInputParam:
     # 任务中心-自定义采集-添加采集信息
     addCustomizeTask01 = {"args":"{0}"}
     addCustomizeTask02 = {"itemUrlList":{0},"saleChannel":"","country":""}
-
-
+    # 任务中心-分类监控-新增分类（Amazon）
+    amazon_newCategory01 = {"method":"listCategoryMonitor","args":"{0}"}
+    amazon_newCategory02 = {"categoryNodeLevel":"","nodes":"","country":"","ctype":1}
+    # 任务中心-分类监控-新增分类（SMT）
+    smt_newCategory01 = {"args":"{0}"}
+    smt_newCategory02 = {"categoryNodeLevel":"","nodes":""}
+    # 任务中心-分类监控-新增分类（shopee）
+    shopee_newCategory01 = {"method":"listCategory","args":"{0}"}
+    shopee_newCategory02 = {"categoryNodeLevel":"","nodes":""}
 
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}
