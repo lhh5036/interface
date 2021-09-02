@@ -15,10 +15,10 @@ import requests
 # 实例化日志类
 logger = MyLog("QueryCustomizeTaskListingApi").getlog() # 初始化
 class QueryCustomizeTaskListingApi():
-    def QueryCustomizeTaskListingFunction(self,idList):
-        logger.info("customizeTaskRankListingFunction------------------->start")
+    def queryCustomizeTaskListingFunction(self,idList):
+        logger.info("queryCustomizeTaskListingFunction------------------->start")
         if len(idList) == 0:
-            logger.error("customizeTaskRankListingFunction------>InputParam is null")
+            logger.error("queryCustomizeTaskListingFunction------>InputParam is null")
             return "请求参数为空!"
         # 获取请求地址
         url = DasApiUrl.queryCustomizeTask_url
@@ -34,11 +34,11 @@ class QueryCustomizeTaskListingApi():
         self.header = header
         resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
         if resp.json()["success"] == True:
-            logger.info("customizeTaskRankListingFunction------------------->end")
+            logger.info("queryCustomizeTaskListingFunction------------------->end")
             return "接口响应成功,响应结果:{0}".format(resp.json()["result"])
         else:
-            logger.error("customizeTaskRankListingFunction------------->response Data is wrong!")
+            logger.error("queryCustomizeTaskListingFunction------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},接口类型:{2},请求参数:{3}".format(resp.json()["errorMsg"], url,queryCustomizeTask01)
 
 if __name__ == '__main__':
-    print(QueryCustomizeTaskListingApi().QueryCustomizeTaskListingFunction(["31292385-0b53-4a1f-bd37-60773ded0c29"]))
+    print(QueryCustomizeTaskListingApi().queryCustomizeTaskListingFunction(["31292385-0b53-4a1f-bd37-60773ded0c29"]))
