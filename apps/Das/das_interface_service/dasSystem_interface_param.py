@@ -276,16 +276,22 @@ class DasApiInputParam:
     keyWordsMonitorListing01 = {"args":"{0}"}
     keyWordsMonitorListing02 = {"search":{0},"limit":10,"offset":0,"sort":"createdTime","order":"DESC"}
     keyWordsMonitorListing03 = {"attentioner":"","taskType":2,"country":"","keyword":"","taskStatus":"","saleChannel":"","menuCode":"9010903"}
-
     # 任务中心-查询接口（店铺监控）
     shopMonitorListing01 = {"args":"{0}"}
     shopMonitorListing02 = {"search":{0},"limit":10,"offset":0,"sort":"createdTime","order":"DESC"}
     shopMonitorListing03 = {"menuCode":"9010904","taskType":3,"country":"","sellerName":"","sellerStatus":"","taskStatus":"","saleChannel":"",
                             "attentioner":"","sellerUrl":"","operator":"","startCreatedTime":"","endCreatedTime":"","notesInfo":"","attentionStatus":""}
+    # 任务中心-自定义采集-查询采集信息
+    queryCustomizeTask01 = {"args":"{0}"}
+    queryCustomizeTask02 = {"idList":{0}}
+    # 任务中心-自定义采集-添加采集信息
+    addCustomizeTask01 = {"args":"{0}"}
+    addCustomizeTask02 = {"itemUrlList":{0},"saleChannel":"","country":""}
+
+
 
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}
     paramConfig_select = '{"notesInfoList":[{notesInfoList}],"id":"datasystem-1234567895201314"}'
-
     # 参数配置-取消开发备注查询接口入参
     paramConfigQuery = {"args": "{\"id\":\"datasystem-1234567895201314\"}"}

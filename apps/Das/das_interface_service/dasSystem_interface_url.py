@@ -174,6 +174,12 @@ class DasApiUrl:
     keyWordsMonitor_url = InterfaceCommonInfo.common_url + "/das/task/queryTaskList"
     # 任务中心-店铺监控（Amazon/smt/1688/shopee）
     shopMonitor_url = InterfaceCommonInfo.common_url + "/das/task/queryTaskList"
+    # 任务中心-自定义采集-查询采集接口
+    queryCustomizeTask_url = InterfaceCommonInfo.common_url + "/das/task/queryCustomizeTaskList"
+    # 任务中心-自定义采集-添加采集接口
+    addCustomizeTask_url = InterfaceCommonInfo.common_url + "/das/task/addCustomizeTaskList"
+
+
 
     # 参数配置-取消开发备注保存接口
     paramConfigSave_url = InterfaceCommonInfo.common_url + "/das/parameterConfiguration/updateCancelDevNotesInfo"
