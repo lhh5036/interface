@@ -1,0 +1,4 @@
+[2021-09-02 09:42:18,159] queryTaskCenterListingApi.py->taskCenterRankListingFunction line:20 [INFO]taskCenterRankListingFunction------------------->start
+[2021-09-02 09:42:18,284] queryTaskCenterListingApi.py->taskCenterRankListingFunction line:47 [INFO]taskCenterRankListingFunction------------------->end
+[2021-09-02 09:42:32,862] queryTaskCenterListingApi.py->taskCenterRankListingFunction line:20 [INFO]taskCenterRankListingFunction------------------->start
+[2021-09-02 09:42:32,862] queryTaskCenterListingApi.py->taskCenterRankListingFunction line:24 [ERROR]taskCenterRankListingFunction-------->InputParam is null
