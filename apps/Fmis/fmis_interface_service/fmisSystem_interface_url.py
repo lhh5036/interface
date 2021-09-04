@@ -153,6 +153,8 @@ class FmisApiUrl:
     # 预付帐户-账户明细-查询接口
     fmis_oaccountPaymentDetails_selectPaymentDetail_url = InterfaceCommonInfo.common_url + "/fmis/oaccountPaymentDetails/selectPaymentDetail"
 
+    '''绩效管理-绩效管理'''
+    # Amazon员工绩效
 
 if __name__ == '__main__':
     pass
