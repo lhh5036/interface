@@ -227,3 +227,6 @@ def getShopeeApiUrl(searchType):
     elif searchType == "shopee_shopMonitor":# 任务中心-店铺监控shopee查询
         url = DasApiUrl.shopMonitor_url
     return url
+
+if __name__ == '__main__':
+    print(PublicCommonUrlServiceClass().getApiUrl('Shopee', 'shopee_shopMonitor'))
