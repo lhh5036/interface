@@ -6,7 +6,7 @@ import unittest
 import time
 import HTMLTestRunner
 
-das_api = Blueprint("das_api",__name__,template_folder='templates') # 实例化一个蓝图(Blueprint)对象
+das_api = Blueprint("das_api",__name__) # 实例化一个蓝图(Blueprint)对象
 
 das_garder_path = os.path.dirname(os.path.realpath(__file__)) + "\\test\\case\\" # 获取数据分析测试用例文件路径
 das_report_path = os.path.dirname(os.path.realpath(__file__)) + "\\report" # 测试数据分析报告路径
