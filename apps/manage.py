@@ -2,7 +2,7 @@
 @File: manage.py
 @time:2021/8/19
 @Author:quanliu 181324
-@Desc:数据分析系统接口调用入口
+@Desc: 总入口
 '''
 
 from apps import create_app
