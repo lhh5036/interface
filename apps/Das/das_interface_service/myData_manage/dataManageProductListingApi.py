@@ -7,7 +7,7 @@
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.publicCommonParamService import PublicCommonParamServiceClass
 from apps.Das.das_interface_service.publicCommonUrlSevice import PublicCommonUrlServiceClass
-from apps.Das.logger import MyLog
+from apps.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 import json
 import requests

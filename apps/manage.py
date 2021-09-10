@@ -1,20 +1,21 @@
 '''
-@File: das_interface_entry.py
+@File: manage.py
 @time:2021/8/19
 @Author:quanliu 181324
 @Desc:数据分析系统接口调用入口
 '''
 
-from flask import Flask,render_template
+from flask import render_template
 import os
 import unittest
 import time
 import HTMLTestRunner
+from apps import create_app
 
-app = Flask(__name__)
+app = create_app("dev")
 
-garder_path = os.path.dirname(os.path.realpath(__file__)) + "\\test\\case\\" # 获取测试用例文件路径
-report_path = os.path.dirname(os.path.realpath(__file__)) + "\\report" # 测试报告路径
+das_garder_path = os.path.dirname(os.path.realpath(__file__)) + "\\Das\\test\\case\\" # 获取数据分析测试用例文件路径
+das_report_path = os.path.dirname(os.path.realpath(__file__)) + "\\Das\\report" # 测试数据分析报告路径
 
 # 接口调用入口
 @app.route("/dasInterfaceEntry")
@@ -25,13 +26,11 @@ def dasInterfaceEntry():
 @app.route('/das/allTestCase/execute')
 def run_dasTestcaseExecute():
     # 文件的路径
-    discover = unittest.defaultTestLoader.discover(garder_path,pattern='test_*.py')
-    # runner = unittest.TextTestRunner()
-    # runner.run(discover) # 调用数据分析系统所有用例
+    discover = unittest.defaultTestLoader.discover(das_garder_path,pattern='test_*.py')
     # 获取当前时间
     now = time.strftime("%Y-%m-%d-%H_%M_%S",time.localtime(time.time()))
     # html报告文件路径
-    report_abspath = os.path.join(report_path,"result_"+now+".html")
+    report_abspath = os.path.join(das_report_path,"result_"+now+".html")
 
     # 打开文件，将报告写入
     fp = open(report_abspath,"wb")

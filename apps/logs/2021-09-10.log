@@ -1,0 +1,16 @@
+[2021-09-10 14:30:34,675] parameterConfigSelectApi.py->paramConfigQuery line:21 [INFO]paramConfigQuery ---->start!
+[2021-09-10 14:30:34,816] parameterConfigSelectApi.py->paramConfigQuery line:35 [INFO]paramConfigQuery ---->end!
+[2021-09-10 14:30:34,846] productGetDijiaApi.py->productDetDiJia line:20 [INFO]productGenDijia ---->start!
+[2021-09-10 14:30:35,108] productGetDijiaApi.py->productDetDiJia line:38 [INFO]productGenDijia ---->end!
+[2021-09-10 14:30:35,118] productGetTongkuanApi.py->productGetTongkuan line:20 [INFO]productGetTongkuan ---->start!
+[2021-09-10 14:30:35,286] productGetTongkuanApi.py->productGetTongkuan line:43 [INFO]productGetTongkuan ---->end!
+[2021-09-10 14:30:35,303] parameterConfigSaveApi.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
+[2021-09-10 14:30:35,436] parameterConfigSaveApi.py->paramConfigFunction line:41 [INFO]paramConfigFunction ---->end!
+[2021-09-10 14:30:35,436] parameterConfigSaveApi.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
+[2021-09-10 14:30:35,562] parameterConfigSaveApi.py->paramConfigFunction line:41 [INFO]paramConfigFunction ---->end!
+[2021-09-10 14:30:35,562] parameterConfigSelectApi.py->paramConfigQuery line:21 [INFO]paramConfigQuery ---->start!
+[2021-09-10 14:30:35,672] parameterConfigSelectApi.py->paramConfigQuery line:35 [INFO]paramConfigQuery ---->end!
+[2021-09-10 14:30:35,751] productGetDijiaApi.py->productDetDiJia line:20 [INFO]productGenDijia ---->start!
+[2021-09-10 14:30:35,932] productGetDijiaApi.py->productDetDiJia line:38 [INFO]productGenDijia ---->end!
+[2021-09-10 14:30:35,956] productGetTongkuanApi.py->productGetTongkuan line:20 [INFO]productGetTongkuan ---->start!
+[2021-09-10 14:30:36,146] productGetTongkuanApi.py->productGetTongkuan line:43 [INFO]productGetTongkuan ---->end!

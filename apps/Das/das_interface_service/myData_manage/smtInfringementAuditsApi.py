@@ -9,7 +9,7 @@ import requests
 import json
 from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
 from apps.Das.das_interface_service.publicCommonUrlSevice import PublicCommonUrlServiceClass
-from apps.Das.logger import MyLog
+from apps.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 
 # 实例化日志类

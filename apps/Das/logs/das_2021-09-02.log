@@ -1,9 +1,0 @@
-[2021-09-02 09:42:18,159] queryTaskCenterListingApi.py->taskCenterRankListingFunction line:20 [INFO]taskCenterRankListingFunction------------------->start
-[2021-09-02 09:42:18,284] queryTaskCenterListingApi.py->taskCenterRankListingFunction line:47 [INFO]taskCenterRankListingFunction------------------->end
-[2021-09-02 09:42:32,862] queryTaskCenterListingApi.py->taskCenterRankListingFunction line:20 [INFO]taskCenterRankListingFunction------------------->start
-[2021-09-02 09:42:32,862] queryTaskCenterListingApi.py->taskCenterRankListingFunction line:24 [ERROR]taskCenterRankListingFunction-------->InputParam is null
-[2021-09-02 12:08:08,407] queryCustomizeTaskListApi.py->QueryCustomizeTaskListingFunction line:19 [INFO]customizeTaskRankListingFunction------------------->start
-[2021-09-02 12:09:00,113] queryCustomizeTaskListApi.py->QueryCustomizeTaskListingFunction line:19 [INFO]customizeTaskRankListingFunction------------------->start
-[2021-09-02 12:09:00,245] queryCustomizeTaskListApi.py->QueryCustomizeTaskListingFunction line:37 [INFO]customizeTaskRankListingFunction------------------->end
-[2021-09-02 12:16:55,934] addCustomizeTaskListApi.py->addCustomizeTaskListingFunction line:20 [INFO]addCustomizeTaskListingFunction------------------->start
-[2021-09-02 12:16:56,070] addCustomizeTaskListApi.py->addCustomizeTaskListingFunction line:40 [INFO]addCustomizeTaskListingFunction------------------->end
