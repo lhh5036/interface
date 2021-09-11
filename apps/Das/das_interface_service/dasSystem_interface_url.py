@@ -184,6 +184,12 @@ class DasApiUrl:
     smt_checkProductByRank_url = InterfaceCommonInfo.common_url + "/das/smt/category/queryCategoryList"
     # 任务中心-分类监控-获取分类接口（Shopee）
     shopee_checkProductByRank_url = InterfaceCommonInfo.common_url + "/das/shopee/category"
+    # 任务中心-分类监控-关注接口
+    attentionTask_url = InterfaceCommonInfo.common_url + "/das/task/attentionTask"
+    # 任务中心-分类监控-删除接口
+    deleteTask_url = InterfaceCommonInfo.common_url + "/das/task/deleteTask"
+    # 任务中心-分类监控-取消关注接口
+    cancelAttentionTask_url = InterfaceCommonInfo.common_url + "/das/task/cancelAttentionTask"
 
 
     # 参数配置-取消开发备注保存接口

@@ -296,6 +296,11 @@ class DasApiInputParam:
     # 任务中心-分类监控-获取分类（shopee）
     shopee_newCategory01 = {"method":"listCategory","args":"{0}"}
     shopee_newCategory02 = {"categoryNodeLevel":"","nodes":""}
+    # 任务中心-分类监控-关注/删除/取消关注
+    categoryTask_param01 = {"args":"{0}"}
+    categoryTask_param02 = {"ids":{0}}
+
+
 
 
     # 参数配置-取消开发备注保存接口入参
