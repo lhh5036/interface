@@ -13,7 +13,7 @@ app = create_app("dev")
 # 接口调用入口
 @app.route("/dasInterfaceEntry")
 def dasInterfaceEntry():
-    return render_template('das_entry.html')
+    return render_template('system_entry.html')
 
 
 if __name__ == '__main__':
