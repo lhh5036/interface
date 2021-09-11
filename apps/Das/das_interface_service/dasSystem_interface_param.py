@@ -299,7 +299,9 @@ class DasApiInputParam:
     # 任务中心-分类监控-关注/删除/取消关注
     categoryTask_param01 = {"args":"{0}"}
     categoryTask_param02 = {"ids":{0}}
-
+    # 任务中心-分类监控-刷新任务
+    crawlTask_param01 = {"args":"{0}"}
+    crawlTask_param02 = {"ids": {0},"saleChannel":{1}}
 
 
 

@@ -190,6 +190,10 @@ class DasApiUrl:
     deleteTask_url = InterfaceCommonInfo.common_url + "/das/task/deleteTask"
     # 任务中心-分类监控-取消关注接口
     cancelAttentionTask_url = InterfaceCommonInfo.common_url + "/das/task/cancelAttentionTask"
+    # 任务中心-分类监控-刷新任务接口
+    crawlTask_url = InterfaceCommonInfo.common_url + "/das/task/crawlTask"
+
+
 
 
     # 参数配置-取消开发备注保存接口

@@ -13,12 +13,12 @@ import requests
 
 
 # 实例化日志类
-logger = MyLog("AttentionTaskApi").getlog() # 初始化
-class AttentionTaskApi():
-    def attentionTaskFunction(self,operateType,ids):
-        logger.info("attentionTaskFunction------------------->start")
+logger = MyLog("OperateTaskApi").getlog() # 初始化
+class OperateTaskApi():
+    def operateTaskFunction(self,operateType,ids):
+        logger.info("operateTaskFunction------------------->start")
         if len(ids) == 0 or operateType == "":
-            logger.error("attentionTaskFunction------------>Input Param is wrong")
+            logger.error("operateTaskFunction------------>Input Param is wrong")
             return "请求参数为空"
         # 接口请求头
         header = Common_TokenHeader().token_header("new", "181324")
@@ -38,8 +38,8 @@ class AttentionTaskApi():
         self.fromData = categoryTask_param01
         resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.fromData))
         if resp.json()["success"] == True:
-            logger.info("attentionTaskFunction------------------->end")
+            logger.info("operateTaskFunction------------------->end")
             return "接口响应成功"
         else:
-            logger.error("attentionTaskFunction------------->response Data is wrong!")
+            logger.error("operateTaskFunction------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},接口类型:{2},请求参数:{3}".format(resp.json()["errorMsg"], url,categoryTask_param01)
