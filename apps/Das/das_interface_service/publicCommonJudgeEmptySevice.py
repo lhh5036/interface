@@ -42,6 +42,8 @@ def amazonNeedJudgeEmpty(searchType,kwargs):
         return needJudgeEmptyParam(["saleChannel"], kwargs)
     elif searchType == "amazon_shopMonitor":# 任务中心-店铺监控Amazon查询
         return needJudgeEmptyParam(["saleChannel"], kwargs)
+    elif searchType == "amazon_listCategoryMonitor":# 任务中心-分类监控-Aamzon获取分类
+        return needJudgeEmptyParam(["country"], kwargs)
     else:
         return False
 

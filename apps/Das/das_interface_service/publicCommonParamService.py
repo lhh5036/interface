@@ -88,6 +88,10 @@ def getAmazonApiInputParam(searchType):
         otherTypeListing03 = DasApiInputParam.shopMonitorListing03
         otherTypeListing02 = DasApiInputParam.shopMonitorListing02
         otherTypeListing01 = DasApiInputParam.shopMonitorListing01
+    elif searchType == "amazon_listCategoryMonitor":# 任务中心-分类监控-Aamzon获取分类
+        otherTypeListing03 = ""
+        otherTypeListing02 = DasApiInputParam.amazon_newCategory02
+        otherTypeListing01 = DasApiInputParam.amazon_newCategory01
     return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
 # 获取SMT平台入参
@@ -135,6 +139,10 @@ def getSmtApiInputParam(searchType):
         otherTypeListing03 = DasApiInputParam.shopMonitorListing03
         otherTypeListing02 = DasApiInputParam.shopMonitorListing02
         otherTypeListing01 = DasApiInputParam.shopMonitorListing01
+    elif searchType == "smt_listCategoryMonitor":# 任务中心-分类监控-SMT获取分类
+        otherTypeListing03 = ""
+        otherTypeListing02 = DasApiInputParam.smt_newCategory02
+        otherTypeListing01 = DasApiInputParam.smt_newCategory01
     return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
 # 获取1688平台入参
@@ -237,5 +245,9 @@ def getShopeeApiInputParam(searchType):
         otherTypeListing03 = DasApiInputParam.shopMonitorListing03
         otherTypeListing02 = DasApiInputParam.shopMonitorListing02
         otherTypeListing01 = DasApiInputParam.shopMonitorListing01
+    elif searchType == "shopee_listCategoryMonitor":# 任务中心-分类监控-shopee获取分类
+        otherTypeListing03 = ""
+        otherTypeListing02 = DasApiInputParam.shopee_newCategory02
+        otherTypeListing01 = DasApiInputParam.shopee_newCategory01
     return otherTypeListing03, otherTypeListing02, otherTypeListing01
 

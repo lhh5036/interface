@@ -78,6 +78,8 @@ def getAmazonApiUrl(searchType):
         url = DasApiUrl.keyWordsMonitor_url
     elif searchType == "amazon_shopMonitor":# 任务中心-店铺监控Amazon查询
         url = DasApiUrl.shopMonitor_url
+    elif searchType == "amazon_listCategoryMonitor":# 任务中心-分类监控-Aamzon获取分类
+        url = DasApiUrl.amazon_taskCenterNewCategory_url
     return url
 
 # 获取SMT平台的url
@@ -127,6 +129,8 @@ def getSmtApiUrl(searchType):
         url = DasApiUrl.keyWordsMonitor_url
     elif searchType == "smt_shopMonitor":# 任务中心-店铺监控SMT查询
         url = DasApiUrl.shopMonitor_url
+    elif searchType == "smt_listCategoryMonitor":# 任务中心-分类监控-SMT获取分类
+        url = DasApiUrl.smt_checkProductByRank_url
     return url
 
 # 获取1688平台的URL
@@ -226,6 +230,8 @@ def getShopeeApiUrl(searchType):
         url = DasApiUrl.keyWordsMonitor_url
     elif searchType == "shopee_shopMonitor":# 任务中心-店铺监控shopee查询
         url = DasApiUrl.shopMonitor_url
+    elif searchType == "shopee_listCategoryMonitor":# 任务中心-分类监控-shopee获取分类
+        url = DasApiUrl.shopee_checkProductByRank_url
     return url
 
 if __name__ == '__main__':
