@@ -2,7 +2,7 @@
 @File: operateTaskApi.py
 @time:2021/9/11
 @Author:quanliu
-@Desc:任务中心-分类监控页面-关注/删除/取消关注接口服务类
+@Desc:任务中心-分类监控页面/关键词监控页面-关注/删除/取消关注接口服务类
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
