@@ -11,7 +11,7 @@ from flask import render_template
 app = create_app("dev")
 
 # 接口调用入口
-@app.route("/dasInterfaceEntry")
+@app.route("/interfaceEntry")
 def dasInterfaceEntry():
     return render_template('system_entry.html')
 
