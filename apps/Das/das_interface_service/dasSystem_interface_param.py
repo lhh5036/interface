@@ -302,6 +302,15 @@ class DasApiInputParam:
     # 任务中心-分类监控-刷新任务
     crawlTask_param01 = {"args":"{0}"}
     crawlTask_param02 = {"ids": {0},"saleChannel":{1}}
+    # 任务中心-分类监控-新增分类
+    addCategoryTask_param01 = {"args":"{0}"}
+    addCategoryTask_param02 = {"listNodes":{0},"categoryUrl":{1},"categoryName":{2},"country":{3},"taskType":1,"listNodeName":{4},"saleChannel":{5}}
+    # 任务中心-关键词监控-新增关键词
+    addKeywordsTask_param01 = {"args":"{0}"}
+    addKeywordsTask_param02 = {"taskType":2,"country":{0},"keyword":{1},"saleChannel":{2}}
+    # 任务中心-店铺监控-新增店铺
+    addStoreTask_param01 = {"args":"{0}"}
+    addStoreTask_param02 = {"taskType":3,"country":{0},"sellerUrl":{1},"sellerName":{2},"saleChannel":{3},"notesInfo":""}
 
 
 

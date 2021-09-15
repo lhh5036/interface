@@ -20,6 +20,7 @@ def create_app(config_name):
 
     # 加载配置
     app.config.from_object(Config)
+    app.config['JSON_AS_ASCII'] = False
 
     # 在Flask对象中注册蓝图模块中的蓝图对象 das_view 中的 das_api
     app.register_blueprint(das_view.das_api)

@@ -168,11 +168,11 @@ class DasApiUrl:
     smt_customizeMarkListing_url = InterfaceCommonInfo.common_url + "/das/smt/querySmtBaseListingPageList"
     # 任务中心-自定义采集查询接口（1688）
     ali_customizeMarkListing_url = InterfaceCommonInfo.common_url + "/das/ali1688/queryAli1688PageList"
-    # 任务中心-分类监控（Amazon/smt/shopee）
+    # 任务中心-分类监控查询接口（Amazon/smt/shopee）
     classificateMonitor_url = InterfaceCommonInfo.common_url + "/das/task/queryTaskList"
-    # 任务中心-关键词监控（Amazon/smt/1688/shopee）
+    # 任务中心-关键词监控查询接口（Amazon/smt/1688/shopee）
     keyWordsMonitor_url = InterfaceCommonInfo.common_url + "/das/task/queryTaskList"
-    # 任务中心-店铺监控（Amazon/smt/1688/shopee）
+    # 任务中心-店铺监控查询接口（Amazon/smt/1688/shopee）
     shopMonitor_url = InterfaceCommonInfo.common_url + "/das/task/queryTaskList"
     # 任务中心-自定义采集-查询采集接口
     queryCustomizeTask_url = InterfaceCommonInfo.common_url + "/das/task/queryCustomizeTaskList"
@@ -192,6 +192,8 @@ class DasApiUrl:
     cancelAttentionTask_url = InterfaceCommonInfo.common_url + "/das/task/cancelAttentionTask"
     # 任务中心-分类监控-刷新任务接口
     crawlTask_url = InterfaceCommonInfo.common_url + "/das/task/crawlTask"
+    # 任务中心-关键词监控-新增关键词接口/分类监控-新增分类接口/店铺监控-新增店铺接口
+    addTask_url = InterfaceCommonInfo.common_url + "/das/task/addTask"
 
 
 
