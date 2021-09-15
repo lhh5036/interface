@@ -296,10 +296,10 @@ class DasApiInputParam:
     # 任务中心-分类监控-获取分类（shopee）
     shopee_newCategory01 = {"method":"listCategory","args":"{0}"}
     shopee_newCategory02 = {"categoryNodeLevel":"","nodes":""}
-    # 任务中心-分类监控-关注/删除/取消关注
+    # 任务中心-关注/删除/取消关注
     categoryTask_param01 = {"args":"{0}"}
     categoryTask_param02 = {"ids":{0}}
-    # 任务中心-分类监控-刷新任务
+    # 任务中心-刷新任务
     crawlTask_param01 = {"args":"{0}"}
     crawlTask_param02 = {"ids": {0},"saleChannel":{1}}
     # 任务中心-分类监控-新增分类
@@ -311,6 +311,9 @@ class DasApiInputParam:
     # 任务中心-店铺监控-新增店铺
     addStoreTask_param01 = {"args":"{0}"}
     addStoreTask_param02 = {"taskType":3,"country":{0},"sellerUrl":{1},"sellerName":{2},"saleChannel":{3},"notesInfo":""}
+    # 任务中心-启用/禁用接口
+    unenableTask_param01 = {"args": "{0}"}
+    unenableTask_param02 = {"ids":{0}}
 
 
 
