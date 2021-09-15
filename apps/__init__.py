@@ -4,6 +4,7 @@
 from flask import Flask
 
 from apps.Das import das_view
+from apps.Fmis import fmis_view
 from apps.config import DevelopementConfig, ProductionConfig
 
 config = {
@@ -22,5 +23,7 @@ def create_app(config_name):
 
     # 在Flask对象中注册蓝图模块中的蓝图对象 das_view 中的 das_api
     app.register_blueprint(das_view.das_api)
+    # 在Flask对象中注册蓝图模块中的蓝图对象 fmis_view 中的 fmis_api
+    app.register_blueprint(fmis_view.fmis_api)
 
     return app
