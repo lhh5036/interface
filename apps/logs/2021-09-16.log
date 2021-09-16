@@ -14,3 +14,5 @@
 [2021-09-16 10:53:43,352] queryWipoPageListApi.py->queryWipoPageListFunciton line:42 [INFO]queryWipoPageListFunciton------------------->end
 [2021-09-16 10:54:02,784] queryWipoPageListApi.py->queryWipoPageListFunciton line:20 [INFO]queryWipoPageListFunciton------------------->start
 [2021-09-16 10:54:02,925] queryWipoPageListApi.py->queryWipoPageListFunciton line:42 [INFO]queryWipoPageListFunciton------------------->end
+[2021-09-16 11:37:19,334] queryJsKwCategoryListApi.py->queryJsKwCategoryListFunction line:20 [INFO]queryJsKwCategoryListFunction------------------->start
+[2021-09-16 11:37:19,444] queryJsKwCategoryListApi.py->queryJsKwCategoryListFunction line:37 [INFO]queryJsKwCategoryListFunction------------------->end

@@ -327,7 +327,9 @@ class DasApiInputParam:
     queryWipoPage_param01 = {"args":"{0}"}
     queryWipoPage_param02 = {"search":{0},"offset":0,"limit":10,"sort":"","order":"DESC"}
     queryWipoPage_param03 = {"menuCode":"901110201","startCrawlTime":"","endCrawlTime":"","source":""}
-
+    # 工具助手-Jungle Scout规则配置国家类目查询
+    queryJsKeywordCategoryList_param01 = {"args":"{0}"}
+    queryJsKeywordCategoryList_param02 = {"country":""}
 
 
     # 参数配置-取消开发备注保存接口入参
