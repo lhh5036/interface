@@ -203,7 +203,8 @@ class DasApiUrl:
     listUsTradeMark_url = InterfaceCommonInfo.common_url + "/das/infringement/listUsTrademark"
     # 工具助手-侵权查询接口（欧洲）
     listEuTradeMark_url = InterfaceCommonInfo.common_url + "/das/infringement/listEuTrademark"
-
+    # 工具助手-USpto商标词
+    listNewUsTradeMark_url = InterfaceCommonInfo.common_url +"/das/infringement/listNewUsTrademark"
 
 
 

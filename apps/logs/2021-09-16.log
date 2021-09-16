@@ -1,2 +1,4 @@
 [2021-09-16 10:11:11,494] tradeMarkListApi.py->tradeMarkListFunction line:19 [INFO]tradeMarkListFunction------------------->start
 [2021-09-16 10:11:11,655] tradeMarkListApi.py->tradeMarkListFunction line:41 [INFO]tradeMarkListFunction------------------->end
+[2021-09-16 10:30:21,481] brandWordsListApi.py->brandWordsListFunction line:20 [INFO]brandWordsListFunction------------------->start
+[2021-09-16 10:30:21,625] brandWordsListApi.py->brandWordsListFunction line:36 [INFO]brandWordsListFunction------------------->end
