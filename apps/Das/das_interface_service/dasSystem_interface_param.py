@@ -341,6 +341,12 @@ class DasApiInputParam:
     queryJsKwRule_param03 = {"ruleName":"","country":"United States","category":"","averageMonthlySales":"min-max","monthlyAveragePrice":"min-max","monthlySearchVolume":"min-max",
                              "searchVolumeTrendsTime":30,"searchVolumeTrends":"min-max","marketOpportunityScore":"min-max","competitionDegree":"非常低-非常高","seasonal":"非常低-非常高",
                              "includeKeywords":"","excludeKeywords":"","excludeTopBrands":0}
+    # 工具助手-Amazon关键词查询接口
+    queryJsKw_param01 = {"args":"{0}"}
+    queryJsKw_param02 = {"search":{0},"offset":0,"limit":50,"sort":"updatedTime","order":"DESC","dataStatus":0}
+    queryJsKw_param03 = {"country":"","category":"","startAverageMonthlySales":"","endAverageMonthlySales":"","startMonthlyAveragePrice":"","endMonthlyAveragePrice":"",
+                         "startMonthlySearchVolume":"","endMonthlySearchVolume":"","startMarketOpportunityScore":"","endMarketOpportunityScore":"","keyWords":"","offset":0}
+
 
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}

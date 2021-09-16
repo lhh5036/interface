@@ -55,3 +55,7 @@
 [2021-09-16 12:54:12,269] addJSKwCategoryListApi.py->addJSKwCategoryListFunction line:50 [ERROR]addJSKwCategoryListFunction------------->response Data is wrong!
 [2021-09-16 15:24:21,544] queryJsKwRuleListApi.py->queryJsKwRuleListFunction line:20 [INFO]queryJsKwRuleListFunction------------------->start
 [2021-09-16 15:24:21,717] queryJsKwRuleListApi.py->queryJsKwRuleListFunction line:42 [INFO]queryJsKwRuleListFunction------------------->end
+[2021-09-16 15:36:38,815] queryJsKwPageListApi.py->queryJsKwPageListFunction line:19 [INFO]queryJsKwPageListFunction------------------->start
+[2021-09-16 15:37:14,888] queryJsKwPageListApi.py->queryJsKwPageListFunction line:19 [INFO]queryJsKwPageListFunction------------------->start
+[2021-09-16 15:39:21,332] queryJsKwPageListApi.py->queryJsKwPageListFunction line:19 [INFO]queryJsKwPageListFunction------------------->start
+[2021-09-16 15:39:21,434] queryJsKwPageListApi.py->queryJsKwPageListFunction line:41 [INFO]queryJsKwPageListFunction------------------->end

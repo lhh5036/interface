@@ -215,7 +215,8 @@ class DasApiUrl:
     addJsKwRule_url = InterfaceCommonInfo.common_url +"/das/jungleScoutKeywordRule/addRule"
     # 工具助手-Jungle Scout规则配置查询接口
     queryJsKwRule_url = InterfaceCommonInfo.common_url +"/das/jungleScoutKeywordRule/queryRulePageList"
-
+    # 工具助手-Amazon关键词查询接口
+    queryJsKw_url = InterfaceCommonInfo.common_url + "/das/jungleScoutKeyword/queryPageList"
 
     # 参数配置-取消开发备注保存接口
     paramConfigSave_url = InterfaceCommonInfo.common_url + "/das/parameterConfiguration/updateCancelDevNotesInfo"
