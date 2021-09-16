@@ -199,6 +199,12 @@ class DasApiUrl:
     # 任务中心-禁用接口
     unenableTask_url = InterfaceCommonInfo.common_url + "/das/task/unenableTask"
 
+    # 工具助手-侵权查询接口(美国)
+    listUsTradeMark_url = InterfaceCommonInfo.common_url + "/das/infringement/listUsTrademark"
+    # 工具助手-侵权查询接口（欧洲）
+    listEuTradeMark_url = InterfaceCommonInfo.common_url + "/das/infringement/listEuTrademark"
+
+
 
 
     # 参数配置-取消开发备注保存接口

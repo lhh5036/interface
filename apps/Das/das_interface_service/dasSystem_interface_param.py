@@ -315,6 +315,11 @@ class DasApiInputParam:
     unenableTask_param01 = {"args": "{0}"}
     unenableTask_param02 = {"ids":{0}}
 
+    # 工具助手-侵权查询接口
+    listTradeMark_param01 = {"args":"{0}"}
+    listTradeMark_param02 = {"search":{0},"offset":0,"limit":10,"sort":"","order":"DESC"}
+    listTradeMark_param03 = {"keyword":"","menuCode":"9011101"}
+
 
 
     # 参数配置-取消开发备注保存接口入参
