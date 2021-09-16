@@ -323,7 +323,10 @@ class DasApiInputParam:
     listNewTradeMark_param01 = {"args":"{0}"}
     listNewTradeMark_param02 = {"search":{0},"offset":0,"limit":10,"sort":"","order":"DESC"}
     listNewTradeMark_param03 = {"menuCode":"","wordMark":""} # menuCode:901110301--EUipo/901110201--USpto
-
+    # 工具助手-WIPO商标词
+    queryWipoPage_param01 = {"args":"{0}"}
+    queryWipoPage_param02 = {"search":{0},"offset":0,"limit":10,"sort":"","order":"DESC"}
+    queryWipoPage_param03 = {"menuCode":"901110201","startCrawlTime":"","endCrawlTime":"","source":""}
 
 
 
