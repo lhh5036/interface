@@ -36,12 +36,12 @@ class Mysql_handleOperator():
         self.methods = methods      # 声明增删改查哪种操作(insert/delete/update/select)
         self.sql = sql              # sql语句
 
-        # 查询数据库数据
+        # 一次性查询数据库数据
         if self.methods == 'select':
             cursor = self.con.cursor() # 创建一个游标
             cursor.execute(self.sql)
-            cursor.close()
             results = cursor.fetchall() # 返回全部结果
+            cursor.close()
             self.con.close() # 关闭数据库连接
             return results
 
@@ -53,6 +53,25 @@ class Mysql_handleOperator():
                 self.con.commit()
             except:
                 self.con.rollback() # 出现异常回滚
+            cursor.close()
             self.con.close() # 关闭数据库连接
+
+    # 使用流式游标分批次查询数据表数据
+    def data_cursor_sql(self, sql):
+        self.sql = sql  # sql语句
+
+        cursor = pymysql.cursors.SSCursor(self.con)
+        cursor.execute(self.sql)
+        results = []
+        while True:
+            result = cursor.fetchone()
+            results.append(result)
+            # print(result)
+            if not result:
+                break
+        results = [i for i in results if i != None]
+        cursor.close()
+        self.con.close()
+        return results
 
 
