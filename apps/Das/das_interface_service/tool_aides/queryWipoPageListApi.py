@@ -43,7 +43,7 @@ class QueryWipoPageListApi():
             return "接口响应成功,接口返回值:{0}".format(resp.json()["rows"])
         else:
             logger.error("queryWipoPageListFunciton------------->response Data is wrong!")
-            return "接口响应失败,失败原因:{0},接口地址:{1},接口类型:{2},请求参数:{3}".format(resp.json()["errorMsg"], url,queryWipoPage_param01)
+            return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"], url,queryWipoPage_param01)
 
 if __name__ == '__main__':
     print(QueryWipoPageListApi().queryWipoPageListFunciton({"source":"AETM","startCrawlTime":"2021-03-26 00:00:00","endCrawlTime":"2021-03-27 00:00:00"}))

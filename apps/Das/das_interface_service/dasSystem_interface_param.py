@@ -330,7 +330,11 @@ class DasApiInputParam:
     # 工具助手-Jungle Scout规则配置国家类目查询
     queryJsKeywordCategoryList_param01 = {"args":"{0}"}
     queryJsKeywordCategoryList_param02 = {"country":""}
-
+    # 工具助手-Jungle Scout规则配置添加规则接口
+    addJsKwRule_param01 = {"args":"{0}"}
+    addJsKwRule_param02 = {"ruleName":"","country":"","category":"","averageMonthlySales":"min-max","monthlyAveragePrice":"min-max","monthlySearchVolume":"min-max",
+                           "searchVolumeTrendsTime":30,"searchVolumeTrends":"min-max","marketOpportunityScore":"min-max","competitionDegree":"非常低-非常高","seasonal":"非常低-非常高",
+                           "includeKeywords":"","excludeKeywords":"","excludeTopBrands":0}
 
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}
