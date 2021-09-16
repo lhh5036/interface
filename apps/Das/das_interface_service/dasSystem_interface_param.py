@@ -335,6 +335,12 @@ class DasApiInputParam:
     addJsKwRule_param02 = {"ruleName":"","country":"","category":"","averageMonthlySales":"min-max","monthlyAveragePrice":"min-max","monthlySearchVolume":"min-max",
                            "searchVolumeTrendsTime":30,"searchVolumeTrends":"min-max","marketOpportunityScore":"min-max","competitionDegree":"非常低-非常高","seasonal":"非常低-非常高",
                            "includeKeywords":"","excludeKeywords":"","excludeTopBrands":0}
+    # 工具助手-Jungle Scout规则配置查询接口
+    queryJsKwRule_param01 = {"args":"{0}"}
+    queryJsKwRule_param02 = {"search":{0},"offset":0,"limit":50,"sort":"createdTime","order":"DESC"}
+    queryJsKwRule_param03 = {"ruleName":"","country":"United States","category":"","averageMonthlySales":"min-max","monthlyAveragePrice":"min-max","monthlySearchVolume":"min-max",
+                             "searchVolumeTrendsTime":30,"searchVolumeTrends":"min-max","marketOpportunityScore":"min-max","competitionDegree":"非常低-非常高","seasonal":"非常低-非常高",
+                             "includeKeywords":"","excludeKeywords":"","excludeTopBrands":0}
 
     # 参数配置-取消开发备注保存接口入参
     paramConfig_param = {"args":"{args}"}
