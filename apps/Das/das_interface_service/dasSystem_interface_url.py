@@ -205,7 +205,8 @@ class DasApiUrl:
     listEuTradeMark_url = InterfaceCommonInfo.common_url + "/das/infringement/listEuTrademark"
     # 工具助手-USpto商标词
     listNewUsTradeMark_url = InterfaceCommonInfo.common_url +"/das/infringement/listNewUsTrademark"
-
+    # 工具助手-EUipo商标词
+    listNewEuTradeMark_url = InterfaceCommonInfo.common_url +"/das/infringement/listNewEuTrademark"
 
 
     # 参数配置-取消开发备注保存接口

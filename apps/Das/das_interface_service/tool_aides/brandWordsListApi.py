@@ -16,29 +16,35 @@ import requests
 logger = MyLog("BrandWordsListAPi").getlog()  # 初始化
 
 class BrandWordsListAPi():
-    def brandWordsListFunction(self,paramStr):
+    def brandWordsListFunction(self,brandWordType,paramStr):
         logger.info("brandWordsListFunction------------------->start")
-        url = DasApiUrl.listNewUsTradeMark_url  # 请求地址
+        if brandWordType == "":
+            logger.error("brandWordsListFunction------------------->Brand Words Type is empty!")
+            return "商标词类型为空!"
+        if brandWordType == "USpto":
+            url = DasApiUrl.listNewUsTradeMark_url  # 请求地址
+        elif brandWordType == "EUipo":
+            url = DasApiUrl.listNewEuTradeMark_url
         # 请求参数
-        listNewUsTradeMark_param03 = DasApiInputParam.listNewUsTradeMark_param03
-        listNewUsTradeMark_param02 = DasApiInputParam.listNewUsTradeMark_param02
-        listNewUsTradeMark_param01 = DasApiInputParam.listNewUsTradeMark_param01
-        listNewUsTradeMark_param03["wordMark"] = paramStr
-        listNewUsTradeMark_param02["search"] = listNewUsTradeMark_param03
-        listNewUsTradeMark_param01["args"] = json.dumps(listNewUsTradeMark_param02)
+        listNewTradeMark_param03 = DasApiInputParam.listNewTradeMark_param03
+        listNewTradeMark_param02 = DasApiInputParam.listNewTradeMark_param02
+        listNewTradeMark_param01 = DasApiInputParam.listNewTradeMark_param01
+        listNewTradeMark_param03["wordMark"] = paramStr
+        listNewTradeMark_param02["search"] = listNewTradeMark_param03
+        listNewTradeMark_param01["args"] = json.dumps(listNewTradeMark_param02)
         # 请求头信息
         header = Common_TokenHeader().token_header("new", "181324")
         self.url = url
         self.header = header
-        self.formData = listNewUsTradeMark_param01
+        self.formData = listNewTradeMark_param01
         resp = requests.post(url=self.url, headers=self.header, data=json.dumps(self.formData))
         if resp.json()["success"] == True:
             logger.info("brandWordsListFunction------------------->end")
             return "接口响应成功,接口返回值:{0}".format(resp.json()["rows"])
         else:
             logger.error("brandWordsListFunction------------->response Data is wrong!")
-            return "接口响应失败,失败原因:{0},接口地址:{1},接口类型:{2},请求参数:{3}".format(resp.json()["errorMsg"], url,listNewUsTradeMark_param01)
+            return "接口响应失败,失败原因:{0},接口地址:{1},接口类型:{2},请求参数:{3}".format(resp.json()["errorMsg"], url,listNewTradeMark_param01)
 
 
 if __name__ == '__main__':
-    print(BrandWordsListAPi().brandWordsListFunction("PODVUKZ"))
+    print(BrandWordsListAPi().brandWordsListFunction("EUipo","EMCEL"))

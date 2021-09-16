@@ -319,10 +319,10 @@ class DasApiInputParam:
     listTradeMark_param01 = {"args":"{0}"}
     listTradeMark_param02 = {"search":{0},"offset":0,"limit":10,"sort":"","order":"DESC"}
     listTradeMark_param03 = {"keyword":"","menuCode":"9011101"}
-    # 工具助手-USpto商标词
-    listNewUsTradeMark_param01 = {"args":"{0}"}
-    listNewUsTradeMark_param02 = {"search":{0},"offset":0,"limit":10,"sort":"","order":"DESC"}
-    listNewUsTradeMark_param03 = {"menuCode":"901110201","wordMark":""}
+    # 工具助手-USpto商标词/EUipo商标词
+    listNewTradeMark_param01 = {"args":"{0}"}
+    listNewTradeMark_param02 = {"search":{0},"offset":0,"limit":10,"sort":"","order":"DESC"}
+    listNewTradeMark_param03 = {"menuCode":"","wordMark":""} # menuCode:901110301--EUipo/901110201--USpto
 
 
 
