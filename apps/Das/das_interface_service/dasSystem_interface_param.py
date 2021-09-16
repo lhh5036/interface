@@ -296,13 +296,56 @@ class DasApiInputParam:
     # 任务中心-分类监控-获取分类（shopee）
     shopee_newCategory01 = {"method":"listCategory","args":"{0}"}
     shopee_newCategory02 = {"categoryNodeLevel":"","nodes":""}
-    # 任务中心-分类监控-关注/删除/取消关注
+    # 任务中心-关注/删除/取消关注
     categoryTask_param01 = {"args":"{0}"}
     categoryTask_param02 = {"ids":{0}}
-    # 任务中心-分类监控-刷新任务
+    # 任务中心-刷新任务
     crawlTask_param01 = {"args":"{0}"}
     crawlTask_param02 = {"ids": {0},"saleChannel":{1}}
+    # 任务中心-分类监控-新增分类
+    addCategoryTask_param01 = {"args":"{0}"}
+    addCategoryTask_param02 = {"listNodes":{0},"categoryUrl":{1},"categoryName":{2},"country":{3},"taskType":1,"listNodeName":{4},"saleChannel":{5}}
+    # 任务中心-关键词监控-新增关键词
+    addKeywordsTask_param01 = {"args":"{0}"}
+    addKeywordsTask_param02 = {"taskType":2,"country":{0},"keyword":{1},"saleChannel":{2}}
+    # 任务中心-店铺监控-新增店铺
+    addStoreTask_param01 = {"args":"{0}"}
+    addStoreTask_param02 = {"taskType":3,"country":{0},"sellerUrl":{1},"sellerName":{2},"saleChannel":{3},"notesInfo":""}
+    # 任务中心-启用/禁用接口
+    unenableTask_param01 = {"args": "{0}"}
+    unenableTask_param02 = {"ids":{0}}
 
+    # 工具助手-侵权查询接口
+    listTradeMark_param01 = {"args":"{0}"}
+    listTradeMark_param02 = {"search":{0},"offset":0,"limit":10,"sort":"","order":"DESC"}
+    listTradeMark_param03 = {"keyword":"","menuCode":"9011101"}
+    # 工具助手-USpto商标词/EUipo商标词
+    listNewTradeMark_param01 = {"args":"{0}"}
+    listNewTradeMark_param02 = {"search":{0},"offset":0,"limit":10,"sort":"","order":"DESC"}
+    listNewTradeMark_param03 = {"menuCode":"","wordMark":""} # menuCode:901110301--EUipo/901110201--USpto
+    # 工具助手-WIPO商标词
+    queryWipoPage_param01 = {"args":"{0}"}
+    queryWipoPage_param02 = {"search":{0},"offset":0,"limit":10,"sort":"","order":"DESC"}
+    queryWipoPage_param03 = {"menuCode":"901110201","startCrawlTime":"","endCrawlTime":"","source":""}
+    # 工具助手-Jungle Scout规则配置国家类目查询
+    queryJsKeywordCategoryList_param01 = {"args":"{0}"}
+    queryJsKeywordCategoryList_param02 = {"country":""}
+    # 工具助手-Jungle Scout规则配置添加规则接口
+    addJsKwRule_param01 = {"args":"{0}"}
+    addJsKwRule_param02 = {"ruleName":"","country":"","category":"","averageMonthlySales":"min-max","monthlyAveragePrice":"min-max","monthlySearchVolume":"min-max",
+                           "searchVolumeTrendsTime":30,"searchVolumeTrends":"min-max","marketOpportunityScore":"min-max","competitionDegree":"非常低-非常高","seasonal":"非常低-非常高",
+                           "includeKeywords":"","excludeKeywords":"","excludeTopBrands":0}
+    # 工具助手-Jungle Scout规则配置查询接口
+    queryJsKwRule_param01 = {"args":"{0}"}
+    queryJsKwRule_param02 = {"search":{0},"offset":0,"limit":50,"sort":"createdTime","order":"DESC"}
+    queryJsKwRule_param03 = {"ruleName":"","country":"United States","category":"","averageMonthlySales":"min-max","monthlyAveragePrice":"min-max","monthlySearchVolume":"min-max",
+                             "searchVolumeTrendsTime":30,"searchVolumeTrends":"min-max","marketOpportunityScore":"min-max","competitionDegree":"非常低-非常高","seasonal":"非常低-非常高",
+                             "includeKeywords":"","excludeKeywords":"","excludeTopBrands":0}
+    # 工具助手-Amazon关键词查询接口
+    queryJsKw_param01 = {"args":"{0}"}
+    queryJsKw_param02 = {"search":{0},"offset":0,"limit":50,"sort":"updatedTime","order":"DESC","dataStatus":0}
+    queryJsKw_param03 = {"country":"","category":"","startAverageMonthlySales":"","endAverageMonthlySales":"","startMonthlyAveragePrice":"","endMonthlyAveragePrice":"",
+                         "startMonthlySearchVolume":"","endMonthlySearchVolume":"","startMarketOpportunityScore":"","endMarketOpportunityScore":"","keyWords":"","offset":0}
 
 
     # 参数配置-取消开发备注保存接口入参

@@ -168,11 +168,11 @@ class DasApiUrl:
     smt_customizeMarkListing_url = InterfaceCommonInfo.common_url + "/das/smt/querySmtBaseListingPageList"
     # 任务中心-自定义采集查询接口（1688）
     ali_customizeMarkListing_url = InterfaceCommonInfo.common_url + "/das/ali1688/queryAli1688PageList"
-    # 任务中心-分类监控（Amazon/smt/shopee）
+    # 任务中心-分类监控查询接口（Amazon/smt/shopee）
     classificateMonitor_url = InterfaceCommonInfo.common_url + "/das/task/queryTaskList"
-    # 任务中心-关键词监控（Amazon/smt/1688/shopee）
+    # 任务中心-关键词监控查询接口（Amazon/smt/1688/shopee）
     keyWordsMonitor_url = InterfaceCommonInfo.common_url + "/das/task/queryTaskList"
-    # 任务中心-店铺监控（Amazon/smt/1688/shopee）
+    # 任务中心-店铺监控查询接口（Amazon/smt/1688/shopee）
     shopMonitor_url = InterfaceCommonInfo.common_url + "/das/task/queryTaskList"
     # 任务中心-自定义采集-查询采集接口
     queryCustomizeTask_url = InterfaceCommonInfo.common_url + "/das/task/queryCustomizeTaskList"
@@ -184,17 +184,39 @@ class DasApiUrl:
     smt_checkProductByRank_url = InterfaceCommonInfo.common_url + "/das/smt/category/queryCategoryList"
     # 任务中心-分类监控-获取分类接口（Shopee）
     shopee_checkProductByRank_url = InterfaceCommonInfo.common_url + "/das/shopee/category"
-    # 任务中心-分类监控-关注接口
+    # 任务中心-关注接口
     attentionTask_url = InterfaceCommonInfo.common_url + "/das/task/attentionTask"
-    # 任务中心-分类监控-删除接口
+    # 任务中心-删除接口
     deleteTask_url = InterfaceCommonInfo.common_url + "/das/task/deleteTask"
-    # 任务中心-分类监控-取消关注接口
+    # 任务中心-取消关注接口
     cancelAttentionTask_url = InterfaceCommonInfo.common_url + "/das/task/cancelAttentionTask"
-    # 任务中心-分类监控-刷新任务接口
+    # 任务中心-刷新任务接口
     crawlTask_url = InterfaceCommonInfo.common_url + "/das/task/crawlTask"
+    # 任务中心-关键词监控-新增关键词接口/分类监控-新增分类接口/店铺监控-新增店铺接口
+    addTask_url = InterfaceCommonInfo.common_url + "/das/task/addTask"
+    # 任务中心-启用接口
+    enableTask_url = InterfaceCommonInfo.common_url + "/das/task/enableTask"
+    # 任务中心-禁用接口
+    unenableTask_url = InterfaceCommonInfo.common_url + "/das/task/unenableTask"
 
-
-
+    # 工具助手-侵权查询接口(美国)
+    listUsTradeMark_url = InterfaceCommonInfo.common_url + "/das/infringement/listUsTrademark"
+    # 工具助手-侵权查询接口（欧洲）
+    listEuTradeMark_url = InterfaceCommonInfo.common_url + "/das/infringement/listEuTrademark"
+    # 工具助手-USpto商标词
+    listNewUsTradeMark_url = InterfaceCommonInfo.common_url +"/das/infringement/listNewUsTrademark"
+    # 工具助手-EUipo商标词
+    listNewEuTradeMark_url = InterfaceCommonInfo.common_url +"/das/infringement/listNewEuTrademark"
+    # 工具助手-WIPO商标词
+    queryWipoPage_url = InterfaceCommonInfo.common_url + "/das/wipo/queryWipoPage"
+    # 工具助手-Jungle Scout规则配置国家类目查询接口
+    queryJsKeywordCategoryList_url = InterfaceCommonInfo.common_url + "/das/jungleScoutKeywordCategory/queryJungleScoutKeywordCategoryList"
+    # 工具助手-Jungle Scout规则配置添加规则接口
+    addJsKwRule_url = InterfaceCommonInfo.common_url +"/das/jungleScoutKeywordRule/addRule"
+    # 工具助手-Jungle Scout规则配置查询接口
+    queryJsKwRule_url = InterfaceCommonInfo.common_url +"/das/jungleScoutKeywordRule/queryRulePageList"
+    # 工具助手-Amazon关键词查询接口
+    queryJsKw_url = InterfaceCommonInfo.common_url + "/das/jungleScoutKeyword/queryPageList"
 
     # 参数配置-取消开发备注保存接口
     paramConfigSave_url = InterfaceCommonInfo.common_url + "/das/parameterConfiguration/updateCancelDevNotesInfo"
