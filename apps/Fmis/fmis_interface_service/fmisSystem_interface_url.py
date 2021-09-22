@@ -10,7 +10,7 @@
 from apps.Common_Config.interface_common_info import InterfaceCommonInfo
 
 class FmisApiUrl:
-    
+
     '''财务管理-财务报表'''
     # 资金收入日报表&资金支出日报表&资金余额日报表&资金对比日报表-查询&添加&删除接口
     fundReport_query_url = InterfaceCommonInfo.common_url + "/fmis/fundReport"
