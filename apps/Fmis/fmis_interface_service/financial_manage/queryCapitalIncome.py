@@ -9,9 +9,10 @@
 '''
 
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
-from apps.Das.das_interface_service.publicCommonUrlSevice import PublicCommonUrlServiceClass
+from apps.Fmis.fmis_interface_service.fmisSystem_interface_url import FmisApiUrl
+from apps.Fmis.fmis_interface_service.fmisSystem_interface_param import FmisApiInputParam
 from apps.logger import MyLog
+from apps.Common_Config.interface_common_info import InterfaceCommonInfo
 import requests
 import json
 
@@ -20,11 +21,36 @@ logger = MyLog("QueryCapitalIncome").getlog()
 
 # 查询资金收入日报表列表数据接口
 class QueryCapitalIncome():
-    def __init__(self, url, header, formData):
+    def __init__(self, url=InterfaceCommonInfo.common_url,
+                 header=Common_TokenHeader().common_header):
+        # 初始化url和header
         self.url = url
         self.header = header
-        self.formData = formData
 
-    def querycapitalincome(self):
+    def querycapitalincome(self, paramList):
+        self.paramList = paramList
+
         logger.info("querycapitalincome ---->start!")
-        pass
+        # 拼接接口请求入参
+        if len(paramList) == 0:
+            logger.error("querycapitalincome --> request parameters is wrong!")
+            return "请求参数为空"
+        form03 = FmisApiInputParam.capital_income03
+        i = 0
+        for k in form03.keys():
+            form03[k] = paramList[i]
+            i += 1
+        form02 = FmisApiInputParam.capital_income02
+        form02["search"] = json.dumps(form03)
+        form01 = FmisApiInputParam.capital_income01
+        form01["args"] = json.dumps(form02)
+        self.form = form01
+
+        resp = requests.post(self.url, headers=self.header, data=self.form)
+        if resp.json()["success"] == True:
+            logger.info("querycapitalincome ---->end!")
+            return "查询资金收入日报表列表数据--接口响应成功"
+        else:
+            logger.error("querycapitalincome ----> response Data is wrong!")
+            return "接口响应失败,失败原因:{0},\n接口地址:{1},\n请求参数:{2}".format(resp.json(),
+                                                                  self.url, self.form)
