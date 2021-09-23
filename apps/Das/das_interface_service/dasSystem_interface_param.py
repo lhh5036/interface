@@ -2,7 +2,7 @@
 @File: dasSystem_interface_param.py
 @time:2021/8/5
 @Author:quanliu 181324
-@Desc:数据管理页面接口请求入参
+@Desc:数据分析接口请求入参
 '''
 
 class DasApiInputParam:
