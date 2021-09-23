@@ -8,4 +8,11 @@
 '''
 
 class Fmis_Common_Config:
+
+    # 资金收入日报表
+    capital_income = "capital_income"
+
+
+# 调试程序
+if __name__ == '__main__':
     pass
