@@ -12,7 +12,7 @@ app = create_app("dev")
 
 # 接口调用入口
 @app.route("/interfaceEntry")
-def dasInterfaceEntry():
+def estoneInterfaceEntry():
     return render_template('system_entry.html')
 
 

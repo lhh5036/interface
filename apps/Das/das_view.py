@@ -32,3 +32,7 @@ def run_dasTestcaseExecute():
     runner.run(discover)
     fp.close()
     return "数据分析系统用例执行完成!"
+
+if __name__ == '__main__':
+    s = run_dasTestcaseExecute()
+    print(s)
