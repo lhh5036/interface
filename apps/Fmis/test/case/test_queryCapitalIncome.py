@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+#!/usr/bin/python3
 '''
 @File: test_queryCapitalIncome
 @time:2021/9/23
@@ -23,21 +25,19 @@ class Test_queryCapitalIncome(unittest.TestCase):
         # 获取当前月份的第一天和最后一天
         start_time = getMonthFirstDay()
         end_time = getMonthLastDay()
-        lis.append(start_time)
-        lis.append(end_time)
+        lis.append(str(start_time)+"T16:00:00.000Z")
+        lis.append(str(end_time)+"T16:00:00.000Z")
         incomeTypes_list = ['业务收入', '内部往来收入']
         incomeType = incomeTypes_list[random.randint(0, len(incomeTypes_list)-1)]
         lis.append(incomeType)
-
         return lis
 
     def testCase01(self):
         paramsList = self.queryCapitalIncome()
-        responseResult01 = QueryCapitalIncome.querycapitalincome(paramsList)
+        responseResult01 = QueryCapitalIncome().querycapitalincome(paramsList)
         return responseResult01
 
 
-
 if __name__ == '__main__':
-    Test_queryCapitalIncome.testCase01()
+    Test_queryCapitalIncome().testCase01()
     pass
