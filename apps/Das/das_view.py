@@ -20,7 +20,7 @@ das_report_path = os.path.dirname(os.path.realpath(__file__)) + "\\report" # 测
 @das_api.route('/das/allTestCase/execute')
 def run_dasTestcaseExecute():
     # 文件的路径
-    discover = unittest.defaultTestLoader.discover(das_garder_path,pattern='test_*.py')
+    discover = unittest.defaultTestLoader.discover(das_garder_path, pattern='test_*.py', top_level_dir=os.getcwd())
     # 获取当前时间
     now = time.strftime("%Y-%m-%d-%H_%M_%S",time.localtime(time.time()))
     # html报告文件路径
