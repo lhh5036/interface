@@ -10,6 +10,7 @@ import unittest
 import time
 import HTMLTestRunner
 from flask import Blueprint
+from pathlib import Path
 
 from apps.utils.date_operate_util import DateUtils
 
@@ -31,6 +32,13 @@ def run_fmisTestcaseExecute():
     now = time.strftime("%Y-%m-%d-%H_%M_%S",time.localtime(time.time()))
     # html报告文件路径
     report_abspath = os.path.join(fmis_report_path, "result_" + now + ".html")
+    # 删除昨天的报告
+    p = Path(fmis_report_path)
+    delete_date = DateUtils().getTheDate(-1, "%Y-%m-%d")
+    for file in p.rglob("result_" + delete_date + "*" + ".html"):
+        # 判断是否为文件，只删除文件
+        if os.path.isfile(file):
+            os.remove(file)
 
     # 打开文件并写入报告
     fp = open(report_abspath, "wb")
@@ -38,6 +46,7 @@ def run_fmisTestcaseExecute():
                                            description="用例执行情况:")
     runner.run(discover)
     fp.close()
+
     return "财务系统用例执行完成!"
 
 

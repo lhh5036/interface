@@ -10,6 +10,9 @@ import os
 import unittest
 import time
 import HTMLTestRunner
+from pathlib import Path
+
+from apps.utils.date_operate_util import DateUtils
 
 das_api = Blueprint("das_api",__name__) # 实例化一个蓝图(Blueprint)对象
 
@@ -25,6 +28,14 @@ def run_dasTestcaseExecute():
     now = time.strftime("%Y-%m-%d-%H_%M_%S",time.localtime(time.time()))
     # html报告文件路径
     report_abspath = os.path.join(das_report_path,"result_"+now+".html")
+
+    # 删除昨天的报告
+    p = Path(das_report_path)
+    delete_date = DateUtils().getTheDate(-1, "%Y-%m-%d")
+    for file in p.rglob("result_" + delete_date + "*" + ".html"):
+        # 判断是否为文件，只删除文件
+        if os.path.isfile(file):
+            os.remove(file)
 
     # 打开文件，将报告写入
     fp = open(report_abspath,"wb")
