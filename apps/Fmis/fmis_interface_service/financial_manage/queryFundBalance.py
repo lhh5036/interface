@@ -53,7 +53,7 @@ class QueryFundBalance():
         try:
             if resp.json()["success"] == True:
                 logger.info("queryfundbalance ---->end!")
-                return "查询资金收入日报表列表数据--接口响应成功"
+                return "查询资金余额日报表列表数据--接口响应成功"
             else:
                 logger.error("queryfundbalance ----> response Data is wrong!")
                 return "接口响应失败,失败原因:{0},\n接口地址:{1},\n请求参数:{2}".format(resp.json(),

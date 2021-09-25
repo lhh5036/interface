@@ -27,4 +27,9 @@ class FmisApiInputParam:
     fund_balance01 = {"method":"fundBalanceList","args":"{0}"}
     fund_balance02 = {"search": 0,"pageReqired":true,"limit":10,"offset":0,"order":"desc"}
     fund_balance03 = {"startDate":"","endDate":"","startModifyTime":"","endModifyTime":""}
+
+    # 财务报表-资金对比日报表查询入参
+    capital_contrast01 = {"method":"selectCapitalContrastList","args":"{0}"}
+    capital_contrast02 = {"search":0,"sort":"recordDate","order":"DESC","pageReqired":true,"limit":10,"offset":0}
+    capital_contrast03 = {"startDate":"","endDate":""}
     pass
