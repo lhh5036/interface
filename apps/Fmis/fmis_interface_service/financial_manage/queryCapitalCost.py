@@ -9,6 +9,7 @@ from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Fmis.fmis_interface_service.fmisSystem_interface_url import FmisApiUrl
 from apps.Fmis.fmis_interface_service.fmisSystem_interface_param import FmisApiInputParam
 from apps.logger import MyLog
+from apps.utils.get_api_respontime import Get_Api_Respontime
 
 import requests
 import json
@@ -46,6 +47,7 @@ class QueryCapitalCost():
         print(self.form)
         resp = requests.post(self.url, headers=self.header, data=self.form.encode())
         print(resp.json())
+        print(Get_Api_Respontime(resp).get_api_respontime('ms'))
         try:
             if resp.json()["success"] == True:
                 logger.info("querycapitalcost ---->end!")
