@@ -17,4 +17,9 @@ class FmisApiInputParam:
     capital_income01 = {"method":"capitalIncomeList", "args":"{0}"}
     capital_income02 = {"search":"{0}","pageReqired":true,"limit":10,"offset":0,"order":"desc"}
     capital_income03 = {"startDate":"{0}","endDate":"{1}","incomeTypes":"{2}"}
+
+    # 财务报表-资金支出日报表查询入参
+    capital_cost01 = {"method":"capitalCostList","args":"{0}"}
+    capital_cost02 = {"search":0,"pageReqired":true,"limit":10,"offset":0,"order":"desc"}
+    capital_cost03 = {"startDate":"{0}","endDate":"{1}","costTypes":"{2}"}
     pass
