@@ -22,4 +22,9 @@ class FmisApiInputParam:
     capital_cost01 = {"method":"capitalCostList","args":"{0}"}
     capital_cost02 = {"search":0,"pageReqired":true,"limit":10,"offset":0,"order":"desc"}
     capital_cost03 = {"startDate":"{0}","endDate":"{1}","costTypes":"{2}"}
+
+    # 财务报表-资金余额日报表查询入参
+    fund_balance01 = {"method":"fundBalanceList","args":"{0}"}
+    fund_balance02 = {"search": 0,"pageReqired":true,"limit":10,"offset":0,"order":"desc"}
+    fund_balance03 = {"startDate":"","endDate":"","startModifyTime":"","endModifyTime":""}
     pass
