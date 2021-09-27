@@ -8,7 +8,7 @@
 import requests
 
 class Get_Api_Respontime():
-    def __init__(self, resp):
+    def __init__(self, resp):   # resp为接口返回数据
         self.resp = resp
 
     def get_api_respontime(self, index):
