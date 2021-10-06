@@ -7,21 +7,20 @@
 
 
 from apps.Common_Config.db_config import ReadConfig
+from apps.Fmis.fmis_common_settting import Fmis_Common_Setting
 import pymysql
+import pprint
 
 # mysql数据库具体操作实现类
 class Mysql_handleOperator():
-    def __init__(self,projectname,env,dbtype="mysql"):
-        self.projectname = projectname # 系统名称
-        self.env = env # 当前环境
-        self.dbtype = dbtype # 数据库类型
-        _database,_host,_user,_password = ReadConfig().getDbConfig(self.env,self.projectname,self.dbtype) # 根据条件得到对应的数据库信息
-        self.host = _host
-        self.user = _user
-        self.password = _password
-        self.database = _database
+    def __init__(self, sqlinfo):    # sqlinfo为各系统通过db_config全局配置解析出来的数据库信息元组
+        self.sqlinfo = sqlinfo
+        self.host = self.sqlinfo[1]
+        self.user = self.sqlinfo[2]
+        self.password = self.sqlinfo[3]
+        self.database = self.sqlinfo[0]
         self.port = 3306
-        self.charset = "utf-8"
+        self.charset = "utf8"
 
         # # 连接数据库
         self.con = pymysql.connect(
@@ -75,3 +74,8 @@ class Mysql_handleOperator():
         return results
 
 
+if __name__ == '__main__':
+    sql = "SELECT deposit_balance_cny, deposit_balance_usd FROM wish_platform_bill \
+WHERE sync_time = '2021-07';"
+    s = Mysql_handleOperator(Fmis_Common_Setting.fmis_mysql).data_sql("select", sql)
+    pprint.pprint(s)
