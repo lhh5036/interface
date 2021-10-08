@@ -9,7 +9,7 @@
 
 
 
-'''判断某个键是否存在于响应数据中'''
+'''判断某个键是否存在于响应数据中,且提取值'''
 class Json_Get():
     def __init__(self, response):
         self.response = response
@@ -27,6 +27,18 @@ class Json_Get():
                         return Json_Get(value[i]).json_get(self.k)
         else:
             return "False"
+
+    def json_value(self, k):
+        self.k = k
+        if self.k in self.response:
+            return self.response[self.k]
+        for key, value in self.response.items():
+            if isinstance(value, dict):
+                return Json_Get(value).json_value(self.k)
+            if isinstance(value, list):
+                for i in range(0, len(value)):
+                    if isinstance(value[i], dict):
+                        return Json_Get(value[i]).json_value(self.k)
 
 if __name__ == '__main__':
     pass
