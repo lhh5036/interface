@@ -11,6 +11,8 @@ from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Fmis.fmis_interface_service.fmisSystem_interface_url import FmisApiUrl
 from apps.Fmis.fmis_interface_service.fmisSystem_interface_param import FmisApiInputParam
 from apps.logger import MyLog
+from apps.Fmis.assert_fmis.assert_file import Fmis_Unit_Assert
+from apps.utils.get_api_responinfo import Get_Api_Responsize
 import requests
 import json
 
@@ -48,17 +50,17 @@ class QueryThirdPartyAccount():
         print(self.form)
         resp = requests.post(self.url, headers=self.header, data=self.form.encode())
         print(resp.json())
-        try:
-            if resp.json()["success"] == True:
-                logger.info("querythirdpartyaccount ---->end!")
-                return "查询第三方收款-Payoneer收款列表数据--接口响应成功"
-            else:
-                logger.error("querythirdpartyaccount ----> response Data is wrong!")
-                return "接口响应失败,失败原因:{0},\n接口地址:{1},\n请求参数:{2}".format(resp.json(),
+        if Fmis_Unit_Assert(resp).fmis_unit_assert() == "False":
+            msg = "接口响应失败,失败原因:{0},\n接口地址:{1},\n请求参数:{2}".format(resp.json(),
                                                                       self.url, self.form)
-        except KeyError:
-            logger.error("querythirdpartyaccount ----> {0}".format(resp.json()))
-            return resp.json()
+            logger.error(msg)
+            return msg
+        else:
+            if int(Get_Api_Responsize(resp).get_api_responsize()[:-1]) > 2*1024*1024:
+                msg = "api the response data is too large, Greater than 2MB!"
+                logger.error(msg)
+                return msg
+            return "True"
 
 if __name__ == '__main__':
     pass

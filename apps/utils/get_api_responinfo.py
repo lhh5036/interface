@@ -54,4 +54,5 @@ if __name__ == '__main__':
         return r
     response = getRDPEmployees()
     print(Get_Api_Responsize(response).get_api_responsize())
+    print(int(Get_Api_Responsize(response).get_api_responsize()[:-1]))
     pass
