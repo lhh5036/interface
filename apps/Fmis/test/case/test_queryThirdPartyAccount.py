@@ -56,14 +56,20 @@ LIMIT {0},10;".format(i)
         l.append(self.paramsList[num])
         self.paramDict = {self.queryParams()[0]: l}
         self.responseResult01 = QueryThirdPartyAccount().querythirdpartyaccount(self.paramDict)
-        return self.responseResult01
+        if self.responseResult01 == True:
+            return "Api normal response!"
+        else:
+            return self.responseResult01
 
     # 按多个邮箱查询
     def testCase02(self):
         self.paramsList = [i[0] for i in self.queryThirdPartyAccount_noplatform()]
         self.paramDict = {self.queryParams()[0]: self.paramsList}
         self.responseResult02 = QueryThirdPartyAccount().querythirdpartyaccount(self.paramDict)
-        return self.responseResult02
+        if self.responseResult02 == True:
+            return "Api normal response!"
+        else:
+            return self.responseResult02
 
 
 if __name__ == '__main__':
