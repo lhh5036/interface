@@ -51,7 +51,7 @@ LIMIT {0},10;".format(i)
     # 按单个邮箱查询
     def testCase01(self):
         self.paramsList = [i[0] for i in self.queryThirdPartyAccount_noplatform()]
-        num = random.randint(0, len(self.paramsList))
+        num = random.randint(0, len(self.paramsList)-1)
         l = []
         l.append(self.paramsList[num])
         self.paramDict = {self.queryParams()[0]: l}
