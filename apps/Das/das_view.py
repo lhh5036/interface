@@ -10,7 +10,7 @@ import os
 import unittest
 import time
 from pathlib import Path
-
+from flask import render_template
 from apps.utils.date_operate_util import DateUtils
 
 das_api = Blueprint("das_api",__name__) # 实例化一个蓝图(Blueprint)对象
@@ -41,7 +41,7 @@ def run_dasTestcaseExecute():
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title='数据分析系统-接口自动化报告,测试结果如下:',description='用例执行情况:')
     runner.run(discover)
     fp.close()
-    return "报告:{0}".format(report_abspath)
+    return render_template("apps/templates/system_report.html")
 
 if __name__ == '__main__':
     s = run_dasTestcaseExecute()
