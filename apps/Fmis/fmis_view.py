@@ -18,10 +18,10 @@ from apps.utils.date_operate_util import DateUtils
 fmis_api = Blueprint("fmis_api", __name__)
 
 # 获取财务系统测试用例文件路径
-fmis_garder_path = os.path.dirname(os.path.realpath(__file__)) + "\\test\\case\\"
+fmis_garder_path = os.path.dirname(os.path.realpath(__file__)) + "/test/case/"
 
 # 获取财务系统测试报告路径
-fmis_report_path = os.path.dirname(os.path.realpath(__file__)) + "\\report"
+fmis_report_path = os.path.dirname(os.path.realpath(__file__)) + "/report"
 
 # 财务系统所有用例执行入口
 @fmis_api.route("/fmis/allTestCase/execute")
