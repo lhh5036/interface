@@ -7,12 +7,9 @@
 @Desc:全局断言工具类,供各系统的assert_file调用
 '''
 
-import assertpy
 import unittest
-import pytest
 import requests
 import json
-import pprint
 
 from apps.logger import MyLog
 from apps.utils.mySql_database_util import Mysql_handleOperator

@@ -9,7 +9,6 @@ from apps.Common_Config.parseRequestDatas import parseRequestDatas
 from apps.Das.das_interface_service.dasSystem_interface_param import DasApiInputParam
 from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.logger import MyLog
-import json
 import requests
 import json
 

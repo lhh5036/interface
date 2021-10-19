@@ -9,10 +9,8 @@
 
 import unittest
 import random
-import pprint
 
 from apps.Fmis.fmis_interface_service.financial_manage.queryThirdPartyAccount import QueryThirdPartyAccount
-from apps.utils.date_operate_util import getMonthFirstDay, getMonthLastDay
 from apps.Fmis.fmis_common_settting import Fmis_Common_Setting
 from apps.Sale.sale_common_setting import Sale_Common_Setting
 from apps.Fmis.fmis_interface_service.fmisSystem_interface_param import FmisApiInputParam

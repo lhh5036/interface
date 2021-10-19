@@ -13,7 +13,6 @@ from apps.utils.get_api_respontime import Get_Api_Respontime
 
 import requests
 import json
-import pprint
 
 # 实例化日志类
 logger = MyLog("QueryCapitalCost").getlog()

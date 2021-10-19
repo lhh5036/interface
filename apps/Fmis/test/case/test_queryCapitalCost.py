@@ -7,10 +7,8 @@
 
 import unittest
 import random
-import pprint
 
 from apps.Fmis.fmis_interface_service.financial_manage.queryCapitalCost import QueryCapitalCost
-from apps.utils.mySql_database_util import Mysql_handleOperator
 from apps.utils.date_operate_util import getMonthFirstDay
 from apps.utils.date_operate_util import getMonthLastDay
 

@@ -6,7 +6,6 @@
 '''
 import random
 
-from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
 from apps.Das.das_interface_service.myData_manage.cancelDevelopmentApi import CancelDevelopmentApi
 from apps.Das.das_interface_service.param_config.parameterConfigSelectApi import ParameterConfigQueryApi

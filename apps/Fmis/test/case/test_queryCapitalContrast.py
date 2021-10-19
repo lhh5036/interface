@@ -6,8 +6,6 @@
 '''
 
 import unittest
-import random
-import pprint
 
 from apps.Fmis.fmis_interface_service.financial_manage.queryCapitalContrast import QueryCapitalContrast
 from apps.utils.date_operate_util import getMonthFirstDay

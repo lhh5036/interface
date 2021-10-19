@@ -5,7 +5,7 @@ from flask import Flask
 
 from apps.Das import das_view
 from apps.Fmis import fmis_view
-from apps.config import DevelopementConfig, ProductionConfig
+from config import DevelopementConfig, ProductionConfig
 
 config = {
     "dev": DevelopementConfig,

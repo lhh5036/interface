@@ -8,7 +8,6 @@
 import random
 import unittest
 
-from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
 from apps.Das.das_interface_service.myData_manage.releaseProductApi import releaseProductInfoApi
 from apps.utils.es_database_util import Es_handleOperator
