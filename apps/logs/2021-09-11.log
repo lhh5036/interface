@@ -1,6 +1,0 @@
-[2021-09-11 16:44:50,945] queryCategoryListApi.py->queryCategoryListFunction line:21 [INFO]queryCategoryListFunction------------------->start
-[2021-09-11 16:44:50,945] queryCategoryListApi.py->queryCategoryListFunction line:25 [ERROR]queryCategoryListFunction-------->InputParam is null
-[2021-09-11 16:45:03,087] queryCategoryListApi.py->queryCategoryListFunction line:21 [INFO]queryCategoryListFunction------------------->start
-[2021-09-11 16:45:03,267] queryCategoryListApi.py->queryCategoryListFunction line:46 [INFO]queryCategoryListFunction------------------->end
-[2021-09-11 16:45:24,801] queryCategoryListApi.py->queryCategoryListFunction line:21 [INFO]queryCategoryListFunction------------------->start
-[2021-09-11 16:45:24,990] queryCategoryListApi.py->queryCategoryListFunction line:46 [INFO]queryCategoryListFunction------------------->end

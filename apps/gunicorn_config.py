@@ -15,9 +15,14 @@ import multiprocessing
 gunicorn的配置文件
 """
 
-
+# 监听内网端口5000
 bind = '0.0.0.0:5000'
 
 # 启动的进程数
 workers = multiprocessing.cpu_count() * 2 + 1
 worker_class = 'gunicorn.workers.ggevent.GeventWorker'
+
+# 如果应用的代码有比那栋，work将会自动重启，适用于开发环境
+reload = True
+
+debug = True
