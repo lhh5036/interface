@@ -7,7 +7,6 @@
 
 from apps import create_app
 from flask import render_template
-
 app = create_app("dev")
 
 # 接口调用入口
