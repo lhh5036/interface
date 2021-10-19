@@ -4,12 +4,11 @@
 @Author:quanliu 181324
 @Desc:数据分析系统接口用例调用入口
 '''
-
+import HTMLTestRunner
 from flask import Blueprint
 import os
 import unittest
 import time
-import HTMLTestRunner
 from pathlib import Path
 
 from apps.utils.date_operate_util import DateUtils
