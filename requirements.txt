@@ -1,0 +1,2 @@
+'''启动命令(根目录下启动)'''
+gunicorn -preload -w 3 -b 0.0.0.0:5000 manage:app
