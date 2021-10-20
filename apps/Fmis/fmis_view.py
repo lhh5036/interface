@@ -9,7 +9,9 @@ import os
 import unittest
 import time
 import HTMLTestRunner
+from BeautifulReport import BeautifulReport as bf
 from flask import Blueprint
+from flask import render_template
 from pathlib import Path
 
 from apps.utils.date_operate_util import DateUtils
@@ -41,12 +43,8 @@ def run_fmisTestcaseExecute():
             os.remove(file)
 
     # 打开文件并写入报告
-    fp = open(report_abspath, "wb")
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title="财务系统-接口自动化报告,测试结果如下:",
-                                           description="用例执行情况:")
-    runner.run(discover)
-    fp.close()
-
+    runner = bf(discover)
+    runner.report(filename="result_"+now,description='财务系统-接口自动化报告',report_dir=fmis_report_path)
     return "财务系统用例执行完成!"
 
 
