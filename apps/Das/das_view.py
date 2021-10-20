@@ -4,15 +4,15 @@
 @Author:quanliu 181324
 @Desc:数据分析系统接口用例调用入口
 '''
-import HTMLTestRunner
 from BeautifulReport import BeautifulReport as bf
-from flask import Blueprint
+from bs4 import BeautifulSoup
+from flask import Blueprint, url_for
 import os
 import unittest
 import time
 from pathlib import Path
-from flask import render_template
 from apps.utils.date_operate_util import DateUtils
+from selenium import webdriver
 
 das_api = Blueprint("das_api",__name__) # 实例化一个蓝图(Blueprint)对象
 
@@ -44,8 +44,10 @@ def run_dasTestcaseExecute():
     # fp.close()
     runner = bf(discover) # 实例化BeautifulReport模块
     runner.report(filename="result_"+now,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
-    # soup = BeautifulSoup(open('ss.html', encoding='utf-8'), features='html.parser')  # features值可为lxml
-    return "数据分析测试用例执行完成!"
+    soup = BeautifulSoup(open(report_abspath, encoding='utf-8'), features='html.parser')  # features值可为lxml
+    driver = webdriver.chrome()
+    driver.get("http://localhost:63343/InterfaceAutoTest/apps/Das/report/{0}.html?_ijt=1in4q1b550bs1b589l509h0df5".format("result_"+now))
+    return "success"
 
 if __name__ == '__main__':
     s = run_dasTestcaseExecute()
