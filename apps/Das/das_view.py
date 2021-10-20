@@ -41,7 +41,7 @@ def run_dasTestcaseExecute():
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title='数据分析系统-接口自动化报告,测试结果如下:',description='用例执行情况:')
     runner.run(discover)
     fp.close()
-    return render_template("apps/templates/system_report.html")
+    return "数据分析测试用例执行完成!"
 
 if __name__ == '__main__':
     s = run_dasTestcaseExecute()
