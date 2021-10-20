@@ -1,0 +1,36 @@
+'''启动命令(根目录下启动)'''
+gunicorn -preload -w 3 -b 0.0.0.0:5000 manage:app
+
+
+'''简易使用python虚拟环境'''
+1.安装虚拟环境pip
+pip install pipenv
+
+2.查看是否安装成功
+pipenv --version
+
+3.创建虚拟环境,先切换到目标项目目录
+pipenv install
+
+4.目标项目目录会创建Pipfile和Pipfile.lock文件
+
+5.查看项目位置：     pipenv --where
+　查看虚拟环境位置：  pipenv --venv
+　查看解释器信息：    pipenv --py
+
+6.进入虚拟环境
+pipenv shell
+
+7.在虚拟环境安装库
+pipenv install 库(用pipenv安装则该库只会安装在虚拟环境，本机环境不会安装)
+注意:不要使用pip install。虽然在虚拟环境中安装对应的包，但是不会更新Pipfile和Pipefile.lock
+
+8.卸载库
+pipenv uninstall 库
+
+9.退出虚拟环境
+exit
+
+10.删除虚拟环境
+pipenv --rm
+注意:"pipenv --rm"只是把创建的虚拟环境删除了，但Pipfile和Pipfile.lock还存在
