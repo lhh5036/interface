@@ -6,20 +6,19 @@
 '''
 
 import unittest
-
-from apps.Das.das_interface_service.myData_manage.smtProductSelectApi import SmtProductSelectApi
-
+from apps.Das.das_interface_service.myData_manage.dataManageProductListingApi import DataManageProductListingApi
 
 # 数据管理-我的数据SMT查询接口用例类
 class Test_smtSelectApi(unittest.TestCase):
 
     def testCase01(self):
-        # 用例1
+        '''这是第一个测试用例'''
         testCaseReq_01 = {"productId": "4000032062735"}
-        testCaseRep_01 = SmtProductSelectApi().smtQueryProductListing(testCaseReq_01)
+        testCaseRep_01 = DataManageProductListingApi().dataManageProductListingInfo("SMT","smt_queryListing",testCaseReq_01)
         print(testCaseRep_01)
 
     def testCase02(self):
+        '''这是第二个测试用例'''
         testCaseReq_02 = {"mainSku": "9SD400194","productId":"4000032062735"}
-        testCaseRep_02 = SmtProductSelectApi().smtQueryProductListing(testCaseReq_02)
+        testCaseRep_02 = DataManageProductListingApi().dataManageProductListingInfo("SMT","smt_queryListing",testCaseReq_02)
         print(testCaseRep_02)
