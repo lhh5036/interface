@@ -44,6 +44,7 @@ def run_dasTestcaseExecute():
     # fp.close()
     runner = bf(discover) # 实例化BeautifulReport模块
     runner.report(filename="result_"+now,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
+    # soup = BeautifulSoup(open('ss.html', encoding='utf-8'), features='html.parser')  # features值可为lxml
     return "数据分析测试用例执行完成!"
 
 if __name__ == '__main__':
