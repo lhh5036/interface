@@ -46,7 +46,7 @@ def run_dasTestcaseExecute():
     runner.report(filename="result_"+now,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
     soup = BeautifulSoup(open(report_abspath, encoding='utf-8'), features='html.parser')  # features值可为lxml
     driver = webdriver.Chrome()
-    driver.get("D:\\pythonProject\\InterfaceAutoTest\\apps\Das\\report\\{0}.html".format("result_"+now))
+    driver.get(report_abspath)
     return "success"
 
 if __name__ == '__main__':
