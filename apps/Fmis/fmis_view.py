@@ -13,6 +13,7 @@ from BeautifulReport import BeautifulReport as bf
 from flask import Blueprint
 from flask import render_template
 from pathlib import Path
+from selenium import webdriver
 
 from apps.utils.date_operate_util import DateUtils
 
@@ -45,7 +46,9 @@ def run_fmisTestcaseExecute():
     # 打开文件并写入报告
     runner = bf(discover)
     runner.report(filename="result_"+now,description='财务系统-接口自动化报告',report_dir=fmis_report_path)
-    return "财务系统用例执行完成!"
+    driver = webdriver.Chrome()
+    driver.get(report_abspath)
+    return "success!"
 
 
 if __name__ == '__main__':
