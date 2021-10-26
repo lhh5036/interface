@@ -14,6 +14,7 @@ from apps.Das.das_interface_service.param_config.parameterConfigSelectApi import
 class Test_paramConfigQueryApi(unittest.TestCase):
 
     def testCase01(self):
+        '''参数配置-取消开发备注查询用例'''
         responseResult01 = ParameterConfigQueryApi().paramConfigQuery()
         print(responseResult01)
 

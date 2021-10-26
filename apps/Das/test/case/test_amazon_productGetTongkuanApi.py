@@ -5,6 +5,8 @@
 @Desc:数据管理-我的数据Amazon页面同款接口用例
 '''
 import random
+
+from apps.Das.das_common_settting import Das_Common_Setting
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
 from apps.Das.das_interface_service.myData_manage.productGetTongkuanApi import ProductGetTongkuanApi
 from apps.utils.es_database_util import Es_handleOperator
@@ -25,11 +27,12 @@ class Test_amazonProductGetTongkuanApi(unittest.TestCase):
 
         index = Das_Common_Config.amazon_account_product_info
         # 连接数据库从ES数据库随机取出数据
-        result = Es_handleOperator("das", "test").data_es(index, query)
+        result = Es_handleOperator(Das_Common_Setting.das_es).data_es(index, query)
         reqParam = result["hits"][0]["_source"]["amazonAsinIncrementInfos"][0]["imageUrls"][0]  # 接口第一个入参string
         return reqParam
 
     def testCase01(self):
+        '''第一个测试用例'''
         reqParam = self.firstInputParam()
         responseResult = ProductGetTongkuanApi().productGetTongkuan(reqParam)
         print(responseResult)

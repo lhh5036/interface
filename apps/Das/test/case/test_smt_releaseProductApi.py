@@ -7,6 +7,7 @@
 import random
 import unittest
 
+from apps.Das.das_common_settting import Das_Common_Setting
 from apps.Das.das_interface_service.dasSystem_interface_url import DasApiUrl
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
 from apps.Das.das_interface_service.myData_manage.releaseProductApi import releaseProductInfoApi
@@ -28,16 +29,17 @@ class Test_smtReleaseRroductApi(unittest.TestCase):
             }
         index = Das_Common_Config.smt_account_product_info
         # 连接数据库从ES数据库随机取出数据
-        result = Es_handleOperator("das","test").data_es(index,query)
+        result = Es_handleOperator(Das_Common_Setting.das_es).data_es(index,query)
         for i in range(len(result["hits"])):
             resultList.append(result["hits"][i]["_id"])
         return resultList
 
     def testCase01(self):
+        '''SMT释放产品第一个用例'''
         # 接口地址
         url = DasApiUrl.smt_releaseProduct_url
         resultList = self.firstInputParam()
-        responseResult = releaseProductInfoApi().releaseProductInfo(url,resultList)
+        responseResult = releaseProductInfoApi().releaseProductInfo("SMT","smt_releaseProduct",resultList)
         print(responseResult)
 
 

@@ -10,14 +10,11 @@ from apps.Common_Config.db_config import ReadConfig
 # ES数据库具体操作实现类
 class Es_handleOperator():
     # 初始化
-    def __init__(self,projectname,env,dbType='es'):
-        self.projectname = projectname
-        self.env = env
-        self.dbType = dbType
-        _host, _port, _timeout = ReadConfig().getDbConfig(self.env, self.projectname, self.dbType) # 连接对应系统的数据库
-        self.hosts = _host
-        self.port = _port
-        self.timeout = _timeout
+    def __init__(self,esInfo):
+        # 连接对应系统的数据库
+        self.hosts = esInfo[0]
+        self.port = esInfo[1]
+        self.timeout = esInfo[2]
 
     # 获取数据（数据量不大情况下使用）
     def data_es(self, index, querys):

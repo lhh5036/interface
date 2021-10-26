@@ -6,6 +6,7 @@
 '''
 import random
 
+from apps.Das.das_common_settting import Das_Common_Setting
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
 from apps.Das.das_interface_service.myData_manage.cancelDevelopmentApi import CancelDevelopmentApi
 from apps.Das.das_interface_service.param_config.parameterConfigSelectApi import ParameterConfigQueryApi
@@ -26,17 +27,17 @@ class Test_amazonCancelDevelopApi(unittest.TestCase):
             }
         index = Das_Common_Config.amazon_account_product_info
         # 连接数据库从ES数据库随机取出数据
-        result = Es_handleOperator("das","test").data_es(index,query)
+        result = Es_handleOperator(Das_Common_Setting.das_es).data_es(index,query)
         resultList = [] # 用来存放接口第一个入参list
         for i in range(len(result["hits"])):
             resultList.append(result["hits"][i]["_id"]) # 接口第一个入参
         return resultList
 
     def testCase01(self):
-        # 接口第二个入参
+        '''这是第一个测试用例'''
         responseData = ParameterConfigQueryApi().paramConfigQuery()
         secondParam = ",".join(random.sample(responseData.split('[')[1].rstrip("]").split(","),1))
         resultList = self.firstInputParam()
-        responseResult01 = CancelDevelopmentApi().cancelDevelopmentFunction("amazon_cancelDevelopment", resultList, secondParam)
+        responseResult01 = CancelDevelopmentApi().cancelDevelopmentFunction("Amazon","amazon_cancelDevelopment", resultList, secondParam)
         print(responseResult01)
 

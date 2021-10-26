@@ -8,6 +8,7 @@
 import random
 import unittest
 
+from apps.Das.das_common_settting import Das_Common_Setting
 from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
 from apps.Das.das_interface_service.myData_manage.releaseProductApi import releaseProductInfoApi
 from apps.utils.es_database_util import Es_handleOperator
@@ -28,13 +29,14 @@ class Test_amazonReleaseRroductApi(unittest.TestCase):
             }
         index = Das_Common_Config.amazon_account_product_info
         # 连接数据库从ES数据库随机取出数据
-        result = Es_handleOperator("das","test").data_es(index,query)
+        result = Es_handleOperator(Das_Common_Setting.das_es).data_es(index,query)
         for i in range(len(result["hits"])):
             resultList.append(result["hits"][i]["_id"])
         return resultList
 
     def testCase01(self):
+        '''第一个测试用例'''
         resultList = self.firstInputParam()
-        responseResult = releaseProductInfoApi().releaseProductInfo("amazon_releaseProduct",resultList)
+        responseResult = releaseProductInfoApi().releaseProductInfo("Amazon","amazon_releaseProduct",resultList)
         print(responseResult)
 
