@@ -46,8 +46,8 @@ def run_dasTestcaseExecute():
     runner.report(filename="result_"+now,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
     # soup = BeautifulSoup(open(report_abspath, encoding='utf-8'), features='html.parser')  # features值可为lxml
     driver = webdriver.Chrome()
-    driver.get(report_abspath)
     driver.maximize_window()
+    driver.get(report_abspath)
     return "数据分析接口用例执行成功!"
 
 if __name__ == '__main__':

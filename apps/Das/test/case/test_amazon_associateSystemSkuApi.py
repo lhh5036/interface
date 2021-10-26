@@ -11,10 +11,13 @@ from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
 from apps.Das.das_interface_service.myData_manage.associateSystemSkuApi import AssociateSystemSkuApi
 from apps.utils.es_database_util import Es_handleOperator
 import unittest
+from ddt import ddt,data
+# 参数化
+paramList = ["8ZZ800161-S-B","8ZZ800161S"]
 
 # 数据管理-我的数据Amazon关联系统SKU接口用例类
+@ddt
 class Test_amazonAssociateSySkuApi(unittest.TestCase):
-
     # 生成第一个入参
     def firstInputParam(self):
         # 生成随机数
@@ -34,19 +37,12 @@ class Test_amazonAssociateSySkuApi(unittest.TestCase):
             resultList.append(result["hits"][i]["_id"])  # 接口第一个入参
         return resultList
 
-    # 用例1接口第二个入参（输入存在SKU）
-    def testCase01(self):
-        '''这是第一个测试用例''' # 用例描述
-        systemSkuStr01 = "8ZZ800161-S-B"
+    @data(*paramList)
+    def testCase01(self,systemSkuStr):
+        '''Amazon关联系统SKU测试用例'''
         paramList = self.firstInputParam()
-        responseResult01 = AssociateSystemSkuApi().associateSystemSku("Amazon","amazon_associateSystemSku", paramList, systemSkuStr01)
+        responseResult01 = AssociateSystemSkuApi().associateSystemSku("Amazon","amazon_associateSystemSku", paramList, systemSkuStr)
         print(responseResult01)
 
-    # 用例2接口第二个入参（输入不存在SKU）
-    def testCase02(self):
-        '''这是第二个测试用例'''
-        systemSkuStr02 = "8ZZ800161S"
-        paramList = self.firstInputParam()
-        responseResult02 = AssociateSystemSkuApi().associateSystemSku("Amazon","amazon_associateSystemSku",paramList, systemSkuStr02)
-        print(responseResult02)
-
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
