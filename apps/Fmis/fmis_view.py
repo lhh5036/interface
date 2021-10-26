@@ -50,6 +50,7 @@ def run_fmisTestcaseExecute():
     options = webdriver.ChromeOptions()
     # options.add_argument('user-agent="MQQBrowser/26 Mozilla/5.0 (Linux; U; Android 2.3.7; zh-cn; MB200 Build/GRJ22; CyanogenMod-7) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"')
     options.add_argument('--headless')
+    options.add_argument('window-size=1920x1680')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-gpu')
     options.add_argument('--disable-dev-shm-usage')
