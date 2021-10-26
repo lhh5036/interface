@@ -46,7 +46,15 @@ def run_fmisTestcaseExecute():
     # 打开文件并写入报告
     runner = bf(discover)
     runner.report(filename="result_"+now,description='财务系统-接口自动化报告',report_dir=fmis_report_path)
-    driver = webdriver.Chrome()
+    # 设置谷歌浏览器启动前参数
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-gpu')
+    options.add_argument('--disable-dev-shm-usage')
+
+    # 启动谷歌浏览器
+    driver = webdriver.Chrome(chrome_options=options)
     driver.get(report_abspath)
     return "success!"
 
