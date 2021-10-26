@@ -48,7 +48,8 @@ def run_fmisTestcaseExecute():
     runner.report(filename="result_"+now,description='财务系统-接口自动化报告',report_dir=fmis_report_path)
     # 设置谷歌浏览器启动前参数
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    options.add_argument('user-agent="MQQBrowser/26 Mozilla/5.0 (Linux; U; Android 2.3.7; zh-cn; MB200 Build/GRJ22; CyanogenMod-7) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"')
+    # options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-gpu')
     options.add_argument('--disable-dev-shm-usage')
