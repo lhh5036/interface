@@ -7,7 +7,7 @@
 
 import unittest
 
-from apps.Fmis.fmis_interface_service.financial_manage.queryFundBalance import QueryFundBalance
+from apps.FmisSystem.fmis_interface_service.financial_manage.queryFundBalance import QueryFundBalance
 from apps.utils.date_operate_util import getMonthFirstDay
 from apps.utils.date_operate_util import getMonthLastDay
 

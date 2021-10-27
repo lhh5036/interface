@@ -8,10 +8,10 @@
 '''
 
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.Fmis.fmis_interface_service.fmisSystem_interface_url import FmisApiUrl
-from apps.Fmis.fmis_interface_service.fmisSystem_interface_param import FmisApiInputParam
+from apps.FmisSystem.fmis_interface_service.fmisSystem_interface_url import FmisApiUrl
+from apps.FmisSystem.fmis_interface_service.fmisSystem_interface_param import FmisApiInputParam
 from apps.logger import MyLog
-from apps.Fmis.assert_fmis.assert_file import Fmis_Unit_Assert
+from apps.FmisSystem.assert_fmis.assert_file import Fmis_Unit_Assert
 from apps.utils.get_api_responinfo import Get_Api_Responsize
 import requests
 import json

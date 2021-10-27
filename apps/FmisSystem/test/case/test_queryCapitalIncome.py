@@ -11,8 +11,8 @@ import unittest
 import random
 import pprint
 
-from apps.Fmis.fmis_interface_service.fmisSystem_comConfig import Fmis_Common_Config
-from apps.Fmis.fmis_interface_service.financial_manage.queryCapitalIncome import QueryCapitalIncome
+from apps.FmisSystem.fmis_interface_service.fmisSystem_comConfig import Fmis_Common_Config
+from apps.FmisSystem.fmis_interface_service.financial_manage.queryCapitalIncome import QueryCapitalIncome
 from apps.utils.mySql_database_util import Mysql_handleOperator
 from apps.utils.date_operate_util import getMonthFirstDay
 from apps.utils.date_operate_util import getMonthLastDay
