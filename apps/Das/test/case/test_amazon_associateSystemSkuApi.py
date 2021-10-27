@@ -11,12 +11,15 @@ from apps.Das.das_interface_service.dasSystem_comConfig import Das_Common_Config
 from apps.Das.das_interface_service.myData_manage.associateSystemSkuApi import AssociateSystemSkuApi
 from apps.utils.es_database_util import Es_handleOperator
 import unittest
-from ddt import ddt,data
+import ddt
+import os
 # 参数化
 paramList = ["8ZZ800161-S-B","8ZZ800161S"]
+# 获取当前文件所在目录的上一级目录
+upPath = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
 # 数据管理-我的数据Amazon关联系统SKU接口用例类
-@ddt
+@ddt.ddt
 class Test_amazonAssociateSySkuApi(unittest.TestCase):
     # 生成第一个入参
     def firstInputParam(self):
@@ -37,12 +40,22 @@ class Test_amazonAssociateSySkuApi(unittest.TestCase):
             resultList.append(result["hits"][i]["_id"])  # 接口第一个入参
         return resultList
 
-    @data(*paramList)
-    def testCase01(self,systemSkuStr):
+    # 配置为yaml文件驱动
+    @ddt.file_data(upPath+"\\moduleFile\\amazonAssociateSkuYaml.yaml")
+    @ddt.unpack
+    def testCase01(self,sysSkuStr):
         '''Amazon关联系统SKU测试用例'''
         paramList = self.firstInputParam()
-        responseResult01 = AssociateSystemSkuApi().associateSystemSku("Amazon","amazon_associateSystemSku", paramList, systemSkuStr)
+        responseResult01 = AssociateSystemSkuApi().associateSystemSku("Amazon","amazon_associateSystemSku", paramList, sysSkuStr)
         print(responseResult01)
+
+    # 参数化驱动
+    @ddt.data(*paramList)
+    def testCase02(self, sysSkuStr):
+        '''Amazon关联系统SKU测试用例'''
+        paramList = self.firstInputParam()
+        responseResult02 = AssociateSystemSkuApi().associateSystemSku("Amazon", "amazon_associateSystemSku", paramList,sysSkuStr)
+        print(responseResult02)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
