@@ -3,8 +3,8 @@
 '''
 from flask import Flask
 
-from apps.Das import das_view
-from apps.Fmis import fmis_view
+from apps.DasSystem import das_view
+from apps.FmisSystem import fmis_view
 from config import DevelopementConfig, ProductionConfig
 
 config = {

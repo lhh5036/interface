@@ -7,7 +7,7 @@
 
 
 from apps.Common_Config.db_config import ReadConfig
-from apps.Fmis.fmis_common_settting import Fmis_Common_Setting
+from apps.FmisSystem.fmis_common_settting import Fmis_Common_Setting
 import pymysql
 import pprint
 
