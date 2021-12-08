@@ -15,7 +15,7 @@ from rediscluster import RedisCluster
 # 解析每个系统中的db_sources文件得到ES/MYSQL配置
 class ReadConfig:
     # 注: dbtype == "es"时projectname随便写，不做校验
-    def getDbConfig(self,env,projectname,dbtype,): # 环境、项目名称、数据库类型（es/mysql）
+    def getDbConfig(self,env,projectname='system',dbtype='mysql'): # 环境、项目名称、数据库类型（es/mysql）
         if env == "" or projectname == "" or dbtype == "":
             logging.error("env or projectName or dbType is empty!")
             return "env or projectName or dbType is empty!"
@@ -25,9 +25,11 @@ class ReadConfig:
             configPath = os.path.join(proDir, "es_sources_config.ini")
             cf.read(os.path.abspath(configPath),encoding='utf-8')
             if env == "test" or env == "TEST":
-                return parseEsFile(cf,"es_test")
+                if projectname == "system":
+                    return parseEsFile(cf,"es_test")
             elif env == "release" or env == "RELEASE":
-                return parseEsFile(cf,"es_release")
+                if projectname == "system":
+                    return parseEsFile(cf,"es_release")
         elif dbtype == "mysql":
             configPath = os.path.join(proDir, "mysql_sources_config.ini")
             cf.read(os.path.abspath(configPath),encoding='utf-8')
