@@ -4,6 +4,7 @@
 @Author:quanliu 181324
 @Desc:数据分析系统接口用例调用入口
 '''
+import HTMLTestRunner
 from BeautifulReport import BeautifulReport as bf
 from bs4 import BeautifulSoup
 from flask import Blueprint, url_for
@@ -44,11 +45,11 @@ def run_dasTestcaseExecute():
     # fp.close()
     runner = bf(discover) # 实例化BeautifulReport模块
     runner.report(filename="result_"+now,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
-    # soup = BeautifulSoup(open(report_abspath, encoding='utf-8'), features='html.parser')  # features值可为lxml
+    # 添加浏览器驱动
     driver = webdriver.Chrome()
     driver.maximize_window()
     driver.get(report_abspath)
-    return "数据分析接口用例执行成功!"
+    return "数据分析执行完成!"
 
 if __name__ == '__main__':
     s = run_dasTestcaseExecute()
