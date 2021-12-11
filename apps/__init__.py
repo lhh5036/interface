@@ -2,7 +2,7 @@
 @time:
 '''
 from flask import Flask
-
+# 导入此前写好的蓝图模块
 from apps.DasSystem import das_view
 from apps.FmisSystem import fmis_view
 from config import DevelopementConfig, ProductionConfig
@@ -23,7 +23,7 @@ def create_app(config_name):
     app.config['JSON_AS_ASCII'] = False
 
     # 在Flask对象中注册蓝图模块中的蓝图对象 das_view 中的 das_api
-    app.register_blueprint(das_view.das_api)
+    app.register_blueprint(das_view.das_api,url_prefix = "/interfaceTest/")
     # 在Flask对象中注册蓝图模块中的蓝图对象 fmis_view 中的 fmis_api
     app.register_blueprint(fmis_view.fmis_api)
 

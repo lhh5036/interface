@@ -7,7 +7,7 @@
 import HTMLTestRunner
 from BeautifulReport import BeautifulReport as bf
 from bs4 import BeautifulSoup
-from flask import Blueprint, url_for
+from flask import Blueprint # 导入 Flask 中的蓝图 Blueprint 模块
 import os
 import unittest
 import time
@@ -20,7 +20,7 @@ das_api = Blueprint("das_api",__name__) # 实例化一个蓝图(Blueprint)对象
 das_garder_path = os.path.dirname(os.path.realpath(__file__)) + "\\test\\case\\" # 获取数据分析测试用例文件路径
 das_report_path = os.path.dirname(os.path.realpath(__file__)) + "\\report" # 测试数据分析报告路径
 
-# 数据分析所有用例执行入口
+# 为创建的蓝图添加路由配置
 @das_api.route('/das/allTestCase/execute')
 def run_dasTestcaseExecute():
     # 文件的路径
@@ -49,7 +49,7 @@ def run_dasTestcaseExecute():
     driver = webdriver.Chrome()
     driver.maximize_window()
     driver.get(report_abspath)
-    return "数据分析执行完成!"
+    return "数据分析测试用例执行完成!"
 
 if __name__ == '__main__':
     s = run_dasTestcaseExecute()

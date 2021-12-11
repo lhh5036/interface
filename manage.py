@@ -10,7 +10,7 @@ from flask import render_template
 app = create_app("dev")
 
 # 接口调用入口
-@app.route("/interfaceEntry")
+@app.route("/projectEntry")
 def estoneInterfaceEntry():
     return render_template("system_entry.html")
 
