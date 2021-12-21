@@ -46,6 +46,8 @@ class ReadConfig:
                     return parseMySqlFile(cf,"erp_pms_test")
                 elif projectname == "erp_publish": # 刊登系统
                     return parseMySqlFile(cf,"erp_publish_test")
+                elif projectname == "erp_publish_amazon": # 刊登系统-Amazon
+                    return parseMySqlFile(cf,"erp_publish_amazon_test")
                 elif projectname == "erp_oms": # 订单系统
                     return parseMySqlFile(cf,"erp_oms_test")
                 elif projectname == "erp_wms": # 仓库系统
@@ -65,6 +67,8 @@ class ReadConfig:
                     return parseMySqlFile(cf,"erp_pms_release")
                 elif projectname == "erp_publish":
                     return parseMySqlFile(cf,"erp_publish_release")
+                elif projectname == "erp_publish_amazon": # 刊登系统-Amazon
+                    return parseMySqlFile(cf,"erp_publish_amazon_release")
                 elif projectname == "erp_oms":
                     return parseMySqlFile(cf,"erp_oms_release")
                 elif projectname == "erp_wms":
