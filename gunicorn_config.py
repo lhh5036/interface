@@ -22,7 +22,7 @@ bind = '192.168.3.180:5000'
 workers = multiprocessing.cpu_count() * 2 + 1
 worker_class = 'gunicorn.workers.ggevent.GeventWorker'
 
-# 如果应用的代码有比那栋，work将会自动重启，适用于开发环境
+# 如果应用的代码有变化，work将会自动重启，适用于开发环境
 reload = True
 
 debug = True
