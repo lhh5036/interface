@@ -14,7 +14,7 @@ config = {
 
 def create_app(config_name):
     """项目的初始化函数"""
-    app = Flask(__name__)
+    app = Flask(__name__,template_folder='templates',static_folder='static')
     # 设置配置类
     Config = config[config_name]
 
