@@ -5,8 +5,9 @@
 @Desc:系统订单查询接口
 '''
 from apps.Common_Config.interface_common_info import Common_TokenHeader
+from apps.SaleSystem.sale_interface_service.saleSystem_interface_param import SaleApiInputParam
+from apps.SaleSystem.sale_interface_service.saleSystem_interface_url import SaleApiUrl
 from apps.SaleSystem.sale_interface_service.sale_publicCommonParamService import SalePublicCommonParamServiceClass
-from apps.SaleSystem.sale_interface_service.sale_publicCommonUrlService import SalePublicCommonUrlServiceClass
 from apps.logger import MyLog
 import json
 import requests
@@ -16,16 +17,18 @@ logger = MyLog("SystemOrderQueryApi").getlog()  # 初始化
 
 # 系统订单查询接口
 class SystemOrderQueryApi():
-    def systemOrderQueryFun(self,platform,searchType,paramMap=None):
+    def systemOrderQueryFun(self,platform,paramMap=None):
         logger.info("systemOrderQueryFun  ----->start!")
-        if platform == "" or searchType == "":
-            logger.error("systemOrderQueryFun ------>request parameter(platform or searchType) is wrong!")
+        if platform == "":
+            logger.error("systemOrderQueryFun ------>request parameter(platform) is wrong!")
             return "请求参数为空"
 
         # 获取url
-        url = SalePublicCommonUrlServiceClass().getApiUrl("SMT","listCustomerOrder")
+        url = SaleApiUrl.systemOrder_queryListing_url
         # 获取参数
-        param03,param02,param01 = SalePublicCommonParamServiceClass().getApiInputParam("SMT","listCustomerOrder")
+        param03 = SaleApiInputParam.systemOrder_query_param03
+        param02 = SaleApiInputParam.systemOrder_query_param02
+        param01 = SaleApiInputParam.systemOrder_query_param01
         param03["saleChannel"] = platform
         param02["search"] = param03
         param01["args"] = json.dumps(param02)
@@ -45,4 +48,4 @@ class SystemOrderQueryApi():
 
 
 if __name__ == '__main__':
-    SystemOrderQueryApi().systemOrderQueryFun("SMT","listCustomerOrder")
+    print(SystemOrderQueryApi().systemOrderQueryFun("SMT"))

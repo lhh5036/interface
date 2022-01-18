@@ -17,7 +17,7 @@ class SalePublicCommonUrlServiceClass():
         elif platform == "Ali":
             return getAliApiUrl()
         elif platform == "Ebay":
-            return getEbayApiUrl()
+            return getEbayApiUrl(searchType)
         elif platform == "Shopee":
             return getShopeeApiUrl()
         else:
@@ -25,26 +25,22 @@ class SalePublicCommonUrlServiceClass():
 
 def getAmazonApiUrl(searchType):
     amazon_url = ""
-    if searchType == "listCustomerOrder":
-        amazon_url = SaleApiUrl.systemOrder_queryListing_url
-    else:
-        pass
+
     return amazon_url
 
 
 def getSmtApiUrl(searchType):
     smt_url = ""
-    if searchType == "listCustomerOrder":
-        smt_url = SaleApiUrl.systemOrder_queryListing_url
-    else:
-        pass
+
     return smt_url
 
 
 
 def getAliApiUrl():
     pass
-def getEbayApiUrl():
-    pass
+def getEbayApiUrl(searchType):
+    ebay_url = ""
+
+    return ebay_url
 def getShopeeApiUrl():
     pass

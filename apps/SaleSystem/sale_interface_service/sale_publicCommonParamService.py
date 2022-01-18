@@ -28,12 +28,7 @@ def getAmazonApiInputParam(searchType):
     otherTypeListing03 = ""
     otherTypeListing02 = ""
     otherTypeListing01 = ""
-    if searchType == "listCustomerOrder":  # 系统订单查询页面
-        otherTypeListing03 = SaleApiInputParam.systemOrder_query_param03
-        otherTypeListing02 = SaleApiInputParam.systemOrder_query_param02
-        otherTypeListing01 = SaleApiInputParam.systemOrder_query_param01
-    else:
-        pass
+
 
     return otherTypeListing03,otherTypeListing02,otherTypeListing01
 
@@ -42,18 +37,22 @@ def getSmtApiInputParam(searchType):
     otherTypeListing03 = ""
     otherTypeListing02 = ""
     otherTypeListing01 = ""
-    if searchType == "listCustomerOrder":  # 系统订单查询页面
-        otherTypeListing03 = SaleApiInputParam.systemOrder_query_param03
-        otherTypeListing02 = SaleApiInputParam.systemOrder_query_param02
-        otherTypeListing01 = SaleApiInputParam.systemOrder_query_param01
-    else:
-        pass
 
     return otherTypeListing03, otherTypeListing02, otherTypeListing01
 
 def getAliApiInputParam(searchType):
     pass
+
+
+
 def getEbayApiInputParam(searchType):
-    pass
+    otherTypeListing03 = ""
+    otherTypeListing02 = ""
+    otherTypeListing01 = ""
+
+    return otherTypeListing03, otherTypeListing02, otherTypeListing01
+
+
+
 def getShopeeApiInputParam(searchType):
     pass
