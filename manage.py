@@ -14,22 +14,26 @@ app = create_app("dev")
 def estoneInterfaceEntry():
     if 'username' in session:
         username = session['username']
-        return render_template("system_entry.html",name = username)
+        return render_template("system_entry.html",name=username)
     return redirect(url_for('login'))
 
 @app.route('/login',methods=['POST','GET'])
 def login():
     if request.method == 'POST':
         user = request.form['name']
-        if user == "test":
+        password = request.form['password']
+        if user == "admin" and password == "123456":
             session['username'] = user
+            session['password'] = password
             return redirect('projectEntry') # redirect直接是url，就是app.route的路径参数；url_for()是对函数进行操作
         else:
             return render_template('login.html')
     else:
         user = request.args.get("name")
-        if user == "test":
+        password = request.args.get("password")
+        if user == "admin" and password == "123456":
             session['username'] = user
+            session['password'] = password
             return redirect(url_for('estoneInterfaceEntry'))
         else:
             return render_template('login.html')
@@ -41,4 +45,4 @@ def logout():
     return '666'
 
 if __name__ == '__main__':
-    app.run(host="127.0.0.1",port='8888',debug=True)
+    app.run(host="127.0.0.1",debug=True)
