@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <script src='../static/js/Special_Effects.js'></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <body>
     <div class="out">
        <div class="fst">
@@ -20,10 +21,29 @@
             <br /><br />
             <span class="read">财务系统所有接口</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/fmis/allTestCase/execute" target="_blank">运行</a>
             <br /><br />
-            <span class="read">欢迎您！</span>    <a href="/logout" target="_blank">{{ username }}</a>
+            <span class="read">欢迎您！{{ session.username }}</span>  <button id="logout">注销</button>
        </div>
     </div>
+<script>
+    $('#logout').click(function () {
+        $.ajax({
+            url:'/logout',
+            type:'post',
+            success:function (data) {
+                //console.log(data);
+                {# 收到666后返回login页面 #}
+                if(data==='666'){
+                   location.href = '/login';
+                }
+            }
+        })
+    })
+    </script>
+
 </body>
+
+
+
 <style>
     body, div, address, blockquote, iframe, ul, ol, dl, dt,
 dd, li, dl, h1, h2, h3, h4, pre, table, caption, th, td, form,
