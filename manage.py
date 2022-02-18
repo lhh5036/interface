@@ -27,7 +27,8 @@ def login():
             session['password'] = password
             return redirect('projectEntry') # redirect直接是url，就是app.route的路径参数；url_for()是对函数进行操作
         else:
-            return render_template('login.html')
+            error = "用户名或密码错误，请重新输入!"
+            return render_template('login.html',error=error)
     else:
         user = request.args.get("name")
         password = request.args.get("password")
@@ -36,7 +37,8 @@ def login():
             session['password'] = password
             return redirect(url_for('estoneInterfaceEntry'))
         else:
-            return render_template('login.html')
+            error = "用户名或密码错误，请重新输入!"
+            return render_template('login.html',error=error)
 
 
 @app.route('/logout',endpoint='logout',methods=['POST'])
