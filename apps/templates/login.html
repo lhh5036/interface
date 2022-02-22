@@ -14,7 +14,9 @@
             <p>姓名:<input type="text" name="name" /></p>
             <p>密码:<input type="text" name="password" /></p>
             <p><input type="submit" value="submit"></p>
-            <p>{% if error %}{{ error }}{% endif %}</p>
+            {% if error %}
+            <p><strong>Error:</strong>{{ error }}</p>
+            {% endif %}
         </form>
     </body>
 </html>
