@@ -29,21 +29,13 @@ class ReadConfig:
             return "env or projectName or dbType is empty!"
         cf = configparser.ConfigParser()
         proDir = os.path.dirname(os.path.abspath(__file__))
-        if dbtype == "es":
-            configPath = os.path.join(proDir, "es_sources_config.ini")
-            cf.read(os.path.abspath(configPath),encoding='utf-8')
-            if env == "test" or env == "TEST":
-                return parseEsFile(cf,"es_test")
-            elif env == "release" or env == "RELEASE":
-                return parseEsFile(cf,"es_release")
-        elif dbtype == "mysql":
-            configPath = os.path.join(proDir, "mysql_sources_config.ini")
-            cf.read(os.path.abspath(configPath),encoding='utf-8')
-            if env == "test" or env == "TEST": # 当前环境为test
-                return parseMySqlFile(cf, mysqlConfigTest[projectname])
-            elif env == "release" or env == "RELEASE": # 当前环境为release
-                return parseMySqlFile(cf, mysqlConfigRelease[projectname])
-
+        configPath = os.path.join(proDir, "es_sources_config.ini") if dbtype=="es" else os.path.join(proDir, "mysql_sources_config.ini")
+        if not os.path.exists(configPath):
+            raise FileNotFoundError("文件不存在")
+        if env == "test" or env == "TEST":
+            return parseEsFile(cf,"es_test") if dbtype=="es" else parseMySqlFile(cf, mysqlConfigTest[projectname])
+        elif env == "release" or env == "RELEASE":
+            return parseEsFile(cf,"es_release") if dbtype=="es" else parseMySqlFile(cf, mysqlConfigRelease[projectname])
 
 '''
 redis调用类
