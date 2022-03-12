@@ -35,20 +35,21 @@ def login():
             flash('You were failed logged in')
             return render_template('login.html',error=error)
     else:
-        user = request.args.get("name")
-        password = request.args.get("password")
-        if user == "admin" and password == "123456":
-            session['username'] = user
-            session['password'] = password
-            flash('You were successfully logged in')
-            return redirect(url_for('estoneInterfaceEntry'))
-        elif user == "" or password == "":
-            error = "请输入用户名和密码!"
-            return render_template('login.html',error=error)
-        else:
-            error = "用户名或密码错误，请重新输入!"
-            flash('You were failed logged in')
-            return render_template('login.html',error=error)
+        # user = request.args.get("name")
+        # password = request.args.get("password")
+        # if user == "admin" and password == "123456":
+        #     session['username'] = user
+        #     session['password'] = password
+        #     flash('You were successfully logged in')
+        #     return redirect(url_for('estoneInterfaceEntry'))
+        # elif user == "" or password == "":
+        #     error = "请输入用户名和密码!"
+        #     return render_template('login.html',error=error)
+        # else:
+        #     error = "用户名或密码错误，请重新输入!"
+        #     flash('You were failed logged in')
+        #     return render_template('login.html',error=error)
+        return render_template('login.html')
 
 
 @app.route('/logout',endpoint='logout',methods=['POST'])
