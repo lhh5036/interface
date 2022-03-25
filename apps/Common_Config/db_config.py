@@ -84,10 +84,24 @@ nodes_release = [{"host": "10.100.1.91", "port": 6379},
                  {"host": "10.100.1.95", "port": 6379}]
 
 # redis测试环境集群
-nodes_test = [{"host": "192.168.3.4", "port": 7001},
-              {"host": "192.168.3.4", "port": 7002},
-              {"host": "192.168.3.5", "port": 7003},
-              {"host": "192.168.3.5", "port": 7004}]
+nodes_test = [{"host": "192.168.3.5", "port": 8001,
+               "user": "redis_admin",
+               "password": "halfj$$1/2red"},
+              {"host": "192.168.3.5", "port": 8002,
+               "user": "redis_admin",
+               "password": "halfj$$1/2red"},
+              {"host": "192.168.3.5", "port": 8003,
+               "user": "redis_admin",
+               "password": "halfj$$1/2red"},
+              {"host": "192.168.3.6", "port": 8004,
+               "user": "redis_admin",
+               "password": "halfj$$1/2red"},
+              {"host": "192.168.3.6", "port": 8005,
+               "user": "redis_admin",
+               "password": "halfj$$1/2red"},
+              {"host": "192.168.3.6", "port": 8006,
+               "user": "redis_admin",
+               "password": "halfj$$1/2red"}]
 
 # redis连接
 class Redis_User():
@@ -137,7 +151,7 @@ def parseMySqlFile(cf,databasename):
     _host = cf.get(databasename, "mysql_host")
     _user = cf.get(databasename, "mysql_user")
     _password = cf.get(databasename, "mysql_password")
-    return _database,_host,_user,_password
+    return _database, _host, _user, _password
 
 # 解析redis_sources_config文件中REDIS配置
 class parseRedisFile():
