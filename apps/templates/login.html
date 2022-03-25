@@ -1,0 +1,22 @@
+<!--estone所有接口入口-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="loginPage" content="width=device-width, initial-scale=1.0">
+    <title>接口测试</title>
+</head>
+
+<html>
+    <body>
+        <form action="" method="post">
+            <p>姓名:<input type="text" name="name" /></p>
+            <p>密码:<input type="text" name="password" /></p>
+            <p><input type="submit" value="submit"></p>
+            {% if error %}
+                <p style="color:#FF0000"><strong>Error:{{ error }}</strong></p>
+            {% endif %}
+        </form>
+    </body>
+</html>
