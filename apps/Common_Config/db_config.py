@@ -11,69 +11,38 @@ import logging
 import redis
 from rediscluster import RedisCluster
 
+# 测试环境
+mysqlConfigTest = {"fmis": "erp_fmis_test", "erp_usermgt": "erp_usermgt_test",
+                   "erp_usermgt_new": "erp_usermgt_new_test",
+                   "erp_product": "erp_product_test",
+                   "erp_pms": "erp_pms_test", "erp_publish": "erp_publish_test",
+                   "erp_publish_amazon": "erp_publish_amazon_test", "erp_oms": "erp_oms_test",
+                   "erp_wms": "erp_wms_test"}
+# 生产环境
+mysqlConfigRelease = {"das": "erp_das_release", "fmis": "erp_fmis_release",
+                      "erp_usermgt": "erp_usermgt_release",
+                      "erp_usermgt_new": "erp_usermgt_new_release",
+                      "erp_product": "erp_product_release",
+                      "erp_pms": "erp_pms_release", "erp_publish":"erp_publish_release",
+                      "erp_publish_amazon": "erp_publish_amazon_release",
+                      "erp_oms": "erp_oms_release", "erp_wms": "erp_wms_release"}
 
 # 解析每个系统中的db_sources文件得到ES/MYSQL配置
 class ReadConfig:
     # 注: dbtype == "es"时projectname随便写，不做校验
-    def getDbConfig(self,env,projectname='system',dbtype='mysql'): # 环境、项目名称、数据库类型（es/mysql）
+    def getDbConfig(self, env, projectname='system', dbtype='mysql'): # 环境、项目名称、数据库类型（es/mysql）
         if env == "" or projectname == "" or dbtype == "":
             logging.error("env or projectName or dbType is empty!")
             return "env or projectName or dbType is empty!"
         cf = configparser.ConfigParser()
         proDir = os.path.dirname(os.path.abspath(__file__))
-        if dbtype == "es":
-            configPath = os.path.join(proDir, "es_sources_config.ini")
-            cf.read(os.path.abspath(configPath),encoding='utf-8')
-            if env == "test" or env == "TEST":
-                if projectname == "system":
-                    return parseEsFile(cf,"es_test")
-            elif env == "release" or env == "RELEASE":
-                if projectname == "system":
-                    return parseEsFile(cf,"es_release")
-        elif dbtype == "mysql":
-            configPath = os.path.join(proDir, "mysql_sources_config.ini")
-            cf.read(os.path.abspath(configPath),encoding='utf-8')
-            if env == "test" or env == "TEST": # 当前环境为test
-                if projectname == "fmis": # 项目名称为财务系统
-                    return parseMySqlFile(cf,"erp_fmis_test")
-                elif projectname == "erp_usermgt": # 旧用户系统
-                    return parseMySqlFile(cf,"erp_usermgt_test")
-                elif projectname == "erp_usermgt_new": # 新用户系统
-                    return parseMySqlFile(cf,"erp_usermgt_new_test")
-                elif projectname == "erp_product": # 产品系统
-                    return parseMySqlFile(cf,"erp_product_test")
-                elif projectname == "erp_pms": # 采购系统
-                    return parseMySqlFile(cf,"erp_pms_test")
-                elif projectname == "erp_publish": # 刊登系统
-                    return parseMySqlFile(cf,"erp_publish_test")
-                elif projectname == "erp_publish_amazon": # 刊登系统-Amazon
-                    return parseMySqlFile(cf,"erp_publish_amazon_test")
-                elif projectname == "erp_oms": # 订单系统
-                    return parseMySqlFile(cf,"erp_oms_test")
-                elif projectname == "erp_wms": # 仓库系统
-                    return parseMySqlFile(cf,"erp_wms_test")
-            elif env == "release" or env == "RELEASE": # 当前环境为release
-                if projectname == "das":
-                    return parseMySqlFile(cf,"erp_das_release")
-                elif projectname == "fmis":
-                    return parseMySqlFile(cf,"erp_fmis_release")
-                elif projectname == "erp_usermgt":
-                    return parseMySqlFile(cf,"erp_usermgt_release")
-                elif projectname == "erp_usermgt_new":
-                    return parseMySqlFile(cf,"erp_usermgt_new_release")
-                elif projectname == "erp_product":
-                    return parseMySqlFile(cf,"erp_product_release")
-                elif projectname == "erp_pms":
-                    return parseMySqlFile(cf,"erp_pms_release")
-                elif projectname == "erp_publish":
-                    return parseMySqlFile(cf,"erp_publish_release")
-                elif projectname == "erp_publish_amazon": # 刊登系统-Amazon
-                    return parseMySqlFile(cf,"erp_publish_amazon_release")
-                elif projectname == "erp_oms":
-                    return parseMySqlFile(cf,"erp_oms_release")
-                elif projectname == "erp_wms":
-                    return parseMySqlFile(cf,"erp_wms_release")
-
+        configPath = os.path.join(proDir, "es_sources_config.ini") if dbtype == "es" else os.path.join(proDir, "mysql_sources_config.ini")
+        if not os.path.exists(configPath):
+            raise FileNotFoundError("文件不存在")
+        if env == "test" or env == "TEST":
+            return parseEsFile(cf, "es_test") if dbtype == "es" else parseMySqlFile(cf, mysqlConfigTest[projectname])
+        elif env == "release" or env == "RELEASE":
+            return parseEsFile(cf, "es_release") if dbtype == "es" else parseMySqlFile(cf, mysqlConfigRelease[projectname])
 
 '''
 redis调用类
