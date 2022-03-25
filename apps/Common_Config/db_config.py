@@ -11,38 +11,56 @@ import logging
 import redis
 from rediscluster import RedisCluster
 
-# 测试环境
-mysqlConfigTest = {"fmis": "erp_fmis_test", "erp_usermgt": "erp_usermgt_test",
-                   "erp_usermgt_new": "erp_usermgt_new_test",
-                   "erp_product": "erp_product_test",
-                   "erp_pms": "erp_pms_test", "erp_publish": "erp_publish_test",
-                   "erp_publish_amazon": "erp_publish_amazon_test", "erp_oms": "erp_oms_test",
-                   "erp_wms": "erp_wms_test"}
-# 生产环境
-mysqlConfigRelease = {"das": "erp_das_release", "fmis": "erp_fmis_release",
-                      "erp_usermgt": "erp_usermgt_release",
-                      "erp_usermgt_new": "erp_usermgt_new_release",
-                      "erp_product": "erp_product_release",
-                      "erp_pms": "erp_pms_release", "erp_publish":"erp_publish_release",
-                      "erp_publish_amazon": "erp_publish_amazon_release",
-                      "erp_oms": "erp_oms_release", "erp_wms": "erp_wms_release"}
+'''解析mysql_sources_config文件中MYSQL配置'''
+def parseMySqlFile(cf,databasename):
+    _host = cf.get(databasename, "mysql_host")
+    _user = cf.get(databasename, "mysql_user")
+    _password = cf.get(databasename, "mysql_password")
+    _database = cf.get(databasename, "mysql_database")
+    return [_host, _user, _password, _database]
 
-# 解析每个系统中的db_sources文件得到ES/MYSQL配置
-class ReadConfig:
-    # 注: dbtype == "es"时projectname随便写，不做校验
-    def getDbConfig(self, env, projectname='system', dbtype='mysql'): # 环境、项目名称、数据库类型（es/mysql）
-        if env == "" or projectname == "" or dbtype == "":
-            logging.error("env or projectName or dbType is empty!")
-            return "env or projectName or dbType is empty!"
+'''解析es_sources_config.ini文件中ES配置'''
+def parseEsFile(cf,databasename):
+    _host = cf.get(databasename, "es_host")
+    _port = cf.get(databasename, "es_port")
+    _timeout = int(cf.get(databasename, "es_timeout"))
+    return _host, _port, _timeout
+
+'''获取配置文件中所有生产环境的数据库配置'''
+class Get_Db_Info():
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def get_mysqldb_info(env, database_config="mysql_sources_config.ini"):
         cf = configparser.ConfigParser()
-        proDir = os.path.dirname(os.path.abspath(__file__))
-        configPath = os.path.join(proDir, "es_sources_config.ini") if dbtype == "es" else os.path.join(proDir, "mysql_sources_config.ini")
-        if not os.path.exists(configPath):
-            raise FileNotFoundError("文件不存在")
-        if env == "test" or env == "TEST":
-            return parseEsFile(cf, "es_test") if dbtype == "es" else parseMySqlFile(cf, mysqlConfigTest[projectname])
-        elif env == "release" or env == "RELEASE":
-            return parseEsFile(cf, "es_release") if dbtype == "es" else parseMySqlFile(cf, mysqlConfigRelease[projectname])
+        prodir = os.path.dirname(os.path.abspath(__file__))
+        configpath = os.path.join(prodir, database_config)
+        cf.read(os.path.join(configpath), encoding='utf-8')
+        return parseMySqlFile(cf, env)
+
+    @staticmethod
+    def get_esdb_info(env, database_config="es_sources_config.ini"):
+        cf = configparser.ConfigParser()
+        prodir = os.path.dirname(os.path.abspath(__file__))
+        configpath = os.path.join(prodir, database_config)
+        cf.read(os.path.join(configpath), encoding='utf-8')
+        return parseEsFile(cf, env)
+
+    def __del__(self):
+        message = "close "
+        logging.info(message)
+        return message
+
+'''获取Mysql数据库配置'''
+def Mysql_Db_Config(env):
+    config = Get_Db_Info().get_mysqldb_info(env)
+    return [config[i] for i in range(len(config))]
+
+'''获取ES数据库配置'''
+def Es_Db_Config(env):
+    es_config = Get_Db_Info().get_esdb_info(env)
+    return [es_config[i] for i in range(len(es_config))]
 
 '''
 redis调用类
@@ -105,23 +123,6 @@ class Redis_User():
         get_values = r.zscore(self._name, self._value)
         return get_values
 
-
-# 解析es_sources_config.ini文件中ES配置
-def parseEsFile(cf,databasename):
-    _host = cf.get(databasename,"es_host")
-    _port = cf.get(databasename,"es_port")
-    _timeout = int(cf.get(databasename,"es_timeout"))
-    return _host,_port,_timeout
-
-
-# 解析mysql_sources_config文件中MYSQL配置
-def parseMySqlFile(cf,databasename):
-    _database = cf.get(databasename, "mysql_database")
-    _host = cf.get(databasename, "mysql_host")
-    _user = cf.get(databasename, "mysql_user")
-    _password = cf.get(databasename, "mysql_password")
-    return _database, _host, _user, _password
-
 # 解析redis_sources_config文件中REDIS配置
 class parseRedisFile():
     def __init__(self, cf, databasename):
@@ -129,16 +130,13 @@ class parseRedisFile():
         self.databasename = databasename
 
     def host(self):
-        _host = cf.get(self.databasename, "redis_host")
+        _host = self.cf.get(self.databasename, "redis_host")
         return _host
     def port(self):
-        _port = cf.get(self.databasename, "redis_port")
+        _port = self.cf.get(self.databasename, "redis_port")
         return _port
 
 
 if __name__ == '__main__':
-    cf = configparser.ConfigParser()
-    proDir = os.path.dirname(os.path.abspath(__file__))
-    configPath = os.path.join(proDir, "es_sources_config.ini")
-    cf.read(os.path.abspath(configPath),encoding='utf-8')
+    pass
 

@@ -7,20 +7,14 @@
 @Desc:数据分析系统获取数据库配置
 '''
 
-from apps.Common_Config.db_config import ReadConfig
+from apps.Common_Config.db_config import Es_Db_Config
 
 class Das_Common_Setting:
-    # 测试环境MySQL数据库配置
-    das_mysql = ReadConfig().getDbConfig("test", "das", "mysql")
-
-    # 生产环境MySQL数据库配置
-    # das_mysql = ReadConfig().getDbConfig("release", "das", "mysql")
-
     # 测试环境ES数据配置
-    das_es = ReadConfig().getDbConfig("test", "das", "es")
+    das_es = Es_Db_Config("es_test")
 
     # 生产环境ES数据配置
-    # das_es = ReadConfig().getDbConfig("release", "das", "es")
+    # das_es = Es_Db_Config("es_release")
 
 
 if __name__ == '__main__':
