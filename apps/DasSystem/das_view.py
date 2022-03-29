@@ -58,7 +58,3 @@ def run_dasTestcaseExecute():
     runner.run() # 执行用例
     # 发送钉钉通知
     runner.dingtalk_notice(url=test_url)
-
-if __name__ == '__main__':
-    s = run_dasTestcaseExecute()
-    print(s)
