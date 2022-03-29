@@ -19,8 +19,8 @@ import json
 test_url = "https://oapi.dingtalk.com/robot/send?access_token=112b226a43ef532c7456a5c262ddac21a7ee21d05229052aaf140c8bd3c6b90c"
 das_api = Blueprint("das_api",__name__) # 实例化一个蓝图(Blueprint)对象
 
-das_garder_path = os.path.dirname(os.path.realpath(__file__)) + "\\test\\case\\" # 获取数据分析测试用例文件路径
-das_report_path = os.path.dirname(os.path.realpath(__file__)) + "\\report" # 测试数据分析报告路径
+das_garder_path = os.path.dirname(os.path.realpath(__file__)) + "/test/case/" # 获取数据分析测试用例文件路径
+das_report_path = os.path.dirname(os.path.realpath(__file__)) + "/report" # 测试数据分析报告路径
 
 # 为创建的蓝图添加路由配置
 @das_api.route('/das/allTestCase/execute')
