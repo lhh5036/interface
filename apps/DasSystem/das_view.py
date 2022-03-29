@@ -7,14 +7,16 @@
 import HTMLTestRunner
 from BeautifulReport import BeautifulReport as bf
 from bs4 import BeautifulSoup
-from flask import Blueprint # 导入 Flask 中的蓝图 Blueprint 模块
+from flask import Blueprint,request # 导入 Flask 中的蓝图 Blueprint 模块
 import os
 import unittest
+from unittestreport import TestRunner
 import time
 from pathlib import Path
 from apps.utils.date_operate_util import DateUtils
 from selenium import webdriver
-
+import json
+test_url = "https://oapi.dingtalk.com/robot/send?access_token=112b226a43ef532c7456a5c262ddac21a7ee21d05229052aaf140c8bd3c6b90c"
 das_api = Blueprint("das_api",__name__) # 实例化一个蓝图(Blueprint)对象
 
 das_garder_path = os.path.dirname(os.path.realpath(__file__)) + "\\test\\case\\" # 获取数据分析测试用例文件路径
@@ -38,18 +40,24 @@ def run_dasTestcaseExecute():
         if os.path.isfile(file):
             os.remove(file)
 
-    # 打开文件，将报告写入
+    # 方法一打开文件，将报告写入
     # fp = open(report_abspath,"wb")
     # runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title='数据分析系统-接口自动化报告,测试结果如下:',description='用例执行情况:')
     # runner.run(discover)
     # fp.close()
-    runner = bf(discover) # 实例化BeautifulReport模块
-    runner.report(filename="result_"+now,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
+    # 方法二
+    # filename = "result_"+now
+    # runner = bf(discover) # 实例化BeautifulReport模块
+    # runner.report(filename=filename,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
     # 添加浏览器驱动
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    driver.get(report_abspath)
-    return "数据分析测试用例执行完成!"
+    # driver = webdriver.Chrome()
+    # driver.maximize_window()
+    # driver.get(report_abspath)
+    # return "数据分析测试用例执行完成!"
+    runner = TestRunner(discover)
+    runner.run() # 执行用例
+    # 发送钉钉通知
+    runner.dingtalk_notice(url=test_url)
 
 if __name__ == '__main__':
     s = run_dasTestcaseExecute()
