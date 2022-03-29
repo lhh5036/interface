@@ -58,3 +58,4 @@ def run_dasTestcaseExecute():
     runner.run() # 执行用例
     # 发送钉钉通知
     runner.dingtalk_notice(url=test_url)
+    return "数据分析测试用例执行完成!"
