@@ -16,7 +16,7 @@ from pathlib import Path
 from apps.utils.date_operate_util import DateUtils
 from selenium import webdriver
 import json
-test_url = "https://oapi.dingtalk.com/robot/send?access_token=112b226a43ef532c7456a5c262ddac21a7ee21d05229052aaf140c8bd3c6b90c"
+test_url = "https://oapi.dingtalk.com/robot/send?access_token=48ef05bac65da22fe78e165ffa5197575a3478654d51ddfff143b126dccc435f"
 das_api = Blueprint("das_api",__name__) # 实例化一个蓝图(Blueprint)对象
 
 das_garder_path = os.path.dirname(os.path.realpath(__file__)) + "/test/case/" # 获取数据分析测试用例文件路径
