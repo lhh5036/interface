@@ -12,6 +12,7 @@ import os
 import unittest
 from unittestreport import TestRunner
 import time
+import requests
 from pathlib import Path
 from apps.Common_Config.Ding_Webhook import WebHook
 from apps.utils.Ding_Robot import DingHelp
@@ -76,4 +77,4 @@ def run_dasTestcaseExecute():
     das_url = urlparse(download_file_url).geturl()
     msg = "数据分析测试用例报告地址:\n"
     # DingHelp(test_url,msg,["13923832556"],download_file_url).dinghelp() # 推送钉钉消息
-    return redirect(das_url)
+    return requests.get(redirect(das_url))
