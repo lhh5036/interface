@@ -7,7 +7,7 @@
 import HTMLTestRunner
 from BeautifulReport import BeautifulReport as bf
 from bs4 import BeautifulSoup
-from flask import Blueprint,request # 导入 Flask 中的蓝图 Blueprint 模块
+from flask import Blueprint,render_template,redirect # 导入 Flask 中的蓝图 Blueprint 模块
 import os
 import unittest
 from unittestreport import TestRunner
@@ -34,12 +34,12 @@ def run_dasTestcaseExecute():
     # 获取当前时间
     now = time.strftime("%Y-%m-%d-%H_%M_%S",time.localtime(time.time()))
     # html报告文件路径
-    report_abspath = os.path.join(das_report_path,"result_"+now+".html")
+    report_abspath = os.path.join(das_report_path,"result_das_"+now+".html")
 
     # 删除昨天的报告
     p = Path(das_report_path)
     delete_date = DateUtils().getTheDate(-1, "%Y-%m-%d")
-    for file in p.rglob("result_" + delete_date + "*" + ".html"):
+    for file in p.rglob("result_das_" + delete_date + "*" + ".html"):
         # 判断是否为文件，只删除文件
         if os.path.isfile(file):
             os.remove(file)
@@ -74,6 +74,6 @@ def run_dasTestcaseExecute():
                  root@192.168.3.10:/data/test_file/'.format(filename)) # 远程传入最新的报告
     download_file_url = "http://192.168.3.10:81/test_file/{0}.html".format(filename)
     das_url = urlparse(download_file_url).geturl()
-    msg = "数据分析测试用例报告地址:\n" + das_url
+    msg = "数据分析测试用例报告地址:\n"
     # DingHelp(test_url,msg,["13923832556"],download_file_url).dinghelp() # 推送钉钉消息
-    return das_url
+    return redirect(das_url)
