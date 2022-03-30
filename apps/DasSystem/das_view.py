@@ -19,7 +19,7 @@ from apps.utils.date_operate_util import DateUtils
 from selenium import webdriver
 import json
 
-test_url = WebHook.espublish_url
+test_url = WebHook.test_url
 das_api = Blueprint("das_api",__name__) # 实例化一个蓝图(Blueprint)对象
 
 das_garder_path = os.path.dirname(os.path.realpath(__file__)) + "/test/case/" # 获取数据分析测试用例文件路径
