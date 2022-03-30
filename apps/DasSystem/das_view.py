@@ -73,6 +73,7 @@ def run_dasTestcaseExecute():
     os.popen('scp -r /home/InterfaceAutoTest/apps/DasSystem/report/{0}.html \
                  root@192.168.3.10:/data/test_file/'.format(filename)) # 远程传入最新的报告
     download_file_url = "http://192.168.3.10:81/test_file/{0}.html".format(filename)
-    msg = "数据分析测试用例报告地址:\n{0}".format(urlparse(download_file_url).geturl())
+    das_url = urlparse(download_file_url).geturl()
+    msg = "数据分析测试用例报告地址:\n" + urlparse(download_file_url).geturl()
     # DingHelp(test_url,msg,["13923832556"],download_file_url).dinghelp() # 推送钉钉消息
     return msg
