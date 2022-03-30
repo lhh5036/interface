@@ -18,6 +18,7 @@ from apps.utils.Ding_Robot import DingHelp
 from apps.utils.date_operate_util import DateUtils
 from selenium import webdriver
 import json
+from urllib.parse import urlparse
 
 test_url = WebHook.test_url
 das_api = Blueprint("das_api",__name__) # 实例化一个蓝图(Blueprint)对象
@@ -72,6 +73,6 @@ def run_dasTestcaseExecute():
     os.popen('scp -r /home/InterfaceAutoTest/apps/DasSystem/report/{0}.html \
                  root@192.168.3.10:/data/test_file/'.format(filename)) # 远程传入最新的报告
     download_file_url = "http://192.168.3.10:81/test_file/{0}.html".format(filename)
-    msg = "数据分析测试用例报告地址:\n{0}".format(download_file_url)
+    msg = "数据分析测试用例报告地址:\n{0}".format(urlparse(download_file_url).geturl())
     # DingHelp(test_url,msg,["13923832556"],download_file_url).dinghelp() # 推送钉钉消息
     return msg
