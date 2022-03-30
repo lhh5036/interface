@@ -14,6 +14,7 @@ from unittestreport import TestRunner
 import time
 from pathlib import Path
 from apps.Common_Config.Ding_Webhook import WebHook
+from apps.utils.Ding_Robot import DingHelp
 from apps.utils.date_operate_util import DateUtils
 from selenium import webdriver
 import json
@@ -63,10 +64,15 @@ def run_dasTestcaseExecute():
     # runner.dingtalk_notice(url=test_url)
     # return "数据分析测试用例执行完成!"
     # 方法四--推送钉钉报告连接
-    filename = "result_"+now
+    filename = "result_das_"+now
     runner = bf(discover) # 实例化BeautifulReport模块
     runner.report(filename=filename,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
-    path_file = '/home/InterfaceAutoTest/apps/DasSystem/report/{0}.html'.format(filename)
+    # 远程连接192.168.3.10服务器(需要先设置免密ssh-copy-id ip)
+    os.popen('ssh 192.168.3.10') # 远程连接
+    os.popen('rm -rf /data/test_file/result_das_*') # 删除远程192.168.3.10上面原来的报告
+    os.popen('exit') # 退出连接192.168.3.10
     os.popen('scp -r /home/InterfaceAutoTest/apps/DasSystem/report/{0}.html \
-                 root@192.168.3.10:/data/test_file/'.format(filename))
+                 root@192.168.3.10:/data/test_file/'.format(filename)) # 远程传入最新的报告
+    msg = "数据分析测试用例报告地址:"
+    DingHelp(test_url,msg,["13923832556"]).dinghelp()
     return "数据分析测试用例执行完成!"
