@@ -76,4 +76,4 @@ def run_dasTestcaseExecute():
     das_url = urlparse(download_file_url).geturl()
     msg = "数据分析测试用例报告地址:\n" + das_url
     # DingHelp(test_url,msg,["13923832556"],download_file_url).dinghelp() # 推送钉钉消息
-    return msg
+    return das_url
