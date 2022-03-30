@@ -13,10 +13,12 @@ import unittest
 from unittestreport import TestRunner
 import time
 from pathlib import Path
+from apps.Common_Config.Ding_Webhook import WebHook
 from apps.utils.date_operate_util import DateUtils
 from selenium import webdriver
 import json
-test_url = "https://oapi.dingtalk.com/robot/send?access_token=48ef05bac65da22fe78e165ffa5197575a3478654d51ddfff143b126dccc435f"
+
+test_url = WebHook.espublish_url
 das_api = Blueprint("das_api",__name__) # 实例化一个蓝图(Blueprint)对象
 
 das_garder_path = os.path.dirname(os.path.realpath(__file__)) + "/test/case/" # 获取数据分析测试用例文件路径
@@ -54,8 +56,17 @@ def run_dasTestcaseExecute():
     # driver.maximize_window()
     # driver.get(report_abspath)
     # return "数据分析测试用例执行完成!"
-    runner = TestRunner(discover)
-    runner.run() # 执行用例
-    # 发送钉钉通知
-    runner.dingtalk_notice(url=test_url)
+    # 方法三
+    # runner = TestRunner(discover)
+    # runner.run() # 执行用例
+    # # 发送钉钉通知，可以得到执行用例成功个数、失败个数、总数
+    # runner.dingtalk_notice(url=test_url)
+    # return "数据分析测试用例执行完成!"
+    # 方法四--推送钉钉报告连接
+    filename = "result_"+now
+    runner = bf(discover) # 实例化BeautifulReport模块
+    runner.report(filename=filename,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
+    path_file = '/home/InterfaceAutoTest/apps/DasSystem/report/{0}.html'.format(filename)
+    os.popen('scp -r /home/InterfaceAutoTest/apps/DasSystem/report/{0}.html \
+                 root@192.168.3.10:/data/test_file/'.format(filename))
     return "数据分析测试用例执行完成!"
