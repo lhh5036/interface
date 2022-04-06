@@ -11,14 +11,14 @@ import logging
 
 class InterfaceCommonInfo:
 
-    # 测试环境接口地址
-    common_url = "http://192.168.3.165"
+    # 测试环境接口地址（网关地址）
+    common_url = "http://192.168.3.162:80"
 
-    # 预生产环境接口地址
-    # common_url = "http://10.100.1.1:31080"
+    # 预生产环境接口地址(网关)
+    # common_url = "http://10.100.1.1:32100"
 
-    # 生产环境接口地址
-    # common_url = "http://10.100.1.1"
+    # 生产环境接口地址（网关）
+    # common_url = "http://10.100.1.1:31100"
 
 
 class Common_TokenHeader():
