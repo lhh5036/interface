@@ -75,5 +75,6 @@ def run_dasTestcaseExecute():
                  root@192.168.3.10:/data/interfaceAutoTest_file/'.format(filename)) # 远程传入最新的报告
     download_file_url = "http://192.168.3.10:81/interfaceAutoTest_file/{0}.html".format(filename)
     das_url = urlparse(download_file_url).geturl()
-    # DingHelp(test_url,msg,["13923832556"],download_file_url).dinghelp() # 推送钉钉消息
+    msg = "数据分析测试报告地址:{0}".format(das_url)
+    # DingHelp(test_url,msg,["13923832556"],test_url).dinghelp() # 推送钉钉消息
     return render_template("system_report.html",das_report_url=das_url)
