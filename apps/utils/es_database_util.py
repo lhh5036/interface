@@ -5,7 +5,7 @@
 @Desc:ES数据库操作工具类
 '''
 from elasticsearch6 import Elasticsearch
-from apps.Common_Config.db_config import ReadConfig
+from apps.Common_Config.db_config import Es_Db_Config
 
 # ES数据库具体操作实现类
 class Es_handleOperator():
@@ -68,3 +68,24 @@ class Es_handleOperator():
             return 0
         else:
             return allDoc['hits']['total']
+
+'''获取查询条目数'''
+def get_data_num(es_info, index):
+    def wragger(func):
+        def demo(*args):
+            total = Es_handleOperator(es_info).data_es_count(index, func(*args))
+            return total
+        return demo
+    return wragger
+
+'''获取ES数据'''
+def get_es_data(es_info, index):
+    def wragger(func):
+        def demo(*args):
+            data = Es_handleOperator(es_info).data_es_new("data", index, func(*args))
+            return data
+        return demo
+    return wragger
+
+if __name__ == '__main__':
+    pass
