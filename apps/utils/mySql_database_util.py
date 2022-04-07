@@ -74,12 +74,55 @@ class Mysql_handleOperator():
         self.con.close()
         return results
 
+class MySql_operator():
+    # 一次性查询数据表全部数据
+    def data_sql(self, con, sql, methods='select'):
+        self.con = con
+        self.methods = methods  # 声明增删改查哪种操作(insert/delete/update/select)
+        self.sql = sql  # sql语句
+
+        # 查询数据库数据
+        if self.methods == 'select':
+            cursor = self.con.cursor()
+            cursor.execute(self.sql)
+            results = cursor.fetchall()
+            cursor.close()
+            return results
+
+        # 新增修改删除数据库数据
+        elif self.methods == 'insert' or self.methods == 'update' or self.methods == 'delete':
+            cursor = self.con.cursor()
+            cursor.execute(self.sql)
+            cursor.close()
+            self.con.commit()
+
+# 连接数据库
+def controlDatebase(config_info, methods='select', port=3306, charset='utf8'):
+    def wragger(func):
+        def demo(*args):
+            conn = pymysql.connect(host=config_info[1],
+                                   user=config_info[2],
+                                   password=config_info[3],
+                                   database=config_info[0],
+                                   port=port,
+                                   charset=charset)
+            sql_list = func(conn, *args)
+            data_list = []
+            for i in sql_list:
+                data = MySql_operator().data_sql(conn, i, methods)
+                datas = [info for info in itertools.chain(*data)]
+                data_list.append(datas)
+            conn.close()
+            return data_list
+        return demo
+    return wragger
+
 # 获取数据库数据
-def get_data(sql_info, method="select"):
+def get_data(config_info, method="select"):
     def wragger(func):
         def demo(*args):
             try:
-                data = Mysql_handleOperator(sql_info).data_sql(method, func(*args))
+                data = Mysql_handleOperator(config_info).data_sql(method, func(*args))
                 return data
             except:
                 raise Exception
