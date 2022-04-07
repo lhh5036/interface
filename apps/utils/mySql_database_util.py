@@ -6,10 +6,11 @@
 '''
 
 
-from apps.Common_Config.db_config import ReadConfig
+from apps.Common_Config.db_config import Mysql_Db_Config
 from apps.FmisSystem.fmis_common_settting import Fmis_Common_Setting
 import pymysql
 import pprint
+import itertools
 
 # mysql数据库具体操作实现类
 class Mysql_handleOperator():
@@ -73,9 +74,27 @@ class Mysql_handleOperator():
         self.con.close()
         return results
 
+# 获取数据库数据
+def get_data(sql_info, method="select"):
+    def wragger(func):
+        def demo(*args):
+            try:
+                data = Mysql_handleOperator(sql_info).data_sql(method, func(*args))
+                return data
+            except:
+                raise Exception
+        return demo
+    return wragger
+
+# 将元组数据转为列表
+def convert_list(func):
+    def wragger(*args):
+        try:
+            lis = [i for i in itertools.chain(*func(*args))]
+            return lis
+        except:
+            return 0
+    return wragger
 
 if __name__ == '__main__':
-    sql = "SELECT deposit_balance_cny, deposit_balance_usd FROM wish_platform_bill \
-WHERE sync_time = '2021-07';"
-    s = Mysql_handleOperator(Fmis_Common_Setting.fmis_mysql).data_sql("select", sql)
-    pprint.pprint(s)
+    pass
