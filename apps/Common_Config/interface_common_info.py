@@ -10,6 +10,8 @@ import json
 import logging
 
 class InterfaceCommonInfo:
+    # 接口自动化框架部署服务器
+    server_ip = '192.168.3.10'
 
     # 测试环境接口地址（网关地址）
     common_url = "http://192.168.3.162:80"
