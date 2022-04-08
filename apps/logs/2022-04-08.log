@@ -1,0 +1,39 @@
+[2022-04-08 11:59:34,628] dataManageProductListingApi.py->dataManageProductListingInfo line:19 [INFO]dataManageProductListingInfo ---->start!
+[2022-04-08 11:59:35,506] dataManageProductListingApi.py->dataManageProductListingInfo line:42 [INFO]dataManageProductListingInfo---->end!
+[2022-04-08 11:59:35,506] dataManageProductListingApi.py->dataManageProductListingInfo line:19 [INFO]dataManageProductListingInfo ---->start!
+[2022-04-08 11:59:36,427] dataManageProductListingApi.py->dataManageProductListingInfo line:42 [INFO]dataManageProductListingInfo---->end!
+[2022-04-08 11:59:36,429] parameterConfigSaveApi.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
+[2022-04-08 11:59:36,549] parameterConfigSaveApi.py->paramConfigFunction line:41 [INFO]paramConfigFunction ---->end!
+[2022-04-08 11:59:36,550] parameterConfigSaveApi.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
+[2022-04-08 11:59:36,686] parameterConfigSaveApi.py->paramConfigFunction line:41 [INFO]paramConfigFunction ---->end!
+[2022-04-08 11:59:36,687] parameterConfigSelectApi.py->paramConfigQuery line:21 [INFO]paramConfigQuery ---->start!
+[2022-04-08 11:59:36,799] parameterConfigSelectApi.py->paramConfigQuery line:35 [INFO]paramConfigQuery ---->end!
+[2022-04-08 11:59:36,805] dataManageProductListingApi.py->dataManageProductListingInfo line:19 [INFO]dataManageProductListingInfo ---->start!
+[2022-04-08 11:59:37,522] dataManageProductListingApi.py->dataManageProductListingInfo line:42 [INFO]dataManageProductListingInfo---->end!
+[2022-04-08 11:59:37,527] dataManageProductListingApi.py->dataManageProductListingInfo line:19 [INFO]dataManageProductListingInfo ---->start!
+[2022-04-08 11:59:38,235] dataManageProductListingApi.py->dataManageProductListingInfo line:42 [INFO]dataManageProductListingInfo---->end!
+[2022-04-08 19:13:28,968] productGetDijiaApi.py->productDetDiJia line:21 [INFO]productGenDijia ---->start!
+[2022-04-08 19:13:29,268] productGetDijiaApi.py->productDetDiJia line:39 [INFO]productGenDijia ---->end!
+[2022-04-08 19:13:29,282] productGetTongkuanApi.py->productGetTongkuan line:20 [INFO]productGetTongkuan ---->start!
+[2022-04-08 19:13:29,576] productGetTongkuanApi.py->productGetTongkuan line:43 [INFO]productGetTongkuan ---->end!
+[2022-04-08 19:13:29,576] parameterConfigSaveApi.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
+[2022-04-08 19:13:29,709] parameterConfigSaveApi.py->paramConfigFunction line:41 [INFO]paramConfigFunction ---->end!
+[2022-04-08 19:13:29,710] parameterConfigSaveApi.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
+[2022-04-08 19:13:29,831] parameterConfigSaveApi.py->paramConfigFunction line:41 [INFO]paramConfigFunction ---->end!
+[2022-04-08 19:13:29,832] parameterConfigSelectApi.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2022-04-08 19:13:29,937] parameterConfigSelectApi.py->paramConfigQuery line:34 [INFO]paramConfigQuery ---->end!
+[2022-04-08 19:13:29,967] productGetDijiaApi.py->productDetDiJia line:21 [INFO]productGenDijia ---->start!
+[2022-04-08 19:13:30,129] productGetDijiaApi.py->productDetDiJia line:39 [INFO]productGenDijia ---->end!
+[2022-04-08 19:13:30,146] productGetTongkuanApi.py->productGetTongkuan line:20 [INFO]productGetTongkuan ---->start!
+[2022-04-08 19:13:30,323] productGetTongkuanApi.py->productGetTongkuan line:43 [INFO]productGetTongkuan ---->end!
+[2022-04-08 19:14:17,510] queryCapitalContrast.py->querycapitalcontrast line:28 [INFO]querycapitalcontrast ---->start!
+[2022-04-08 19:14:17,963] queryCapitalContrast.py->querycapitalcontrast line:48 [INFO]querycapitalcontrast ---->end!
+[2022-04-08 19:14:17,963] queryCapitalCost.py->querycapitalcost line:31 [INFO]querycapitalcost ---->start!
+[2022-04-08 19:14:18,058] queryCapitalIncome.py->querycapitalincome line:31 [INFO]querycapitalincome ---->start!
+[2022-04-08 19:14:18,114] queryCapitalIncome.py->querycapitalincome line:52 [INFO]querycapitalincome ---->end!
+[2022-04-08 19:14:18,115] queryFundBalance.py->queryfundbalance line:28 [INFO]queryfundbalance ---->start!
+[2022-04-08 19:14:18,359] queryFundBalance.py->queryfundbalance line:53 [INFO]queryfundbalance ---->end!
+[2022-04-08 19:14:18,359] queryFundBalance.py->queryfundbalance line:28 [INFO]queryfundbalance ---->start!
+[2022-04-08 19:14:18,435] queryFundBalance.py->queryfundbalance line:53 [INFO]queryfundbalance ---->end!
+[2022-04-08 19:14:18,435] queryFundBalance.py->queryfundbalance line:28 [INFO]queryfundbalance ---->start!
+[2022-04-08 19:14:18,478] queryFundBalance.py->queryfundbalance line:53 [INFO]queryfundbalance ---->end!
