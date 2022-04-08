@@ -14,7 +14,6 @@ import multiprocessing
 """
 gunicorn的配置文件
 """
-
 # 监听内网端口5000
 bind = '192.168.3.180:5000'
 
@@ -24,5 +23,4 @@ worker_class = 'gunicorn.workers.ggevent.GeventWorker'
 
 # 如果应用的代码有变化，work将会自动重启，适用于开发环境
 reload = True
-
 debug = True
