@@ -5,11 +5,7 @@
 @Desc:MySQL数据库操作工具类
 '''
 
-
-from apps.Common_Config.db_config import Mysql_Db_Config
-from apps.FmisSystem.fmis_common_settting import Fmis_Common_Setting
 import pymysql
-import pprint
 import itertools
 
 # mysql数据库具体操作实现类
