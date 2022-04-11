@@ -10,7 +10,7 @@
 import unittest
 import random
 
-from apps.AllSystemData.FmisSystem.fmis_interface_service.financial_manage.queryCapitalIncome import QueryCapitalIncome
+from apps.AllSystemData.FmisSystem.fmis_api.financial_manage.queryCapitalIncome import QueryCapitalIncome
 from apps.utils.date_operate_util import getMonthFirstDay
 from apps.utils.date_operate_util import getMonthLastDay
 

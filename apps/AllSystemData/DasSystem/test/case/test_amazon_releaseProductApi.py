@@ -9,8 +9,8 @@ import random
 import unittest
 
 from apps.AllSystemData.DasSystem.das_common_settting import Das_Common_Setting
-from apps.AllSystemData.DasSystem.das_interface_service.dasSystem_comConfig import Das_Common_Config
-from apps.AllSystemData.DasSystem.das_interface_service.myData_manage.releaseProductApi import releaseProductInfoApi
+from apps.AllSystemData.DasSystem.das_api.dasSystem_comConfig import Das_Common_Config
+from apps.AllSystemData.DasSystem.das_api.myData_manage.releaseProductApi import releaseProductInfoApi
 
 from apps.utils.es_database_util import Es_handleOperator
 

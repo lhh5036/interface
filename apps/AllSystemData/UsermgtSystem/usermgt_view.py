@@ -27,7 +27,7 @@ usermgt_garder_path = os.path.dirname(os.path.realpath(__file__)) + "/test/case/
 usermgt_report_path = os.path.dirname(os.path.realpath(__file__)) + "/report"
 
 # 用户系统所有用例执行入口
-@usermgt_api.route("/usermgt/allTestCase/execute")
+@usermgt_api.route("/allTestCase/execute")
 def run_usermgtTTestcaseExecute():
     # 执行用例的文件路径
     discover = unittest.defaultTestLoader.discover(usermgt_garder_path, pattern='test_*.py',

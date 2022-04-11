@@ -5,6 +5,7 @@ from flask import Flask
 # 导入此前写好的蓝图模块
 from apps.AllSystemData.DasSystem import das_view
 from apps.AllSystemData.FmisSystem import fmis_view
+from apps.AllSystemData.SaleSystem import sale_view
 from apps.AllSystemData.UsermgtSystem import usermgt_view
 from config import DevelopementConfig, ProductionConfig
 
@@ -28,9 +29,13 @@ def create_app(config_name):
     app.permanent_session_lifetime = 1551 # session的生存时间——测试时设置
 
     # 在Flask对象中注册蓝图模块中的蓝图对象 das_view 中的 das_api
-    app.register_blueprint(das_view.das_api, url_prefix="/interfaceTest/")
+    app.register_blueprint(das_view.das_api, url_prefix="/interfaceTest/das/")
     # 在Flask对象中注册蓝图模块中的蓝图对象 fmis_view 中的 fmis_api
-    app.register_blueprint(fmis_view.fmis_api, url_prefix="/interfaceTest/")
+    app.register_blueprint(fmis_view.fmis_api, url_prefix="/interfaceTest/fmis/")
     # 在Flask对象中注册蓝图模块中的蓝图对象 usermgt_view 中的 usermgt_api
-    app.register_blueprint(usermgt_view.usermgt_api, url_prefix="/interfaceTest/")
+    app.register_blueprint(usermgt_view.usermgt_api, url_prefix="/interfaceTest/usermgt/")
+
+    app.register_blueprint(sale_view.sale_api,url_prefix="/interfaceTest/sale/")
+
+    app.register_blueprint(url_prefix = "/interfaceTest/tms/")
     return app

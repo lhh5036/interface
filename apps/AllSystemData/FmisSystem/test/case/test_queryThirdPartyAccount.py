@@ -11,9 +11,9 @@ import unittest
 import random
 
 from apps.AllSystemData.FmisSystem.fmis_common_settting import Fmis_Common_Setting
-from apps.AllSystemData.FmisSystem.fmis_interface_service.financial_manage.queryThirdPartyAccount import \
+from apps.AllSystemData.FmisSystem.fmis_api.financial_manage.queryThirdPartyAccount import \
     QueryThirdPartyAccount
-from apps.AllSystemData.FmisSystem.fmis_interface_service.fmisSystem_interface_param import FmisApiInputParam
+from apps.AllSystemData.FmisSystem.fmis_api.fmisSystem_interface_param import FmisApiInputParam
 from apps.AllSystemData.SaleSystem.sale_common_setting import Sale_Common_Setting
 
 from apps.utils.mySql_database_util import Mysql_handleOperator

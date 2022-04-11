@@ -7,7 +7,7 @@
 
 import unittest
 
-from apps.AllSystemData.FmisSystem.fmis_interface_service.financial_manage.queryCapitalContrast import \
+from apps.AllSystemData.FmisSystem.fmis_api.financial_manage.queryCapitalContrast import \
     QueryCapitalContrast
 from apps.utils.date_operate_util import getMonthFirstDay
 from apps.utils.date_operate_util import getMonthLastDay

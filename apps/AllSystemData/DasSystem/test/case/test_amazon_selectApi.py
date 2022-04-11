@@ -6,7 +6,7 @@
 '''
 
 import unittest
-from apps.AllSystemData.DasSystem.das_interface_service.myData_manage.dataManageProductListingApi import \
+from apps.AllSystemData.DasSystem.das_api.myData_manage.dataManageProductListingApi import \
     DataManageProductListingApi
 
 # 数据管理-我的数据Amazon查询接口用例类

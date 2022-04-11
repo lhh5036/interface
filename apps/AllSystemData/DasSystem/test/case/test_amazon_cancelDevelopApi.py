@@ -7,9 +7,9 @@
 import random
 
 from apps.AllSystemData.DasSystem.das_common_settting import Das_Common_Setting
-from apps.AllSystemData.DasSystem.das_interface_service.dasSystem_comConfig import Das_Common_Config
-from apps.AllSystemData.DasSystem.das_interface_service.myData_manage.cancelDevelopmentApi import CancelDevelopmentApi
-from apps.AllSystemData.DasSystem.das_interface_service.param_config.parameterConfigSelectApi import \
+from apps.AllSystemData.DasSystem.das_api.dasSystem_comConfig import Das_Common_Config
+from apps.AllSystemData.DasSystem.das_api.myData_manage.cancelDevelopmentApi import CancelDevelopmentApi
+from apps.AllSystemData.DasSystem.das_api.param_config.parameterConfigSelectApi import \
     ParameterConfigQueryApi
 
 from apps.utils.es_database_util import Es_handleOperator

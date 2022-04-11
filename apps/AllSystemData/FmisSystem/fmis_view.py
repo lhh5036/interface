@@ -27,7 +27,7 @@ fmis_garder_path = os.path.dirname(os.path.realpath(__file__)) + "/test/case/"
 fmis_report_path = os.path.dirname(os.path.realpath(__file__)) + "/report"
 
 # 财务系统所有用例执行入口
-@fmis_api.route("/fmis/allTestCase/execute")
+@fmis_api.route("/allTestCase/execute")
 def run_fmisTestcaseExecute():
     # 执行用例的文件路径
     discover = unittest.defaultTestLoader.discover(fmis_garder_path, pattern='test_*.py', top_level_dir=os.getcwd())

@@ -37,3 +37,17 @@
 [2022-04-08 19:14:18,435] queryFundBalance.py->queryfundbalance line:53 [INFO]queryfundbalance ---->end!
 [2022-04-08 19:14:18,435] queryFundBalance.py->queryfundbalance line:28 [INFO]queryfundbalance ---->start!
 [2022-04-08 19:14:18,478] queryFundBalance.py->queryfundbalance line:53 [INFO]queryfundbalance ---->end!
+[2022-04-08 19:29:04,580] productGetDijiaApi.py->productDetDiJia line:21 [INFO]productGenDijia ---->start!
+[2022-04-08 19:29:04,946] productGetDijiaApi.py->productDetDiJia line:39 [INFO]productGenDijia ---->end!
+[2022-04-08 19:29:04,955] productGetTongkuanApi.py->productGetTongkuan line:20 [INFO]productGetTongkuan ---->start!
+[2022-04-08 19:29:05,219] productGetTongkuanApi.py->productGetTongkuan line:43 [INFO]productGetTongkuan ---->end!
+[2022-04-08 19:29:05,220] parameterConfigSaveApi.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
+[2022-04-08 19:29:05,420] parameterConfigSaveApi.py->paramConfigFunction line:41 [INFO]paramConfigFunction ---->end!
+[2022-04-08 19:29:05,420] parameterConfigSaveApi.py->paramConfigFunction line:19 [INFO]paramConfigFunction ---->start!
+[2022-04-08 19:29:05,649] parameterConfigSaveApi.py->paramConfigFunction line:41 [INFO]paramConfigFunction ---->end!
+[2022-04-08 19:29:05,650] parameterConfigSelectApi.py->paramConfigQuery line:20 [INFO]paramConfigQuery ---->start!
+[2022-04-08 19:29:05,755] parameterConfigSelectApi.py->paramConfigQuery line:34 [INFO]paramConfigQuery ---->end!
+[2022-04-08 19:29:05,793] productGetDijiaApi.py->productDetDiJia line:21 [INFO]productGenDijia ---->start!
+[2022-04-08 19:29:05,971] productGetDijiaApi.py->productDetDiJia line:39 [INFO]productGenDijia ---->end!
+[2022-04-08 19:29:05,995] productGetTongkuanApi.py->productGetTongkuan line:20 [INFO]productGetTongkuan ---->start!
+[2022-04-08 19:29:06,191] productGetTongkuanApi.py->productGetTongkuan line:43 [INFO]productGetTongkuan ---->end!

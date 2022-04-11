@@ -6,7 +6,7 @@
 '''
 
 import unittest
-from apps.AllSystemData.DasSystem.das_interface_service.param_config.parameterConfigSaveApi import ParameterConfigApi
+from apps.AllSystemData.DasSystem.das_api.param_config.parameterConfigSaveApi import ParameterConfigApi
 
 # 参数配置保存接口用例类
 class Test_parameterConfigSaveApi(unittest.TestCase):

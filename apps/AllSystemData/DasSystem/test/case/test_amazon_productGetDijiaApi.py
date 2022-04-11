@@ -6,8 +6,8 @@ File: test_amazon_productGetDijiaApi.py
 @Desc:数据管理-我的数据Amazon页面低价接口用例
 '''
 from apps.AllSystemData.DasSystem.das_common_settting import Das_Common_Setting
-from apps.AllSystemData.DasSystem.das_interface_service.dasSystem_comConfig import Das_Common_Config
-from apps.AllSystemData.DasSystem.das_interface_service.myData_manage.productGetDijiaApi import ProductGetDijiaApi
+from apps.AllSystemData.DasSystem.das_api.dasSystem_comConfig import Das_Common_Config
+from apps.AllSystemData.DasSystem.das_api.myData_manage.productGetDijiaApi import ProductGetDijiaApi
 from apps.utils.es_database_util import Es_handleOperator
 import random
 import unittest

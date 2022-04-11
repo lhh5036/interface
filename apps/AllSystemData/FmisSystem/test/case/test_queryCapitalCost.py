@@ -8,7 +8,7 @@
 import unittest
 import random
 
-from apps.AllSystemData.FmisSystem.fmis_interface_service.financial_manage.queryCapitalCost import QueryCapitalCost
+from apps.AllSystemData.FmisSystem.fmis_api.financial_manage.queryCapitalCost import QueryCapitalCost
 from apps.utils.date_operate_util import getMonthFirstDay
 from apps.utils.date_operate_util import getMonthLastDay
 

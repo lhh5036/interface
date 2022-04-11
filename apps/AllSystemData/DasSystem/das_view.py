@@ -28,7 +28,7 @@ das_garder_path = os.path.dirname(os.path.realpath(__file__)) + "/test/case/" # 
 das_report_path = os.path.dirname(os.path.realpath(__file__)) + "/report" # 测试数据分析报告路径
 
 # 为创建的蓝图添加路由配置
-@das_api.route('/das/allTestCase/execute')
+@das_api.route('/allTestCase/execute')
 def run_dasTestcaseExecute():
     # 文件的路径
     discover = unittest.defaultTestLoader.discover(das_garder_path, pattern='test_*.py', top_level_dir=os.getcwd())

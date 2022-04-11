@@ -7,7 +7,7 @@
 
 import unittest
 
-from apps.AllSystemData.DasSystem.das_interface_service.param_config.parameterConfigSelectApi import \
+from apps.AllSystemData.DasSystem.das_api.param_config.parameterConfigSelectApi import \
     ParameterConfigQueryApi
 
 
