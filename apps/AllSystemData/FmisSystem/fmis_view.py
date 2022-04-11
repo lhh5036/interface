@@ -13,9 +13,10 @@ from BeautifulReport import BeautifulReport as bf
 from flask import Blueprint
 from flask import render_template
 from pathlib import Path
-from selenium import webdriver
+from urllib.parse import urlparse
 
 from apps.utils.date_operate_util import DateUtils
+from apps.Common_Config.interface_common_info import InterfaceCommonInfo
 
 # 实例化一个蓝图(Blueprint)对象
 fmis_api = Blueprint("fmis_api", __name__)
@@ -44,12 +45,20 @@ def run_fmisTestcaseExecute():
             os.remove(file)
 
     # 打开文件并写入报告
+    filename = "result_fmis_" + now + ".html"
     runner = bf(discover)
-    runner.report(filename="result_fmis_"+now,description='财务系统-接口自动化报告',report_dir=fmis_report_path)
-    # 启动谷歌浏览器
-    driver = webdriver.Chrome()
-    driver.get(report_abspath)
-    return "success!"
+    runner.report(filename=filename,
+                  description='新用户系统-接口自动化报告',
+                  report_dir=fmis_report_path)
+    # 远程连接192.168.3.10服务器(需要先设置免密ssh-copy-id ip)
+    os.popen("ssh {0} 'rm -rf /data/interfaceAutoTest_file/result_fmis_*'".format(InterfaceCommonInfo.server_ip))
+    os.popen('scp -r /home/InterfaceAutoTest/apps/FmisSystem/report/{0} \
+             root@{1}:/data/interfaceAutoTest_file/'.format(filename, InterfaceCommonInfo.server_ip))
+    download_file_url = "http://{0}:81/interfaceAutoTest_file/{1}".format(InterfaceCommonInfo.server_ip,
+                                                                          filename)
+    fmis_url = urlparse(download_file_url).geturl()
+    msg = "新用户测试报告地址:{0}".format(fmis_url)
+    return render_template("system_report.html", fmis_report_url=fmis_url)
 
 
 if __name__ == '__main__':
