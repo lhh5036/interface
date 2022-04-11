@@ -1,5 +1,5 @@
 '''
-@File:fmis_view.py
+@File:product_view.py
 @time:2021/9/24
 @Author:majiaqin 170479
 @Desc:财务系统接口用例调用入口
