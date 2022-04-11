@@ -34,18 +34,18 @@ def run_fmisTestcaseExecute():
     # 获取当前时间
     now = time.strftime("%Y-%m-%d-%H_%M_%S",time.localtime(time.time()))
     # html报告文件路径
-    report_abspath = os.path.join(fmis_report_path, "result_" + now + ".html")
+    report_abspath = os.path.join(fmis_report_path, "result_fmis_" + now + ".html")
     # 删除昨天的报告
     p = Path(fmis_report_path)
     delete_date = DateUtils().getTheDate(-1, "%Y-%m-%d")
-    for file in p.rglob("result_" + delete_date + "*" + ".html"):
+    for file in p.rglob("result_fmis_" + delete_date + "*" + ".html"):
         # 判断是否为文件，只删除文件
         if os.path.isfile(file):
             os.remove(file)
 
     # 打开文件并写入报告
     runner = bf(discover)
-    runner.report(filename="result_"+now,description='财务系统-接口自动化报告',report_dir=fmis_report_path)
+    runner.report(filename="result_fmis_"+now,description='财务系统-接口自动化报告',report_dir=fmis_report_path)
     # 启动谷歌浏览器
     driver = webdriver.Chrome()
     driver.get(report_abspath)

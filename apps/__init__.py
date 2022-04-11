@@ -10,6 +10,7 @@ from apps.AllSystemData.ProductSystem import product_view
 from apps.AllSystemData.SaleSystem import sale_view
 from apps.AllSystemData.TmsSystem import tms_view
 from apps.AllSystemData.UsermgtSystem import usermgt_view
+from apps.AllSystemData.WmsSystem import wms_view
 from config import DevelopementConfig, ProductionConfig
 
 config = {
@@ -45,4 +46,6 @@ def create_app(config_name):
     app.register_blueprint(product_view.product_api, url_prefix="/interfaceTest/product/")
     # 采购系统
     app.register_blueprint(pms_view.pms_api, url_prefix="/interfaceTest/pms/")
+    # 仓库系统
+    app.register_blueprint(wms_view.wms_api,url_prefix="/interfaceTest/wms/")
     return app
