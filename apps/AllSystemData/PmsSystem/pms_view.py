@@ -35,14 +35,14 @@ def run_pmsTestcaseExecute():
         if os.path.isfile(file):
             os.remove(file)
 
-    filename = "result_pms_"+now
+    filename = "result_pms_"+now + ".html"
     runner = bf(discover) # 实例化BeautifulReport模块
     runner.report(filename=filename,description='采购系统-接口自动化报告',report_dir=pms_report_path)# bf默认为.html结尾
     # 远程连接192.168.3.10服务器(需要先设置免密ssh-copy-id ip)
     os.popen('ssh 192.168.3.10 "rm -rf /data/interfaceAutoTest_file/result_pms_*"') # 远程连接,删除远程192.168.3.10上面原来的报告
-    os.popen('scp -r /home/InterfaceAutoTest/apps/AllSystemData/PmsSystem/report/{0}.html \
+    os.popen('scp -r /home/InterfaceAutoTest/apps/AllSystemData/PmsSystem/report/{0} \
                  root@192.168.3.10:/data/interfaceAutoTest_file/'.format(filename)) # 远程传入最新的报告
-    download_file_url = "http://192.168.3.10:81/interfaceAutoTest_file/{0}.html".format(filename)
+    download_file_url = "http://192.168.3.10:81/interfaceAutoTest_file/{0}".format(filename)
     pms_url = urlparse(download_file_url).geturl()
     msg = "采购系统测试报告地址:{0}".format(pms_url)
     # DingHelp(test_url,msg,["13923832556"]).dinghelp() # 推送钉钉消息
