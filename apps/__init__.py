@@ -5,7 +5,10 @@ from flask import Flask
 # 导入此前写好的蓝图模块
 from apps.AllSystemData.DasSystem import das_view
 from apps.AllSystemData.FmisSystem import fmis_view
+from apps.AllSystemData.PmsSystem import pms_view
+from apps.AllSystemData.ProductSystem import product_view
 from apps.AllSystemData.SaleSystem import sale_view
+from apps.AllSystemData.TmsSystem import tms_view
 from apps.AllSystemData.UsermgtSystem import usermgt_view
 from config import DevelopementConfig, ProductionConfig
 
@@ -34,8 +37,12 @@ def create_app(config_name):
     app.register_blueprint(fmis_view.fmis_api, url_prefix="/interfaceTest/fmis/")
     # 在Flask对象中注册蓝图模块中的蓝图对象 usermgt_view 中的 usermgt_api
     app.register_blueprint(usermgt_view.usermgt_api, url_prefix="/interfaceTest/usermgt/")
-
+    # 订单系统
     app.register_blueprint(sale_view.sale_api,url_prefix="/interfaceTest/sale/")
-
-    app.register_blueprint(url_prefix = "/interfaceTest/tms/")
+    # 物流系统
+    app.register_blueprint(tms_view.tms_api,url_prefix = "/interfaceTest/tms/")
+    # 产品系统
+    app.register_blueprint(product_view.product_api, url_prefix="/interfaceTest/product/")
+    # 采购系统
+    app.register_blueprint(pms_view.pms_api, url_prefix="/interfaceTest/pms/")
     return app
