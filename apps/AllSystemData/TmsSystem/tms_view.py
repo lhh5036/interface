@@ -2,7 +2,7 @@
 @File: tms_view.py
 @time:2022/1/18
 @Author:quanliu 181324
-@Desc:订单系统接口用例调用入口
+@Desc:物流系统接口用例调用入口
 '''
 from BeautifulReport import BeautifulReport as bf
 from flask import Blueprint,render_template # 导入 Flask 中的蓝图 Blueprint 模块

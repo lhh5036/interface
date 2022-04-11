@@ -35,26 +35,26 @@ def run_usermgtTTestcaseExecute():
     # 获取当前时间
     now = DateUtils().getCurrentTimeFormate("%Y-%m-%d-%H_%M_%S")
     # html报告文件路径
-    report_abspath = os.path.join(usermgt_report_path, 'result_'+now+'.html')
+    report_abspath = os.path.join(usermgt_report_path, 'result_usermgt_'+now+'.html')
     # 删除昨天的报告
     p = Path(usermgt_report_path)
     delete_date = DateUtils().getTheDate(-1, "%Y-%m-%d")
-    for file in p.rglob('result_'+delete_date+'*'+'.html'):
+    for file in p.rglob('result_usermgt_'+delete_date+'*'+'.html'):
         # 判断是否为文件,只删除文件
         if os.path.isfile(file):
             os.remove(file)
 
     # 打开文件并写入报告
-    filename = "result_usermgt_"+now
+    filename = "result_usermgt_"+now + ".html"
     runner = bf(discover)
     runner.report(filename=filename,
                   description='新用户系统-接口自动化报告',
                   report_dir=usermgt_report_path)
     # 远程连接192.168.3.10服务器(需要先设置免密ssh-copy-id ip)
     os.popen("ssh {0} 'rm -rf /data/interfaceAutoTest_file/result_usermgt_*'".format(InterfaceCommonInfo.server_ip))
-    os.popen('scp -r /home/InterfaceAutoTest/apps/UsermgtSystem/report/{0}.html \
+    os.popen('scp -r /home/InterfaceAutoTest/apps/UsermgtSystem/report/{0} \
              root@{1}:/data/interfaceAutoTest_file/'.format(filename, InterfaceCommonInfo.server_ip))
-    download_file_url = "http://{0}:81/interfaceAutoTest_file/{1}.html".format(InterfaceCommonInfo.server_ip,
+    download_file_url = "http://{0}:81/interfaceAutoTest_file/{1}".format(InterfaceCommonInfo.server_ip,
                                                                                filename)
     usermgt_url = urlparse(download_file_url).geturl()
     msg = "新用户测试报告地址:{0}".format(usermgt_url)
