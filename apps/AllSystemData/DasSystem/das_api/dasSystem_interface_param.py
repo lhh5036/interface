@@ -17,7 +17,7 @@ class DasApiInputParam:
 
     # 我的数据-释放产品接口入参
     releaseProductInfo_param = {"method": "updateBaseListingByIds","args": "{args}"}
-    releaseProductInfo_select = '{"ids":[{ids}],"dataStatus":0}'
+    releaseProductInfo_select = {"ids":['{ids}'],"dataStatus":0}
 
     # 我的数据-关联系统SKU接口入参
     associateSySku_param = {"args":"{args}"}
