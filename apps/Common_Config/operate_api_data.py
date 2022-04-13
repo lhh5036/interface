@@ -7,7 +7,6 @@
 @Desc:拼接api参数和请求接口装饰器
 '''
 
-import pprint
 import requests
 import json
 from apps.Common_Config.interface_common_info import InterfaceCommonInfo, Common_TokenHeader
