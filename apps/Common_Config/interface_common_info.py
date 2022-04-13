@@ -28,7 +28,8 @@ class Common_TokenHeader():
     token_currency = "5df26666b185fbf0b3437482125d340e"
 
     # 公共请求头参数(公共token)
-    common_header = {"Content-Type":"application/json","Authorization":token_currency}
+    common_header = {"Content-Type": "application/json",
+                     "Authorization": token_currency}
 
     # 公共请求头参数(账号token)
     def token_header(self, method, account):
