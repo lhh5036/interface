@@ -21,19 +21,19 @@ class DasApiInputParam:
 
     # 我的数据-关联系统SKU接口入参
     associateSySku_param = {"args":"{args}"}
-    associateSySku_select = '{"ids":[{ids}],"systemSku":"{systemSku}"}'
+    associateSySku_select = {"ids":['{ids}'],"systemSku":"{systemSku}"}
 
     # 我的数据-取消开发接口入参
     cancelDevelop_param = {"args":"{args}"}
-    cancelDevelop_select = '{"ids":[{ids}],"cancelNotesInfo":"{cancelNotesInfo}"}'
+    cancelDevelop_select = {"ids":['{ids}'],"cancelNotesInfo":"{cancelNotesInfo}"}
 
     # 我的数据-低价接口入参
     productGenDijia_param = {"args":"{args}"}
-    productGenDijia_select = '{"asinUrlStr":"{asinUrlStr}"}'
+    productGenDijia_select = {"asinUrlStr":"{asinUrlStr}"}
 
     # 我的数据-同款接口入参
     productGenTongkuan_param = {"args":"{args}"}
-    productGenTongkuan_select = '{"asinUrlStr":"{asinUrlStr}"}'
+    productGenTongkuan_select = {"asinUrlStr":"{asinUrlStr}"}
 
     # 我的数据-SMT查询接口入参
     smt_ProductInfo01 = {"args":"{args}"}
