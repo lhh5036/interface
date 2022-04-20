@@ -47,6 +47,26 @@ def splicing_params(value_dict, params_key1='args', params_key2='search'):
                     raise KeyError
         return demo
     return wragger
+# 拼接接口参数
+def splicing_params_new(value_dict, params_key1='args', params_key2='search'):
+    def wragger(func):
+        def demo(*args):
+            result01 = func(*args)[0] # 获取最内层数据
+            for k in value_dict:
+                result01[k] = value_dict[k]
+            try:
+                result02 = func(*args)[1] # 获取倒数第二层数据
+            except:
+                return result01
+            result02[params_key2] = str(result01) # 填充倒数第二层数据
+            try:
+                result01 = func(*args)[2] # 获取最外层数据
+            except:
+                return result02
+            result01[params_key1] = str(result02)
+            return result01
+        return demo
+    return wragger
 
 '''接口请求拼接装饰器'''
 def api_assemble(api_url, api_method='post'):
@@ -71,5 +91,10 @@ def api_assemble(api_url, api_method='post'):
         return demo
     return wragger
 
+@splicing_params_new({'ids': 333})
+def test():
+    return [{"ids":['{ids}']},{"search":{0}},{"args":"{args}"}]
+
 if __name__ == '__main__':
+    print(test())
     pass
