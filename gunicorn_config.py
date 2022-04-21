@@ -16,6 +16,7 @@ gunicorn的配置文件
 """
 # 监听内网端口5000
 bind = '192.168.3.180:5000'
+# bind = '192.168.3.10:5000'
 
 # 启动的进程数
 workers = multiprocessing.cpu_count() * 2 + 1
