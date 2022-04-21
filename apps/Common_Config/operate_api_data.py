@@ -81,23 +81,32 @@ def splicing_params_new(value_dict, params_key1='args', params_key2='search'):
         return demo
     return wragger
 
+'''将splicing_params_new或splicing_params装饰器解析的字典格式参数转为list'''
+def params_list(func):
+    def wragger(*args):
+        result = []
+        result.append(func(*args))
+        return result
+    return wragger
+
 '''接口请求拼接装饰器'''
-def api_assemble(api_url, api_method='post'):
+def api_assemble(api_url, api_method='post', params=None):
     def wragger(func):
         def demo(*args):
             global true, false, null
             true = True
             false = False
             null = None
-            url = InterfaceCommonInfo.common_url + api_url
             header = Common_TokenHeader.common_header
             form = func(*args)
             if api_method == 'post':
+                url = api_url
                 resp = requests.post(url, headers=header,
                                      data=json.dumps(form))
                 result = resp.json()
                 return result
             elif api_method == 'get':
+                url = api_url.format(params)
                 resp = requests.get(url, headers=header)
                 result = resp.json()
                 return result
