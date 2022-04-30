@@ -90,7 +90,7 @@ def params_list(func):
     return wragger
 
 '''接口请求拼接装饰器'''
-def api_assemble(api_url, api_method='post', params=None):
+def api_assemble(api_url, api_method='post', params=True):
     def wragger(func):
         def demo(*args):
             global true, false, null
@@ -101,12 +101,12 @@ def api_assemble(api_url, api_method='post', params=None):
             form = func(*args)
             if api_method == 'post':
                 url = api_url
-                if params == None:
-                    resp = requests.post(url, headers=header)
-                    result = resp.json()
-                else:
+                if params == True:
                     resp = requests.post(url, headers=header,
                                          data=json.dumps(form))
+                    result = resp.json()
+                elif params == False:
+                    resp = requests.post(url, headers=header)
                     result = resp.json()
                 return result
             elif api_method == 'get':
