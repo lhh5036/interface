@@ -20,7 +20,7 @@ def splicing_params(value_dict, params_key1='args', params_key2='search'):
                 for k in value_dict:
                     result01[0] = value_dict[k]
                 return result01
-            elif type(func(*args)) == dict:
+            else:
                 if len(func(*args)) == 1:
                     result = func(*args)[0]
                     for k in value_dict:
@@ -63,7 +63,7 @@ def splicing_params_new(value_dict, params_key1='args', params_key2='search'):
                 for k in value_dict:
                     result01[0] = value_dict[k]
                 return result01
-            elif type(func(*args)) == dict:
+            else:
                 result01 = func(*args)[0] # 获取最内层数据
                 for k in value_dict:
                     result01[k] = value_dict[k]
