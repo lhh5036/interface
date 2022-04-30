@@ -101,9 +101,13 @@ def api_assemble(api_url, api_method='post', params=None):
             form = func(*args)
             if api_method == 'post':
                 url = api_url
-                resp = requests.post(url, headers=header,
-                                     data=json.dumps(form))
-                result = resp.json()
+                if params == None:
+                    resp = requests.post(url, headers=header)
+                    result = resp.json()
+                else:
+                    resp = requests.post(url, headers=header,
+                                         data=json.dumps(form))
+                    result = resp.json()
                 return result
             elif api_method == 'get':
                 url = api_url.format(params)
