@@ -105,10 +105,11 @@ def api_assemble(api_url, api_method='post', params=True):
                     resp = requests.post(url, headers=header,
                                          data=json.dumps(form))
                     result = resp.json()
+                    return result
                 elif params == False:
                     resp = requests.post(url, headers=header)
                     result = resp.json()
-                return result
+                    return result
             elif api_method == 'get':
                 url = api_url.format(params)
                 resp = requests.get(url, headers=header)
