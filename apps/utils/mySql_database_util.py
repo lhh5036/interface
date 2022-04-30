@@ -12,10 +12,10 @@ import itertools
 class Mysql_handleOperator():
     def __init__(self, sqlinfo):    # sqlinfo为各系统通过db_config全局配置解析出来的数据库信息元组
         self.sqlinfo = sqlinfo
-        self.host = self.sqlinfo[1]
-        self.user = self.sqlinfo[2]
-        self.password = self.sqlinfo[3]
-        self.database = self.sqlinfo[0]
+        self.host = self.sqlinfo[0]
+        self.user = self.sqlinfo[1]
+        self.password = self.sqlinfo[2]
+        self.database = self.sqlinfo[3]
         self.port = 3306
         self.charset = "utf8"
 
