@@ -13,33 +13,32 @@ import pprint
 
 from apps.utils.assert_utils import Assert_Api
 
-class Usermgt_Unit_Assert():
-    def __init__(self, response):
-        self.response = response
-
-    def usermgt_unit_assert(self, sql=None):
-        self.sql = sql
-        l = []
-        if self.sql == None:
-            statucode = Assert_Api(self.response).assert_statucode()
-            connect = Assert_Api(self.response).assert_connect()
-            l.append(statucode)
-            l.append(connect)
-            if "False" in l:
-                return "False"
+def usermgt_unit_assert(sql=None):
+    def wragger(func):
+        def demo(*args):
+            l = []
+            if sql == None:
+                statucode = Assert_Api().assert_statucode(func(*args))
+                connect = Assert_Api().assert_connect(func(*args))
+                l.append(statucode)
+                l.append(connect)
+                if "False" in l:
+                    return "False"
+                else:
+                    return "True"
             else:
-                return "True"
-        else:
-            statucode = Assert_Api(self.response).assert_statucode()
-            connect = Assert_Api(self.response).assert_connect()
-            total = Assert_Api(self.response).assert_total(self.sql)
-            l.append(statucode)
-            l.append(connect)
-            l.append(total)
-            if "False" in l:
-                return "False"
-            else:
-                return "True"
+                statucode = Assert_Api().assert_statucode(func(*args))
+                connect = Assert_Api().assert_connect(func(*args))
+                total = Assert_Api().assert_total(func(*args), sql)
+                l.append(statucode)
+                l.append(connect)
+                l.append(total)
+                if "False" in l:
+                    return "False"
+                else:
+                    return "True"
+        return demo
+    return wragger
 
 if __name__ == '__main__':
     pass
