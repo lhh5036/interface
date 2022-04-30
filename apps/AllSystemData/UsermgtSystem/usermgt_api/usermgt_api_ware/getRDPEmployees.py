@@ -6,15 +6,9 @@
 @Author:majiaqin 170479
 @Desc:查看账号在该页面下的数据权限
 '''
-import requests
-import json
-import pprint
-from apps.Common_Config.interface_common_info import Common_TokenHeader
-from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgtSystem_interface_param import UsermgtApiInputParam
 from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgtSystem_interface_url import UsermgtApiUrl
 from apps.Common_Config.operate_api_data import api_assemble
 from apps.logger import MyLog
-
 
 # 实例化日志类
 logger = MyLog("GetRDPEmployeesApi").getlog()
