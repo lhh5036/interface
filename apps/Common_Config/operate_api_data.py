@@ -12,41 +12,41 @@ import json
 from apps.Common_Config.interface_common_info import InterfaceCommonInfo, Common_TokenHeader
 
 '''接口参数拼接装饰器'''
-def splicing_params(value_dict, params_key1='args', params_key2='search'):
+def splicing_params(params_key1='args', params_key2='search'):
     def wragger(func):
         def demo(*args):
-            if type(func(*args)[0]) == list:
-                result01 = func(*args)[0]
-                for k in value_dict:
-                    result01[0] = value_dict[k]
+            if type(func(*args)[0][0]) == list:
+                result01 = func(*args)[0][0]
+                for k in func(*args)[1]:
+                    result01[0] = func(*args)[1][k]
                 return result01
             else:
-                if len(func(*args)) == 1:
-                    result = func(*args)[0]
-                    for k in value_dict:
-                        result[k] = value_dict[k]
+                if len(func(*args)[0]) == 1:
+                    result = func(*args)[0][0]
+                    for k in func(*args)[1]:
+                        result[k] = func(*args)[1][k]
                         return result
-                elif len(func(*args)) == 2:
-                    result01 = func(*args)[1]
-                    for k in value_dict:
-                        result01[k] = value_dict[k]
-                    result02 = func(*args)[0]
+                elif len(func(*args)[0]) == 2:
+                    result01 = func(*args)[0][1]
+                    for k in func(*args)[1]:
+                        result01[k] = func(*args)[1][k]
+                    result02 = func(*args)[0][0]
                     try:
                         result02[params_key1] = str(result01)
                         return result02
                     except KeyError:
                         raise KeyError
-                elif len(func(*args)) == 3:
-                    result01 = func(*args)[2]
-                    for k in value_dict:
-                        result01[k] = value_dict[k]
-                    result02 = func(*args)[1]
+                elif len(func(*args)[0]) == 3:
+                    result01 = func(*args)[0][2]
+                    for k in func(*args)[1]:
+                        result01[k] = func(*args)[1][k]
+                    result02 = func(*args)[0][1]
                     try:
                         result02[params_key2] = str(result01)
                     except KeyError:
                         raise KeyError
                     try:
-                        result03 = func(*args)[0]
+                        result03 = func(*args)[0][0]
                         result03[params_key1] = str(result02)
                         return result03
                     except KeyError:
@@ -55,25 +55,25 @@ def splicing_params(value_dict, params_key1='args', params_key2='search'):
     return wragger
 
 # 拼接接口参数
-def splicing_params_new(value_dict, params_key1='args', params_key2='search'):
+def splicing_params_new(params_key1='search', params_key2='args'):
     def wragger(func):
         def demo(*args):
-            if type(func(*args)[0]) == list:
-                result01 = func(*args)[0]
-                for k in value_dict:
-                    result01[0] = value_dict[k]
+            if type(func(*args)[0][0]) == list:
+                result01 = func(*args)[0][0]
+                for k in func(*args)[1]:
+                    result01[k] = func(*args)[1][k]
                 return result01
             else:
-                result01 = func(*args)[0] # 获取最内层数据
-                for k in value_dict:
-                    result01[k] = value_dict[k]
+                result01 = func(*args)[0][0] # 获取最内层数据
+                for k in func(*args)[1]:
+                    result01[k] = func(*args)[1][k]
                 try:
-                    result02 = func(*args)[1] # 获取倒数第二层数据
+                    result02 = func(*args)[0][1] # 获取倒数第二层数据
                 except:
                     return result01
                 result02[params_key2] = str(result01) # 填充倒数第二层数据
                 try:
-                    result01 = func(*args)[2] # 获取最外层数据
+                    result01 = func(*args)[0][2] # 获取最外层数据
                 except:
                     return result02
                 result01[params_key1] = str(result02)
