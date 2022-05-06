@@ -46,4 +46,6 @@ def run_tmsTestcaseExecute():
     wms_url = urlparse(download_file_url).geturl()
     msg = "仓库系统测试报告地址:{0}".format(wms_url)
     # DingHelp(test_url,msg,["13923832556"]).dinghelp() # 推送钉钉消息
-    return render_template("system_report.html",wms_report_url=wms_url)
+    return render_template("system_report.html",
+                           wms_report_url=wms_url,
+                           urlname='wms')

@@ -55,10 +55,12 @@ def run_usermgtTTestcaseExecute():
     os.popen('scp -r /home/InterfaceAutoTest/apps/AllSystemData/UsermgtSystem/report/{0} \
              root@{1}:/data/interfaceAutoTest_file/'.format(filename, InterfaceCommonInfo.server_ip))
     download_file_url = "http://{0}:81/interfaceAutoTest_file/{1}".format(InterfaceCommonInfo.server_ip,
-                                                                               filename)
+                                                                          filename)
     usermgt_url = urlparse(download_file_url).geturl()
     msg = "新用户测试报告地址:{0}".format(usermgt_url)
-    return render_template("system_report.html", usermgt_report_url=usermgt_url)
+    return render_template("system_report.html",
+                           usermgt_report_url=usermgt_url,
+                           urlname='usermgt')
 
 if __name__ == '__main__':
     pass

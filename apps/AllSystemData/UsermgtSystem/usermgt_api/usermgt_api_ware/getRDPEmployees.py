@@ -6,6 +6,7 @@
 @Author:majiaqin 170479
 @Desc:查看账号在该页面下的数据权限
 '''
+import pprint
 from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgtSystem_interface_url import UsermgtApiUrl
 from apps.Common_Config.operate_api_data import api_assemble
 from apps.AllSystemData.UsermgtSystem.usermgt_common_setting import Usermgt_Common_Setting
@@ -42,4 +43,5 @@ class GetRDPEmployeesApi():
 
 
 if __name__ == '__main__':
+    pprint.pprint(GetRDPEmployeesApi().splicing_params_list())
     pass

@@ -47,4 +47,6 @@ def run_saleTestcaseExecute():
     sale_url = urlparse(download_file_url).geturl()
     msg = "订单系统测试报告地址:{0}".format(sale_url)
     # DingHelp(test_url,msg,["13923832556"]).dinghelp() # 推送钉钉消息
-    return render_template("system_report.html",sale_report_url=sale_url)
+    return render_template("system_report.html",
+                           sale_report_url=sale_url,
+                           urlname='sale')

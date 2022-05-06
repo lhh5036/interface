@@ -46,4 +46,6 @@ def run_pmsTestcaseExecute():
     pms_url = urlparse(download_file_url).geturl()
     msg = "采购系统测试报告地址:{0}".format(pms_url)
     # DingHelp(test_url,msg,["13923832556"]).dinghelp() # 推送钉钉消息
-    return render_template("system_report.html",pms_report_url=pms_url)
+    return render_template("system_report.html",
+                           pms_report_url=pms_url,
+                           urlname='pms')

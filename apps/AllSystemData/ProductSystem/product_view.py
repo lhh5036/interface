@@ -47,4 +47,6 @@ def run_productTestcaseExecute():
     product_url = urlparse(download_file_url).geturl()
     msg = "产品系统测试报告地址:{0}".format(product_url)
     # DingHelp(test_url,msg,["13923832556"]).dinghelp() # 推送钉钉消息
-    return render_template("system_report.html",product_report_url=product_url)
+    return render_template("system_report.html",
+                           product_report_url=product_url,
+                           urlname='product')

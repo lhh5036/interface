@@ -46,4 +46,6 @@ def run_tmsTestcaseExecute():
     tms_url = urlparse(download_file_url).geturl()
     msg = "物流系统测试报告地址:{0}".format(tms_url)
     # DingHelp(test_url,msg,["13923832556"]).dinghelp() # 推送钉钉消息
-    return render_template("system_report.html",tms_report_url=tms_url)
+    return render_template("system_report.html",
+                           tms_report_url=tms_url,
+                           urlname='tms')
