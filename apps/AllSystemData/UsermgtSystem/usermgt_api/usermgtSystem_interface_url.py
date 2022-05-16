@@ -16,6 +16,9 @@ class UsermgtApiUrl:
     # 查看该组织架构id的下级员工
     listNextEmployeeByDeptId_url = InterfaceCommonInfo.common_url + \
                                    '/usermgt-n/hr/employee/listNextEmployeeByDeptId'
+    # 根据职位查询员工
+    getEmployeeList_url = InterfaceCommonInfo.common_url + \
+                          '/usermgt-n/hr/employee/getEmployeeList'
     # 判断员工是否为负责人,返回相关员工信息
     listTeamLeaderByEmployeeNo_url = InterfaceCommonInfo.common_url + \
                                      '/usermgt-n/hr/employee/listTeamLeaderByEmployeeNo'

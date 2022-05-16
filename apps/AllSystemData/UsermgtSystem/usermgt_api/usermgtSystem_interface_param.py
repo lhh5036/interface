@@ -16,6 +16,9 @@ class UsermgtApiInputParam:
     # 查看该组织架构id的下级员工接口入参
     listNextEmployeeByDeptId_param01 = {"args": ""}
 
+    # 根据职位查询员工入参
+    getEmployeeList_param01 = {"positionName": ""}
+
     # 判断员工是否为负责人,返回相关员工信息接口入参
     listTeamLeaderByEmployeeNo_param01 = {"args": ""}
     listTeamLeaderByEmployeeNo_param02 = {"employeeNo": "3381",
