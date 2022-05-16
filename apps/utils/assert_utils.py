@@ -27,58 +27,58 @@ class Assert_Api(unittest.TestCase):
     def __init__(self):
         super().__init__()
 
-
     '''断言返回数据状态码'''
-    def assert_statucode(self, response):
-        self.response = response
+    def assert_statucode(self, response_code):
+        self.response_code = response_code
         try:
-            self.assertEqual(200, self.response.status_code)
-            print(self.assertEqual(200, self.response.status_code))
+            self.assertEqual(200, self.response_code)
+            print(self.assertEqual(200, self.response_code))
             logger.info("Assert statu_code ---> success!")
             return "True"
         except AssertionError:
             logger.error("Assert statu_code ---> fail!")
-            logger.error("接口报错，statu_code：{0}".format(self.response.status_code))
+            logger.error("接口报错，statu_code：{0}".format(self.response_code))
             return "False"
 
     '''断言接口是否成功连接'''
-    def assert_connect(self, response):
-        self.response = response
+    def assert_connect(self, response_code, response_msg):
+        self.response_code = response_code
+        self.response_msg = response_msg
         try:
-            self.assertIn("connectionRefused", self.response.json())
-            self.assertIn("success", self.response.json())
-            self.assertIn("errorMsg", self.response.json())
+            self.assertIn("connectionRefused", self.response_msg)
+            self.assertIn("success", self.response_msg)
+            self.assertIn("errorMsg", self.response_msg)
             logger.info("Api have response data!")
             try:
-                self.assertEqual(False, self.response.json()["connectionRefused"])
-                self.assertEqual(True, self.response.json()["success"])
-                self.assertEqual(None, self.response.json()["errorMsg"])
+                self.assertEqual(False, self.response_msg["connectionRefused"])
+                self.assertEqual(True, self.response_msg["success"])
+                self.assertEqual(None, self.response_msg["errorMsg"])
                 logger.info("Api connect success!")
                 return "True"
             except AssertionError:
                 logger.error("Api connect fail!")
                 msg = "接口连接失败,connectionRefused的值为{0} \n success的值为{1} \n\
-errorMsg的的值为{2}".format(self.response.json()["connectionRefused"],
-                        self.response.json()["success"],
-                        self.response.json["errorMsg"])
+errorMsg的的值为{2}".format(self.response_msg["connectionRefused"],
+                        self.response_msg["success"],
+                        self.response_msg["errorMsg"])
                 logger.error(msg)
                 return "False"
         except AssertionError:
             logger.error("Api response fail!")
-            logger.error("接口报错，statu_code：{0}".format(self.response.status_code))
+            logger.error("接口报错，statu_code：{0}".format(self.response_code))
             return "False"
 
     '''断言接口返回数据条目数是否正确'''
-    def assert_total(self, response, sql):
-        self.response = response
+    def assert_total(self, response_msg, sql):
+        self.response_msg = response_msg
         # 查询数据条目数的sql
         self.sql = sql
-        message = Json_Get(self.response.json()).json_get("total")
+        message = Json_Get(self.response_msg).json_get("total")
         if message == "True":
             logger.info("Api response data have total!")
             sql_total = Mysql_handleOperator(Fmis_Common_Setting.fmis_mysql).data_sql("select", self.sql)[0][0]
             try:
-                self.assertEqual(sql_total, Json_Get(self.response.json()).json_value("total"))
+                self.assertEqual(sql_total, Json_Get(self.response_msg).json_value("total"))
                 logger.info(" The number of returned api data is correct!")
                 return "True"
             except AssertionError:
