@@ -36,3 +36,5 @@ class Test_GetRDPEmployees(unittest.TestCase):
                   'menuCode': info[1]})
         return lis
 
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
