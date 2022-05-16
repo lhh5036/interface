@@ -17,7 +17,7 @@ from apps.Common_Config.operate_api_data import splicing_params_new, api_assembl
 from apps.AllSystemData.UsermgtSystem.assert_usermgt.assert_file import usermgt_unit_assert
 from apps.logger import MyLog
 # 实例化日志类
-# logger = MyLog("GetRDPEmployeesApi").getlog()
+logger = MyLog("GetRDPEmployeesApi").getlog()
 
 class Test_GetRDPEmployees(unittest.TestCase):
 
@@ -26,7 +26,7 @@ class Test_GetRDPEmployees(unittest.TestCase):
     @splicing_params_new()
     def testCase(self):
         '''查看账号在该页面下的数据权限接口用例'''
-        # logger.info("getRDPEmployees ---->start!")
+        logger.info("getRDPEmployees ---->start!")
         lis =[]
         lis.append([UsermgtApiInputParam.getRDPEmployees_param01,
                     UsermgtApiInputParam.getRDPEmployees_param02])
@@ -36,5 +36,3 @@ class Test_GetRDPEmployees(unittest.TestCase):
                   'menuCode': info[1]})
         return lis
 
-if __name__ == '__main__':
-    unittest.main(verbosity=2)
