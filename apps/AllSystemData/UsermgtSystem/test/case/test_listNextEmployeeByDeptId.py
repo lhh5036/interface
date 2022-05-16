@@ -32,6 +32,7 @@ class Test_ListNextEmployeeByDeptId(unittest.TestCase):
         lis = []
         lis.append([UsermgtApiInputParam.listNextEmployeeByDeptId_param01])
         lis.append({"args": deptid})
+        print(lis)
         return lis
 
 if __name__ == '__main__':
