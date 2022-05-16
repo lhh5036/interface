@@ -4,7 +4,7 @@
 @Author:quanliu
 @Desc:存放数据分析系统url方法
 '''
-from apps.AllSystemData.DasSystem import DasApiUrl
+from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiUrl
 
 
 class PublicCommonUrlServiceClass():
