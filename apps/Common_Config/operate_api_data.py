@@ -10,6 +10,7 @@
 import requests
 import json
 from apps.Common_Config.interface_common_info import InterfaceCommonInfo, Common_TokenHeader
+from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgtSystem_interface_url import UsermgtApiUrl
 
 '''接口参数拼接装饰器'''
 def splicing_params(params_key1='args', params_key2='search'):
@@ -104,23 +105,25 @@ def api_assemble(api_url, api_method='post', params=True):
                 if params == True:
                     resp = requests.post(url, headers=header,
                                          data=json.dumps(form))
-                    result = resp.json()
+                    result = [resp.status_code, resp.json()]
+                    print(result)
                     return result
                 elif params == False:
                     resp = requests.post(url, headers=header)
-                    result = resp.json()
+                    result = [resp.status_code, resp.json()]
                     return result
             elif api_method == 'get':
                 url = api_url.format(params)
                 resp = requests.get(url, headers=header)
-                result = resp.json()
+                result = [resp.status_code, resp.json()]
                 return result
         return demo
     return wragger
 
-@splicing_params_new({'ids': 333})
+@api_assemble(UsermgtApiUrl.listNextEmployeeByDeptId_url)
+@splicing_params_new()
 def test():
-    return [['']]
+    return [[{"args": ""}], {'args': '50841235'}]
 
 if __name__ == '__main__':
     print(test())
