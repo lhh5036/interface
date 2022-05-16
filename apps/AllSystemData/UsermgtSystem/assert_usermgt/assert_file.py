@@ -14,6 +14,7 @@ import pprint
 from apps.utils.assert_utils import Assert_Api
 
 def usermgt_unit_assert(sql=None):
+    '''新用户断言装饰器'''
     def wragger(func):
         def demo(*args):
             l = []
