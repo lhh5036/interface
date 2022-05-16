@@ -36,4 +36,4 @@ class Test_ListNextEmployeeByDeptId(unittest.TestCase):
 
 if __name__ == '__main__':
     # print(Test_ListNextEmployeeByDeptId().testCase())
-    unittest.main()
+    unittest.main(verbosity=2)
