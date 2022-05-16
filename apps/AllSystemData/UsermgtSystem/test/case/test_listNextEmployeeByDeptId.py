@@ -8,6 +8,7 @@
 '''
 
 import unittest
+import random
 from ddt import ddt, data, unpack
 from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgtSystem_interface_url import UsermgtApiUrl
 from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgt_api_ware.listNextEmployeeByDeptId import ListNextEmployeeByDeptIdApi
@@ -18,19 +19,21 @@ from apps.logger import MyLog
 # 实例化日志类
 logger = MyLog("ListNextEmployeeByDeptIdApi").getlog()
 
-@ddt
+
 class Test_ListNextEmployeeByDeptId(unittest.TestCase):
-    @usermgt_unit_assert
-    @api_assemble(UsermgtApiUrl.listEmployeeByDeptId_url)
-    @splicing_params_new
-    @data(*ListNextEmployeeByDeptIdApi().splicing_params_list())
-    @unpack
-    def testCase(self, deptid):
-        logger.info("listNextEmployeeByDeptId ---->start!")
+    @usermgt_unit_assert()
+    @api_assemble(UsermgtApiUrl.listNextEmployeeByDeptId_url)
+    @splicing_params_new()
+    def testCase(self):
+        '''查看该组织架构id的下级员工'''
+        deptid_list = ListNextEmployeeByDeptIdApi().splicing_params_list()
+        deptid = deptid_list[random.randint(0, len(deptid_list) - 1)]
+        logger.info("listNextEmployeeByDeptId ---->start! {0}".format(deptid))
         lis = []
         lis.append([UsermgtApiInputParam.listNextEmployeeByDeptId_param01])
         lis.append({"args": deptid})
         return lis
 
 if __name__ == '__main__':
-    unittest.main(verbosity=2)
+    # print(Test_ListNextEmployeeByDeptId().testCase())
+    unittest.main()
