@@ -21,6 +21,9 @@ logger = MyLog("GetRDPEmployeesApi").getlog()
 
 class Test_GetRDPEmployees(unittest.TestCase):
 
+    @usermgt_unit_assert()
+    @api_assemble(UsermgtApiUrl.getRDPEmployees_url)
+    @splicing_params_new()
     def testCase(self):
         '''查看账号在该页面下的数据权限接口用例'''
         logger.info("getRDPEmployees ---->start!")

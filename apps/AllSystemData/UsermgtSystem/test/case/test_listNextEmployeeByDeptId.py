@@ -19,7 +19,6 @@ from apps.logger import MyLog
 # 实例化日志类
 logger = MyLog("ListNextEmployeeByDeptIdApi").getlog()
 
-
 class Test_ListNextEmployeeByDeptId(unittest.TestCase):
     @usermgt_unit_assert()
     @api_assemble(UsermgtApiUrl.listNextEmployeeByDeptId_url)
