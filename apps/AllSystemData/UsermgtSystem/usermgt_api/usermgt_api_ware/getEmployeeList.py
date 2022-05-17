@@ -10,7 +10,7 @@ import pprint
 from apps.utils.mySql_database_util import get_data, convert_list
 from apps.AllSystemData.UsermgtSystem.usermgt_common_setting import Usermgt_Common_Setting
 
-class GetEmployeeList():
+class GetEmployeeListApi():
     def __init__(self):
         pass
 
