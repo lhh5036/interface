@@ -9,9 +9,11 @@
 
 import requests
 import json
+from apps.logger import MyLog
 from apps.Common_Config.interface_common_info import InterfaceCommonInfo, Common_TokenHeader
 from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgtSystem_interface_url import UsermgtApiUrl
-
+# 实例化日志类
+logger = MyLog("operate_api_data").getlog()
 '''接口参数拼接装饰器'''
 def splicing_params(params_key1='args', params_key2='search'):
     def wragger(func):
@@ -100,6 +102,7 @@ def api_assemble(api_url, api_method='post', params=True):
             null = None
             header = Common_TokenHeader.common_header
             form = func(*args)
+            logger.info(form)
             if api_method == 'post':
                 url = api_url
                 if params == True:
