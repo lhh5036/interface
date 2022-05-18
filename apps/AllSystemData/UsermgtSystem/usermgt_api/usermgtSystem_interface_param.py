@@ -32,6 +32,12 @@ class UsermgtApiInputParam:
     treeListOrgStructAndEmployeeVO_param01 = {"orgName": "",
                                               "employeeNo": ""}
 
+    # 获取页面数据权限
+    employee_params01 = {"args": "",
+                         "method": ""}
+    employee_params02 = {"employeeNo": "",
+                         "menuCode": ""}
+
     # 返回新用户系统某个账号关联的角色名接口入参
     queryRoleByEmpNos_param01 = [""]
 

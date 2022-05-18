@@ -25,6 +25,9 @@ class UsermgtApiUrl:
     # 根据平台和工号获取级联获取员工信息
     newlistOrgStructAndEmployeeVO_url = InterfaceCommonInfo.common_url + \
                                         '/usermgt-n/sys/orgstruct/newlistOrgStructAndEmployeeVO'
+    # 获取页面数据权限
+    employee_url = InterfaceCommonInfo.common_url + \
+                   '/newpms/employee'
     # 根据平台和工号获取级联获取员工信息（树形返回）
     treeListOrgStructAndEmployeeVO_url = InterfaceCommonInfo.common_url + \
                                          '/usermgt-n/sys/orgstruct/treeListOrgStructAndEmployeeVO'
