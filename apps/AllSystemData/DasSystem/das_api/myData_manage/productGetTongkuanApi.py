@@ -27,9 +27,9 @@ class ProductGetTongkuanApi():
 
         # 拼接接口请求入参
         paramSelect = DasApiInputParam.productGenTongkuan_select
-        replaceRepSelect = paramSelect.replace("{asinUrlStr}", paramStr)  # 替换接口里面的参数
+        paramSelect["asinUrlStr"] = paramStr
         reqParam = DasApiInputParam.productGenTongkuan_param
-        reqParam["args"] = replaceRepSelect  # 替换最外层参数
+        reqParam["args"] = str(paramSelect)  # 替换最外层参数
 
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")

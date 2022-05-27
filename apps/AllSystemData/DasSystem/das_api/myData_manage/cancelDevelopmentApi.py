@@ -26,9 +26,10 @@ class CancelDevelopmentApi():
             paramStr += "'" + paramList[i] + "',"
         # 拼接接口请求入参
         reqSelect = DasApiInputParam.cancelDevelop_select
-        reqSelectStr = reqSelect.replace("{ids}", paramStr).replace("{cancelNotesInfo}", cancelNotesInfoStr)  # 替换接口入参
+        reqSelect["ids"] = paramList
+        reqSelect["cancelNotesInfo"] = cancelNotesInfoStr
         reqParam = DasApiInputParam.cancelDevelop_param
-        reqParam["args"] = reqSelectStr
+        reqParam["args"] = str(reqSelect)
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")
         url = PublicCommonUrlServiceClass().getApiUrl(platform,searchType)

@@ -28,9 +28,9 @@ class releaseProductInfoApi():
             paramStr += "'"+paramList[i]+"',"
         # 拼接接口请求入参
         reqSelect = DasApiInputParam.releaseProductInfo_select
-        reqSelectStr = reqSelect.replace("{ids}",paramStr) # 替换参数
+        reqSelect["ids"] = paramList
         reqParam = DasApiInputParam.releaseProductInfo_param
-        reqParam["args"] = reqSelectStr
+        reqParam["args"] = str(reqSelect)
         # 接口请求头
         header = Common_TokenHeader().token_header("new","181324")
         # 组装接口所需要的参数
