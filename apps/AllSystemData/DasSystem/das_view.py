@@ -68,12 +68,12 @@ def run_dasTestcaseExecute():
     # return "数据分析测试用例执行完成!"
     # 方法四--推送钉钉报告连接
     filename = "result_das_"+now + ".html"
-    fp = open(report_abspath,"wb")
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title='数据分析系统-接口自动化报告,测试结果如下:',description='用例执行情况:')
-    runner.run(discover)
+    # fp = open(report_abspath,"wb")
+    # runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title='数据分析系统-接口自动化报告,测试结果如下:',description='用例执行情况:')
+    # runner.run(discover)
 
-    # runner = bf(discover) # 实例化BeautifulReport模块
-    # runner.report(filename=filename,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
+    runner = bf(discover) # 实例化BeautifulReport模块
+    runner.report(filename=filename,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
     # 远程连接192.168.3.10服务器(需要先设置免密ssh-copy-id ip)
     os.popen('ssh 192.168.3.10 "rm -rf /data/interfaceAutoTest_file/result_das_*"') # 远程连接,删除远程192.168.3.10上面原来的报告
     os.popen('scp -r /home/InterfaceAutoTest/apps/AllSystemData/DasSystem/report/{0} \
