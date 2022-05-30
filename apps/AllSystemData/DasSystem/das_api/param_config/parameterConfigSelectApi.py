@@ -8,11 +8,15 @@ from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiU
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from flask import current_app as app
+from logger import MyLog
+
+
+# 实例化日志类
+logger = MyLog("ParameterConfigQueryApi").getlog() # 初始化
 
 class ParameterConfigQueryApi():
     def paramConfigQuery(self):
-        app.logger.info("paramConfigQuery ---->start!")
+        logger.info("paramConfigQuery ---->start!")
         # 接口地址
         url = DasApiUrl.paramConfigSelect_url
         # 接口请求参数
@@ -26,9 +30,8 @@ class ParameterConfigQueryApi():
         respResult = get_page_content_by_requests(self.url,self.header,self.formData)
         responseData = respResult.json()["result"]["cancelDevNotesInfoList"]
         if respResult.status_code == 200:
-            app.logger.info("paramConfigQuery ---->end!")
+            logger.info("paramConfigQuery ---->end!")
             return "接口响应成功,接口返回值:{0}".format(responseData)
         else:
-            app.logger.error("paramConfigQuery -->response Data is wrong!")
+            logger.error("paramConfigQuery -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(respResult.json()["errorMsg"], url, formData)
-
