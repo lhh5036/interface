@@ -42,7 +42,7 @@ class Test_amazonAssociateSySkuApi(unittest.TestCase):
         return resultList
 
     # 配置为yaml文件驱动
-    @ddt.file_data(upPath+"\\moduleFile\\amazonAssociateSkuYaml.yaml")
+    @ddt.file_data(upPath+"/moduleFile/amazonAssociateSkuYaml.yaml")
     @ddt.unpack
     def testCase01(self,sysSkuStr):
         '''Amazon关联系统SKU测试用例'''
