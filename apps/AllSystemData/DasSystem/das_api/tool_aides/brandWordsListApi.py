@@ -8,16 +8,18 @@ from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiU
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 
-from flask import current_app as app
+from logger import MyLog
 import json
 import requests
 
+# 实例化日志类
+logger = MyLog("BrandWordsListAPi").getlog()  # 初始化
 
 class BrandWordsListAPi():
     def brandWordsListFunction(self,brandWordType,paramStr):
-        app.logger.info("brandWordsListFunction------------------->start")
+        logger.info("brandWordsListFunction------------------->start")
         if brandWordType == "":
-            app.logger.error("brandWordsListFunction------------------->Brand Words Type is empty!")
+            logger.error("brandWordsListFunction------------------->Brand Words Type is empty!")
             return "商标词类型为空!"
         if brandWordType == "USpto":
             url = DasApiUrl.listNewUsTradeMark_url  # 请求地址
@@ -37,10 +39,10 @@ class BrandWordsListAPi():
         self.formData = listNewTradeMark_param01
         resp = requests.post(url=self.url, headers=self.header, data=json.dumps(self.formData))
         if resp.json()["success"] == True:
-            app.logger.info("brandWordsListFunction------------------->end")
+            logger.info("brandWordsListFunction------------------->end")
             return "接口响应成功,接口返回值:{0}".format(resp.json()["rows"])
         else:
-            app.logger.error("brandWordsListFunction------------->response Data is wrong!")
+            logger.error("brandWordsListFunction------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},接口类型:{2},请求参数:{3}".format(resp.json()["errorMsg"], url,brandWordType,listNewTradeMark_param01)
 
 

@@ -9,14 +9,15 @@ from apps.Common_Config.parseRequestDatas import parseRequestDatas
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 
-from flask import current_app as app
+from logger import MyLog
 import json
 import requests
 
-
+# 实例化日志类
+logger = MyLog("QueryWipoPageListApi").getlog()  # 初始化
 class QueryWipoPageListApi():
     def queryWipoPageListFunciton(self,kwargs):# 参数为dict格式
-        app.logger.info("queryWipoPageListFunciton------------------->start")
+        logger.info("queryWipoPageListFunciton------------------->start")
         url = DasApiUrl.queryWipoPage_url  # 请求地址
         # 请求参数
         queryWipoPage_param03 = DasApiInputParam.queryWipoPage_param03
@@ -38,10 +39,10 @@ class QueryWipoPageListApi():
         self.formData = queryWipoPage_param01
         resp = requests.post(url=self.url, headers=self.header, data=json.dumps(self.formData))
         if resp.json()["success"] == True:
-            app.logger.info("queryWipoPageListFunciton------------------->end")
+            logger.info("queryWipoPageListFunciton------------------->end")
             return "接口响应成功,接口返回值:{0}".format(resp.json()["rows"])
         else:
-            app.logger.error("queryWipoPageListFunciton------------->response Data is wrong!")
+            logger.error("queryWipoPageListFunciton------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"], url,queryWipoPage_param01)
 
 if __name__ == '__main__':

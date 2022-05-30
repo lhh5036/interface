@@ -8,16 +8,18 @@ from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiU
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 
-from flask import current_app as app
+from logger import MyLog
 import json
 import requests
 
+# 实例化日志类
+logger = MyLog("QueryJsKwCategoryListApi").getlog()  # 初始化
 
 class QueryJsKwCategoryListApi():
     def queryJsKwCategoryListFunction(self,countryStr):
-        app.logger.info("queryJsKwCategoryListFunction------------------->start")
+        logger.info("queryJsKwCategoryListFunction------------------->start")
         if countryStr == "":
-            app.logger.error("queryJsKwCategoryListFunction------------------->country is empty!")
+            logger.error("queryJsKwCategoryListFunction------------------->country is empty!")
             return "国家字段为空!"
         url = DasApiUrl.queryJsKeywordCategoryList_url  # 请求地址
         # 请求参数
@@ -32,10 +34,10 @@ class QueryJsKwCategoryListApi():
         self.formData = queryJsKeywordCategoryList_param01
         resp = requests.post(url=self.url, headers=self.header, data=json.dumps(self.formData))
         if resp.json()["success"] == True:
-            app.logger.info("queryJsKwCategoryListFunction------------------->end")
+            logger.info("queryJsKwCategoryListFunction------------------->end")
             return "接口响应成功,接口返回值:{0}".format(resp.json()["result"])
         else:
-            app.logger.error("queryJsKwCategoryListFunction------------->response Data is wrong!")
+            logger.error("queryJsKwCategoryListFunction------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"], url,queryJsKeywordCategoryList_param01)
 
 if __name__ == '__main__':
