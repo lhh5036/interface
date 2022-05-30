@@ -154,15 +154,15 @@
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">开始时间</button>
-                <span class="text-dark">2022-03-29 18:21:13</span>
+                <span class="text-dark">2022-05-27 13:50:01</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">执行时间</button>
-                <span class="text-dark">4.43 S</span>
+                <span class="text-dark">6.85 S</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">用例总数</button>
-                <span class="text-dark">16</span>
+                <span class="text-dark">20</span>
             </li>
 
 
@@ -173,7 +173,7 @@
 
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">成功用例</button>
-                <span class="text-success">7</span>
+                <span class="text-success">20</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-warning">失败用例</button>
@@ -181,7 +181,7 @@
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-danger">错误用例</button>
-                <span class="text-danger">9</span>
+                <span class="text-danger">0</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-secondary">跳过用例</button>
@@ -223,15 +223,31 @@
                     <select id="testClass">
                         <option>所有</option>
                         
+                            <option>Test_paramConfigQueryApi</option>
+                        
+                            <option>Test_smtProductGetTongkuanApi</option>
+                        
                             <option>Test_smtSelectApi</option>
+                        
+                            <option>Test_amazonProductGetTongkuanApi</option>
+                        
+                            <option>Test_smtReleaseRroductApi</option>
+                        
+                            <option>Test_amazonAssociateSySkuApi</option>
+                        
+                            <option>Test_parameterConfigSaveApi</option>
+                        
+                            <option>Test_amazonCancelDevelopApi</option>
                         
                             <option>Test_amazonSelectApi</option>
                         
-                            <option>Test_paramConfigQueryApi</option>
+                            <option>Test_amazonProdcutGetDijiaApi</option>
                         
-                            <option>_FailedTest</option>
+                            <option>Test_amazonReleaseRroductApi</option>
                         
-                            <option>Test_parameterConfigSaveApi</option>
+                            <option>Test_smtProdcutGetDijiaApi</option>
+                        
+                            <option>Test_smtAssociateSySkuApi</option>
                         
                     </select>
 
@@ -259,12 +275,12 @@
             
                 <tr>
                     <td>1</td>
-                    <td class="_FailedTest">_FailedTest</td>
-                    <td>apps.DasSystem.test.case.test_amazon_associateSystemSkuApi</td>
-                    <td>None</td>
-                    <td>0.00199s</td>
+                    <td class="Test_amazonAssociateSySkuApi">Test_amazonAssociateSySkuApi</td>
+                    <td>testCase01_1_8ZZ800161_S_B</td>
+                    <td>testCase01_1_8ZZ800161_S_B</td>
+                    <td>0.294s</td>
                     
-                        <td class="text-danger">错误</td>
+                        <td class="text-success">成功</td>
                     
                     <td>
                         <button type="button" class="btn btn-success btn_info">查看详情</button>
@@ -276,41 +292,8 @@
                     <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
                         
 
-                            <pre>Traceback (most recent call last):
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 59, in testPartExecutor
-    yield
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 605, in run
-    testMethod()
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\loader.py", line 34, in testFailure
-    raise self._exception
-</pre>
-                        
-
-                            <pre>ImportError: Failed to import test module: apps.DasSystem.test.case.test_amazon_associateSystemSkuApi
-Traceback (most recent call last):
-  File "C:\python\lib\unittest\loader.py", line 428, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "C:\python\lib\unittest\loader.py", line 369, in _get_module_from_name
-    __import__(name)
-  File "D:\flask_test\apps\DasSystem\test\case\test_amazon_associateSystemSkuApi.py", line 12, in <module>
-    from apps.utils.es_database_util import Es_handleOperator
-  File "D:\flask_test\apps\utils\es_database_util.py", line 8, in <module>
-    from apps.Common_Config.db_config import ReadConfig
-ImportError: cannot import name 'ReadConfig'
-
-</pre>
-                        
-
-                            <pre>apps.DasSystem.test.case.test_amazon_associateSystemSkuApi (unittest.loader._FailedTest)执行——>【错误Error】
+                            <pre>关联系统SKU--接口响应成功
+testCase01_1_8ZZ800161_S_B (apps.AllSystemData.DasSystem.test.case.test_amazon_associateSystemSkuApi.Test_amazonAssociateSySkuApi)执行——>【通过】
 </pre>
                         
                         
@@ -319,12 +302,12 @@ ImportError: cannot import name 'ReadConfig'
             
                 <tr>
                     <td>2</td>
-                    <td class="_FailedTest">_FailedTest</td>
-                    <td>apps.DasSystem.test.case.test_amazon_cancelDevelopApi</td>
-                    <td>None</td>
-                    <td>0.000995s</td>
+                    <td class="Test_amazonAssociateSySkuApi">Test_amazonAssociateSySkuApi</td>
+                    <td>testCase01_2_8ZZ800161S</td>
+                    <td>testCase01_2_8ZZ800161S</td>
+                    <td>0.157s</td>
                     
-                        <td class="text-danger">错误</td>
+                        <td class="text-success">成功</td>
                     
                     <td>
                         <button type="button" class="btn btn-success btn_info">查看详情</button>
@@ -336,41 +319,8 @@ ImportError: cannot import name 'ReadConfig'
                     <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
                         
 
-                            <pre>Traceback (most recent call last):
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 59, in testPartExecutor
-    yield
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 605, in run
-    testMethod()
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\loader.py", line 34, in testFailure
-    raise self._exception
-</pre>
-                        
-
-                            <pre>ImportError: Failed to import test module: apps.DasSystem.test.case.test_amazon_cancelDevelopApi
-Traceback (most recent call last):
-  File "C:\python\lib\unittest\loader.py", line 428, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "C:\python\lib\unittest\loader.py", line 369, in _get_module_from_name
-    __import__(name)
-  File "D:\flask_test\apps\DasSystem\test\case\test_amazon_cancelDevelopApi.py", line 13, in <module>
-    from apps.utils.es_database_util import Es_handleOperator
-  File "D:\flask_test\apps\utils\es_database_util.py", line 8, in <module>
-    from apps.Common_Config.db_config import ReadConfig
-ImportError: cannot import name 'ReadConfig'
-
-</pre>
-                        
-
-                            <pre>apps.DasSystem.test.case.test_amazon_cancelDevelopApi (unittest.loader._FailedTest)执行——>【错误Error】
+                            <pre>接口响应失败,失败原因:产品系统中不存在该sku.,接口地址:http://192.168.3.162:80/das/amazon/AccountProductInfo/associatedSystemSku,请求参数:{'args': "{'ids': ['bd5e1983-58f9-4b16-bece-afcea8bf0b5a', '0021f113-dc98-47c1-a437-3a910329572e', '6bba8401-105c-4b18-8f41-6fd47a88f13e', '5c245379-0c95-4dae-9633-229167fb1527', 'b91daf9b-ba8f-4beb-b353-756e63f7d06f', 'e1776928-ea07-4c12-ba2b-c8948018ea3d', 'f58d006f-725b-4fa0-87b5-918782f4e66f', '9e6d0008-74c8-4b87-a7fd-6a6b8e38bb16', '9a66b4bc-7ee3-40ab-bb4e-ea0bad45a9c1', '5688cf4a-893d-4077-9c2e-a2bf8f960182'], 'systemSku': '8ZZ800161S'}"}
+testCase01_2_8ZZ800161S (apps.AllSystemData.DasSystem.test.case.test_amazon_associateSystemSkuApi.Test_amazonAssociateSySkuApi)执行——>【通过】
 </pre>
                         
                         
@@ -379,12 +329,12 @@ ImportError: cannot import name 'ReadConfig'
             
                 <tr>
                     <td>3</td>
-                    <td class="_FailedTest">_FailedTest</td>
-                    <td>apps.DasSystem.test.case.test_amazon_productGetDijiaApi</td>
-                    <td>None</td>
-                    <td>0.0s</td>
+                    <td class="Test_amazonAssociateSySkuApi">Test_amazonAssociateSySkuApi</td>
+                    <td>testCase02_1_8ZZ800161_S_B</td>
+                    <td>Amazon关联系统SKU测试用例</td>
+                    <td>0.178s</td>
                     
-                        <td class="text-danger">错误</td>
+                        <td class="text-success">成功</td>
                     
                     <td>
                         <button type="button" class="btn btn-success btn_info">查看详情</button>
@@ -396,41 +346,8 @@ ImportError: cannot import name 'ReadConfig'
                     <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
                         
 
-                            <pre>Traceback (most recent call last):
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 59, in testPartExecutor
-    yield
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 605, in run
-    testMethod()
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\loader.py", line 34, in testFailure
-    raise self._exception
-</pre>
-                        
-
-                            <pre>ImportError: Failed to import test module: apps.DasSystem.test.case.test_amazon_productGetDijiaApi
-Traceback (most recent call last):
-  File "C:\python\lib\unittest\loader.py", line 428, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "C:\python\lib\unittest\loader.py", line 369, in _get_module_from_name
-    __import__(name)
-  File "D:\flask_test\apps\DasSystem\test\case\test_amazon_productGetDijiaApi.py", line 11, in <module>
-    from apps.utils.es_database_util import Es_handleOperator
-  File "D:\flask_test\apps\utils\es_database_util.py", line 8, in <module>
-    from apps.Common_Config.db_config import ReadConfig
-ImportError: cannot import name 'ReadConfig'
-
-</pre>
-                        
-
-                            <pre>apps.DasSystem.test.case.test_amazon_productGetDijiaApi (unittest.loader._FailedTest)执行——>【错误Error】
+                            <pre>关联系统SKU--接口响应成功
+testCase02_1_8ZZ800161_S_B (apps.AllSystemData.DasSystem.test.case.test_amazon_associateSystemSkuApi.Test_amazonAssociateSySkuApi)执行——>【通过】
 </pre>
                         
                         
@@ -439,12 +356,12 @@ ImportError: cannot import name 'ReadConfig'
             
                 <tr>
                     <td>4</td>
-                    <td class="_FailedTest">_FailedTest</td>
-                    <td>apps.DasSystem.test.case.test_amazon_productGetTongkuanApi</td>
-                    <td>None</td>
-                    <td>0.000998s</td>
+                    <td class="Test_amazonAssociateSySkuApi">Test_amazonAssociateSySkuApi</td>
+                    <td>testCase02_2_8ZZ800161S</td>
+                    <td>Amazon关联系统SKU测试用例</td>
+                    <td>0.128s</td>
                     
-                        <td class="text-danger">错误</td>
+                        <td class="text-success">成功</td>
                     
                     <td>
                         <button type="button" class="btn btn-success btn_info">查看详情</button>
@@ -456,41 +373,8 @@ ImportError: cannot import name 'ReadConfig'
                     <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
                         
 
-                            <pre>Traceback (most recent call last):
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 59, in testPartExecutor
-    yield
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 605, in run
-    testMethod()
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\loader.py", line 34, in testFailure
-    raise self._exception
-</pre>
-                        
-
-                            <pre>ImportError: Failed to import test module: apps.DasSystem.test.case.test_amazon_productGetTongkuanApi
-Traceback (most recent call last):
-  File "C:\python\lib\unittest\loader.py", line 428, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "C:\python\lib\unittest\loader.py", line 369, in _get_module_from_name
-    __import__(name)
-  File "D:\flask_test\apps\DasSystem\test\case\test_amazon_productGetTongkuanApi.py", line 12, in <module>
-    from apps.utils.es_database_util import Es_handleOperator
-  File "D:\flask_test\apps\utils\es_database_util.py", line 8, in <module>
-    from apps.Common_Config.db_config import ReadConfig
-ImportError: cannot import name 'ReadConfig'
-
-</pre>
-                        
-
-                            <pre>apps.DasSystem.test.case.test_amazon_productGetTongkuanApi (unittest.loader._FailedTest)执行——>【错误Error】
+                            <pre>接口响应失败,失败原因:产品系统中不存在该sku.,接口地址:http://192.168.3.162:80/das/amazon/AccountProductInfo/associatedSystemSku,请求参数:{'args': "{'ids': ['7c7ab88a-2120-4d5e-99a5-13486d96f72d', '4bd04c3f-ac43-4597-908e-9a1d6f40f665', '606ffceb-149e-4748-b6a0-0e50277e2e6c', '6cbdafbb-6d79-427f-a620-df804acd19a8', '1828dfc2-45a4-4b15-bb6d-338f42bfb55c', '9461ee01-cf5d-4f68-a780-41f3055093ef', 'e3884778-cf81-495f-bdd9-4b084f2603f2', 'f36f6176-0e6d-4847-ac61-f1a434a5c81e', 'd19cc361-d340-47a7-991b-ede22e632d7c', '94154f92-b13f-4c09-b5cc-2e03fa52f89c'], 'systemSku': '8ZZ800161S'}"}
+testCase02_2_8ZZ800161S (apps.AllSystemData.DasSystem.test.case.test_amazon_associateSystemSkuApi.Test_amazonAssociateSySkuApi)执行——>【通过】
 </pre>
                         
                         
@@ -499,12 +383,12 @@ ImportError: cannot import name 'ReadConfig'
             
                 <tr>
                     <td>5</td>
-                    <td class="_FailedTest">_FailedTest</td>
-                    <td>apps.DasSystem.test.case.test_amazon_releaseProductApi</td>
-                    <td>None</td>
-                    <td>0.0s</td>
+                    <td class="Test_amazonCancelDevelopApi">Test_amazonCancelDevelopApi</td>
+                    <td>testCase01</td>
+                    <td>这是第一个测试用例</td>
+                    <td>0.3s</td>
                     
-                        <td class="text-danger">错误</td>
+                        <td class="text-success">成功</td>
                     
                     <td>
                         <button type="button" class="btn btn-success btn_info">查看详情</button>
@@ -516,41 +400,8 @@ ImportError: cannot import name 'ReadConfig'
                     <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
                         
 
-                            <pre>Traceback (most recent call last):
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 59, in testPartExecutor
-    yield
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 605, in run
-    testMethod()
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\loader.py", line 34, in testFailure
-    raise self._exception
-</pre>
-                        
-
-                            <pre>ImportError: Failed to import test module: apps.DasSystem.test.case.test_amazon_releaseProductApi
-Traceback (most recent call last):
-  File "C:\python\lib\unittest\loader.py", line 428, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "C:\python\lib\unittest\loader.py", line 369, in _get_module_from_name
-    __import__(name)
-  File "D:\flask_test\apps\DasSystem\test\case\test_amazon_releaseProductApi.py", line 14, in <module>
-    from apps.utils.es_database_util import Es_handleOperator
-  File "D:\flask_test\apps\utils\es_database_util.py", line 8, in <module>
-    from apps.Common_Config.db_config import ReadConfig
-ImportError: cannot import name 'ReadConfig'
-
-</pre>
-                        
-
-                            <pre>apps.DasSystem.test.case.test_amazon_releaseProductApi (unittest.loader._FailedTest)执行——>【错误Error】
+                            <pre>接口响应失败,失败原因:["ID：b88777e3-eeee-4361-bb3a-f4ec6adfd050取消开发失败，原因：开发状态必须为待开发.","ID：3aae9b0d-4c9a-46ed-9c80-d49fdc0c9793取消开发失败，原因：开发状态必须为待开发.","ID：6c9405ba-f830-4c92-8b38-20ceef0ba36d取消开发失败，原因：开发状态必须为待开发.","ID：3633a9ee-ee9c-442f-89dc-51112edd82c3取消开发失败，原因：开发状态必须为待开发.","ID：b6acd78a-b3e5-437b-8c07-ea3416b8dbf0取消开发失败，原因：开发状态必须为待开发.","ID：8c33c21b-0391-4036-88e7-28c03c9e6308取消开发失败，原因：开发状态必须为待开发.","ID：c2367c17-3215-4884-a200-b415ef03b0ae取消开发失败，原因：开发状态必须为待开发.","ID：eea282bf-dffe-45e0-a518-92a970e286b7取消开发失败，原因：开发状态必须为待开发.","ID：3b947796-d5ac-4578-a312-950d6b3e042e取消开发失败，原因：开发状态必须为待开发.","ID：6f868a50-c98f-4e05-8dce-c0bee1d91a60取消开发失败，原因：开发状态必须为待开发."],接口地址:http://192.168.3.162:80/das/amazon/AccountProductInfo/cancelDevelopment,请求参数:{'args': '{\'ids\': [\'b88777e3-eeee-4361-bb3a-f4ec6adfd050\', \'3aae9b0d-4c9a-46ed-9c80-d49fdc0c9793\', \'6c9405ba-f830-4c92-8b38-20ceef0ba36d\', \'3633a9ee-ee9c-442f-89dc-51112edd82c3\', \'b6acd78a-b3e5-437b-8c07-ea3416b8dbf0\', \'8c33c21b-0391-4036-88e7-28c03c9e6308\', \'c2367c17-3215-4884-a200-b415ef03b0ae\', \'eea282bf-dffe-45e0-a518-92a970e286b7\', \'3b947796-d5ac-4578-a312-950d6b3e042e\', \'6f868a50-c98f-4e05-8dce-c0bee1d91a60\'], \'cancelNotesInfo\': "\'test01\'"}'}
+testCase01 (apps.AllSystemData.DasSystem.test.case.test_amazon_cancelDevelopApi.Test_amazonCancelDevelopApi)执行——>【通过】
 </pre>
                         
                         
@@ -559,10 +410,91 @@ ImportError: cannot import name 'ReadConfig'
             
                 <tr>
                     <td>6</td>
+                    <td class="Test_amazonProdcutGetDijiaApi">Test_amazonProdcutGetDijiaApi</td>
+                    <td>testCase01</td>
+                    <td>第一个测试用例</td>
+                    <td>0.487s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>接口响应成功,响应结果:https://kj.1688.com/pdt_dijiakaifa.html?detailUrl=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F71arum1q0kL._AC_UL1500_.jpg
+testCase01 (apps.AllSystemData.DasSystem.test.case.test_amazon_productGetDijiaApi.Test_amazonProdcutGetDijiaApi)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>7</td>
+                    <td class="Test_amazonProductGetTongkuanApi">Test_amazonProductGetTongkuanApi</td>
+                    <td>testCase01</td>
+                    <td>第一个测试用例</td>
+                    <td>0.17s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>接口响应成功,响应结果:https://kj.1688.com/pdt_tongkuan.html?imgUrl=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F71FH5rJ9KcL._AC_SL1500_.jpg
+testCase01 (apps.AllSystemData.DasSystem.test.case.test_amazon_productGetTongkuanApi.Test_amazonProductGetTongkuanApi)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>8</td>
+                    <td class="Test_amazonReleaseRroductApi">Test_amazonReleaseRroductApi</td>
+                    <td>testCase01</td>
+                    <td>第一个测试用例</td>
+                    <td>0.508s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>释放产品---接口响应成功
+testCase01 (apps.AllSystemData.DasSystem.test.case.test_amazon_releaseProductApi.Test_amazonReleaseRroductApi)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>9</td>
                     <td class="Test_amazonSelectApi">Test_amazonSelectApi</td>
                     <td>testCase01</td>
                     <td>第一个测试用例</td>
-                    <td>1.02s</td>
+                    <td>0.596s</td>
                     
                         <td class="text-success">成功</td>
                     
@@ -577,7 +509,7 @@ ImportError: cannot import name 'ReadConfig'
                         
 
                             <pre>接口响应成功,响应结果:[]
-testCase01 (apps.DasSystem.test.case.test_amazon_selectApi.Test_amazonSelectApi)执行——>【通过】
+testCase01 (apps.AllSystemData.DasSystem.test.case.test_amazon_selectApi.Test_amazonSelectApi)执行——>【通过】
 </pre>
                         
                         
@@ -585,11 +517,11 @@ testCase01 (apps.DasSystem.test.case.test_amazon_selectApi.Test_amazonSelectApi)
                 </tr>
             
                 <tr>
-                    <td>7</td>
+                    <td>10</td>
                     <td class="Test_amazonSelectApi">Test_amazonSelectApi</td>
                     <td>testCase02</td>
                     <td>第二个测试用例</td>
-                    <td>1.1s</td>
+                    <td>0.838s</td>
                     
                         <td class="text-success">成功</td>
                     
@@ -604,7 +536,7 @@ testCase01 (apps.DasSystem.test.case.test_amazon_selectApi.Test_amazonSelectApi)
                         
 
                             <pre>接口响应成功,响应结果:[{'id': 'a210c341-a9c7-4ec1-9bd8-0c318fe76ab9', 'country': 'US', 'asin': 'B08862CWH6', 'createdTime': '2021-09-07 10:16:43', 'updatedTime': '2021-09-07 10:16:43', 'claimTime': '2021-09-07 10:16:43', 'crawlTime': '2021-09-07 10:16:43', 'dataStatus': 1, 'url': 'https://www.amazon.com/dp/B08862CWH6?th=1&psc=1', 'parentAsin': 'B07D7N2JNQ', 'searchKeywords': '', 'amazonAsinIncrementInfos': [{'id': 'ed1fe4a2-fa15-11eb-965b-000000000248', 'country': 'US', 'asin': 'B08862CWH6', 'rating': 4.2, 'reviews': 1419, 'price': 35.99, 'minPrice': None, 'maxPrice': None, 'numSellers': None, 'rankDetail': "#6,595 in Clothing, Shoes & Jewelry (See Top 100 in Clothing, Shoes & Jewelry)\n#31 in Women's Cocktail Dresses\n#231 in Women's Casual Dresses\n#3,737 in Women's Shops", 'rank': 6595, 'category': {'category1': 'Clothing, Shoes & Jewelry', 'category2': 'Women', 'category3': 'Clothing', 'category4': 'Dresses', 'category5': '', 'category6': '', 'category7': '', 'category8': '', 'category9': '', 'category10': ''}, 'departmentName': 'Clothing, Shoes & Jewelry', 'name': 'Gardenwed Floral Chiffon Dresses for Women Flowy Homecoming Cocktail Dress Casual Beach Sun Dress', 'keywords': '', 'brand': 'Visit the Gardenwed Store', 'selectedVariations': {'color': 'Navy Flower', 'size': 'XX-Large', 'pattern': '', 'style': ''}, 'hasCart': True, 'feature': {'feature1': 'Pull On closure', 'feature2': 'Machine Wash', 'feature3': 'Fabric:Floral chiffon,it’s lightweight and flowing material,which feels great.And it’s very comfortable to wear for hot weather.', 'feature4': 'Feature: Unique fashion tailoring to make each one distinctive features, puffy short sleeve, v neck, loose fit, trendy and chic women long dress, floral print and full big swing make you looking feminine and elegant.', 'feature5': "Style: This flowy midi dress style of the empire high waist, mid-calf length, coupled with well made.It's not only glamorous but also very original, style with heels or sandals for a fantastic look.It may represents freedom, romance and distinct personality.", 'feature6': "Occasion: Suitable for Spring, Summer, Fall, Winter, Beach, Vacation, Outdoor, Holiday, Banquet, Juniors'casual, Hawaiian, Ball, Honeymoon, Party, Cocktail, Wedding Guest, Club, Dating,At Home, Office, Work, Casual or Daily Wear.", 'feature7': 'Slight hand wash in cold water and hang dry, no bleach, dry clean is also available.Owing to our size is different from Amazon Size and the size you usually choose, so please do refer to our own size chart below the dress images.', 'feature8': '', 'feature9': '', 'feature10': ''}, 'description': 'Product Description\nGardenwed Women\'s V-Neck Floral Printed Cocktail Party Dress Flowy Swing Chiffon Casual Midi Dress\nProduct information :\nSilhouette: A-line\nNeckline: V-Neck\nFabric: Chiffon\nWaist: Elastic\nLength:Mid-calf length\nFeature: High Waist, Full Swing, Flutter Sleeve, Chiffon Midi, Floral Print , Flowy, Fashionable Unique Design,\nOccasions: Beach, pool, wedding, carnival party, cocktail, club, holiday, tea party, casual, daily wear, work, date, vacation, award presentation,family gathering,church etc.\nFeatures：\nThis vintage chiffon long floral dress is made of soft chiffon and we add the comfortable lining inside so you don\'t need to afraid the dress will be see through.\nSexy v-neck and ruffle flutter sleeves design make the dress different from many other chiffon dresses in the market. This big swing chiffon dress is suitable for all the seasons especially for spring, summer ,autumn and winter. You may look fashion and modest when match it with a coat in fall.The high quality and elegant dress is a great buy for every women !\nDetail :Women\'s V-Neck Floral Wedding Party Dress Boho Beach Swing Chiffon Casual Dress - Yellow little Flower\nSize Collection from our Customer, Only for Reference\nMore Notes :\nWashing Care:Hand wash in cold water and machine washable, hang dry, do not bleach.\nPlease allow 1-2 cm (0.4 "-0.8") difference due to the manual measurement.\nSome customers say that the dress is a little large.So for a great fit, please measure your sizes exactly and do refer to our standard size chart before you make the order.Please do refer to our size chart and choose the smaller size if you are a between size.\nWe update a new different style floral summer chiffon dress, if you like, you could click and take a look.\nSummer Casual Beach Dress\nSun Dresses for Women Casual\nWomen\'s Cocktail Dress\nWomen\'s Summer Dresses\nSummer Dresses for Juniors\nChiffon Dresses for Women\nOccasion\nCasual Gathering\nDating\nBeach\nDaily\nWeekend\nHoliday', 'firstListOnTime': None, 'status': True, 'imageUrls': ['https://m.media-amazon.com/images/I/71-kJHsA9CL._AC_UL1500_.jpg', 'https://m.media-amazon.com/images/I/71IW1gVyltL._AC_UL1500_.jpg', 'https://m.media-amazon.com/images/I/71JB5Yq3VpL._AC_UL1500_.jpg', 'https://m.media-amazon.com/images/I/71WSnyG0-EL._AC_UL1500_.jpg', 'https://m.media-amazon.com/images/I/71GSo5FVw+L._AC_UL1500_.jpg', 'https://m.media-amazon.com/images/I/71dtIknf0cL._AC_UL1500_.jpg'], 'stock': True, 'fba': True, 'weight': {'itemWeight': '', 'shippingWeight': ''}, 'dimensions': {'productDimensions': '', 'packageDimensions': '', 'itemDimensions': ''}, 'sellerId': 'AKP8ORU74U505', 'sellerName': 'Gardenwed', 'isAmazon': False, 'crawlTime': '2021-08-11 04:02:44', 'latestCommentTime': None, 'badgeName': '', 'badgeLink': ''}], 'prohibitionCauses': '', 'account': 'NS0127-曾丽云', 'categoryNodeLevel': None, 'listNodes': ['7141123011', '7147440011', '7581668011', '7581674011', '9650170011'], 'categoryMark': True, 'keywordMark': False, 'shopMark': False, 'bestsellerMark': False, 'followMark': False, 'newReleasesMark': False, 'moverShakerMark': False, 'mostWishMark': True, 'giftIdeasMark': False, 'dataSources': 'es_amazon_base_listing', 'saleEmpId': 15382, 'saleEmpName': '181581-胡生斌', 'systemCategoryId': 1, 'systemCategoryPaths': '服装/服饰配件', 'amazonPlatSite': 'Amazon-US', 'mainSku': '9SD102520', 'skuMapStr': None, 'associatedSystemSku': None, 'developmentStatus': 0, 'cancelNotesInfo': None, 'distributor': '049-赵浩亮', 'distributionTime': '2021-09-07 10:16:43'}, {'id': '0729cc7f-9be4-4488-83fe-21afd3080892', 'country': 'US', 'asin': 'B0885SZ97G', 'createdTime': '2021-08-11 14:41:05', 'updatedTime': '2021-08-11 14:41:05', 'claimTime': '2021-08-11 14:41:05', 'crawlTime': '2021-08-11 14:41:05', 'dataStatus': 1, 'url': 'https://www.amazon.com/dp/B0885SZ97G?th=1&psc=1', 'parentAsin': 'B07D7N2JNQ', 'searchKeywords': '', 'amazonAsinIncrementInfos': [{'id': 'ed1d9b2c-fa13-11eb-9a58-0000000001e4', 'country': 'US', 'asin': 'B0885SZ97G', 'rating': 4.2, 'reviews': 1419, 'price': 35.99, 'minPrice': None, 'maxPrice': None, 'numSellers': None, 'rankDetail': "#6,595 in Clothing, Shoes & Jewelry (See Top 100 in Clothing, Shoes & Jewelry)\n#31 in Women's Cocktail Dresses\n#231 in Women's Casual Dresses\n#3,737 in Women's Shops", 'rank': 6595, 'category': {'category1': 'Clothing, Shoes & Jewelry', 'category2': 'Women', 'category3': 'Clothing', 'category4': 'Dresses', 'category5': '', 'category6': '', 'category7': '', 'category8': '', 'category9': '', 'category10': ''}, 'departmentName': 'Clothing, Shoes & Jewelry', 'name': 'Gardenwed Floral Chiffon Dresses for Women Flowy Homecoming Cocktail Dress Casual Beach Sun Dress', 'keywords': '', 'brand': 'Visit the Gardenwed Store', 'selectedVariations': {'color': 'Blue Dandelion', 'size': 'Large', 'pattern': '', 'style': ''}, 'hasCart': True, 'feature': {'feature1': 'Chiffon', 'feature2': 'Pull On closure', 'feature3': '机洗', 'feature4': 'Fabric:Floral chiffon,it’s lightweight and flowing material,which feels great.And it’s very comfortable to wear for hot weather.', 'feature5': 'Feature: Unique fashion tailoring to make each one distinctive features, puffy short sleeve, v neck, loose fit, trendy and chic women long dress, floral print and full big swing make you looking feminine and elegant.', 'feature6': "Style: This flowy midi dress style of the empire high waist, mid-calf length, coupled with well made.It's not only glamorous but also very original, style with heels or sandals for a fantastic look.It may represents freedom, romance and distinct personality.", 'feature7': "Occasion: Suitable for Spring, Summer, Fall, Winter, Beach, Vacation, Outdoor, Holiday, Banquet, Juniors'casual, Hawaiian, Ball, Honeymoon, Party, Cocktail, Wedding Guest, Club, Dating,At Home, Office, Work, Casual or Daily Wear.", 'feature8': 'Slight hand wash in cold water and hang dry, no bleach, dry clean is also available.Owing to our size is different from Amazon Size and the size you usually choose, so please do refer to our own size chart below the dress images.', 'feature9': '', 'feature10': ''}, 'description': 'Product Description\nGardenwed Women\'s V-Neck Floral Printed Cocktail Party Dress Flowy Swing Chiffon Casual Midi Dress\nProduct information :\nSilhouette: A-line\nNeckline: V-Neck\nFabric: Chiffon\nWaist: Elastic\nLength:Mid-calf length\nFeature: High Waist, Full Swing, Flutter Sleeve, Chiffon Midi, Floral Print , Flowy, Fashionable Unique Design,\nOccasions: Beach, pool, wedding, carnival party, cocktail, club, holiday, tea party, casual, daily wear, work, date, vacation, award presentation,family gathering,church etc.\nFeatures：\nThis vintage chiffon long floral dress is made of soft chiffon and we add the comfortable lining inside so you don\'t need to afraid the dress will be see through.\nSexy v-neck and ruffle flutter sleeves design make the dress different from many other chiffon dresses in the market. This big swing chiffon dress is suitable for all the seasons especially for spring, summer ,autumn and winter. You may look fashion and modest when match it with a coat in fall.The high quality and elegant dress is a great buy for every women !\nDetail :Women\'s V-Neck Floral Wedding Party Dress Boho Beach Swing Chiffon Casual Dress - Yellow little Flower\nSize Collection from our Customer, Only for Reference\nMore Notes :\nWashing Care:Hand wash in cold water and machine washable, hang dry, do not bleach.\nPlease allow 1-2 cm (0.4 "-0.8") difference due to the manual measurement.\nSome customers say that the dress is a little large.So for a great fit, please measure your sizes exactly and do refer to our standard size chart before you make the order.Please do refer to our size chart and choose the smaller size if you are a between size.\nWe update a new different style floral summer chiffon dress, if you like, you could click and take a look.\nSummer Casual Beach Dress\nSun Dresses for Women Casual\nWomen\'s Cocktail Dress\nWomen\'s Summer Dresses\nSummer Dresses for Juniors\nChiffon Dresses for Women\nOccasion\nCasual Gathering\nDating\nBeach\nDaily\nWeekend\nHoliday', 'firstListOnTime': None, 'status': True, 'imageUrls': ['https://m.media-amazon.com/images/I/61SDgoPtd5L._AC_UL1500_.jpg', 'https://m.media-amazon.com/images/I/61MSvhgi0SL._AC_UL1500_.jpg', 'https://m.media-amazon.com/images/I/71JB5Yq3VpL._AC_UL1500_.jpg', 'https://m.media-amazon.com/images/I/61wwurp3boL._AC_UL1500_.jpg', 'https://m.media-amazon.com/images/I/71UhIu6dQoL._AC_UL1500_.jpg', 'https://m.media-amazon.com/images/I/71ob4SJwYTL._AC_UL1500_.jpg'], 'stock': True, 'fba': True, 'weight': {'itemWeight': '', 'shippingWeight': ''}, 'dimensions': {'productDimensions': '', 'packageDimensions': '', 'itemDimensions': ''}, 'sellerId': 'AKP8ORU74U505', 'sellerName': 'Gardenwed', 'isAmazon': False, 'crawlTime': '2021-08-11 03:48:25', 'latestCommentTime': None, 'badgeName': '', 'badgeLink': ''}], 'prohibitionCauses': '', 'account': '3599-范令陀', 'categoryNodeLevel': None, 'listNodes': ['7141123011', '7147440011', '7581668011', '7581674011', '9650170011'], 'categoryMark': True, 'keywordMark': False, 'shopMark': False, 'bestsellerMark': True, 'followMark': False, 'newReleasesMark': False, 'moverShakerMark': False, 'mostWishMark': True, 'giftIdeasMark': False, 'dataSources': 'es_amazon_base_listing', 'saleEmpId': 15382, 'saleEmpName': '181581-胡生斌', 'systemCategoryId': 1, 'systemCategoryPaths': '服装/服饰配件', 'amazonPlatSite': 'Amazon-US', 'mainSku': '9SD102520', 'skuMapStr': None, 'associatedSystemSku': None, 'developmentStatus': 0, 'cancelNotesInfo': None, 'distributor': '181324-全柳', 'distributionTime': '2021-08-11 14:41:05'}]
-testCase02 (apps.DasSystem.test.case.test_amazon_selectApi.Test_amazonSelectApi)执行——>【通过】
+testCase02 (apps.AllSystemData.DasSystem.test.case.test_amazon_selectApi.Test_amazonSelectApi)执行——>【通过】
 </pre>
                         
                         
@@ -612,11 +544,11 @@ testCase02 (apps.DasSystem.test.case.test_amazon_selectApi.Test_amazonSelectApi)
                 </tr>
             
                 <tr>
-                    <td>8</td>
+                    <td>11</td>
                     <td class="Test_parameterConfigSaveApi">Test_parameterConfigSaveApi</td>
                     <td>testCase01</td>
                     <td>这是第一个用例</td>
-                    <td>0.179s</td>
+                    <td>0.0838s</td>
                     
                         <td class="text-success">成功</td>
                     
@@ -631,7 +563,7 @@ testCase02 (apps.DasSystem.test.case.test_amazon_selectApi.Test_amazonSelectApi)
                         
 
                             <pre>取消开发备注---保存接口响应成功
-testCase01 (apps.DasSystem.test.case.test_paramConfigApi.Test_parameterConfigSaveApi)执行——>【通过】
+testCase01 (apps.AllSystemData.DasSystem.test.case.test_paramConfigApi.Test_parameterConfigSaveApi)执行——>【通过】
 </pre>
                         
                         
@@ -639,11 +571,11 @@ testCase01 (apps.DasSystem.test.case.test_paramConfigApi.Test_parameterConfigSav
                 </tr>
             
                 <tr>
-                    <td>9</td>
+                    <td>12</td>
                     <td class="Test_parameterConfigSaveApi">Test_parameterConfigSaveApi</td>
                     <td>testCase02</td>
                     <td>这是第二个用例</td>
-                    <td>0.209s</td>
+                    <td>0.103s</td>
                     
                         <td class="text-success">成功</td>
                     
@@ -658,7 +590,7 @@ testCase01 (apps.DasSystem.test.case.test_paramConfigApi.Test_parameterConfigSav
                         
 
                             <pre>取消开发备注---保存接口响应成功
-testCase02 (apps.DasSystem.test.case.test_paramConfigApi.Test_parameterConfigSaveApi)执行——>【通过】
+testCase02 (apps.AllSystemData.DasSystem.test.case.test_paramConfigApi.Test_parameterConfigSaveApi)执行——>【通过】
 </pre>
                         
                         
@@ -666,11 +598,11 @@ testCase02 (apps.DasSystem.test.case.test_paramConfigApi.Test_parameterConfigSav
                 </tr>
             
                 <tr>
-                    <td>10</td>
+                    <td>13</td>
                     <td class="Test_paramConfigQueryApi">Test_paramConfigQueryApi</td>
                     <td>testCase01</td>
                     <td>参数配置-取消开发备注查询用例</td>
-                    <td>0.145s</td>
+                    <td>0.0698s</td>
                     
                         <td class="text-success">成功</td>
                     
@@ -685,187 +617,7 @@ testCase02 (apps.DasSystem.test.case.test_paramConfigApi.Test_parameterConfigSav
                         
 
                             <pre>接口响应成功,接口返回值:['test01', 'test02']
-testCase01 (apps.DasSystem.test.case.test_paramConfigQueryApi.Test_paramConfigQueryApi)执行——>【通过】
-</pre>
-                        
-                        
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>11</td>
-                    <td class="_FailedTest">_FailedTest</td>
-                    <td>apps.DasSystem.test.case.test_smt_associateSystemSkuApi</td>
-                    <td>None</td>
-                    <td>0.000998s</td>
-                    
-                        <td class="text-danger">错误</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>Traceback (most recent call last):
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 59, in testPartExecutor
-    yield
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 605, in run
-    testMethod()
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\loader.py", line 34, in testFailure
-    raise self._exception
-</pre>
-                        
-
-                            <pre>ImportError: Failed to import test module: apps.DasSystem.test.case.test_smt_associateSystemSkuApi
-Traceback (most recent call last):
-  File "C:\python\lib\unittest\loader.py", line 428, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "C:\python\lib\unittest\loader.py", line 369, in _get_module_from_name
-    __import__(name)
-  File "D:\flask_test\apps\DasSystem\test\case\test_smt_associateSystemSkuApi.py", line 13, in <module>
-    from apps.utils.es_database_util import Es_handleOperator
-  File "D:\flask_test\apps\utils\es_database_util.py", line 8, in <module>
-    from apps.Common_Config.db_config import ReadConfig
-ImportError: cannot import name 'ReadConfig'
-
-</pre>
-                        
-
-                            <pre>apps.DasSystem.test.case.test_smt_associateSystemSkuApi (unittest.loader._FailedTest)执行——>【错误Error】
-</pre>
-                        
-                        
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>12</td>
-                    <td class="_FailedTest">_FailedTest</td>
-                    <td>apps.DasSystem.test.case.test_smt_productGetDijiaApi</td>
-                    <td>None</td>
-                    <td>0.000999s</td>
-                    
-                        <td class="text-danger">错误</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>Traceback (most recent call last):
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 59, in testPartExecutor
-    yield
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 605, in run
-    testMethod()
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\loader.py", line 34, in testFailure
-    raise self._exception
-</pre>
-                        
-
-                            <pre>ImportError: Failed to import test module: apps.DasSystem.test.case.test_smt_productGetDijiaApi
-Traceback (most recent call last):
-  File "C:\python\lib\unittest\loader.py", line 428, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "C:\python\lib\unittest\loader.py", line 369, in _get_module_from_name
-    __import__(name)
-  File "D:\flask_test\apps\DasSystem\test\case\test_smt_productGetDijiaApi.py", line 13, in <module>
-    from apps.utils.es_database_util import Es_handleOperator
-  File "D:\flask_test\apps\utils\es_database_util.py", line 8, in <module>
-    from apps.Common_Config.db_config import ReadConfig
-ImportError: cannot import name 'ReadConfig'
-
-</pre>
-                        
-
-                            <pre>apps.DasSystem.test.case.test_smt_productGetDijiaApi (unittest.loader._FailedTest)执行——>【错误Error】
-</pre>
-                        
-                        
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>13</td>
-                    <td class="_FailedTest">_FailedTest</td>
-                    <td>apps.DasSystem.test.case.test_smt_productGetTongkuanApi</td>
-                    <td>None</td>
-                    <td>0.0s</td>
-                    
-                        <td class="text-danger">错误</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>Traceback (most recent call last):
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 59, in testPartExecutor
-    yield
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 605, in run
-    testMethod()
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\loader.py", line 34, in testFailure
-    raise self._exception
-</pre>
-                        
-
-                            <pre>ImportError: Failed to import test module: apps.DasSystem.test.case.test_smt_productGetTongkuanApi
-Traceback (most recent call last):
-  File "C:\python\lib\unittest\loader.py", line 428, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "C:\python\lib\unittest\loader.py", line 369, in _get_module_from_name
-    __import__(name)
-  File "D:\flask_test\apps\DasSystem\test\case\test_smt_productGetTongkuanApi.py", line 14, in <module>
-    from apps.utils.es_database_util import Es_handleOperator
-  File "D:\flask_test\apps\utils\es_database_util.py", line 8, in <module>
-    from apps.Common_Config.db_config import ReadConfig
-ImportError: cannot import name 'ReadConfig'
-
-</pre>
-                        
-
-                            <pre>apps.DasSystem.test.case.test_smt_productGetTongkuanApi (unittest.loader._FailedTest)执行——>【错误Error】
+testCase01 (apps.AllSystemData.DasSystem.test.case.test_paramConfigQueryApi.Test_paramConfigQueryApi)执行——>【通过】
 </pre>
                         
                         
@@ -874,12 +626,12 @@ ImportError: cannot import name 'ReadConfig'
             
                 <tr>
                     <td>14</td>
-                    <td class="_FailedTest">_FailedTest</td>
-                    <td>apps.DasSystem.test.case.test_smt_releaseProductApi</td>
-                    <td>None</td>
-                    <td>0.000994s</td>
+                    <td class="Test_smtAssociateSySkuApi">Test_smtAssociateSySkuApi</td>
+                    <td>testCase01</td>
+                    <td>SMT关联系统SKU第一个用例</td>
+                    <td>0.218s</td>
                     
-                        <td class="text-danger">错误</td>
+                        <td class="text-success">成功</td>
                     
                     <td>
                         <button type="button" class="btn btn-success btn_info">查看详情</button>
@@ -891,41 +643,8 @@ ImportError: cannot import name 'ReadConfig'
                     <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
                         
 
-                            <pre>Traceback (most recent call last):
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 59, in testPartExecutor
-    yield
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\case.py", line 605, in run
-    testMethod()
-</pre>
-                        
-
-                            <pre>  File "C:\python\lib\unittest\loader.py", line 34, in testFailure
-    raise self._exception
-</pre>
-                        
-
-                            <pre>ImportError: Failed to import test module: apps.DasSystem.test.case.test_smt_releaseProductApi
-Traceback (most recent call last):
-  File "C:\python\lib\unittest\loader.py", line 428, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "C:\python\lib\unittest\loader.py", line 369, in _get_module_from_name
-    __import__(name)
-  File "D:\flask_test\apps\DasSystem\test\case\test_smt_releaseProductApi.py", line 14, in <module>
-    from apps.utils.es_database_util import Es_handleOperator
-  File "D:\flask_test\apps\utils\es_database_util.py", line 8, in <module>
-    from apps.Common_Config.db_config import ReadConfig
-ImportError: cannot import name 'ReadConfig'
-
-</pre>
-                        
-
-                            <pre>apps.DasSystem.test.case.test_smt_releaseProductApi (unittest.loader._FailedTest)执行——>【错误Error】
+                            <pre>关联系统SKU--接口响应成功
+testCase01 (apps.AllSystemData.DasSystem.test.case.test_smt_associateSystemSkuApi.Test_smtAssociateSySkuApi)执行——>【通过】
 </pre>
                         
                         
@@ -934,10 +653,118 @@ ImportError: cannot import name 'ReadConfig'
             
                 <tr>
                     <td>15</td>
+                    <td class="Test_smtAssociateSySkuApi">Test_smtAssociateSySkuApi</td>
+                    <td>testCase02</td>
+                    <td>SMT关联系统SKU第二个用例</td>
+                    <td>0.14s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>接口响应失败,失败原因:产品系统中不存在该sku.,接口地址:http://192.168.3.162:80/das/smt/AccountProductInfo/associatedSystemSku,请求参数:{'args': "{'ids': ['05fc43ac-1675-4b6a-8b94-cfce2bb1dffc', 'd05f60e2-790f-4333-bc2f-4cd2d46690b8', 'b93e4c7e-7799-49bd-8e5c-c6820bc099cf', 'c304a63b-6c49-4808-8989-0222bcc61c00', '5ad16619-9bf1-4927-9c63-8530a34d4f68', '660f6ef1-0c22-405a-81d3-610b1e39ab60', 'e7c7c036-ff93-403e-9c37-68723703f2d6', 'a60ff786-fa94-4990-b697-612da0572e0a', '5bbe3946-9fb7-4465-823a-054801b08600', '6935615c-0995-40ea-8c6f-8f8afe47d3e3'], 'systemSku': '8ZZ800161S'}"}
+testCase02 (apps.AllSystemData.DasSystem.test.case.test_smt_associateSystemSkuApi.Test_smtAssociateSySkuApi)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>16</td>
+                    <td class="Test_smtProdcutGetDijiaApi">Test_smtProdcutGetDijiaApi</td>
+                    <td>testCase01</td>
+                    <td>SMT低价查询第一个用例</td>
+                    <td>0.219s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>接口响应成功,响应结果:https://kj.1688.com/pdt_dijiakaifa.html?detailUrl=https%3A%2F%2Fae01.alicdn.com%2Fkf%2FHeefe5ea552c346ddae9dc4920b8d9f96p%2F7mm-Endoscope-Camera-Flexible-IP67-Waterproof-Micro-USB-Inspection-Borescope-Camera-for-Android-PC-Notebook-6LEDs.jpg
+testCase01 (apps.AllSystemData.DasSystem.test.case.test_smt_productGetDijiaApi.Test_smtProdcutGetDijiaApi)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>17</td>
+                    <td class="Test_smtProductGetTongkuanApi">Test_smtProductGetTongkuanApi</td>
+                    <td>testCase01</td>
+                    <td>SMT同款查询第一个用例</td>
+                    <td>0.25s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>接口响应成功,响应结果:https://kj.1688.com/pdt_tongkuan.html?imgUrl=https%3A%2F%2Fae01.alicdn.com%2Fkf%2FHeefe5ea552c346ddae9dc4920b8d9f96p%2F7mm-Endoscope-Camera-Flexible-IP67-Waterproof-Micro-USB-Inspection-Borescope-Camera-for-Android-PC-Notebook-6LEDs.jpg
+testCase01 (apps.AllSystemData.DasSystem.test.case.test_smt_productGetTongkuanApi.Test_smtProductGetTongkuanApi)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>18</td>
+                    <td class="Test_smtReleaseRroductApi">Test_smtReleaseRroductApi</td>
+                    <td>testCase01</td>
+                    <td>SMT释放产品第一个用例</td>
+                    <td>0.661s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>释放产品---接口响应成功
+testCase01 (apps.AllSystemData.DasSystem.test.case.test_smt_releaseProductApi.Test_smtReleaseRroductApi)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>19</td>
                     <td class="Test_smtSelectApi">Test_smtSelectApi</td>
                     <td>testCase01</td>
                     <td>这是第一个测试用例</td>
-                    <td>0.834s</td>
+                    <td>0.746s</td>
                     
                         <td class="text-success">成功</td>
                     
@@ -952,7 +779,7 @@ ImportError: cannot import name 'ReadConfig'
                         
 
                             <pre>接口响应成功,响应结果:[{'id': '4a282ee7-8987-41db-bacd-2baed18acd24', 'country': 'US', 'productId': '4000032062735', 'createdTime': '2021-11-25 11:03:29', 'updatedTime': '2021-11-25 11:03:29', 'claimTime': '2021-11-25 11:03:29', 'crawlTime': '2021-11-25 11:03:29', 'dataStatus': 1, 'productUrl': 'https://www.aliexpress.com/item/4000032062735.html', 'searchKeywords': '', 'incrementInfo': [{'id': '5248d71e-f57b-11eb-8da0-000000000096', 'productId': '4000032062735', 'variationsInfos': [{'skuId': '10000000072566549', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16261, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Beige'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H96ae539a5fe9420a86dcbc702683dcec0/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H96ae539a5fe9420a86dcbc702683dcec0/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566548', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15818, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'White'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566551', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 17247, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Beige'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H96ae539a5fe9420a86dcbc702683dcec0/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H96ae539a5fe9420a86dcbc702683dcec0/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566550', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16592, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Beige'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H96ae539a5fe9420a86dcbc702683dcec0/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H96ae539a5fe9420a86dcbc702683dcec0/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566547', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15037, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'White'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566546', 'originalPrice': None, 'price': 1.22, 'discount': None, 'stock': 13620, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'White'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566557', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15744, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Ginger yellow'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566556', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15289, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Ginger yellow'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566559', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15101, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Light Coffee'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1YifLbXY7gK0jSZKzq6yikpXaK/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1YifLbXY7gK0jSZKzq6yikpXaK/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566558', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15110, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Light Coffee'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1YifLbXY7gK0jSZKzq6yikpXaK/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1YifLbXY7gK0jSZKzq6yikpXaK/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566553', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15685, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Red'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1T8DObeP2gK0jSZFoq6yuIVXac/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1T8DObeP2gK0jSZFoq6yuIVXac/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566552', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16163, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Red'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1T8DObeP2gK0jSZFoq6yuIVXac/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1T8DObeP2gK0jSZFoq6yuIVXac/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566555', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15716, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Ginger yellow'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566554', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16237, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Red'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1T8DObeP2gK0jSZFoq6yuIVXac/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1T8DObeP2gK0jSZFoq6yuIVXac/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566565', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15281, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Toon purple'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H848e1b620a384e7ebff9f60d8addeaeci/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H848e1b620a384e7ebff9f60d8addeaeci/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566564', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15737, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Toon purple'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H848e1b620a384e7ebff9f60d8addeaeci/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H848e1b620a384e7ebff9f60d8addeaeci/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566567', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15704, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'GRAY'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1HnfPbhD1gK0jSZFyq6AiOVXan/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1HnfPbhD1gK0jSZFyq6AiOVXan/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566566', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15736, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Toon purple'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H848e1b620a384e7ebff9f60d8addeaeci/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H848e1b620a384e7ebff9f60d8addeaeci/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566561', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 17788, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Brown'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H9adf69926b914752a78544f4cd17c4fdN/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H9adf69926b914752a78544f4cd17c4fdN/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566560', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16057, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Light Coffee'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1YifLbXY7gK0jSZKzq6yikpXaK/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1YifLbXY7gK0jSZKzq6yikpXaK/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566563', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 17728, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Brown'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H9adf69926b914752a78544f4cd17c4fdN/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H9adf69926b914752a78544f4cd17c4fdN/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566562', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 17486, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Brown'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H9adf69926b914752a78544f4cd17c4fdN/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H9adf69926b914752a78544f4cd17c4fdN/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566572', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15679, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Grey'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/Hd6184d87ec6944b2a039fce77d2789254/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/Hd6184d87ec6944b2a039fce77d2789254/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566569', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16326, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'GRAY'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1HnfPbhD1gK0jSZFyq6AiOVXan/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1HnfPbhD1gK0jSZFyq6AiOVXan/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566568', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15599, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'GRAY'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1HnfPbhD1gK0jSZFyq6AiOVXan/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1HnfPbhD1gK0jSZFyq6AiOVXan/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566571', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15165, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Grey'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/Hd6184d87ec6944b2a039fce77d2789254/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/Hd6184d87ec6944b2a039fce77d2789254/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566570', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16137, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Grey'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/Hd6184d87ec6944b2a039fce77d2789254/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/Hd6184d87ec6944b2a039fce77d2789254/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}], 'title': '2019 Baby Autumn Winter Tights Hot Baby Toddler Kid Girl Ribbed Stockings Cotton Warm Pantyhose Solid Candy Color Tight 0-4Years', 'keywords': 'Tights & Stockings,Mother & Kids, Cheap Tights & Stockings,High Quality Mother & Kids,Tights & Stockings, , ', 'cateIds': ['1501', '100003199', '200000869', '200001654'], 'categories': ['Mother & Kids', "Girls' Clothing", 'Socks, Tights & Leggings', 'Tights & Stockings'], 'favorite': 48484, 'reviews': 2862, 'rating': 4.7, 'totalSold': 4284, 'totalStock': 430043, 'imageUrls': ['https://ae01.alicdn.com/kf/H33472a64a43043bdbb5c7885dfbe7648x/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg', 'https://ae01.alicdn.com/kf/HTB1UibLbXY7gK0jSZKzq6yikpXaq/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg', 'https://ae01.alicdn.com/kf/H5a48d44545c6493f93439e1dac82ebe9W/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg', 'https://ae01.alicdn.com/kf/HTB1bgHObeL2gK0jSZFmq6A7iXXaO/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg', 'https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg', 'https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg'], 'currency': 'USD', 'maxPrice': 1.5, 'minPrice': 1.22, 'merchantId': '2956029', 'merchantName': 'pudcoco Official Store', 'brand': 'pudcoco', 'specifications': 'Brand Name: pudcoco\nOrigin: CN(Origin)\nMaterial: COTTON\nMaterial: Polyester\nItem Type: TIGHT\nFit: Fits true to size, take your normal size\nModel Number: TIGHT\nGender: Unisex\nPattern Type: Solid\nDepartment Name: Children', 'description': "Hello! Welcome to our store!\nQuality is the first with best service. customers all are our friends.\nFashion design,100% Brand New, high quality!\nMaterial: Cotton Blend\nGender:Baby & Toddler Girls'& Boys'\nColor: As picture show\nStyle: Cute, Casual,Fashion\nSize\xa0S: 0-1 Years 45Cm\nM:\xa01-2Years\xa0 50Cm\nL: 3-4Years\xa055Cm\nThere is 2-3% difference according to manual measurement.\nplease check the measurement chart carefully before you buy the item.\n1 inch = 2.54 cm\nPlease note that slight color difference should be acceptable due to the light and screen.\nWhat You Get:\n1 pc STOCKING", 'descImgUrls': [], 'crawlTime': '2021-08-05 07:25:57', 'order7': None, 'order14': None, 'order21': None, 'order28': None}], 'categoryNodeLevel': 2, 'cateIds': ['1501', '100003199'], 'prohibitionCauses': '', 'account': '4837-吴涛', 'categoryMark': True, 'keywordMark': False, 'shopMark': False, 'bestsellerMark': True, 'shopTopSellingMark': False, 'followMark': False, 'saleEmpId': None, 'saleEmpName': None, 'systemCategoryId': None, 'systemCategoryPaths': None, 'smtPlatSite': None, 'mainSku': None, 'skuMapStr': None, 'associatedSystemSku': None, 'developmentStatus': 0, 'cancelNotesInfo': None, 'distributor': None, 'distributionTime': None, 'infringementReviewer': None, 'infringementReviewTime': None, 'auditStatus': None, 'auditNotesInfo': None, 'salesProhibition': None, 'infringementTypeName': None, 'infringementObj': None}, {'id': '3ec3feb1-9ea7-4d7b-93f3-df5ea9052134', 'country': 'US', 'productId': '4000032062735', 'createdTime': '2021-08-24 10:42:50', 'updatedTime': '2021-08-24 10:42:50', 'claimTime': '2021-08-24 10:42:50', 'crawlTime': '2021-08-24 10:42:50', 'dataStatus': 1, 'productUrl': 'https://www.aliexpress.com/item/4000032062735.html', 'searchKeywords': '', 'incrementInfo': [{'id': '5248d71e-f57b-11eb-8da0-000000000096', 'productId': '4000032062735', 'variationsInfos': [{'skuId': '10000000072566549', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16261, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Beige'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H96ae539a5fe9420a86dcbc702683dcec0/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H96ae539a5fe9420a86dcbc702683dcec0/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566548', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15818, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'White'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566551', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 17247, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Beige'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H96ae539a5fe9420a86dcbc702683dcec0/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H96ae539a5fe9420a86dcbc702683dcec0/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566550', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16592, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Beige'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H96ae539a5fe9420a86dcbc702683dcec0/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H96ae539a5fe9420a86dcbc702683dcec0/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566547', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15037, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'White'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566546', 'originalPrice': None, 'price': 1.22, 'discount': None, 'stock': 13620, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'White'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566557', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15744, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Ginger yellow'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566556', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15289, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Ginger yellow'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566559', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15101, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Light Coffee'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1YifLbXY7gK0jSZKzq6yikpXaK/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1YifLbXY7gK0jSZKzq6yikpXaK/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566558', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15110, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Light Coffee'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1YifLbXY7gK0jSZKzq6yikpXaK/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1YifLbXY7gK0jSZKzq6yikpXaK/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566553', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15685, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Red'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1T8DObeP2gK0jSZFoq6yuIVXac/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1T8DObeP2gK0jSZFoq6yuIVXac/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566552', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16163, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Red'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1T8DObeP2gK0jSZFoq6yuIVXac/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1T8DObeP2gK0jSZFoq6yuIVXac/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566555', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15716, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Ginger yellow'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566554', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16237, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Red'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1T8DObeP2gK0jSZFoq6yuIVXac/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1T8DObeP2gK0jSZFoq6yuIVXac/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566565', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15281, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Toon purple'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H848e1b620a384e7ebff9f60d8addeaeci/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H848e1b620a384e7ebff9f60d8addeaeci/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566564', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15737, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Toon purple'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H848e1b620a384e7ebff9f60d8addeaeci/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H848e1b620a384e7ebff9f60d8addeaeci/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566567', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15704, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'GRAY'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1HnfPbhD1gK0jSZFyq6AiOVXan/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1HnfPbhD1gK0jSZFyq6AiOVXan/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566566', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15736, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Toon purple'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H848e1b620a384e7ebff9f60d8addeaeci/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H848e1b620a384e7ebff9f60d8addeaeci/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566561', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 17788, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Brown'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H9adf69926b914752a78544f4cd17c4fdN/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H9adf69926b914752a78544f4cd17c4fdN/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566560', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16057, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Light Coffee'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1YifLbXY7gK0jSZKzq6yikpXaK/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1YifLbXY7gK0jSZKzq6yikpXaK/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566563', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 17728, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Brown'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H9adf69926b914752a78544f4cd17c4fdN/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H9adf69926b914752a78544f4cd17c4fdN/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566562', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 17486, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Brown'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/H9adf69926b914752a78544f4cd17c4fdN/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/H9adf69926b914752a78544f4cd17c4fdN/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566572', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15679, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Grey'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/Hd6184d87ec6944b2a039fce77d2789254/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/Hd6184d87ec6944b2a039fce77d2789254/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566569', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16326, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'GRAY'}, {'name': 'Size', 'value': '3 to 4T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1HnfPbhD1gK0jSZFyq6AiOVXan/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1HnfPbhD1gK0jSZFyq6AiOVXan/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566568', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15599, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'GRAY'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/HTB1HnfPbhD1gK0jSZFyq6AiOVXan/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/HTB1HnfPbhD1gK0jSZFyq6AiOVXan/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566571', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 15165, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Grey'}, {'name': 'Size', 'value': '2 to 3T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/Hd6184d87ec6944b2a039fce77d2789254/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/Hd6184d87ec6944b2a039fce77d2789254/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}, {'skuId': '10000000072566570', 'originalPrice': None, 'price': 1.5, 'discount': None, 'stock': 16137, 'sold': None, 'attrInfos': [{'name': 'Color', 'value': 'Dark Grey'}, {'name': 'Size', 'value': '0 to 1T'}], 'skuImagePath': ['https://ae01.alicdn.com/kf/Hd6184d87ec6944b2a039fce77d2789254/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_50x50.jpg', 'https://ae01.alicdn.com/kf/Hd6184d87ec6944b2a039fce77d2789254/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg_640x640.jpg']}], 'title': '2019 Baby Autumn Winter Tights Hot Baby Toddler Kid Girl Ribbed Stockings Cotton Warm Pantyhose Solid Candy Color Tight 0-4Years', 'keywords': 'Tights & Stockings,Mother & Kids, Cheap Tights & Stockings,High Quality Mother & Kids,Tights & Stockings, , ', 'cateIds': ['1501', '100003199', '200000869', '200001654'], 'categories': ['Mother & Kids', "Girls' Clothing", 'Socks, Tights & Leggings', 'Tights & Stockings'], 'favorite': 48484, 'reviews': 2862, 'rating': 4.7, 'totalSold': 4284, 'totalStock': 430043, 'imageUrls': ['https://ae01.alicdn.com/kf/H33472a64a43043bdbb5c7885dfbe7648x/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg', 'https://ae01.alicdn.com/kf/HTB1UibLbXY7gK0jSZKzq6yikpXaq/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg', 'https://ae01.alicdn.com/kf/H5a48d44545c6493f93439e1dac82ebe9W/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg', 'https://ae01.alicdn.com/kf/HTB1bgHObeL2gK0jSZFmq6A7iXXaO/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg', 'https://ae01.alicdn.com/kf/HTB1FgzPbbj1gK0jSZFuq6ArHpXas/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg', 'https://ae01.alicdn.com/kf/HTB1HwnNbfb2gK0jSZK9q6yEgFXaM/2019-Baby-Autumn-Winter-Tights-Hot-Baby-Toddler-Kid-Girl-Ribbed-Stockings-Cotton-Warm-Pantyhose-Solid.jpg'], 'currency': 'USD', 'maxPrice': 1.5, 'minPrice': 1.22, 'merchantId': '2956029', 'merchantName': 'pudcoco Official Store', 'brand': 'pudcoco', 'specifications': 'Brand Name: pudcoco\nOrigin: CN(Origin)\nMaterial: COTTON\nMaterial: Polyester\nItem Type: TIGHT\nFit: Fits true to size, take your normal size\nModel Number: TIGHT\nGender: Unisex\nPattern Type: Solid\nDepartment Name: Children', 'description': "Hello! Welcome to our store!\nQuality is the first with best service. customers all are our friends.\nFashion design,100% Brand New, high quality!\nMaterial: Cotton Blend\nGender:Baby & Toddler Girls'& Boys'\nColor: As picture show\nStyle: Cute, Casual,Fashion\nSize\xa0S: 0-1 Years 45Cm\nM:\xa01-2Years\xa0 50Cm\nL: 3-4Years\xa055Cm\nThere is 2-3% difference according to manual measurement.\nplease check the measurement chart carefully before you buy the item.\n1 inch = 2.54 cm\nPlease note that slight color difference should be acceptable due to the light and screen.\nWhat You Get:\n1 pc STOCKING", 'descImgUrls': [], 'crawlTime': '2021-08-05 07:25:57', 'order7': None, 'order14': None, 'order21': None, 'order28': None}], 'categoryNodeLevel': 2, 'cateIds': ['1501', '100003199'], 'prohibitionCauses': '', 'account': '181538-李露', 'categoryMark': True, 'keywordMark': False, 'shopMark': False, 'bestsellerMark': True, 'shopTopSellingMark': False, 'followMark': False, 'saleEmpId': None, 'saleEmpName': None, 'systemCategoryId': None, 'systemCategoryPaths': None, 'smtPlatSite': None, 'mainSku': None, 'skuMapStr': None, 'associatedSystemSku': None, 'developmentStatus': 0, 'cancelNotesInfo': None, 'distributor': None, 'distributionTime': None, 'infringementReviewer': '10290-覃杨凯', 'infringementReviewTime': None, 'auditStatus': 0, 'auditNotesInfo': None, 'salesProhibition': None, 'infringementTypeName': None, 'infringementObj': None}]
-testCase01 (apps.DasSystem.test.case.test_smt_selectApi.Test_smtSelectApi)执行——>【通过】
+testCase01 (apps.AllSystemData.DasSystem.test.case.test_smt_selectApi.Test_smtSelectApi)执行——>【通过】
 </pre>
                         
                         
@@ -960,11 +787,11 @@ testCase01 (apps.DasSystem.test.case.test_smt_selectApi.Test_smtSelectApi)执行
                 </tr>
             
                 <tr>
-                    <td>16</td>
+                    <td>20</td>
                     <td class="Test_smtSelectApi">Test_smtSelectApi</td>
                     <td>testCase02</td>
                     <td>这是第二个测试用例</td>
-                    <td>0.944s</td>
+                    <td>0.706s</td>
                     
                         <td class="text-success">成功</td>
                     
@@ -979,7 +806,7 @@ testCase01 (apps.DasSystem.test.case.test_smt_selectApi.Test_smtSelectApi)执行
                         
 
                             <pre>接口响应成功,响应结果:[]
-testCase02 (apps.DasSystem.test.case.test_smt_selectApi.Test_smtSelectApi)执行——>【通过】
+testCase02 (apps.AllSystemData.DasSystem.test.case.test_smt_selectApi.Test_smtSelectApi)执行——>【通过】
 </pre>
                         
                         
@@ -1115,9 +942,9 @@ testCase02 (apps.DasSystem.test.case.test_smt_selectApi.Test_smtSelectApi)执行
                     show: false
                 },
                 data: [
-                    {value: 7, name: '通过'},
+                    {value: 20, name: '通过'},
                     {value: 0, name: '失败'},
-                    {value: 9, name: '错误'},
+                    {value: 0, name: '错误'},
                     {value: 0, name: '跳过'}
                 ]
             }
@@ -1137,8 +964,8 @@ testCase02 (apps.DasSystem.test.case.test_smt_selectApi.Test_smtSelectApi)执行
             {
                 name: '测试结果',
                 type: 'gauge',
-                detail: {formatter: '43.75%'},
-                data: [{value: '43.75', name: '用例通过率'}],
+                detail: {formatter: '100.00%'},
+                data: [{value: '100.00', name: '用例通过率'}],
                 axisLine: {
                     lineStyle: {
                         color: [

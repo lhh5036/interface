@@ -9,8 +9,8 @@
 
 import requests
 import json
-from apps.logger import MyLog
-from apps.Common_Config.interface_common_info import InterfaceCommonInfo, Common_TokenHeader
+from logger import MyLog
+from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgtSystem_interface_url import UsermgtApiUrl
 # 实例化日志类
 logger = MyLog("operate_api_data").getlog()
