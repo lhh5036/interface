@@ -6,9 +6,8 @@
 '''
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiUrl
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-import requests
-import json
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
+from apps.get_page_content_by_requests import get_page_content_by_requests
 from apps.logger import MyLog
 
 
@@ -27,8 +26,8 @@ class ParameterConfigQueryApi():
         self.url = url
         self.formData = formData
         self.header = header
-        respResult = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
         # 响应值
+        respResult = get_page_content_by_requests(self.url,self.header,self.formData)
         responseData = respResult.json()["result"]["cancelDevNotesInfoList"]
         if respResult.status_code == 200:
             logger.info("paramConfigQuery ---->end!")
