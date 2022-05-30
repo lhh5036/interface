@@ -7,10 +7,9 @@
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiUrl
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
-
+from apps.get_page_content_by_requests import get_page_content_by_requests
 from apps.logger import MyLog
 import json
-import requests
 
 
 # 实例化日志类
@@ -37,7 +36,7 @@ class OperateTaskApi():
         self.url = url # 请求地址
         self.header = header
         self.fromData = categoryTask_param01
-        resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.fromData))
+        resp = get_page_content_by_requests(self.url,self.header,self.fromData)
         if resp.json()["success"] == True:
             logger.info("operateTaskFunction------------------->end")
             return "接口响应成功"

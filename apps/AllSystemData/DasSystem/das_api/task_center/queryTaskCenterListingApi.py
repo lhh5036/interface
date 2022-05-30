@@ -8,11 +8,11 @@ from apps.AllSystemData.DasSystem.das_api.publicCommonJudgeEmptySevice import Pu
 from apps.AllSystemData.DasSystem.das_api.publicCommonParamService import PublicCommonParamServiceClass
 from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCommonUrlServiceClass
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-
+from apps.get_page_content_by_requests import get_page_content_by_requests
 from apps.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 import json
-import requests
+
 
 # 实例化日志类
 logger = MyLog("TaskCenterRankListingApi").getlog() # 初始化
@@ -43,7 +43,7 @@ class TaskCenterRankListingApi():
         self.url = url # 请求地址
         self.header = header
         self.fromData = rankListing01
-        resp = requests.post(url=self.url, headers=self.header, data=json.dumps(self.fromData))
+        resp = get_page_content_by_requests(self.url, self.header,self.fromData)
         if resp.json()["success"] == True:
             logger.info("taskCenterRankListingFunction------------------->end")
             return "接口响应成功,响应结果:{0}".format(resp.json()["rows"])

@@ -9,9 +9,10 @@ from apps.AllSystemData.DasSystem.das_api.publicCommonParamService import Public
 from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCommonUrlServiceClass
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
+from apps.get_page_content_by_requests import get_page_content_by_requests
 from apps.logger import MyLog
 import json
-import requests
+
 
 
 # 实例化日志类
@@ -41,7 +42,7 @@ class QueryCategoryListApi():
         self.url = url  # 请求地址
         self.header = header
         self.fromData = categoryListing01
-        resp = requests.post(url=self.url, headers=self.header, data=json.dumps(self.fromData))
+        resp = get_page_content_by_requests(self.url, self.header, self.fromData)
         if resp.json()["success"] == True:
             logger.info("queryCategoryListFunction------------------->end")
             return "接口响应成功,响应结果:{0}".format(resp.json()["result"])
