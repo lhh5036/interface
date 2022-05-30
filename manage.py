@@ -7,7 +7,20 @@
 
 from apps import create_app
 from flask import render_template,request,redirect,url_for,session,flash
-app = create_app("dev")
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import DataRequired, EqualTo, Length
+
+
+app = create_app("dev") # 实例化APP
+
+class RegisterForm(FlaskForm):
+    username = StringField(label='username',validators=[DataRequired()], render_kw={'placeholder': 'username', 'class': 'input_text'})
+    password = PasswordField(label='password',validators=[DataRequired(),Length(3, 8, '密码长度必须在3-8之间')])
+    cpassword = PasswordField(label='cpassword',validators=[DataRequired(),EqualTo('password', '两次密码不一致')])
+    submit = SubmitField('提交')
+
+
 
 # 接口调用入口
 @app.route("/projectEntry")
