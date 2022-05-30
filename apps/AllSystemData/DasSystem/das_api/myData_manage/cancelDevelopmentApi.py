@@ -8,15 +8,17 @@ from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCom
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from flask import current_app as app
+from logger import MyLog
+import json
 
-
+# 实例化日志类
+logger = MyLog("CancelDevelopmentApi").getlog() # 初始化
 # 我的数据-取消开发接口服务类
 class CancelDevelopmentApi():
     def cancelDevelopmentFunction(self,platform,searchType,paramList,cancelNotesInfoStr):
-        app.logger.info("cancelDevelopmentFunction ---->start!")
+        logger.info("cancelDevelopmentFunction ---->start!")
         if len(paramList) == 0 or cancelNotesInfoStr == "" or searchType == "" or platform == "":
-            app.logger.error("cancelDevelopmentFunction --> request parameters is wrong!")
+            logger.error("cancelDevelopmentFunction --> request parameters is wrong!")
             return "请求参数为空"
         # 将入参list转为string类型
         paramStr = ""
@@ -37,9 +39,8 @@ class CancelDevelopmentApi():
         self.header = header
         resp = get_page_content_by_requests(self.url, self.header, self.formData)
         if resp.json()["success"] == True:
-            app.logger.info("cancelDevelopmentFunction ---->end!")
+            logger.info("cancelDevelopmentFunction ---->end!")
             return "取消开发---接口响应成功"
         else:
-            app.logger.error("cancelDevelopmentFunction -->response Data is wrong!")
+            logger.error("cancelDevelopmentFunction -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"], url, reqParam)
-

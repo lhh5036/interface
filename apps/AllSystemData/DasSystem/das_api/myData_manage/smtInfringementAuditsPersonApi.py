@@ -8,12 +8,15 @@ from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiU
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from flask import current_app as app
+from logger import MyLog
 
+
+# 实例化日志类
+logger = MyLog("SmtInfringementAuditsPersonApi").getlog() # 初始化
 # 数据管理-我的数据SMT查询接口
 class SmtInfringementAuditsPersonApi():
     def smtInfringementAuditsPersonFun(self):# 设置动态入参，参数类型为字典{"name":"Jack","age":18}
-        app.logger.info("smtInfringementAuditsPersonFun------------------>start")
+        logger.info("smtInfringementAuditsPersonFun------------------>start")
         url = DasApiUrl.smt_infringementAuditPerson_url # 获取请求地址
         formData = DasApiInputParam.infringementAduitsPerson_param # 获取请求参数
         header = Common_TokenHeader().token_header("new","181324") # 获取请求头信息
@@ -22,10 +25,10 @@ class SmtInfringementAuditsPersonApi():
         self.header = header
         resp = get_page_content_by_requests(self.url,self.header,self.formData)
         if resp.status_code == 200:
-            app.logger.info("smtInfringementAuditsPersonFun------------------>end")
+            logger.info("smtInfringementAuditsPersonFun------------------>end")
             return "接口响应成功,响应结果:{0}".format(resp.json()["result"])
         else:
-            app.logger.error("smtInfringementAuditsPersonFun -->response Data is wrong!")
+            logger.error("smtInfringementAuditsPersonFun -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,formData)
 
 

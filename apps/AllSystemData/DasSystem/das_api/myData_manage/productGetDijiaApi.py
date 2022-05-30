@@ -8,15 +8,18 @@ from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiU
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from flask import current_app as app
+from logger import MyLog
 
+
+# 实例化日志类
+logger = MyLog("ProductGetDijiaApi").getlog() # 初始化
 
 # 数据管理-低价接口
 class ProductGetDijiaApi():
     def productDetDiJia(self,paramStr): # 请求入参为用例名称，string类型的参数
-        app.logger.info("productGenDijia ---->start!")
+        logger.info("productGenDijia ---->start!")
         if paramStr == "":
-            app.logger.error("productGenDijia --> ReqParam:paramStr is null!")
+            logger.error("productGenDijia --> ReqParam:paramStr is null!")
             return "请求入参不能为空!"
         # 接口请求地址
         url = DasApiUrl.productGenDijia_url
@@ -32,12 +35,8 @@ class ProductGetDijiaApi():
         self.url = url
         respResult = get_page_content_by_requests(self.url, self.header,self.formData)
         if respResult.json()["success"] == True:
-            app.logger.info("productGenDijia ---->end!")
+            logger.info("productGenDijia ---->end!")
             return "接口响应成功,响应结果:{0}".format(respResult.json()["result"])
         else:
-            app.logger.error("productGenDijia -->response Data is wrong!")
+            logger.error("productGenDijia -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(respResult.json()["errorMsg"], url,reqParam)
-
-
-
-

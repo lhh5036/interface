@@ -8,14 +8,16 @@ from apps.AllSystemData.DasSystem.das_api.publicCommonParamService import Public
 from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCommonUrlServiceClass
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from flask import current_app as app
+from logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 import json
 
+# 实例化日志类
+logger = MyLog("DataManageProductListingApi").getlog() # 初始化
 
 class DataManageProductListingApi():
     def dataManageProductListingInfo(self,platform,searchType,kwargs):
-        app.logger.info("dataManageProductListingInfo ---->start!")
+        logger.info("dataManageProductListingInfo ---->start!")
         # 接口地址
         url = PublicCommonUrlServiceClass().getApiUrl(platform,searchType) # 获取请求地址
         # 拼接接口入参
@@ -38,10 +40,10 @@ class DataManageProductListingApi():
         self.header = header
         resp = get_page_content_by_requests(self.url,self.header,self.formData)
         if resp.json()["success"] == True:
-            app.logger.info("dataManageProductListingInfo---->end!")
+            logger.info("dataManageProductListingInfo---->end!")
             return "接口响应成功,响应结果:{0}".format(resp.json()["rows"])
         else:
-            app.logger.error("dataManageProductListingInfo -->response Data is wrong!")
+            logger.error("dataManageProductListingInfo -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,productInfoSelect01)
 
 
