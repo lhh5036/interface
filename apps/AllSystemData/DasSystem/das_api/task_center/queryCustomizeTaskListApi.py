@@ -8,15 +8,17 @@ from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiU
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from flask import current_app as app
+from logger import MyLog
 import json
 
 
+# 实例化日志类
+logger = MyLog("QueryCustomizeTaskListingApi").getlog() # 初始化
 class QueryCustomizeTaskListingApi():
     def queryCustomizeTaskListingFunction(self,idList):
-        app.logger.info("queryCustomizeTaskListingFunction------------------->start")
+        logger.info("queryCustomizeTaskListingFunction------------------->start")
         if len(idList) == 0:
-            app.logger.error("queryCustomizeTaskListingFunction------>InputParam is null")
+            logger.error("queryCustomizeTaskListingFunction------>InputParam is null")
             return "请求参数为空!"
         # 获取请求地址
         url = DasApiUrl.queryCustomizeTask_url
@@ -33,10 +35,10 @@ class QueryCustomizeTaskListingApi():
 
         resp = get_page_content_by_requests(self.url,self.header,self.formData)
         if resp.json()["success"] == True:
-            app.logger.info("queryCustomizeTaskListingFunction------------------->end")
+            logger.info("queryCustomizeTaskListingFunction------------------->end")
             return "接口响应成功,响应结果:{0}".format(resp.json()["result"])
         else:
-            app.logger.error("queryCustomizeTaskListingFunction------------->response Data is wrong!")
+            logger.error("queryCustomizeTaskListingFunction------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},接口类型:{2},请求参数:{3}".format(resp.json()["errorMsg"], url,queryCustomizeTask01)
 
 if __name__ == '__main__':

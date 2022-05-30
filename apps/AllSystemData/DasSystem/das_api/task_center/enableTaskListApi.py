@@ -8,15 +8,17 @@ from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiU
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from flask import current_app as app
+from logger import MyLog
 import json
 
 
+# 实例化日志类
+logger = MyLog("EnableTaskListApi").getlog() # 初始化
 class EnableTaskListApi():
     def enableTaskListFunction(self,idsList):
-        app.logger.info("enableTaskListFunction------------------->start")
+        logger.info("enableTaskListFunction------------------->start")
         if len(idsList) == 0:
-            app.logger.error("enableTaskListFunction------------>Input Param is wrong")
+            logger.error("enableTaskListFunction------------>Input Param is wrong")
             return "请求参数为空"
         # 接口请求头
         header = Common_TokenHeader().token_header("new", "181324")
@@ -32,10 +34,10 @@ class EnableTaskListApi():
         self.fromData = unenableTask_param01
         resp = get_page_content_by_requests(self.url,self.header, self.fromData)
         if resp.json()["success"] == True:
-            app.logger.info("enableTaskListFunction------------------->end")
+            logger.info("enableTaskListFunction------------------->end")
             return "任务启用成功"
         else:
-            app.logger.error("enableTaskListFunction------------->response Data is wrong!")
+            logger.error("enableTaskListFunction------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"], url, unenableTask_param01)
 
 if __name__ == '__main__':

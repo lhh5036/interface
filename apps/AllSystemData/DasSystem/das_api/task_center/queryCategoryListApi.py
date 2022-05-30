@@ -10,17 +10,20 @@ from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCom
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from flask import current_app as app
+from logger import MyLog
 import json
 
 
+
+# 实例化日志类
+logger = MyLog("QueryCategoryListApi").getlog() # 初始化
 class QueryCategoryListApi():
     def queryCategoryListFunction(self,platform,searchType,kwargs):# 字典格式
-        app.logger.info("queryCategoryListFunction------------------->start")
+        logger.info("queryCategoryListFunction------------------->start")
         # 是否校验入参
         needJudge = PublicCommonJudgeEmptySevice().needJudgeEmpty(platform, searchType, kwargs)
         if needJudge == True:
-            app.logger.error("queryCategoryListFunction-------->InputParam is null")
+            logger.error("queryCategoryListFunction-------->InputParam is null")
             return "请求参数为空!"
         # 获取请求参数
         categoryListing03, categoryListing02, categoryListing01 = PublicCommonParamServiceClass().getApiInputParam(platform, searchType)
@@ -41,10 +44,10 @@ class QueryCategoryListApi():
         self.fromData = categoryListing01
         resp = get_page_content_by_requests(self.url, self.header, self.fromData)
         if resp.json()["success"] == True:
-            app.logger.info("queryCategoryListFunction------------------->end")
+            logger.info("queryCategoryListFunction------------------->end")
             return "接口响应成功,响应结果:{0}".format(resp.json()["result"])
         else:
-            app.logger.error("queryCategoryListFunction------------->response Data is wrong!")
+            logger.error("queryCategoryListFunction------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},接口类型:{2},请求参数:{3}".format(resp.json()["errorMsg"], url, searchType,categoryListing01)
 
 if __name__ == '__main__':

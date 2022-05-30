@@ -9,18 +9,19 @@ from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from flask import current_app as app
+from logger import MyLog
 import json
 
-
+# 实例化日志类
+logger = MyLog("AddKeywordsTaskListApi").getlog() # 初始化
 class AddKeywordsTaskListApi():
     def addKeywordsTaskListFunction(self,kwargs):
-        app.logger.info("addKeywordsTaskListFunction------------------->start")
+        logger.info("addKeywordsTaskListFunction------------------->start")
         country = parseRequestDatas("country", kwargs)
         saleChannel = parseRequestDatas("saleChannel",kwargs)
         keyword = parseRequestDatas("keyword",kwargs)
         if country == "" or saleChannel == "" or keyword == "":
-            app.logger.error("addKeywordsTaskListFunction---------->Input Params is null")
+            logger.error("addKeywordsTaskListFunction---------->Input Params is null")
             return "请求参数为空!"
         # 获取请求参数
         addKeywordsTask_param02 = DasApiInputParam.addKeywordsTask_param02
@@ -39,10 +40,10 @@ class AddKeywordsTaskListApi():
         self.formData = addKeywordsTask_param01
         resp = get_page_content_by_requests(self.url,self.header,self.formData)
         if resp.json()["success"] == True:
-            app.logger.info("addKeywordsTaskListFunction------------------->end")
+            logger.info("addKeywordsTaskListFunction------------------->end")
             return "任务添加成功"
         else:
-            app.logger.error("addKeywordsTaskListFunction------------->response Data is wrong!")
+            logger.error("addKeywordsTaskListFunction------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"], addTask_url,addKeywordsTask_param01)
 
 if __name__ == '__main__':
