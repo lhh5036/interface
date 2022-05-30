@@ -12,7 +12,7 @@ def setup_log(config):
     # 当前文件的根路径
     garder_path = os.path.dirname(os.path.realpath(__file__))
     log_time = time.strftime("%Y-%m-%d")
-    log_path = garder_path + "\\apps\\logs\\"
+    log_path = garder_path + "/apps/logs/"
     log_name = log_path + "{0}.log".format(log_time)
     '''配置日志'''
     # 设置日志的记录等级
