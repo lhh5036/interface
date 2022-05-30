@@ -24,8 +24,8 @@ from urllib.parse import urlparse
 test_url = WebHook.test_url
 das_api = Blueprint("das_api",__name__) # 实例化一个蓝图(Blueprint)对象
 
-das_garder_path = os.path.dirname(os.path.realpath(__file__)) + "/test/case/" # 获取数据分析测试用例文件路径
-das_report_path = os.path.dirname(os.path.realpath(__file__)) + "/report" # 测试数据分析报告路径
+das_garder_path = os.path.dirname(os.path.realpath(__file__)) + "\\test\\case\\" # 获取数据分析测试用例文件路径
+das_report_path = os.path.dirname(os.path.realpath(__file__)) + "\\report" # 测试数据分析报告路径
 
 # 为创建的蓝图添加路由配置
 @das_api.route('/allTestCase/execute')
@@ -51,15 +51,15 @@ def run_dasTestcaseExecute():
     # runner.run(discover)
     # fp.close()
     # 方法二
-    # filename = "result_das_"+now
-    # runner = bf(discover) # 实例化BeautifulReport模块
-    # runner.report(filename=filename,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
+    filename = "result_das_"+now
+    runner = bf(discover) # 实例化BeautifulReport模块
+    runner.report(filename=filename,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
     # 添加浏览器驱动
-    # global driver
-    # driver = webdriver.Chrome()
-    # driver.maximize_window()
-    # driver.get(report_abspath)
-    # return "数据分析测试用例执行完成!"
+    global driver
+    driver = webdriver.Chrome()
+    driver.maximize_window()
+    driver.get(report_abspath)
+    return "数据分析测试用例执行完成!"
     # 方法三
     # runner = TestRunner(discover)
     # runner.run() # 执行用例
@@ -67,21 +67,21 @@ def run_dasTestcaseExecute():
     # runner.dingtalk_notice(url=test_url)
     # return "数据分析测试用例执行完成!"
     # 方法四--推送钉钉报告连接
-    filename = "result_das_"+now + ".html"
-    # fp = open(report_abspath,"wb")
-    # runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title='数据分析系统-接口自动化报告,测试结果如下:',description='用例执行情况:')
-    # runner.run(discover)
-
-    runner = bf(discover) # 实例化BeautifulReport模块
-    runner.report(filename=filename,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
-    # 远程连接192.168.3.10服务器(需要先设置免密ssh-copy-id ip)
-    os.popen('ssh 192.168.3.10 "rm -rf /data/interfaceAutoTest_file/result_das_*"') # 远程连接,删除远程192.168.3.10上面原来的报告
-    os.popen('scp -r /home/InterfaceAutoTest/apps/AllSystemData/DasSystem/report/{0} \
-                 root@192.168.3.10:/data/interfaceAutoTest_file/'.format(filename)) # 远程传入最新的报告
-    download_file_url = "http://192.168.3.10:81/interfaceAutoTest_file/{0}".format(filename)
-    das_url = urlparse(download_file_url).geturl()
-    msg = "数据分析测试报告地址:{0}".format(das_url)
-    # DingHelp(test_url,msg,["13923832556"]).dinghelp() # 推送钉钉消息
-    return render_template("system_report.html",
-                           das_report_url=das_url,
-                           urlname='das')
+    # filename = "result_das_"+now + ".html"
+    # # fp = open(report_abspath,"wb")
+    # # runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title='数据分析系统-接口自动化报告,测试结果如下:',description='用例执行情况:')
+    # # runner.run(discover)
+    #
+    # runner = bf(discover) # 实例化BeautifulReport模块
+    # runner.report(filename=filename,description='数据分析系统-接口自动化报告',report_dir=das_report_path)
+    # # 远程连接192.168.3.10服务器(需要先设置免密ssh-copy-id ip)
+    # os.popen('ssh 192.168.3.10 "rm -rf /data/interfaceAutoTest_file/result_das_*"') # 远程连接,删除远程192.168.3.10上面原来的报告
+    # os.popen('scp -r /home/InterfaceAutoTest/apps/AllSystemData/DasSystem/report/{0} \
+    #              root@192.168.3.10:/data/interfaceAutoTest_file/'.format(filename)) # 远程传入最新的报告
+    # download_file_url = "http://192.168.3.10:81/interfaceAutoTest_file/{0}".format(filename)
+    # das_url = urlparse(download_file_url).geturl()
+    # msg = "数据分析测试报告地址:{0}".format(das_url)
+    # # DingHelp(test_url,msg,["13923832556"]).dinghelp() # 推送钉钉消息
+    # return render_template("system_report.html",
+    #                        das_report_url=das_url,
+    #                        urlname='das')

@@ -9,21 +9,18 @@ from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 
-from logger import MyLog
+from flask import current_app as app
 import json
 import requests
 
-# 实例化日志类
-logger = MyLog("AddJSKwCategoryListApi").getlog()  # 初始化
-
 class AddJSKwCategoryListApi():
     def addJSKwCategoryListFunction(self,kwargs):
-        logger.info("addJSKwCategoryListFunction------------------->start")
+        app.logger.info("addJSKwCategoryListFunction------------------->start")
         ruleName = parseRequestDatas("ruleName",kwargs) # 规则名
         category = parseRequestDatas("category",kwargs) # 类目
         country = parseRequestDatas("country",kwargs) # 国家
         if ruleName == "" or country == "" or category == "":
-            logger.error("addJSKwCategoryListFunction------>ruleName or country or category is null")
+            app.logger.error("addJSKwCategoryListFunction------>ruleName or country or category is null")
             return "规则名或国家或类目为空!"
         url = DasApiUrl.addJsKwRule_url  # 请求地址
         # 请求参数
@@ -44,10 +41,10 @@ class AddJSKwCategoryListApi():
         self.formData = addJsKwRule_param01
         resp = requests.post(url=self.url, headers=self.header, data=json.dumps(self.formData))
         if resp.json()["success"] == True:
-            logger.info("addJSKwCategoryListFunction------------------->end")
+            app.logger.info("addJSKwCategoryListFunction------------------->end")
             return "规则创建成功"
         else:
-            logger.error("addJSKwCategoryListFunction------------->response Data is wrong!")
+            app.logger.error("addJSKwCategoryListFunction------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,addJsKwRule_param01)
 
 if __name__ == '__main__':

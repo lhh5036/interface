@@ -8,15 +8,14 @@ from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiU
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
-from logger import MyLog
+from flask import current_app as app
 import json
 import requests
 
-# 实例化日志类
-logger = MyLog("QueryJsKwRuleListApi").getlog()  # 初始化
+
 class QueryJsKwRuleListApi():
     def queryJsKwRuleListFunction(self,kwargs):# 参数为dict格式
-        logger.info("queryJsKwRuleListFunction------------------->start")
+        app.logger.info("queryJsKwRuleListFunction------------------->start")
         url = DasApiUrl.queryJsKwRule_url  # 请求地址
         # 请求参数
         queryJsKwRule_param03 = DasApiInputParam.queryJsKwRule_param03
@@ -38,10 +37,10 @@ class QueryJsKwRuleListApi():
         self.formData = queryJsKwRule_param01
         resp = requests.post(url=self.url, headers=self.header, data=json.dumps(self.formData))
         if resp.json()["success"] == True:
-            logger.info("queryJsKwRuleListFunction------------------->end")
+            app.logger.info("queryJsKwRuleListFunction------------------->end")
             return "接口响应成功,接口返回值:{0}".format(resp.json()["rows"])
         else:
-            logger.error("queryJsKwRuleListFunction------------->response Data is wrong!")
+            app.logger.error("queryJsKwRuleListFunction------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"], url,queryJsKwRule_param01)
 
 if __name__ == '__main__':
