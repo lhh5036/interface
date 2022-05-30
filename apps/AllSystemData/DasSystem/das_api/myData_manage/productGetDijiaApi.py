@@ -4,13 +4,12 @@
 @Author:quanliu
 @Desc:低价接口服务
 '''
-import requests
-
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiUrl
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
+from apps.get_page_content_by_requests import get_page_content_by_requests
 from apps.logger import MyLog
-import json
+
 
 # 实例化日志类
 logger = MyLog("ProductGetDijiaApi").getlog() # 初始化
@@ -34,7 +33,7 @@ class ProductGetDijiaApi():
         self.header = header
         self.formData = reqParam
         self.url = url
-        respResult = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
+        respResult = get_page_content_by_requests(self.url, self.header,self.formData)
         if respResult.json()["success"] == True:
             logger.info("productGenDijia ---->end!")
             return "接口响应成功,响应结果:{0}".format(respResult.json()["result"])

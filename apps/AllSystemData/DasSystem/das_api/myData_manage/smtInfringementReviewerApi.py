@@ -7,6 +7,7 @@
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiUrl
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
+from apps.get_page_content_by_requests import get_page_content_by_requests
 from apps.logger import MyLog
 import json
 import requests
@@ -32,7 +33,7 @@ class SmtInfringementReviewerApi():
         self.url = url
         self.header = header
         self.data = smt_infringementReviewer01
-        resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.data))
+        resp = get_page_content_by_requests(self.url,self.header,self.data)
         if resp.status_code == 200:
             logger.info("smtInfringementReviewerFun--------------->end")
             return "分配侵权审核人---接口响应成功"

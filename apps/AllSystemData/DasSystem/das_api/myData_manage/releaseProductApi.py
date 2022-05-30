@@ -7,10 +7,8 @@
 from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCommonUrlServiceClass
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
+from apps.get_page_content_by_requests import get_page_content_by_requests
 from apps.logger import MyLog
-import requests
-import json
-
 
 # 实例化日志类
 logger = MyLog("releaseProductInfoApi").getlog() # 初始化
@@ -38,7 +36,7 @@ class releaseProductInfoApi():
         self.url = url
         self.formData = reqParam
         self.header = header
-        resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
+        resp = get_page_content_by_requests(self.url,self.header,self.formData)
         if resp.json()["success"] == True:
             logger.info("releaseProductInfo ---->end!")
             return "释放产品---接口响应成功"

@@ -6,9 +6,9 @@
 '''
 from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCommonUrlServiceClass
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-import requests
 import json
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
+from apps.get_page_content_by_requests import get_page_content_by_requests
 from apps.logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 
@@ -62,7 +62,7 @@ class InfringementAuditsApi():
             self.url = url
             self.header = header
             self.formData = resultReplace
-            response = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
+            response = get_page_content_by_requests(self.url,self.header,self.formData)
             if response.json()["success"] == True:
                 logger.info("infringementAuditFunction-------->end")
                 return "侵权审核---接口响应成功"
