@@ -8,7 +8,7 @@ from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiU
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
-from apps.logger import MyLog
+from logger import MyLog
 import json
 import requests
 

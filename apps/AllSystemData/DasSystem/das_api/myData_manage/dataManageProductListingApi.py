@@ -8,10 +8,9 @@ from apps.AllSystemData.DasSystem.das_api.publicCommonParamService import Public
 from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCommonUrlServiceClass
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from apps.logger import MyLog
+from logger import MyLog
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 import json
-import requests
 
 # 实例化日志类
 logger = MyLog("DataManageProductListingApi").getlog() # 初始化
@@ -38,13 +37,13 @@ class DataManageProductListingApi():
         self.url = url
         self.formData = productInfoSelect01
         self.header = header
-        resp = get_page_content_by_requests(url=self.url,headers=self.header,data=json.dumps(self.formData))
-        if resp["success"] == True:
+        resp = get_page_content_by_requests(self.url,self.header,self.formData)
+        if resp.json()["success"] == True:
             logger.info("dataManageProductListingInfo---->end!")
             return "接口响应成功,响应结果:{0}".format(resp.json()["rows"])
         else:
             logger.error("dataManageProductListingInfo -->response Data is wrong!")
-            return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp["errorMsg"],url,productInfoSelect01)
+            return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,productInfoSelect01)
 
 
 if __name__ == '__main__':

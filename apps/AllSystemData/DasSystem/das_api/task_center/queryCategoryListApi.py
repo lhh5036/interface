@@ -10,7 +10,7 @@ from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCom
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from apps.logger import MyLog
+from logger import MyLog
 import json
 
 

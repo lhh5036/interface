@@ -8,8 +8,7 @@ from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCom
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from apps.logger import MyLog
-import requests
+from logger import MyLog
 import json
 
 # 实例化日志类
@@ -38,11 +37,11 @@ class CancelDevelopmentApi():
         self.url = url
         self.formData = reqParam
         self.header = header
-        resp = get_page_content_by_requests(url=self.url, headers=self.header, data=json.dumps(self.formData))
-        if resp["success"] == True:
+        resp = get_page_content_by_requests(self.url, self.header, self.formData)
+        if resp.json()["success"] == True:
             logger.info("cancelDevelopmentFunction ---->end!")
             return "取消开发---接口响应成功"
         else:
             logger.error("cancelDevelopmentFunction -->response Data is wrong!")
-            return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp["errorMsg"], url, reqParam)
+            return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"], url, reqParam)
 

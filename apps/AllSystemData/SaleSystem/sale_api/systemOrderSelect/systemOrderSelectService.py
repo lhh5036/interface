@@ -8,7 +8,7 @@ from apps.AllSystemData.SaleSystem.sale_api.saleSystem_interface_param import Sa
 from apps.AllSystemData.SaleSystem.sale_api.saleSystem_interface_url import SaleApiUrl
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 
-from apps.logger import MyLog
+from logger import MyLog
 import json
 import requests
 
