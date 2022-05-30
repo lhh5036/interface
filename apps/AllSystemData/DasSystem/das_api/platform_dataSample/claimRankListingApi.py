@@ -7,10 +7,10 @@
 from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCommonUrlServiceClass
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
-
+from apps.get_page_content_by_requests import get_page_content_by_requests
 from apps.logger import MyLog
 import json
-import requests
+
 
 # 实例化日志类
 logger = MyLog("ClaimRankLinstingApi").getlog() # 初始化
@@ -31,7 +31,7 @@ class ClaimRankLinstingApi():
         self.url = url
         self.header = header
         self.formData = claimProduct01
-        resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
+        resp = get_page_content_by_requests(self.url,self.header,self.formData)
         if resp.json()["success"] == True:
             logger.info("claimRankListingFun -------->end")
             return "认领产品接口调用成功"
