@@ -8,16 +8,18 @@ from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCom
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from flask import current_app as app
+from logger import MyLog
 import json
 
 
+# 实例化日志类
+logger = MyLog("CheckAccountProductByRankApi").getlog() # 初始化
 # 校验哪些产品已经被认领过接口类
 class CheckAccountProductByRankApi():
     def checkProductByRankFunction(self,platform,searchType,salechannelname,idsList):
-        app.logger.info("checkProductByRankFunction------>start")
+        logger.info("checkProductByRankFunction------>start")
         if salechannelname == "" or len(idsList) == 0:
-            app.logger.error("checkProductByRankFunction --> request parameters is wrong!")
+            logger.error("checkProductByRankFunction --> request parameters is wrong!")
             return "请求参数为空"
 
         # 拼接内层参数
@@ -36,11 +38,8 @@ class CheckAccountProductByRankApi():
         self.header = header
         responseResult = get_page_content_by_requests(self.url,self.header,self.fromData)
         if responseResult.json()["success"] == True:
-            app.logger.info("checkProductByRankFunction------>end")
+            logger.info("checkProductByRankFunction------>end")
             return "接口响应成功,响应结果:{0}".format(responseResult.json()["result"])
         else:
-            app.logger.error("checkProductByRankFunction -->response Data is wrong!")
+            logger.error("checkProductByRankFunction -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(responseResult.json()["errorMsg"],url,checkAccountProductByRank01)
-
-
-

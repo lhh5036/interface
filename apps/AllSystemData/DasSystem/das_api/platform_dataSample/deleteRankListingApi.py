@@ -8,15 +8,16 @@ from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCom
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from flask import current_app as app
+from logger import MyLog
 import json
 
-
+# 实例化日志类
+logger = MyLog("DeleteRankListingApi").getlog() # 初始化
 class DeleteRankListingApi():
     def deleteRankListingFunction(self,platform,searchType,paramList): # 请求参数为List
-        app.logger.info("deleteRankListingFunction--------->start")
+        logger.info("deleteRankListingFunction--------->start")
         if len(paramList) == 0:
-            app.logger.error("deleteRankListingFunction----->InputParameter is null")
+            logger.error("deleteRankListingFunction----->InputParameter is null")
             return "请求参数为空!"
         # 对入参进行参数化
         deleteProduct02 = DasApiInputParam.deleteProduct02
@@ -31,9 +32,9 @@ class DeleteRankListingApi():
         self.url = url
         resp = get_page_content_by_requests(self.url,self.header,self.formData)
         if resp.status_code == 200:
-            app.logger.info("deleteRankListingFunction-------->end")
+            logger.info("deleteRankListingFunction-------->end")
             return "禁用接口响应成功"
         else:
-            app.logger.error("deleteRankListingFunction--------->response Data is wrong!")
+            logger.error("deleteRankListingFunction--------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,deleteProduct01)
 

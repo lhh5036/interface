@@ -8,15 +8,17 @@ from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCom
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from flask import current_app as app
+from logger import MyLog
 import json
 
 
+# 实例化日志类
+logger = MyLog("AllocationRankLinstingApi").getlog() # 初始化
 class AllocationRankLinstingApi():
     def allocationRankListingFunction(self,platform,searchType,idsList,claimantStr):
-        app.logger.info("allocationRankListingFunction -------->start")
+        logger.info("allocationRankListingFunction -------->start")
         if len(idsList) == 0 or searchType == "" or claimantStr == "":
-            app.logger.error("allocationRankListingFunction----->Input Parameter is null")
+            logger.error("allocationRankListingFunction----->Input Parameter is null")
             return "请求参数searchType或ids或分配人字段为空!"
         # 拼接请求参数
         allocationProduct02 = DasApiInputParam.allocationProduct02
@@ -32,8 +34,8 @@ class AllocationRankLinstingApi():
         self.formData = allocationProduct01
         resp = get_page_content_by_requests(self.url,self.header,self.formData)
         if resp.status_code == 200:
-            app.logger.info("allocationRankListingFunction -------->end")
+            logger.info("allocationRankListingFunction -------->end")
             return "分配接口响应成功"
         else:
-            app.logger.error("allocationRankListingFunction------>response Data is wrong!")
+            logger.error("allocationRankListingFunction------>response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,allocationProduct01)
