@@ -8,17 +8,15 @@ from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCom
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from logger import MyLog
+from flask import current_app as app
 import json
 
 
-# 实例化日志类
-logger = MyLog("GetAllocationUserListApi").getlog() # 初始化
 class GetAllocationUserListApi():
     def getAllocationUserListFunction(self,platform,searchType,jobNumber): # 请求参数为用户工号
-        logger.info("getAllocationUserListFunction--------->start")
+        app.logger.info("getAllocationUserListFunction--------->start")
         if jobNumber == "":
-            logger.error("getAllocationUserListFunction----->InputParameter is null")
+            app.logger.error("getAllocationUserListFunction----->InputParameter is null")
             return "请求参数为空!"
         # 对入参进行参数化
         allocationPerson02 = DasApiInputParam.allocationPerson02
@@ -33,8 +31,8 @@ class GetAllocationUserListApi():
         self.url = url
         resp = get_page_content_by_requests(self.url,self.header, self.formData)
         if resp.json()["success"] == True:
-            logger.info("getAllocationUserListFunction-------->end")
+            app.logger.info("getAllocationUserListFunction-------->end")
             return "接口响应成功,返回结果:{0}".format(resp.json()["result"])
         else:
-            logger.error("getAllocationUserListFunction--------->response Data is wrong!")
+            app.logger.error("getAllocationUserListFunction--------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"], url, allocationPerson01)

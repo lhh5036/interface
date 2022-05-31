@@ -9,22 +9,20 @@ from apps.AllSystemData.DasSystem.das_api.publicCommonParamService import Public
 from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCommonUrlServiceClass
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from logger import MyLog
+from flask import current_app as app
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 import json
 
 
-# 实例化日志类
-logger = MyLog("DataSmapleRankListingQueryApi").getlog() # 初始化
 class DataSmapleRankListingQueryApi():
     def dataSampleRankListingFunction(self,platform,searchType,kwargs):
-        logger.info("dataSampleRankListingFunction------------------->start")
+        app.logger.info("dataSampleRankListingFunction------------------->start")
         # 判断哪个页面的数据需要对入参进行判空
         isNeedEmpty = PublicCommonJudgeEmptySevice().needJudgeEmpty(platform, searchType,kwargs)
         if isNeedEmpty == True:
             country = parseRequestDatas("country", kwargs)  # 站点判空
             if country == "" or searchType == "":
-                logger.error("dataSampleRankListingFunction--------->InputParam:country or searchType is null")
+                app.logger.error("dataSampleRankListingFunction--------->InputParam:country or searchType is null")
                 return "请求参数country或searchType为空"
         # 获取请求参数
         rankListing03,rankListing02,rankListing01 = PublicCommonParamServiceClass().getApiInputParam(platform,searchType)
@@ -47,10 +45,10 @@ class DataSmapleRankListingQueryApi():
         self.fromData = rankListing01
         resp = get_page_content_by_requests(self.url,self.header,self.fromData)
         if resp.json()["success"] == True:
-            logger.info("dataSampleRankListingFunction------------------->end")
+            app.logger.info("dataSampleRankListingFunction------------------->end")
             return "接口响应成功,响应结果:{0}".format(resp.json()["rows"])
         else:
-            logger.error("dataSampleRankListingFunction------------->response Data is wrong!")
+            app.logger.error("dataSampleRankListingFunction------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},接口类型:{2},请求参数:{3}".format(resp.json()["errorMsg"], url,searchType,rankListing01)
 
 
