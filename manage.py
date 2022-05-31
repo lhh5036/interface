@@ -10,9 +10,9 @@ from flask import render_template,request,redirect,url_for,session,flash
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, EqualTo, Length
+import os
 
-
-app = create_app("dev") # 实例化APP
+app = create_app(os.getenv('FLASK_CONFIG') or 'default') # 实例化APP 进入开发环境
 
 class RegisterForm(FlaskForm):
     username = StringField(label='username',validators=[DataRequired()], render_kw={'placeholder': 'username', 'class': 'input_text'})
@@ -32,6 +32,8 @@ def estoneInterfaceEntry():
 
 @app.route('/login',methods=['POST','GET'])
 def login():
+    print(app.config)
+    print(app.logger)
     if request.method == 'POST':
         user = request.form['name']
         password = request.form['password']
@@ -71,4 +73,4 @@ def logout():
     return '666'
 
 if __name__ == '__main__':
-    app.run(host="127.0.0.1",debug=True)
+    app.run()
