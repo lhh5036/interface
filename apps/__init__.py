@@ -12,6 +12,7 @@ from apps.AllSystemData.TmsSystem import tms_view
 from apps.AllSystemData.UsermgtSystem import usermgt_view
 from apps.AllSystemData.WmsSystem import wms_view
 from config import DevelopementConfig, ProductionConfig
+from logger import setup_log
 
 config = {
     "dev": DevelopementConfig,
@@ -24,9 +25,9 @@ def create_app(config_name):
                 static_folder='static')
     # 设置配置类
     Config = config[config_name]
-
     # 加载配置
     app.config.from_object(Config)
+    app.logger.addHandler(setup_log(Config))
     app.config['JSON_AS_ASCII'] = False
     # 为session加密的key
     app.config['SECRET_KEY'] = "3422sfsdfsdw4523gdgdsfs" # secret_key设置成os.urandom(24)的话，它的值就会变化，而一旦发生变化，
