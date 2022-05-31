@@ -4,15 +4,20 @@
 @Author:quanliu 181324
 @Desc: 总入口
 '''
-
 from apps import create_app
 from flask import render_template,request,redirect,url_for,session,flash
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, EqualTo, Length
 import os
+# 必须要在引入db前先引入db.Model类
+from models import User,Teacher
+from dbExat import db
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default') # 实例化APP 进入开发环境
+
+db.drop_all(app=app) # 删除表
+db.create_all(app=app) # 创建表
 
 class RegisterForm(FlaskForm):
     username = StringField(label='username',validators=[DataRequired()], render_kw={'placeholder': 'username', 'class': 'input_text'})
@@ -32,8 +37,8 @@ def estoneInterfaceEntry():
 
 @app.route('/login',methods=['POST','GET'])
 def login():
-    print(app.config)
-    print(app.logger)
+    print(db)
+    print(db.Model.__name__)
     if request.method == 'POST':
         user = request.form['name']
         password = request.form['password']
