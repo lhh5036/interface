@@ -8,18 +8,16 @@ from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiU
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 
-from logger import MyLog
+from flask import current_app as app
 import json
 import requests
 
 
-# 实例化日志类
-logger = MyLog("TradeMarkListApi").getlog() # 初始化
 class TradeMarkListApi():
     def tradeMarkListFunction(self,tradeMark,paramStr):
-        logger.info("tradeMarkListFunction------------------->start")
+        app.logger.info("tradeMarkListFunction------------------->start")
         if tradeMark == "":
-            logger.error("tradeMarkListFunction------------------->The query region is empty!")
+            app.logger.error("tradeMarkListFunction------------------->The query region is empty!")
             return "请选择查询地区!"
         if tradeMark == "US":
             url = DasApiUrl.listUsTradeMark_url  # 请求地址
@@ -39,10 +37,10 @@ class TradeMarkListApi():
         self.formData = listTradeMark_param01
         resp = requests.post(url=self.url,headers=self.header,data=json.dumps(self.formData))
         if resp.json()["success"] == True:
-            logger.info("tradeMarkListFunction------------------->end")
+            app.logger.info("tradeMarkListFunction------------------->end")
             return "接口响应成功,接口返回值:{0}".format(resp.json()["rows"])
         else:
-            logger.error("tradeMarkListFunction------------->response Data is wrong!")
+            app.logger.error("tradeMarkListFunction------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},接口类型:{2},请求参数:{3}".format(resp.json()["errorMsg"], url,tradeMark,listTradeMark_param01)
 
 if __name__ == '__main__':
