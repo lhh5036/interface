@@ -8,17 +8,14 @@ from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiU
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from logger import MyLog
-
-# 实例化日志类
-logger = MyLog("ProductGetTongkuanApi").getlog() # 初始化
+from flask import current_app as app
 
 # 数据管理-同款接口服务
 class ProductGetTongkuanApi():
     def productGetTongkuan(self,paramStr):
-        logger.info("productGetTongkuan ---->start!")
+        app.logger.info("productGetTongkuan ---->start!")
         if paramStr == "":
-            logger.error("productGetTongkuan --> ReqParam:paramStr is null!")
+            app.logger.error("productGetTongkuan --> ReqParam:paramStr is null!")
             return "请求入参不能为空!"
 
         # 接口请求地址
@@ -39,8 +36,8 @@ class ProductGetTongkuanApi():
 
         respResult = get_page_content_by_requests(self.url, self.header,self.formData)
         if respResult.json()["success"] == True:
-            logger.info("productGetTongkuan ---->end!")
+            app.logger.info("productGetTongkuan ---->end!")
             return "接口响应成功,响应结果:{0}".format(respResult.json()["result"])
         else:
-            logger.error("productGetTongkuan -->response Data is wrong!")
+            app.logger.error("productGetTongkuan -->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(respResult.json()["errorMsg"], url,reqParam)
