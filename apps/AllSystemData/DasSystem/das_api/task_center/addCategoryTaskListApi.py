@@ -9,16 +9,13 @@ from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from logger import MyLog
+from flask import current_app as app
 import json
 
 
-# 实例化日志类
-logger = MyLog("AddCategoryTaskListApi").getlog()  # 初始化
-
 class AddCategoryTaskListApi():
     def addCategoryTaskListFunction(self, kwargs):
-        logger.info("addCategoryTaskListFunction------------------->start")
+        app.logger.info("addCategoryTaskListFunction------------------->start")
         country = parseRequestDatas("country", kwargs)
         saleChannel = parseRequestDatas("saleChannel", kwargs)
         listNodes = parseRequestDatas("listNodes",kwargs)
@@ -27,7 +24,7 @@ class AddCategoryTaskListApi():
         listNodeName = parseRequestDatas("listNodeName", kwargs)
 
         if country == "" or saleChannel == "" or categoryUrl == "" or categoryName == "":
-            logger.error("addCategoryTaskListFunction---------->Input Params is null")
+            app.logger.error("addCategoryTaskListFunction---------->Input Params is null")
             return "请求参数为空!"
         # 获取请求参数
         addCategoryTask_param02 = DasApiInputParam.addCategoryTask_param02
@@ -49,10 +46,10 @@ class AddCategoryTaskListApi():
         self.formData = addCategoryTask_param01
         resp = get_page_content_by_requests(self.url,self.header, addCategoryTask_param01)
         if resp.json()["success"] == True:
-            logger.info("addCategoryTaskListFunction------------------->end")
+            app.logger.info("addCategoryTaskListFunction------------------->end")
             return "任务添加成功"
         else:
-            logger.error("addCategoryTaskListFunction------------->response Data is wrong!")
+            app.logger.error("addCategoryTaskListFunction------------->response Data is wrong!")
             return "接口响应失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"], addTask_url,addCategoryTask_param01)
 
 if __name__ == '__main__':
