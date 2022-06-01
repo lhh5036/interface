@@ -23,7 +23,7 @@ def create_app(config_name):
     # 加载配置
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
-    # 创建db对象
+    # 初始化db
     db.init_app(app)
 
     app.logger.addHandler(setup_log(config[config_name])) # 日志绑定app
