@@ -7,14 +7,11 @@
 from dbExat import db
 
 
-class User(db.Model):
+class InterfaceResultModel(db.Model):
     __bind_key__ = "test_db" # 绑定数据库
-    __tablename__ = "user_info"
-    id = db.Column(db.Integer,primary_key=True,autoincrement=True) # 设置ID为主键并且自动增长
-    username = db.Column(db.String(80), unique=True)
-
-class Teacher(db.Model):
-    __bind_key__ = "test_db" # 绑定数据库
-    __tablename__ = "teacher_info"
-    id = db.Column(db.Integer,primary_key=True,autoincrement=True) # 设置ID为主键并且自动增长
-    username = db.Column(db.String(80), unique=True)
+    __tablename__ = "interface_result_info" # 接口自动化结果表
+    id = db.Column(db.Integer,primary_key=True,autoincrement=True)
+    systemName = db.Column(db.String(80), unique=True,comment="系统名称")
+    testCaseNum = db.Column(db.Integer,comment="总的用例数")
+    successCaseNum = db.Column(db.Integer,comment="执行成功数")
+    failCaseNum = db.Column(db.Integer,comment="失败数")
