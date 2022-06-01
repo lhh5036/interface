@@ -16,8 +16,8 @@ from dbExat import db
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default') # 实例化APP 进入开发环境
 
-db.drop_all(app=app) # 删除表
-db.create_all(app=app) # 创建表
+db.drop_all(bind=["test_db"],app=app) # 删除表
+db.create_all(bind=["test_db"],app=app) # 创建表
 
 class RegisterForm(FlaskForm):
     username = StringField(label='username',validators=[DataRequired()], render_kw={'placeholder': 'username', 'class': 'input_text'})

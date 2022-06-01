@@ -41,9 +41,9 @@ class DevelopmentConfig(BaseConfig):
     # 原来的cookie中的token就不能被新的secret_key验证，于是cookie就失效了，相应的session存的内容也就没了，所以会再次提示用户登录。因此以后secret_key最好设置成一个固定的字符串！
     SECRET_KEY = "3422sfsdfsdw4523gdgdsfs"
     # 可以绑定多个数据库（db.create_all(bind=['test_db'])）
-    # SQLALCHEMY_BINDS = {
-    #     "test_db":"mysql+pymysql://root:root@192.168.3.180:3306/data_warehouse?charset=utf8"
-    # }
+    SQLALCHEMY_BINDS = {
+        "test_db":"mysql+pymysql://root:root@192.168.3.180:3306/data_warehouse?charset=utf8"
+    }
 
 # 测试环境
 class TestingConfig(BaseConfig):
