@@ -91,7 +91,7 @@ def run_dasTestcaseExecute():
     # print(runner.failure_count) # 失败数
 
     # 1.先查询  2.后删除
-    InterfaceResultModel.query.filter(InterfaceResultModel.systemName == "das").delete()
+    InterfaceResultModel.query.filter(InterfaceResultModel.modelName == "das").delete()
     db.session.commit()
     # 重新插入数据库新的数据
     das_result = InterfaceResultModel(modelName="das",
