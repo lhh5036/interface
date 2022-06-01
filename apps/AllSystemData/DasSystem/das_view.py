@@ -7,7 +7,7 @@
 import HTMLTestRunner
 from BeautifulReport import BeautifulReport as bf
 from bs4 import BeautifulSoup
-from flask import Blueprint,render_template,redirect # 导入 Flask 中的蓝图 Blueprint 模块
+from flask import Blueprint,render_template,redirect,current_app # 导入 Flask 中的蓝图 Blueprint 模块
 import os
 import unittest
 from unittestreport import TestRunner
@@ -20,6 +20,9 @@ from apps.utils.date_operate_util import DateUtils
 from selenium import webdriver
 import json
 from urllib.parse import urlparse
+from models import InterfaceResultModel # 引入模板类
+from dbExat import db
+
 
 test_url = WebHook.test_url
 das_api = Blueprint("das_api",__name__) # 实例化一个蓝图(Blueprint)对象
@@ -82,4 +85,17 @@ def run_dasTestcaseExecute():
     das_url = urlparse(download_file_url).geturl()
     msg = "数据分析测试报告地址:{0}".format(das_url)
     # DingHelp(test_url,msg,["13923832556"]).dinghelp() # 推送钉钉消息
+
+    # print(runner.testsRun) # 总共运行数
+    # print(runner.success_count) # 成功数
+    # print(runner.failure_count) # 失败数
+
+    # 1.先查询  2.后删除
+    InterfaceResultModel.query.filter(InterfaceResultModel.systemName == "das").delete()
+    db.session.commit()
+    # 重新插入数据库新的数据
+    das_result = InterfaceResultModel(systemName="数据分析系统",testCaseNum=runner.testsRun,successCaseNum=runner.success_count,failCaseNum=runner.failure_count)
+    db.session.add(das_result)
+    db.session.commit()
+
     return render_template("system_report.html",das_report_url=das_url,urlname='das')
