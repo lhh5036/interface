@@ -5,34 +5,22 @@
 @Desc:数据采集-认领产品接口类
 '''
 from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCommonUrlServiceClass
-from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
-from apps.get_page_content_by_requests import get_page_content_by_requests
+from apps.Common_Config.operate_api_data import api_assemble_new
 from flask import current_app as app
 import json
 
 
-class ClaimRankLinstingApi():
-    def claimRankListingFun(self,platform,searchType,paramList):
-        app.logger.info("claimRankListingFun -------->start")
-        if len(paramList) == 0:
-            app.logger.error("claimRankListingFun----->Input Parameter is null")
-            return "请求参数为空"
-        # 参数化接口入参
-        claimProduct02 = DasApiInputParam.claimProduct02
-        claimProduct02["ids"] = paramList
-        claimProduct01 = DasApiInputParam.claimProduct01
-        claimProduct01["args"] = json.dumps(claimProduct02)
-        # 获取请求头信息
-        header = Common_TokenHeader().token_header("new","181324")
-        url = PublicCommonUrlServiceClass().getApiUrl(platform,searchType)
-        self.url = url
-        self.header = header
-        self.formData = claimProduct01
-        resp = get_page_content_by_requests(self.url,self.header,self.formData)
-        if resp.json()["success"] == True:
-            app.logger.info("claimRankListingFun -------->end")
-            return "认领产品接口调用成功"
-        else:
-            app.logger.error("claimRankListingFun -->response Data is wrong!")
-            return "接口调用失败,失败原因:{0},接口地址:{1},请求参数:{2}".format(resp.json()["errorMsg"],url,claimProduct01)
+@api_assemble_new()
+def claimRankListingFun(platform,searchType,paramList):
+    app.logger.info("claimRankListingFun -------->start")
+    if len(paramList) == 0:
+        app.logger.error("claimRankListingFun----->Input Parameter is null")
+        return "请求参数为空"
+    # 参数化接口入参
+    claimProduct02 = DasApiInputParam.claimProduct02
+    claimProduct02["ids"] = paramList
+    claimProduct01 = DasApiInputParam.claimProduct01
+    claimProduct01["args"] = json.dumps(claimProduct02)
+    url = PublicCommonUrlServiceClass().getApiUrl(platform,searchType)
+    return url,claimProduct01
