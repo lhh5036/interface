@@ -37,7 +37,7 @@ class Test_amazonCancelDevelopApi(unittest.TestCase):
     def testCase01(self):
         '''这是第一个测试用例'''
         responseData = paramConfigQuery()
-        secondParam = ",".join(random.sample(responseData.split('[')[1].rstrip("]").split(","),1))
+        secondParam = ",".join(random.sample(responseData[1]["result"]["cancelDevNotesInfoList"],1))
         resultList = self.firstInputParam()
         responseResult01 = cancelDevelopmentFunction("Amazon","amazon_cancelDevelopment", resultList, secondParam)
         print(responseResult01)
