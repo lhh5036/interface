@@ -14,14 +14,13 @@ from unittestreport import TestRunner
 import time
 import requests
 from pathlib import Path
+from apps.AllSystemData.updateInterResult import insterOrUpdateData
 from apps.Common_Config.Ding_Webhook import WebHook
 from apps.utils.Ding_Robot import DingHelp
 from apps.utils.date_operate_util import DateUtils
 from selenium import webdriver
 import json
 from urllib.parse import urlparse
-from models import InterfaceResultModel # 引入模板类
-from dbExat import db
 
 
 test_url = WebHook.test_url
@@ -90,26 +89,6 @@ def run_dasTestcaseExecute():
     # print(runner.success_count) # 成功数
     # print(runner.failure_count) # 失败数
 
-    # 1.先查询  2.后删除
-    das_result = InterfaceResultModel.query.filter(InterfaceResultModel.modelName == "das").all()
-    if len(das_result) <= 0:
-        try:
-            das_result = InterfaceResultModel(modelName="das",
-                                              systemName="数据分析系统",
-                                              testCaseNum=runner.testsRun,
-                                              successCaseNum=runner.success_count,
-                                              failCaseNum=runner.failure_count,
-                                              reportUrl=das_url)
-            db.session.add(das_result)
-            db.session.commit()
-        except Exception as e:
-            db.session.rollback()
-    else:
-        try:
-            InterfaceResultModel.query.filter(InterfaceResultModel.modelName == "das").update({"testCaseNum":runner.testsRun,"successCaseNum":runner.success_count,
-                                                                                         "failCaseNum":runner.failure_count,"reportUrl":das_url})
-            db.session.commit()
-        except Exception as e:
-            db.session.rollback()
-
+    # 存在则更新，不存在则插入
+    insterOrUpdateData("das","数据分析系统",runner.testsRun,runner.success_count,runner.failure_count,das_url)
     return render_template("system_report.html",das_report_url=das_url,urlname='das')
