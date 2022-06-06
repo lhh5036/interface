@@ -10,7 +10,7 @@ import unittest
 
 from apps.AllSystemData.DasSystem.das_common_settting import Das_Common_Setting
 from apps.AllSystemData.DasSystem.das_api.dasSystem_comConfig import Das_Common_Config
-from apps.AllSystemData.DasSystem.das_api.myData_manage.productGetTongkuanApi import ProductGetTongkuanApi
+from apps.AllSystemData.DasSystem.das_api.myData_manage.productGetTongkuanApi import productGetTongkuan
 from apps.utils.es_database_util import Es_handleOperator
 
 # 数据管理-我的数据SMT页面同款接口用例类
@@ -35,5 +35,5 @@ class Test_smtProductGetTongkuanApi(unittest.TestCase):
     def testCase01(self):
         '''SMT同款查询第一个用例'''
         reqParam = self.firstInputParam()
-        responseResult = ProductGetTongkuanApi().productGetTongkuan(reqParam)
+        responseResult = productGetTongkuan(reqParam)
         print(responseResult)

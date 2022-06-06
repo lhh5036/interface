@@ -8,7 +8,7 @@ import random
 
 from apps.AllSystemData.DasSystem.das_common_settting import Das_Common_Setting
 from apps.AllSystemData.DasSystem.das_api.dasSystem_comConfig import Das_Common_Config
-from apps.AllSystemData.DasSystem.das_api.myData_manage.productGetTongkuanApi import ProductGetTongkuanApi
+from apps.AllSystemData.DasSystem.das_api.myData_manage.productGetTongkuanApi import productGetTongkuan
 from apps.utils.es_database_util import Es_handleOperator
 import unittest
 
@@ -34,5 +34,5 @@ class Test_amazonProductGetTongkuanApi(unittest.TestCase):
     def testCase01(self):
         '''第一个测试用例'''
         reqParam = self.firstInputParam()
-        responseResult = ProductGetTongkuanApi().productGetTongkuan(reqParam)
+        responseResult = productGetTongkuan(reqParam)
         print(responseResult)

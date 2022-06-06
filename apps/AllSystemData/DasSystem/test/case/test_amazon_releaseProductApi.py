@@ -10,7 +10,7 @@ import unittest
 
 from apps.AllSystemData.DasSystem.das_common_settting import Das_Common_Setting
 from apps.AllSystemData.DasSystem.das_api.dasSystem_comConfig import Das_Common_Config
-from apps.AllSystemData.DasSystem.das_api.myData_manage.releaseProductApi import releaseProductInfoApi
+from apps.AllSystemData.DasSystem.das_api.myData_manage.releaseProductApi import releaseProductInfo
 
 from apps.utils.es_database_util import Es_handleOperator
 
@@ -38,6 +38,6 @@ class Test_amazonReleaseRroductApi(unittest.TestCase):
     def testCase01(self):
         '''第一个测试用例'''
         resultList = self.firstInputParam()
-        responseResult = releaseProductInfoApi().releaseProductInfo("Amazon","amazon_releaseProduct",resultList)
+        responseResult = releaseProductInfo("Amazon","amazon_releaseProduct",resultList)
         print(responseResult)
 

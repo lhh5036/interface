@@ -11,7 +11,7 @@ from apps.AllSystemData.DasSystem.das_common_settting import Das_Common_Setting
 
 from apps.AllSystemData.DasSystem.das_api.dasSystem_comConfig import Das_Common_Config
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiUrl
-from apps.AllSystemData.DasSystem.das_api.myData_manage.releaseProductApi import releaseProductInfoApi
+from apps.AllSystemData.DasSystem.das_api.myData_manage.releaseProductApi import releaseProductInfo
 
 from apps.utils.es_database_util import Es_handleOperator
 
@@ -41,7 +41,7 @@ class Test_smtReleaseRroductApi(unittest.TestCase):
         # 接口地址
         url = DasApiUrl.smt_releaseProduct_url
         resultList = self.firstInputParam()
-        responseResult = releaseProductInfoApi().releaseProductInfo("SMT","smt_releaseProduct",resultList)
+        responseResult = releaseProductInfo("SMT","smt_releaseProduct",resultList)
         print(responseResult)
 
 

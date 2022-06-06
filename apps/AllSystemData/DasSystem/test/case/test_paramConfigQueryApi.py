@@ -7,8 +7,7 @@
 
 import unittest
 
-from apps.AllSystemData.DasSystem.das_api.param_config.parameterConfigSelectApi import \
-    ParameterConfigQueryApi
+from apps.AllSystemData.DasSystem.das_api.param_config.parameterConfigSelectApi import paramConfigQuery
 
 
 
@@ -17,6 +16,6 @@ class Test_paramConfigQueryApi(unittest.TestCase):
 
     def testCase01(self):
         '''参数配置-取消开发备注查询用例'''
-        responseResult01 = ParameterConfigQueryApi().paramConfigQuery()
+        responseResult01 = paramConfigQuery()
         print(responseResult01)
 
