@@ -9,6 +9,8 @@
 
 import requests
 import json
+
+from apps.get_page_content_by_requests import get_page_content_by_requests
 from logger import MyLog
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgtSystem_interface_url import UsermgtApiUrl
@@ -91,6 +93,19 @@ def params_list(func):
         result.append(func(*args))
         return result
     return wragger
+
+# 拼接請求參數（新）
+def api_assemble_new(api_method="post"):
+    def wraager(func):
+        def demo(*args):
+            api_url,api_param = func(*args)
+            api_header = Common_TokenHeader.common_header
+            resp = get_page_content_by_requests(api_url,api_header,api_param,api_method)
+            return [resp.status_code,resp.json()] # 返回接口狀態碼
+        return demo
+    return wraager
+
+
 
 '''接口请求拼接装饰器'''
 def api_assemble(api_url, api_method='post', params=True):
