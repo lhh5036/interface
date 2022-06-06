@@ -8,12 +8,12 @@
 import random
 from apps.AllSystemData.DasSystem.das_common_settting import Das_Common_Setting
 from apps.AllSystemData.DasSystem.das_api.dasSystem_comConfig import Das_Common_Config
-from apps.AllSystemData.DasSystem.das_api.myData_manage.associateSystemSkuApi import AssociateSystemSkuApi
-
+from apps.AllSystemData.DasSystem.das_api.myData_manage.associateSystemSkuApi import associateSystemSku
 from apps.utils.es_database_util import Es_handleOperator
 import unittest
 import ddt
 import os
+
 # 参数化
 paramList01 = ["8ZZ800161-S-B","8ZZ800161S"]
 # 获取当前文件所在目录的上一级目录
@@ -47,7 +47,7 @@ class Test_amazonAssociateSySkuApi(unittest.TestCase):
     def testCase01(self,sysSkuStr):
         '''Amazon关联系统SKU测试用例'''
         paramList = self.firstInputParam()
-        responseResult01 = AssociateSystemSkuApi().associateSystemSku("Amazon","amazon_associateSystemSku", paramList, sysSkuStr)
+        responseResult01 = associateSystemSku("Amazon", "amazon_associateSystemSku", paramList, sysSkuStr)
         print(responseResult01)
 
     # 参数化驱动
@@ -55,7 +55,7 @@ class Test_amazonAssociateSySkuApi(unittest.TestCase):
     def testCase02(self, sysSkuStr):
         '''Amazon关联系统SKU测试用例'''
         paramList = self.firstInputParam()
-        responseResult02 = AssociateSystemSkuApi().associateSystemSku("Amazon", "amazon_associateSystemSku", paramList,sysSkuStr)
+        responseResult02 = associateSystemSku("Amazon", "amazon_associateSystemSku", paramList,sysSkuStr)
         print(responseResult02)
 
 if __name__ == '__main__':

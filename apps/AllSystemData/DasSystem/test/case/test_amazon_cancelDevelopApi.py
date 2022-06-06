@@ -8,7 +8,7 @@ import random
 
 from apps.AllSystemData.DasSystem.das_common_settting import Das_Common_Setting
 from apps.AllSystemData.DasSystem.das_api.dasSystem_comConfig import Das_Common_Config
-from apps.AllSystemData.DasSystem.das_api.myData_manage.cancelDevelopmentApi import CancelDevelopmentApi
+from apps.AllSystemData.DasSystem.das_api.myData_manage.cancelDevelopmentApi import cancelDevelopmentFunction
 from apps.AllSystemData.DasSystem.das_api.param_config.parameterConfigSelectApi import \
     ParameterConfigQueryApi
 
@@ -40,6 +40,6 @@ class Test_amazonCancelDevelopApi(unittest.TestCase):
         responseData = ParameterConfigQueryApi().paramConfigQuery()
         secondParam = ",".join(random.sample(responseData.split('[')[1].rstrip("]").split(","),1))
         resultList = self.firstInputParam()
-        responseResult01 = CancelDevelopmentApi().cancelDevelopmentFunction("Amazon","amazon_cancelDevelopment", resultList, secondParam)
+        responseResult01 = cancelDevelopmentFunction("Amazon","amazon_cancelDevelopment", resultList, secondParam)
         print(responseResult01)
 

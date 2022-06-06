@@ -7,7 +7,7 @@ File: test_amazon_productGetDijiaApi.py
 '''
 from apps.AllSystemData.DasSystem.das_common_settting import Das_Common_Setting
 from apps.AllSystemData.DasSystem.das_api.dasSystem_comConfig import Das_Common_Config
-from apps.AllSystemData.DasSystem.das_api.myData_manage.productGetDijiaApi import ProductGetDijiaApi
+from apps.AllSystemData.DasSystem.das_api.myData_manage.productGetDijiaApi import productDetDiJia
 from apps.utils.es_database_util import Es_handleOperator
 import random
 import unittest
@@ -34,6 +34,6 @@ class Test_amazonProdcutGetDijiaApi(unittest.TestCase):
     def testCase01(self):
         '''第一个测试用例'''
         reqParam = self.firstInputParam()
-        responseResult = ProductGetDijiaApi().productDetDiJia(reqParam)
+        responseResult = productDetDiJia(reqParam)
         print(responseResult)
 
