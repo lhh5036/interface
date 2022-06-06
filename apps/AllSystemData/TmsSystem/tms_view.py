@@ -10,6 +10,8 @@ import os
 import unittest
 import time
 from pathlib import Path
+
+from apps.AllSystemData.updateInterResult import insterOrUpdateData
 from apps.utils.date_operate_util import DateUtils
 from urllib.parse import urlparse
 
@@ -46,6 +48,8 @@ def run_tmsTestcaseExecute():
     tms_url = urlparse(download_file_url).geturl()
     msg = "物流系统测试报告地址:{0}".format(tms_url)
     # DingHelp(test_url,msg,["13923832556"]).dinghelp() # 推送钉钉消息
+    # 存在则更新，不存在则插入
+    insterOrUpdateData("tms", "物流系统", runner.testsRun, runner.success_count, runner.failure_count, tms_url)
     return render_template("system_report.html",
                            tms_report_url=tms_url,
                            urlname='tms')
