@@ -9,7 +9,7 @@ import random
 
 from apps.AllSystemData.DasSystem.das_common_settting import Das_Common_Setting
 from apps.AllSystemData.DasSystem.das_api.dasSystem_comConfig import Das_Common_Config
-from apps.AllSystemData.DasSystem.das_api.myData_manage.associateSystemSkuApi import AssociateSystemSkuApi
+from apps.AllSystemData.DasSystem.das_api.myData_manage.associateSystemSkuApi import associateSystemSku
 
 from apps.utils.es_database_util import Es_handleOperator
 import unittest
@@ -39,7 +39,7 @@ class Test_smtAssociateSySkuApi(unittest.TestCase):
         '''SMT关联系统SKU第一个用例'''
         resultList = self.firstInputParam()
         systemSkuStr01 = "8ZZ800161-S-B"
-        responseResult01 = AssociateSystemSkuApi().associateSystemSku("SMT","smt_associateSystemSku",resultList, systemSkuStr01)
+        responseResult01 = associateSystemSku("SMT","smt_associateSystemSku",resultList, systemSkuStr01)
         print(responseResult01)
 
     #用例2接口第二个入参（输入不存在SKU）
@@ -47,5 +47,5 @@ class Test_smtAssociateSySkuApi(unittest.TestCase):
         '''SMT关联系统SKU第二个用例'''
         resultList = self.firstInputParam()
         systemSkuStr02 = "8ZZ800161S"
-        responseResult02 = AssociateSystemSkuApi().associateSystemSku("SMT","smt_associateSystemSku",resultList, systemSkuStr02)
+        responseResult02 = associateSystemSku("SMT","smt_associateSystemSku",resultList, systemSkuStr02)
         print(responseResult02)

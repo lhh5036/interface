@@ -6,7 +6,7 @@
 '''
 
 import unittest
-from apps.AllSystemData.DasSystem.das_api.param_config.parameterConfigSaveApi import ParameterConfigApi
+from apps.AllSystemData.DasSystem.das_api.param_config.parameterConfigSaveApi import paramConfigFunction
 
 # 参数配置保存接口用例类
 class Test_parameterConfigSaveApi(unittest.TestCase):
@@ -15,7 +15,7 @@ class Test_parameterConfigSaveApi(unittest.TestCase):
         # 用例2接口第二个入参（单个参数）
         '''这是第一个用例'''
         paramStr01 = "'test01'"
-        responseResult01 = ParameterConfigApi().paramConfigFunction(paramStr01)
+        responseResult01 = paramConfigFunction(paramStr01)
         print(responseResult01)
 
 
@@ -23,7 +23,7 @@ class Test_parameterConfigSaveApi(unittest.TestCase):
         # 用例2接口第二个入参（多个参数）
         '''这是第二个用例'''
         paramStr02 = "'test01','test02'"
-        responseResult02 = ParameterConfigApi().paramConfigFunction(paramStr02)
+        responseResult02 = paramConfigFunction(paramStr02)
         print(responseResult02)
 
 
