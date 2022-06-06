@@ -6,6 +6,7 @@
 '''
 
 from BeautifulReport import BeautifulReport as bf
+from apps.AllSystemData.updateInterResult import insterOrUpdateData
 from flask import Blueprint,render_template # 导入 Flask 中的蓝图 Blueprint 模块
 import os
 import unittest
@@ -47,6 +48,6 @@ def run_productTestcaseExecute():
     product_url = urlparse(download_file_url).geturl()
     msg = "产品系统测试报告地址:{0}".format(product_url)
     # DingHelp(test_url,msg,["13923832556"]).dinghelp() # 推送钉钉消息
-    return render_template("system_report.html",
-                           product_report_url=product_url,
-                           urlname='product')
+    # 存在则更新，不存在则插入
+    insterOrUpdateData("product", "产品系统", runner.testsRun, runner.success_count, runner.failure_count, product_url)
+    return render_template("system_report.html",product_report_url=product_url,urlname='product')
