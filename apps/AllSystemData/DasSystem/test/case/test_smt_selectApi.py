@@ -6,8 +6,7 @@
 '''
 
 import unittest
-from apps.AllSystemData.DasSystem.das_api.myData_manage.dataManageProductListingApi import \
-    DataManageProductListingApi
+from apps.AllSystemData.DasSystem.das_api.myData_manage.dataManageProductListingApi import dataManageProductListingInfo
 
 
 
@@ -17,11 +16,11 @@ class Test_smtSelectApi(unittest.TestCase):
     def testCase01(self):
         '''这是第一个测试用例'''
         testCaseReq_01 = {"productId": "4000032062735"}
-        testCaseRep_01 = DataManageProductListingApi().dataManageProductListingInfo("SMT","smt_queryListing",testCaseReq_01)
+        testCaseRep_01 = dataManageProductListingInfo("SMT","smt_queryListing",testCaseReq_01)
         print(testCaseRep_01)
 
     def testCase02(self):
         '''这是第二个测试用例'''
         testCaseReq_02 = {"mainSku": "9SD400194","productId":"4000032062735"}
-        testCaseRep_02 = DataManageProductListingApi().dataManageProductListingInfo("SMT","smt_queryListing",testCaseReq_02)
+        testCaseRep_02 = dataManageProductListingInfo("SMT","smt_queryListing",testCaseReq_02)
         print(testCaseRep_02)

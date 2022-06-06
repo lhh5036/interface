@@ -9,7 +9,7 @@ import random
 
 from apps.AllSystemData.DasSystem.das_common_settting import Das_Common_Setting
 from apps.AllSystemData.DasSystem.das_api.dasSystem_comConfig import Das_Common_Config
-from apps.AllSystemData.DasSystem.das_api.myData_manage.productGetDijiaApi import ProductGetDijiaApi
+from apps.AllSystemData.DasSystem.das_api.myData_manage.productGetDijiaApi import productDetDiJia
 from apps.utils.es_database_util import Es_handleOperator
 import unittest
 
@@ -35,5 +35,5 @@ class Test_smtProdcutGetDijiaApi(unittest.TestCase):
     def testCase01(self):
         '''SMT低价查询第一个用例'''
         reqParam = self.firstInputParam()
-        responseResult = ProductGetDijiaApi().productDetDiJia(reqParam)
+        responseResult = productDetDiJia(reqParam)
         print(responseResult)
