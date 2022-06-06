@@ -10,6 +10,8 @@ import os
 import unittest
 import time
 from pathlib import Path
+
+from apps.AllSystemData.updateInterResult import insterOrUpdateData
 from apps.utils.date_operate_util import DateUtils
 from urllib.parse import urlparse
 
@@ -45,7 +47,7 @@ def run_pmsTestcaseExecute():
     download_file_url = "http://192.168.3.10:81/interfaceAutoTest_file/{0}".format(filename)
     pms_url = urlparse(download_file_url).geturl()
     msg = "采购系统测试报告地址:{0}".format(pms_url)
+    # 存在则更新，不存在则插入
+    insterOrUpdateData("pms", "采购系统", runner.testsRun, runner.success_count, runner.failure_count, pms_url)
     # DingHelp(test_url,msg,["13923832556"]).dinghelp() # 推送钉钉消息
-    return render_template("system_report.html",
-                           pms_report_url=pms_url,
-                           urlname='pms')
+    return render_template("system_report.html",pms_report_url=pms_url, urlname='pms')
