@@ -91,16 +91,8 @@ def run_dasTestcaseExecute():
     # print(runner.failure_count) # 失败数
 
     # 1.先查询  2.后删除
-    InterfaceResultModel.query.filter(InterfaceResultModel.modelName == "das").delete()
-    db.session.commit()
-    # 重新插入数据库新的数据
-    das_result = InterfaceResultModel(modelName="das",
-                                      systemName="数据分析系统",
-                                      testCaseNum=runner.testsRun,
-                                      successCaseNum=runner.success_count,
-                                      failCaseNum=runner.failure_count,
-                                      reportUrl=das_url)
-    db.session.add(das_result)
+    InterfaceResultModel.query.filter(InterfaceResultModel.modelName == "das").update({"testCaseNum":runner.testsRun,"successCaseNum":runner.success_count,
+                                                                                       "failCaseNum":runner.failure_count,"reportUrl":das_url})
     db.session.commit()
 
     return render_template("system_report.html",das_report_url=das_url,urlname='das')
