@@ -15,6 +15,7 @@ from flask import render_template
 from pathlib import Path
 from urllib.parse import urlparse
 
+from apps.AllSystemData.updateInterResult import insterOrUpdateData
 from apps.utils.date_operate_util import DateUtils
 from apps.Common_Config.interface_common_info import InterfaceCommonInfo
 
@@ -58,9 +59,10 @@ def run_fmisTestcaseExecute():
                                                                           filename)
     fmis_url = urlparse(download_file_url).geturl()
     msg = "新用户测试报告地址:{0}".format(fmis_url)
-    return render_template("system_report.html",
-                           fmis_report_url=fmis_url,
-                           urlname='fmis')
+
+    # 存在则更新，不存在则插入
+    insterOrUpdateData("fmis", "财务系统", runner.testsRun, runner.success_count, runner.failure_count, fmis_url)
+    return render_template("system_report.html",fmis_report_url=fmis_url,urlname='fmis')
 
 
 if __name__ == '__main__':
