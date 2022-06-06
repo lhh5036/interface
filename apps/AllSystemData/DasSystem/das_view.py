@@ -91,7 +91,7 @@ def run_dasTestcaseExecute():
     # print(runner.failure_count) # 失败数
 
     # 1.先查询  2.后更新
-    das_result = InterfaceResultModel.query.filter(InterfaceResultModel.modelName == "das")
+    das_result = InterfaceResultModel.query.filter_by(InterfaceResultModel.modelName == "das").first()
     # 重新插入数据库新的数据
     das_result.testCaseNum = runner.testsRun
     das_result.successCaseNum = runner.success_count
