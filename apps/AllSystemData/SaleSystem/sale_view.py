@@ -17,8 +17,8 @@ from urllib.parse import urlparse
 
 sale_api = Blueprint("sale_api",__name__) # 实例化一个蓝图(Blueprint)对象
 
-sale_garder_path = os.path.dirname(os.path.realpath(__file__)) + "\\test\\case\\" # 获取订单系统测试用例文件路径
-sale_report_path = os.path.dirname(os.path.realpath(__file__)) + "\\report" # 测试订单系统报告路径
+sale_garder_path = os.path.dirname(os.path.realpath(__file__)) + "/test/case/" # 获取订单系统测试用例文件路径
+sale_report_path = os.path.dirname(os.path.realpath(__file__)) + "/report" # 测试订单系统报告路径
 
 # 为创建的蓝图添加路由配置
 @sale_api.route('/allTestCase/execute')
