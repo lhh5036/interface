@@ -15,9 +15,9 @@ from flask import current_app as app
 # 系统订单查询接口
 @api_assemble_new(login_method="old")
 def syncLogisticsTrackingFunc(platform,paramList):
-    app.logger.info("systemOrderQueryFun  ----->start!")
+    app.logger.info("syncLogisticsTrackingFunc  ----->start!")
     if platform == "" or len(paramList) <= 0:
-        app.logger.error("systemOrderQueryFun ------>request parameter is wrong!")
+        app.logger.error("syncLogisticsTrackingFunc ------>request parameter is wrong!")
         return "请求参数为空"
 
     # 获取url
