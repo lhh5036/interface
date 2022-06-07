@@ -95,13 +95,16 @@ def params_list(func):
     return wragger
 
 # 拼接請求參數（新）
-def api_assemble_new(api_method="post"):
+def api_assemble_new(login_method="new",api_method="post"):
     def wraager(func):
         def demo(*args):
             api_url,api_param = func(*args)
-            api_header = Common_TokenHeader.common_header
+            if login_method == "new":
+                api_header = Common_TokenHeader().common_header
+            else:
+                api_header = Common_TokenHeader().token_header('old','181324')
             resp = get_page_content_by_requests(api_url,api_header,api_param,api_method)
-            return [resp.status_code,resp.json()] # 返回接口狀態碼
+            return [resp.status_code, resp.json()] # 返回接口狀態碼
         return demo
     return wraager
 
