@@ -11,3 +11,7 @@ class SaleApiInputParam:
     systemOrder_query_param02 = {"search": {0}, "offset": 0, "limit": 200}
     systemOrder_query_param03 = {"salesSubsectorLeaderSet":[],"salesTeamLeaderSet":[],"salesmanSet":[],"salesJuniorSupervisorSet":[],"saleChannel":"","history":"false","orderStatus":"0","withoutProfitInfo":0}
 
+
+    # 同步追踪号
+    syncLogisticsTracking_param01 = {"args": "{0}", "method": "syncLogisticsTracking"}
+    syncLogisticsTracking_param02 = ["{0}"]
