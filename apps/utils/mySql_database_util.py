@@ -96,20 +96,25 @@ class MySql_operator():
 def controlDatebase(config_info, methods='select', port=3306, charset='utf8'):
     def wragger(func):
         def demo(*args):
-            conn = pymysql.connect(host=config_info[1],
-                                   user=config_info[2],
-                                   password=config_info[3],
-                                   database=config_info[0],
+            conn = pymysql.connect(host=config_info[0],
+                                   user=config_info[1],
+                                   password=config_info[2],
+                                   database=config_info[3],
                                    port=port,
                                    charset=charset)
-            sql_list = func(conn, *args)
-            data_list = []
-            for i in sql_list:
-                data = MySql_operator().data_sql(conn, i, methods)
-                datas = [info for info in itertools.chain(*data)]
-                data_list.append(datas)
-            conn.close()
-            return data_list
+            if isinstance(func(*args),list):
+                data_list = []
+                for i in func(*args):
+                    result = list(MySql_operator().data_sql(conn,i,methods))
+                    if len(result) <= 0:
+                        continue
+                    data_list.append(result)
+                conn.close()
+                return data_list
+            else:
+                resultList = list(MySql_operator().data_sql(conn, func(*args), methods))
+                conn.close()
+                return resultList
         return demo
     return wragger
 
