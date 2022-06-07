@@ -4,7 +4,7 @@
 @Author:quanliu 181324
 @Desc:系统订单查询接口用例
 '''
-from apps.AllSystemData.SaleSystem.sale_api.systemOrderSelect.systemOrderSelectApi import systemOrderQueryFun
+from apps.AllSystemData.SaleSystem.sale_api.platSystemOrder.systemOrderSelectApi import systemOrderQueryFun
 import unittest
 import ddt
 import os
