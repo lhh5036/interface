@@ -9,5 +9,5 @@ class SaleApiInputParam:
     # 系统订单接口入参
     systemOrder_query_param01 = {"args": "{0}", "method": "listCustomerOrder"}
     systemOrder_query_param02 = {"search": {0}, "offset": 0, "limit": 200}
-    systemOrder_query_param03 = {"salesSubsectorLeaderSet":[],"salesTeamLeaderSet":[],"salesmanSet":[],"salesJuniorSupervisorSet":[],"saleChannel":"","history":"false","withoutProfitInfo":0}
+    systemOrder_query_param03 = {"salesSubsectorLeaderSet":[],"salesTeamLeaderSet":[],"salesmanSet":[],"salesJuniorSupervisorSet":[],"saleChannel":"","history":"false","orderStatus":"0","withoutProfitInfo":0}
 
