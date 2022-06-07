@@ -2,7 +2,7 @@
 #!/usr/bin/python3
 
 '''
-@File: fmisSystem_interface_url.py
+@File: pmsSystem_interface_url.py
 @time:2021/9/4
 @Author:majiaqin 170479
 @Desc:财务系统接口地址

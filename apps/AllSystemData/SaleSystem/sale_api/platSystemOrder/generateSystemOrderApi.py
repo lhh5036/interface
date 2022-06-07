@@ -5,7 +5,6 @@
 @Desc:生成系统订单接口
 '''
 
-
 from apps.AllSystemData.SaleSystem.sale_api.saleSystem_interface_param import SaleApiInputParam
 from apps.AllSystemData.SaleSystem.sale_api.saleSystem_interface_url import SaleApiUrl
 from apps.Common_Config.operate_api_data import api_assemble_new

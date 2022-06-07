@@ -5,10 +5,8 @@
 @Desc:生成系统订单
 '''
 from apps.AllSystemData.SaleSystem.sale_api.platSystemOrder.generateSystemOrderApi import generateSystemOrderApi
-from apps.AllSystemData.SaleSystem.sale_api.platSystemOrder.syncLogisticsTrackingApi import syncLogisticsTrackingFunc
 import unittest
 import ddt
-import os
 from apps.AllSystemData.SaleSystem.sale_common_setting import Sale_Common_Setting
 from apps.utils.mySql_database_util import controlDatebase
 

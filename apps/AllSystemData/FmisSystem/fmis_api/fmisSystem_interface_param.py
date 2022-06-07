@@ -2,7 +2,7 @@
 #!/usr/bin/python3
 
 '''
-@File: fmisSystem_interface_param.py
+@File: pmsSystem_interface_param.py
 @time:2021/9/22
 @Author:majiaqin 170479
 @Desc:财务管理接口请求入参

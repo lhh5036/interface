@@ -9,6 +9,7 @@ from apps.AllSystemData.SaleSystem.sale_api.saleSystem_interface_url import Sale
 from apps.Common_Config.operate_api_data import api_assemble_new
 import json
 from flask import current_app as app
+from copy import deepcopy
 
 # 系统订单查询接口
 @api_assemble_new(login_method="old")
@@ -21,7 +22,7 @@ def systemOrderQueryFun(platform,paramMap=None):
     # 获取url
     url = SaleApiUrl.systemOrder_queryListing_url
     # 获取参数
-    param03 = SaleApiInputParam.systemOrder_query_param03
+    param03 = deepcopy(SaleApiInputParam.systemOrder_query_param03)
     param02 = SaleApiInputParam.systemOrder_query_param02
     param01 = SaleApiInputParam.systemOrder_query_param01
     param03["saleChannel"] = platform

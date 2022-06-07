@@ -13,13 +13,13 @@ class Test_amazonSelectApi(unittest.TestCase):
 
     def testCase01(self):
         '''第一个测试用例'''
-        testCaseReq_01 = {"country": "11US"}
+        testCaseReq_01 = {"country": "IN","sellerName":"Gardenwed"}
         testCaseRep_01 = dataManageProductListingInfo("Amazon","amazon_queryListing",testCaseReq_01)
         print(testCaseRep_01)
 
     def testCase02(self):
         '''第二个测试用例'''
-        testCaseReq_02 = {"country": "US","sellerName":"Gardenwed"}
+        testCaseReq_02 = {"country": "US"}
         testCaseRep_02 = dataManageProductListingInfo("Amazon","amazon_queryListing",testCaseReq_02)
         print(testCaseRep_02)
 
