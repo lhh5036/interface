@@ -8,14 +8,14 @@ from apps.AllSystemData.SaleSystem.sale_api.saleSystem_interface_param import Sa
 from apps.AllSystemData.SaleSystem.sale_api.saleSystem_interface_url import SaleApiUrl
 from apps.Common_Config.operate_api_data import api_assemble_new
 import json
-# from flask import current_app as app
+from flask import current_app as app
 
 # 系统订单查询接口
 @api_assemble_new(login_method="old")
 def systemOrderQueryFun(platform,paramMap=None):
-    # app.logger.info("systemOrderQueryFun  ----->start!")
+    app.logger.info("systemOrderQueryFun  ----->start!")
     if platform == "":
-        # app.logger.error("systemOrderQueryFun ------>request parameter(platform) is wrong!")
+        app.logger.error("systemOrderQueryFun ------>request parameter(platform) is wrong!")
         return "请求参数为空"
 
     # 获取url
