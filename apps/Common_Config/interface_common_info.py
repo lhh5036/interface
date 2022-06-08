@@ -31,6 +31,7 @@ class Common_TokenHeader():
     common_header = {"Content-Type": "application/json",
                      "Authorization": token_currency}
 
+
     # 公共请求头参数(账号token)
     def token_header(self, method, account):
         self.method = method
@@ -38,7 +39,14 @@ class Common_TokenHeader():
         account_header = {"Content-Type":"application/json","Authorization":GetLoginToken(self.method, self.account)}
 
         return account_header
+    # 产品系统公共请求参数
+    def token_header_product(self, method, account,menuCode):
+        self.method = method
+        self.account = account
+        self.menuCode = menuCode
+        account_header = {"Content-Type":"application/json","Authorization":GetLoginToken(self.method, self.account),"userName":self.account,"menuCode":self.menuCode}
 
+        return account_header
 '''
 获取新旧用户系统token
 '''
