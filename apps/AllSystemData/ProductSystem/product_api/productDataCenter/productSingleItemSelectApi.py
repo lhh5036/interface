@@ -6,13 +6,13 @@
 '''
 from apps.AllSystemData.ProductSystem.product_api.productSystem_interface_param import ProductApiInputParam
 from apps.AllSystemData.ProductSystem.product_api.productSystem_interface_url import ProductApiUrl
+from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.Common_Config.operate_api_data import api_assemble_new
-import json
 from copy import deepcopy
 # from flask import current_app as app
 
 # 系统订单查询接口
-@api_assemble_new()
+@api_assemble_new(api_header=Common_TokenHeader().token_header_product("new","181324","8010602"))
 def productSingleItemSelectApi(paramMap=None):
     # app.logger.info("generateSystemOrderApi  ----->start!")
     url = ProductApiUrl.singleItemSelect_url
