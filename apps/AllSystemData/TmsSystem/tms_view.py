@@ -16,8 +16,8 @@ from apps.utils.date_operate_util import DateUtils
 from urllib.parse import urlparse
 
 tms_api = Blueprint("tms_api",__name__) # 实例化一个蓝图(Blueprint)对象
-tms_garder_path = os.path.dirname(os.path.realpath(__file__)) + "\\test\\case\\" # 获取物流系统测试用例文件路径
-tms_report_path = os.path.dirname(os.path.realpath(__file__)) + "\\report" # 测试物流系统报告路径
+tms_garder_path = os.path.dirname(os.path.realpath(__file__)) + "/test/case/" # 获取物流系统测试用例文件路径
+tms_report_path = os.path.dirname(os.path.realpath(__file__)) + "/report" # 测试物流系统报告路径
 
 # 为创建的蓝图添加路由配置
 @tms_api.route('/allTestCase/execute')
