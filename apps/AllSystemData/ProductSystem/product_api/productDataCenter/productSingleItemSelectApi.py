@@ -14,7 +14,7 @@ from flask import current_app as app
 # 系统订单查询接口
 @api_assemble_new(api_header=Common_TokenHeader().token_header_product("new","181324","8010602"))
 def productSingleItemSelectApi(paramMap=None):
-    app.logger.info("generateSystemOrderApi  ----->start!")
+    app.logger.info("productSingleItemSelectApi  ----->start!")
     url = ProductApiUrl.singleItemSelect_url
     param01 = deepcopy(ProductApiInputParam.singleItemSelect_param01)
     keyList = []
