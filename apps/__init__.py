@@ -14,6 +14,7 @@ from apps.AllSystemData.WmsSystem import wms_view
 from logger import setup_log
 from config import config
 from dbExat import db
+from schedulerExat import schedule
 
 
 def create_app(config_name):
@@ -25,6 +26,9 @@ def create_app(config_name):
     config[config_name].init_app(app)
     # 初始化db
     db.init_app(app)
+    # 初始化定时器
+    schedule.init_app(app)
+    schedule.start()
 
     app.logger.addHandler(setup_log(config[config_name])) # 日志绑定app
     app.permanent_session_lifetime = 1551   # session的生存时间——测试时设置
