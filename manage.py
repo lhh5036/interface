@@ -19,6 +19,11 @@ from flask_script import Manager # (使用版本2.0.5;版本2.0.6中没有flask.
 
 # 模型 -->  迁移文件 --> 表
 app = create_app(os.getenv('FLASK_CONFIG') or 'default') # 实例化APP 进入开发环境
+# manager = Manager(app)
+# # 1.要使用flask-migrate必须绑定app和db
+# migrate = Migrate(app,db)
+# # 2.把MigrateCommand(数据库迁移)命令添加到manager
+# manager.add_command('db',MigrateCommand)
 
 # 判断数据库是否存在表
 with app.app_context():
@@ -26,12 +31,6 @@ with app.app_context():
     if not has_table:
         # db.drop_all(bind=["test_db"],app=app) # 删除表
         db.create_all(bind=["test_db"],app=app) # 创建表
-
-# manager = Manager(app = app)
-# # 1.要使用flask-migrate必须绑定app和db
-# migrate = Migrate(app,db)
-# # 2.把MigrateCommand(数据库迁移)命令添加到manager
-# manager.add_command('db',MigrateCommand)
 
 class RegisterForm(FlaskForm):
     username = StringField(label='username',validators=[DataRequired()], render_kw={'placeholder': 'username', 'class': 'input_text'})
