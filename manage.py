@@ -13,7 +13,11 @@ import os
 from dbExat import db
 from flask_migrate import Migrate,MigrateCommand # 使用版本2.7.0;flask_migrate版本过高（3.1.0）会没有MigrateCommand这个函数
 from flask_script import Manager # (使用版本2.0.5;版本2.0.6中没有flask._compat)
+# python3 manage.py db init  ---初始化环境
+# python3 manage.py db migrate  ---将模型生成一个迁移文件
+# python3 managepy db upgrade   ---将模型真正的映射到数据库中
 
+# 模型 -->  迁移文件 --> 表
 app = create_app(os.getenv('FLASK_CONFIG') or 'default') # 实例化APP 进入开发环境
 
 # 判断数据库是否存在表
