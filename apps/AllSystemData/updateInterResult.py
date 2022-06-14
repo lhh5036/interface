@@ -1,8 +1,10 @@
 '''
 @File: updateInterResult.py
 @time:2022/6/6
-@Author:
-@Desc:
+@Author:quanliu 181324
+@Desc:默认filter是且的关系，如果使用or需要导入from sqlalchemy import or_；用法：filter(or_(User.name=="lisi",User.password==123))
+排序：User.query.order_by(User.id.asc()).all()
+分组:db.session.query(User.role_id,func.count(User.role_id)).group_by(User.role_id).all() ---导入：from sqlalchemy import func
 '''
 from models import InterfaceResultModel # 引入模板类
 from dbExat import db
