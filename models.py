@@ -3,6 +3,7 @@
 @time:2022/5/31
 @Author:quanliu 181324
 @Desc:数据库建表模型类（必须要被引入）
+primary_key(主键)、unique(唯一)、index(索引)、default(默认值)
 '''
 from dbExat import db
 import datetime
