@@ -15,6 +15,7 @@ from logger import setup_log
 from config import config
 from dbExat import db
 from schedulerExat import schedule
+from datetime import timedelta
 
 
 def create_app(config_name):
@@ -31,7 +32,7 @@ def create_app(config_name):
     schedule.start()
 
     app.logger.addHandler(setup_log(config[config_name])) # 日志绑定app
-    app.permanent_session_lifetime = 1551   # session的生存时间——测试时设置
+    app.permanent_session_lifetime = timedelta(days=1551)   # session的生存时间——测试时设置
     # 在Flask对象中注册蓝图模块中的蓝图对象 das_view 中的 das_api
     app.register_blueprint(das_view.das_api,url_prefix="/interfaceTest/das/")
     # 在Flask对象中注册蓝图模块中的蓝图对象 fmis_view 中的 fmis_api
