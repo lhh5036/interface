@@ -38,15 +38,19 @@ class RegisterForm(FlaskForm):
     cpassword = PasswordField(label='cpassword',validators=[DataRequired(),EqualTo('password', '两次密码不一致')])
     submit = SubmitField('提交')
 
-
+# 登录装饰器
+def admin_login_req(func):
+    def demo(*args):
+        if not session.get("username"):
+            return redirect(url_for("login"))
+        return func(*args)
+    return demo
 
 # 接口调用入口
 @app.route("/projectEntry")
+@admin_login_req
 def estoneInterfaceEntry():
-    if 'username' in session:
-        username = session['username']
-        return render_template("system_entry.html",name=username)
-    return redirect(url_for('login'))
+    return render_template("system_entry.html")
 
 @app.route('/login',methods=['POST','GET'])
 def login():
