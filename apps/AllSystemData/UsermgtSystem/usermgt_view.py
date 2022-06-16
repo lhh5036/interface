@@ -16,6 +16,7 @@ from urllib.parse import urlparse
 
 from apps.utils.date_operate_util import DateUtils
 from apps.Common_Config.interface_common_info import InterfaceCommonInfo
+from apps.AllSystemData.updateInterResult import insterOrUpdateData
 
 # 实例化一个蓝图(Blueprint)对象
 usermgt_api = Blueprint("usermgt_api", __name__)
@@ -58,6 +59,8 @@ def run_usermgtTTestcaseExecute():
                                                                           filename)
     usermgt_url = urlparse(download_file_url).geturl()
     msg = "新用户测试报告地址:{0}".format(usermgt_url)
+    # 存在则更新，不存在则插入
+    insterOrUpdateData("usermgt", "新用户系统", runner.testsRun, runner.success_count, runner.failure_count, usermgt_url)
     return render_template("system_report.html",
                            usermgt_report_url=usermgt_url,
                            urlname='usermgt')
