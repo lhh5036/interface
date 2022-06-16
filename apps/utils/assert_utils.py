@@ -13,7 +13,7 @@ import json
 import pprint
 
 from deepdiff import DeepDiff, DeepSearch
-from logger import MyLog
+from loggerUtils import MyLog
 from apps.utils.mySql_database_util import Mysql_handleOperator
 from apps.AllSystemData.FmisSystem.fmis_common_settting import Fmis_Common_Setting
 from apps.utils.currency_utils import Json_Get
