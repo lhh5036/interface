@@ -7,16 +7,16 @@
 import logging
 from deepdiff import DeepDiff
 
-def new_assert_utils(resp_result,assertResp_result): # 接口返回的数据和期望的数据 [状态码,响应结果数据]
+def new_assert_utils(resp_result,expResp_result): # 接口返回的数据和期望的数据 [状态码,响应结果数据]
     if len(resp_result) < 2:
         return "需要断言的数据不全，请检查!"
-    if len(assertResp_result) < 2:
+    if len(expResp_result) < 2:
         return "期望的数据不全，请检查!"
 
     resp_statusCode = resp_result[0] # 接口返回响应状态码
     resp_json = resp_result[1] # 接口返回响应结果
-    exp_resp_statusCode = assertResp_result[0] # 接口期望状态码
-    exp_resp_json = assertResp_result[1] # 接口期望返回的结果
+    exp_resp_statusCode = expResp_result[0] # 接口期望状态码
+    exp_resp_json = expResp_result[1] # 接口期望返回的结果
     try:
         compare_statusCode = assert_statusCode(resp_statusCode,exp_resp_statusCode)
         if compare_statusCode != None:
