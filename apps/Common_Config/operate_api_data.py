@@ -11,7 +11,7 @@ import requests
 import json
 
 from apps.get_page_content_by_requests import get_page_content_by_requests
-from logger import MyLog
+from loggerUtils import MyLog
 from apps.Common_Config.interface_common_info import Common_TokenHeader
 from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgtSystem_interface_url import UsermgtApiUrl
 # 实例化日志类

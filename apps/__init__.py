@@ -11,7 +11,7 @@ from apps.AllSystemData.SaleSystem import sale_view
 from apps.AllSystemData.TmsSystem import tms_view
 from apps.AllSystemData.UsermgtSystem import usermgt_view
 from apps.AllSystemData.WmsSystem import wms_view
-from logger import setup_log
+from loggerUtils import setup_log
 from config import config
 from dbExat import db
 from schedulerExat import schedule
