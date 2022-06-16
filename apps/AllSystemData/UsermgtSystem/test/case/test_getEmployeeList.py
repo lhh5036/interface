@@ -13,7 +13,7 @@ from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgtSystem_interface_param 
 from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgt_api_ware.getEmployeeList import GetEmployeeListApi
 from apps.Common_Config.operate_api_data import splicing_params_new, api_assemble
 from apps.AllSystemData.UsermgtSystem.assert_usermgt.assert_file import usermgt_unit_assert
-from logger import MyLog
+from loggerUtils import MyLog
 
 # 实例化日志类
 logger = MyLog("GetEmployeeListApi").getlog()

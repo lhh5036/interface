@@ -7,7 +7,7 @@
 from apps.AllSystemData.FmisSystem.fmis_api.fmisSystem_interface_param import FmisApiInputParam
 from apps.AllSystemData.FmisSystem.fmis_api.fmisSystem_interface_url import FmisApiUrl
 from apps.Common_Config.interface_common_info import Common_TokenHeader
-from logger import MyLog
+from loggerUtils import MyLog
 import requests
 import json
 
