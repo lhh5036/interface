@@ -95,7 +95,7 @@ def params_list(func):
     return wragger
 
 '''拼接請求參數（新）'''
-def api_assemble_new(login_method="new",api_method="post",api_header="", employeeNo='181324'):
+def api_assemble_new(login_method="new", api_method="post", api_header="", employeeNo='181324'):
     def wraager(func):
         def demo(*args):
             if api_header != "":
