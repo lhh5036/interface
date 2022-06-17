@@ -94,24 +94,23 @@ def params_list(func):
         return result
     return wragger
 
-# 拼接請求參數（新）
-def api_assemble_new(login_method="new",api_method="post",api_header=""):
+'''拼接請求參數（新）'''
+def api_assemble_new(login_method="new", api_method="post", api_header="", employeeNo='181324'):
     def wraager(func):
         def demo(*args):
             if api_header != "":
-                api_header_use = api_header # 如果请求头传的话就是传的
+                api_header_use = api_header # 如果api_header不为空则使用该api_header
             else: 
                 if login_method == "new":
+                    # 如果api_header为空则使用公共header
                     api_header_use = Common_TokenHeader().common_header
-                else:
-                    api_header_use = Common_TokenHeader().token_header('old', '181324')
-            api_url,api_param = func(*args)
-            resp = get_page_content_by_requests(api_url,api_header_use,api_param,api_method)
-            return [resp.status_code, resp.json()] # 返回接口狀態碼
+                elif login_method == 'old':
+                    api_header_use = Common_TokenHeader().token_header(login_method, employeeNo)
+            api_url, api_param = func(*args)
+            resp = get_page_content_by_requests(api_url, api_header_use, api_param, api_method)
+            return [resp.status_code, resp.json()] # 返回接口状态码和响应结果
         return demo
     return wraager
-
-
 
 '''接口请求拼接装饰器'''
 def api_assemble(api_url, api_method='post', params=True):
