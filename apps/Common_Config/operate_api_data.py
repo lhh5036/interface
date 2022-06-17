@@ -105,8 +105,8 @@ def api_assemble_new(login_method="new",api_method="post",api_header=""):
                     api_header_use = Common_TokenHeader().common_header
                 else:
                     api_header_use = Common_TokenHeader().token_header('old', '181324')
-            api_url,api_param = func(*args)
-            resp = get_page_content_by_requests(api_url,api_header_use,api_param,api_method)
+            api_url, api_param = func(*args)
+            resp = get_page_content_by_requests(api_url, api_header_use, api_param, api_method)
             return [resp.status_code, resp.json()] # 返回接口狀態碼
         return demo
     return wraager
