@@ -28,7 +28,7 @@ class Test_purchaseSuggestionApi(unittest.TestCase):
     def testCase02(self):
         '''需求管理-采购建议查询(无参数)'''
         responseResult02 = purchaseSuggestionApi({"warehouseAttr":"美景仓"})
-        return responseResult02
+        print(responseResult02)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
