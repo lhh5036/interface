@@ -9,7 +9,8 @@
 
 import requests
 import json
-
+import pprint
+from copy import deepcopy
 from apps.get_page_content_by_requests import get_page_content_by_requests
 from loggerUtils import MyLog
 from apps.Common_Config.interface_common_info import Common_TokenHeader
@@ -17,47 +18,30 @@ from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgtSystem_interface_url im
 # 实例化日志类
 logger = MyLog("operate_api_data").getlog()
 '''接口参数拼接装饰器'''
-def splicing_params(params_key1='args', params_key2='search'):
-    def wragger(func):
-        def demo(*args):
-            if type(func(*args)[0][0]) == list:
-                result01 = func(*args)[0][0]
-                for k in func(*args)[1]:
-                    result01[0] = func(*args)[1][k]
-                return result01
-            else:
-                if len(func(*args)[0]) == 1:
-                    result = func(*args)[0][0]
-                    for k in func(*args)[1]:
-                        result[k] = func(*args)[1][k]
-                        return result
-                elif len(func(*args)[0]) == 2:
-                    result01 = func(*args)[0][1]
-                    for k in func(*args)[1]:
-                        result01[k] = func(*args)[1][k]
-                    result02 = func(*args)[0][0]
-                    try:
-                        result02[params_key1] = str(result01)
-                        return result02
-                    except KeyError:
-                        raise KeyError
-                elif len(func(*args)[0]) == 3:
-                    result01 = func(*args)[0][2]
-                    for k in func(*args)[1]:
-                        result01[k] = func(*args)[1][k]
-                    result02 = func(*args)[0][1]
-                    try:
-                        result02[params_key2] = str(result01)
-                    except KeyError:
-                        raise KeyError
-                    try:
-                        result03 = func(*args)[0][0]
-                        result03[params_key1] = str(result02)
-                        return result03
-                    except KeyError:
-                        raise KeyError
-        return demo
-    return wragger
+class Splicing_Params():
+    def __init__(self, params_list, paramMap=None):
+        self.params_list = params_list
+        self.paramMap = paramMap
+        self.params_list_deepcopy = deepcopy(self.params_list)
+
+    def splicing_param(self):
+        if self.paramMap == None:
+            return self.params_list_deepcopy[len(self.params_list_deepcopy)-1]
+        else:
+            for paramMap_key in self.paramMap.keys():
+                self.params_list_deepcopy[len(self.params_list_deepcopy)-1][paramMap_key] = self.paramMap[paramMap_key]
+            return self.params_list_deepcopy[len(self.params_list_deepcopy)-1]
+
+    def splicing_params(self):
+        if len(self.params_list_deepcopy) == 1:
+            return self.splicing_param()
+        elif len(self.params_list_deepcopy) == 2:
+            self.params_list_deepcopy[0]['args'] = self.splicing_param()
+            return self.params_list_deepcopy[0]
+        elif len(self.params_list_deepcopy) == 3:
+            self.params_list_deepcopy[1]['search'] = self.splicing_param()
+            self.params_list_deepcopy[0]['args'] = self.params_list_deepcopy[1]
+            return self.params_list_deepcopy[0]
 
 # 拼接接口参数
 def splicing_params_new(params_key1='search', params_key2='args'):
@@ -149,5 +133,6 @@ def test():
     return [[{"args": ""}], {'args': '50841235'}]
 
 if __name__ == '__main__':
-    print(test())
+    params_list = [{"servicePlatform": "", "employeeNo": ""}]
+    pprint.pprint(Splicing_Params(params_list, paramMap={"servicePlatform": "Amazon", "employeeNo": "170479"}).splicing_params())
     pass
