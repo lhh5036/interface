@@ -94,7 +94,7 @@ def params_list(func):
         return result
     return wragger
 
-# 拼接請求參數（新）
+'''拼接請求參數（新）'''
 def api_assemble_new(login_method="new",api_method="post",api_header="", employeeNo='181324'):
     def wraager(func):
         def demo(*args):
@@ -111,8 +111,6 @@ def api_assemble_new(login_method="new",api_method="post",api_header="", employe
             return [resp.status_code, resp.json()] # 返回接口状态码和响应结果
         return demo
     return wraager
-
-
 
 '''接口请求拼接装饰器'''
 def api_assemble(api_url, api_method='post', params=True):
