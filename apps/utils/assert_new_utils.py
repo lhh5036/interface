@@ -11,11 +11,11 @@ def new_assert_utils(func): # 接口返回的数据和期望的数据 [状态码
     def wragger(*args, **kwargs):
         resp_result,expResp_result = func(*args, **kwargs) # 获取结果
         if len(resp_result) < 2:
-            print("需要断言的数据不全，请检查!")
-            return False
+            logging.error("需要断言的数据不全，请检查!")
+            raise Exception("需要断言的数据不全，请检查!")
         if len(expResp_result) < 2:
-            print("期望的数据不全，请检查!")
-            return False
+            logging.error("期望的数据不全，请检查!")
+            raise Exception("期望的数据不全，请检查!")
 
         resp_statusCode = resp_result[0] # 接口返回响应状态码
         resp_json = resp_result[1] # 接口返回响应结果
@@ -23,15 +23,15 @@ def new_assert_utils(func): # 接口返回的数据和期望的数据 [状态码
         exp_resp_json = expResp_result[1] # 接口期望返回的结果
         comp_code_msg = assert_statusCode(resp_statusCode,exp_resp_statusCode) # 获取响应状态码的校验信息
         if comp_code_msg != "": # 如果校验状态码的结果与期望结果不一致
-            print(comp_code_msg)
-            return False
+            logging.error(comp_code_msg)
+            raise Exception(comp_code_msg)
         else:
             comp_json_msg = assert_respJson(resp_json, exp_resp_json) # 获取响应结果中某些值得校验信息
             if comp_json_msg != "":
-                print("响应结果中的参数值与期望的结果不一致,对比结果:{0}".format(comp_json_msg))
-                return False
+                logging.error("响应结果中的参数值与期望的结果不一致,对比结果:{0}".format(comp_json_msg))
+                raise Exception("响应结果中的参数值与期望的结果不一致,对比结果:{0}".format(comp_json_msg))
             else:
-                print("响应结果中的参数值与期望结果一致")
+                logging.info("响应结果中的参数值与期望结果一致")
                 return True
     return wragger
 
