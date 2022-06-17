@@ -32,7 +32,7 @@ def new_assert_utils(func): # 接口返回的数据和期望的数据 [状态码
                 raise Exception("响应结果中的参数值与期望的结果不一致,对比结果:{0}".format(comp_json_msg))
             else:
                 logging.info("响应结果中的参数值与期望结果一致")
-                return True
+                print("响应结果中的参数值与期望结果一致")
     return wragger
 
 # 断言响应状态码
@@ -102,7 +102,7 @@ def concat_assert_data(func):
 def test():
     t1 = ["a","b"]
     t2 = [200,{"a":"1","b":2,"c":3}]
-    t3 = [200,((1,2),)]
+    t3 = [200,(("1",2),)]
 
     return t1,t2,t3
 

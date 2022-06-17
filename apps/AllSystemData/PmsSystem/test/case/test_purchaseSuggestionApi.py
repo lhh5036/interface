@@ -19,7 +19,7 @@ class Test_purchaseSuggestionApi(unittest.TestCase):
         tCode1 = responseResult01[0]
         tJson1 = {"articleNumber":"5AC304821-A03","status":1}
         tkey = ["articleNumber","status"]
-        tCode2 = 500
+        tCode2 = 200
         tJson2 = (("5AC304821-A03",1),)
         t1 = [tCode1,tJson1]
         t2 = [tCode2,tJson2]
