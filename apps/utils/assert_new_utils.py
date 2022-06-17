@@ -9,24 +9,32 @@ from deepdiff import DeepDiff
 
 def new_assert_utils(func): # 接口返回的数据和期望的数据 [状态码,响应结果数据]
     def wragger(*args, **kwargs):
+        checkResult = True # 默认校验通过
         resp_result,expResp_result = func(*args, **kwargs) # 获取结果
         if len(resp_result) < 2:
             logging.error("需要断言的数据不全，请检查!")
-            return False
+            checkResult = False
+            return checkResult
         if len(expResp_result) < 2:
             logging.error("期望的数据不全，请检查!")
-            return False
+            checkResult = False
+            return checkResult
 
         resp_statusCode = resp_result[0] # 接口返回响应状态码
         resp_json = resp_result[1] # 接口返回响应结果
         exp_resp_statusCode = expResp_result[0] # 接口期望状态码
         exp_resp_json = expResp_result[1] # 接口期望返回的结果
         comp_code = assert_statusCode(resp_statusCode,exp_resp_statusCode)
-        if comp_code == False:
-            return False
-        comp_json = assert_respJson(resp_json, exp_resp_json)
-        if comp_json == False:
-            return False
+        if checkResult != comp_code: # 如果校验状态码的结果与期望结果不一致
+            checkResult = False
+            return checkResult
+        else:
+            comp_json = assert_respJson(resp_json, exp_resp_json)
+            if checkResult == comp_json:
+                return checkResult
+            else:
+                checkResult = False
+                return checkResult
     return wragger
 
 # 断言响应状态码
@@ -89,11 +97,12 @@ def concat_assert_data(func):
         return check_json_list,expact_json_list
     return wragger
 
+@new_assert_utils
 @concat_assert_data
 def test():
     t1 = ["a","b"]
     t2 = [200,{"a":"1","b":2,"c":3}]
-    t3 = [200,((1,2),(4,5),(6,7))]
+    t3 = [500,((1,2),)]
 
     return t1,t2,t3
 
