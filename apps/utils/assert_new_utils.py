@@ -50,7 +50,7 @@ def assert_statusCode(resp_statusCode, exp_resp_statusCode):
 def assert_respJson(resp_json, exp_resp_json):
     if resp_json == {} or exp_resp_json == {}:
         return "需要校验的数据或者期望数据结果为空，请检查!"
-    ddiff = DeepDiff(resp_json,exp_resp_json,ignore_string_case=True,ignore_order=True,view="tree")
+    ddiff = DeepDiff(resp_json,exp_resp_json, ignore_string_case=True, ignore_order=True, view="tree")
     if ddiff == {}:
         logging.info("接口响应结果与期望一致")
         return True
@@ -66,7 +66,7 @@ def concat_assert_data(func):
         expact_json_list = [] # 期望的结果
         if len(keysList) <= 0 or len(resp_json) < 2 or len(exp_select_result) < 2:
             logging.error("没有需要校验的key")
-            return check_json_list,expact_json_list
+            return check_json_list, expact_json_list
         check_code = resp_json[0] # 响应状态码
         check_json = resp_json[1] # 响应结果
         result_check_json = {}
@@ -83,7 +83,7 @@ def concat_assert_data(func):
         expact_json = exp_select_result[1] # 期望SQL查询结果
         if len(expact_json) <= 0:
             logging.error("期望结果为空")
-            return check_json_list,expact_json_list
+            return check_json_list, expact_json_list
         m = 0
         expact_json_dict = {}
         for k in keysList:
@@ -94,7 +94,7 @@ def concat_assert_data(func):
         # 拼接期望数据
         expact_json_list.append(expact_code)
         expact_json_list.append(expact_json_dict)
-        return check_json_list,expact_json_list
+        return check_json_list, expact_json_list
     return wragger
 
 @new_assert_utils
