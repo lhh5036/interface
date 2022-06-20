@@ -7,12 +7,12 @@
 from apps.AllSystemData.PmsSystem.pms_api.pmsSystem_interface_param import PmsApiInputParam
 from apps.AllSystemData.PmsSystem.pms_api.pmsSystem_interface_url import PmsApiUrl
 from apps.Common_Config.operate_api_data import api_assemble_new, Splicing_Params
-from flask import current_app as app
+# from flask import current_app as app
 
 # 系统订单查询接口
 @api_assemble_new()
 def purchaseSuggestionApi(paramMap=None):
-    app.logger.info("purchaseSuggestionApi  ----->start!")
+    # app.logger.info("purchaseSuggestionApi  ----->start!")
     url = PmsApiUrl.purchaseSuggestion_url
     param01 = PmsApiInputParam.purchaseSuggestion_param01
     param02 = PmsApiInputParam.purchaseSuggestion_param02
