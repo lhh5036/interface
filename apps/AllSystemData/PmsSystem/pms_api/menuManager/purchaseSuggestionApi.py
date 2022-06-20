@@ -10,16 +10,16 @@ from apps.AllSystemData.PmsSystem.pms_api.pmsSystem_interface_url import PmsApiU
 from apps.Common_Config.operate_api_data import api_assemble_new
 import json
 from apps.Common_Config.parseRequestDatas import parseRequestDatas
-from flask import current_app as app
+# from flask import current_app as app
 
 # 系统订单查询接口
 @api_assemble_new()
 def purchaseSuggestionApi(paramMap=None):
-    app.logger.info("purchaseSuggestionApi  ----->start!")
+    # app.logger.info("purchaseSuggestionApi  ----->start!")
     url = PmsApiUrl.purchaseSuggestion_url
     param03 = deepcopy(PmsApiInputParam.purchaseSuggestion_param03)
     keyList = []
-    if paramMap != "":
+    if paramMap != None:
         for key in paramMap.keys():
             keyList.append(key)
         for i in range(len(keyList)):
