@@ -36,11 +36,11 @@ class Splicing_Params():
         if len(self.params_list_deepcopy) == 1:
             return self.splicing_param()
         elif len(self.params_list_deepcopy) == 2:
-            self.params_list_deepcopy[0]['args'] = self.splicing_param()
+            self.params_list_deepcopy[0]['args'] = json.dumps(self.splicing_param())
             return self.params_list_deepcopy[0]
         elif len(self.params_list_deepcopy) == 3:
             self.params_list_deepcopy[1]['search'] = self.splicing_param()
-            self.params_list_deepcopy[0]['args'] = self.params_list_deepcopy[1]
+            self.params_list_deepcopy[0]['args'] = json.dumps(self.params_list_deepcopy[1])
             return self.params_list_deepcopy[0]
 
 # 拼接接口参数
@@ -133,6 +133,8 @@ def test():
     return [[{"args": ""}], {'args': '50841235'}]
 
 if __name__ == '__main__':
-    params_list = [{"servicePlatform": "", "employeeNo": ""}]
-    pprint.pprint(Splicing_Params(params_list, paramMap={"servicePlatform": "Amazon", "employeeNo": "170479"}).splicing_params())
+    params_list = [{"args": ""},
+                   {"employeeNo": "",
+                    "servicePlatform": ""}]
+    pprint.pprint(Splicing_Params(params_list, paramMap={"employeeNo": "3381", "servicePlatform": "SMT平台"}).splicing_params())
     pass
