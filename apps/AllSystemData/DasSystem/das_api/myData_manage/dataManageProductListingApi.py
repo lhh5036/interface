@@ -7,26 +7,18 @@
 from apps.AllSystemData.DasSystem.das_api.publicCommonParamService import PublicCommonParamServiceClass
 from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCommonUrlServiceClass
 from flask import current_app as app
-from apps.Common_Config.operate_api_data import api_assemble_new
-from apps.Common_Config.parseRequestDatas import parseRequestDatas
-import json
+from apps.Common_Config.operate_api_data import api_assemble_new, Splicing_Params
 
 @api_assemble_new()
 def dataManageProductListingInfo(platform,searchType,kwargs):
     app.logger.info("dataManageProductListingInfo ---->start!")
     # 接口地址
     url = PublicCommonUrlServiceClass().getApiUrl(platform,searchType) # 获取请求地址
-    # 拼接接口入参
+    # 接口入参
     productInfoSelect03,productInfoSelect02,productInfoSelect01 = PublicCommonParamServiceClass().getApiInputParam(platform,searchType)
-    keyList = []
-    if kwargs != "":
-        for key in kwargs.keys():
-            keyList.append(key)
-        for i in range(len(keyList)):
-            value = parseRequestDatas(keyList[i],kwargs)
-            productInfoSelect03[keyList[i]] = value
-    # 替换中间层
-    productInfoSelect02["search"] = productInfoSelect03
-    # 替换外层
-    productInfoSelect01["args"] = json.dumps(productInfoSelect02)
-    return url,productInfoSelect01
+    paramList = []
+    paramList.append(productInfoSelect01)
+    paramList.append(productInfoSelect02)
+    paramList.append(productInfoSelect03)
+    requestJson = Splicing_Params(paramList,kwargs).splicing_params() # 拼接接口参数
+    return url,requestJson
