@@ -49,3 +49,6 @@ class Test_smtAssociateSySkuApi(unittest.TestCase):
         systemSkuStr02 = "8ZZ800161S"
         responseResult02 = associateSystemSku("SMT","smt_associateSystemSku",resultList, systemSkuStr02)
         print(responseResult02)
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

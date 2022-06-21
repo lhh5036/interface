@@ -26,6 +26,8 @@ class Test_parameterConfigSaveApi(unittest.TestCase):
         responseResult02 = paramConfigFunction(paramStr02)
         print(responseResult02)
 
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
 
 
 

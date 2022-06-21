@@ -24,3 +24,6 @@ class Test_smtSelectApi(unittest.TestCase):
         testCaseReq_02 = {"mainSku": "9SD400194","productId":"4000032062735"}
         testCaseRep_02 = dataManageProductListingInfo("SMT","smt_queryListing",testCaseReq_02)
         print(testCaseRep_02)
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

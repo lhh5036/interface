@@ -37,3 +37,6 @@ class Test_smtProductGetTongkuanApi(unittest.TestCase):
         reqParam = self.firstInputParam()
         responseResult = productGetTongkuan(reqParam)
         print(responseResult)
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

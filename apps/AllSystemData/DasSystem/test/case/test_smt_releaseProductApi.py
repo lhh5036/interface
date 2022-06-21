@@ -45,3 +45,5 @@ class Test_smtReleaseRroductApi(unittest.TestCase):
         print(responseResult)
 
 
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
