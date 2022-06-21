@@ -7,16 +7,16 @@
 from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCommonUrlServiceClass
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.Common_Config.operate_api_data import api_assemble_new
-from flask import current_app as app
+from loggerUtils import MyLog
 
-
+logger = MyLog("releaseProductInfo").getlog()
 # 我的数据Amazon-释放产品接口
 @api_assemble_new()
 def releaseProductInfo(platform,searchType,paramList): # 调用该接口使用入参为list
     paramStr = ""
-    app.logger.info("releaseProductInfo ---->start!")
+    logger.info("releaseProductInfo ---->start!")
     if len(paramList) == 0:
-        app.logger.error("releaseProductInfo --> request parameters is wrong!")
+        logger.error("releaseProductInfo --> request parameters is wrong!")
         return "请求参数为空"
 
     # 将入参list转为string类型

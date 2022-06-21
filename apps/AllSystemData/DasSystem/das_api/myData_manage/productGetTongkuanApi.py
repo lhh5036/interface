@@ -7,14 +7,15 @@
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiUrl
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.Common_Config.operate_api_data import api_assemble_new
-from flask import current_app as app
+from loggerUtils import MyLog
 
+logger = MyLog("productGetTongkuan").getlog()
 # 数据管理-同款接口服务
 @api_assemble_new()
 def productGetTongkuan(paramStr):
-    app.logger.info("productGetTongkuan ---->start!")
+    logger.info("productGetTongkuan ---->start!")
     if paramStr == "":
-        app.logger.error("productGetTongkuan --> ReqParam:paramStr is null!")
+        logger.error("productGetTongkuan --> ReqParam:paramStr is null!")
         return "请求入参不能为空!"
 
     # 接口请求地址

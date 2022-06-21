@@ -6,12 +6,13 @@
 '''
 from apps.AllSystemData.DasSystem.das_api.publicCommonParamService import PublicCommonParamServiceClass
 from apps.AllSystemData.DasSystem.das_api.publicCommonUrlSevice import PublicCommonUrlServiceClass
-from flask import current_app as app
 from apps.Common_Config.operate_api_data import api_assemble_new, Splicing_Params
+from loggerUtils import MyLog
 
+logger = MyLog("dataManageProductListingInfo").getlog()
 @api_assemble_new()
 def dataManageProductListingInfo(platform,searchType,kwargs):
-    app.logger.info("dataManageProductListingInfo ---->start!")
+    logger.info("dataManageProductListingInfo ---->start!")
     # 接口地址
     url = PublicCommonUrlServiceClass().getApiUrl(platform,searchType) # 获取请求地址
     # 接口入参
