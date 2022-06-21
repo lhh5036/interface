@@ -7,12 +7,12 @@
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_url import DasApiUrl
 from apps.AllSystemData.DasSystem.das_api.dasSystem_interface_param import DasApiInputParam
 from apps.Common_Config.operate_api_data import api_assemble_new
-from flask import current_app as app
+from loggerUtils import MyLog
 
-
+logger = MyLog("paramConfigQuery").getlog()
 @api_assemble_new()
 def paramConfigQuery():
-    app.logger.info("paramConfigQuery ---->start!")
+    logger.info("paramConfigQuery ---->start!")
     # 接口地址
     url = DasApiUrl.paramConfigSelect_url
     # 接口请求参数
