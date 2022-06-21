@@ -42,3 +42,5 @@ class Test_amazonCancelDevelopApi(unittest.TestCase):
         responseResult01 = cancelDevelopmentFunction("Amazon","amazon_cancelDevelopment", resultList, secondParam)
         print(responseResult01)
 
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
