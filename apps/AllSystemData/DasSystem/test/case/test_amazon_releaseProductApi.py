@@ -41,3 +41,5 @@ class Test_amazonReleaseRroductApi(unittest.TestCase):
         responseResult = releaseProductInfo("Amazon","amazon_releaseProduct",resultList)
         print(responseResult)
 
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

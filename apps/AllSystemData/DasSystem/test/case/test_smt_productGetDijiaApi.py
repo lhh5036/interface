@@ -37,3 +37,6 @@ class Test_smtProdcutGetDijiaApi(unittest.TestCase):
         reqParam = self.firstInputParam()
         responseResult = productDetDiJia(reqParam)
         print(responseResult)
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

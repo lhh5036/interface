@@ -19,3 +19,5 @@ class Test_paramConfigQueryApi(unittest.TestCase):
         responseResult01 = paramConfigQuery()
         print(responseResult01)
 
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

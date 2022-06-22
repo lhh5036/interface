@@ -17,10 +17,11 @@ class Test_purchaseSuggestionApi(unittest.TestCase):
         '''需求管理-采购建议查询(有参数)'''
         responseResult01 = purchaseSuggestionApi({"articleNumber":"5AC304821-A03"})
         tCode1 = responseResult01[0]
-        tJson1 = {"articleNumber":"5AC304821-A03","status":1}
-        tkey = ["articleNumber","status"]
+        tJsonValue = responseResult01[1]["rows"][0]["articleNumber"]
+        tJson1 = {"articleNumber":tJsonValue}
+        tkey = ["articleNumber"]
         tCode2 = 200
-        tJson2 = (("5AC304821-A03",1),)
+        tJson2 = (("5AC304821-A03",),)
         t1 = [tCode1,tJson1]
         t2 = [tCode2,tJson2]
         return tkey,t1,t2

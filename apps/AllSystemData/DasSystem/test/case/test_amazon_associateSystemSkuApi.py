@@ -15,7 +15,7 @@ import ddt
 import os
 
 # 参数化
-paramList01 = ["8ZZ800161-S-B","8ZZ800161S"]
+paramList01 = ["8ZZ800161-S-B"]
 # 获取当前文件所在目录的上一级目录
 upPath = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
@@ -51,12 +51,12 @@ class Test_amazonAssociateSySkuApi(unittest.TestCase):
         print(responseResult01)
 
     # 参数化驱动
-    @ddt.data(*paramList01)
-    def testCase02(self, sysSkuStr):
-        '''Amazon关联系统SKU测试用例'''
-        paramList = self.firstInputParam()
-        responseResult02 = associateSystemSku("Amazon", "amazon_associateSystemSku", paramList,sysSkuStr)
-        print(responseResult02)
+    # @ddt.data(*paramList01)
+    # def testCase02(self, sysSkuStr):
+    #     '''Amazon关联系统SKU测试用例'''
+    #     paramList = self.firstInputParam()
+    #     responseResult02 = associateSystemSku("Amazon", "amazon_associateSystemSku", paramList,sysSkuStr)
+    #     print(responseResult02)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

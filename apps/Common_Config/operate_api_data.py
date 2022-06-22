@@ -90,8 +90,14 @@ def api_assemble_new(login_method="new", api_method="post", api_header="", emplo
                     api_header_use = Common_TokenHeader().common_header
                 elif login_method == 'old':
                     api_header_use = Common_TokenHeader().token_header(login_method, employeeNo)
-            api_url, api_param = func(*args)
+            api_url, api_param = func(*args) # 获取接口请求的地址和请求参数
             resp = get_page_content_by_requests(api_url, api_header_use, api_param, api_method)
+            if resp.status_code == 200:
+                logger.info("接口请求的地址:{0}".format(api_url))
+                logger.info("接口请求参数:{0}".format(api_param))
+            else:
+                logger.error("接口请求的地址:{0}".format(api_url))
+                logger.error("接口请求参数:{0}".format(api_param))
             return [resp.status_code, resp.json()] # 返回接口状态码和响应结果
         return demo
     return wraager
