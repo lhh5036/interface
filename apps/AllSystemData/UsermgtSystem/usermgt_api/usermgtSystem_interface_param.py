@@ -84,3 +84,7 @@ class UsermgtApiInputParam:
             "positionId": 48,
             "positionName": "产品开发"
           }]
+
+    # 三级查询组织架构
+    threeLevelEmployee_param01 = {"servicePlatform": "",
+                                  "employeeNo": ""}

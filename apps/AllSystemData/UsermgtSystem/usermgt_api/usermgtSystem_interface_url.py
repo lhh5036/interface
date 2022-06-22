@@ -82,6 +82,9 @@ class UsermgtApiUrl:
     # 角色管理-根据角色name集合查询角色对应员工工号、id及名称
     getEmpNoAndEmpNameDTOByRoleNames_url = InterfaceCommonInfo.common_url + \
                                            '/usermgt-n/sys/role/getEmpNoAndEmpNameDTOByRoleNames'
+    # 三级查询组织架构
+    threeLevelEmployee_url = InterfaceCommonInfo.common_url + \
+                             '/usermgt-n/sys/orgstruct/threeLevelEmployee'
 
 if __name__ == '__main__':
     pass
