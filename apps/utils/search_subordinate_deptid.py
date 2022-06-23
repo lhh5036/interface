@@ -29,7 +29,7 @@ WHERE parent_id = '{0}';".format(self.deptId)
                 self.get_deptId(deptIdList)
             else:
                 continue
-        return self.deptid_list
+        return list(set(self.deptid_list))
 
 
 if __name__ == '__main__':
