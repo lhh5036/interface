@@ -28,20 +28,26 @@ class Splicing_Params():
         if self.paramMap == None:
             return self.params_list_deepcopy[len(self.params_list_deepcopy)-1]
         else:
-            for paramMap_key in self.paramMap.keys():
-                self.params_list_deepcopy[len(self.params_list_deepcopy)-1][paramMap_key] = self.paramMap[paramMap_key]
-            return self.params_list_deepcopy[len(self.params_list_deepcopy)-1]
+            if type(self.paramMap) == list:
+                return self.paramMap
+            else:
+                for paramMap_key in self.paramMap.keys():
+                    self.params_list_deepcopy[len(self.params_list_deepcopy)-1][paramMap_key] = self.paramMap[paramMap_key]
+                return self.params_list_deepcopy[len(self.params_list_deepcopy)-1]
 
     def splicing_params(self):
-        if len(self.params_list_deepcopy) == 1:
+        if type(self.paramMap) == list:
             return self.splicing_param()
-        elif len(self.params_list_deepcopy) == 2:
-            self.params_list_deepcopy[0]['args'] = json.dumps(self.splicing_param())
-            return self.params_list_deepcopy[0]
-        elif len(self.params_list_deepcopy) == 3:
-            self.params_list_deepcopy[1]['search'] = self.splicing_param()
-            self.params_list_deepcopy[0]['args'] = json.dumps(self.params_list_deepcopy[1])
-            return self.params_list_deepcopy[0]
+        else:
+            if len(self.params_list_deepcopy) == 1:
+                return self.splicing_param()
+            elif len(self.params_list_deepcopy) == 2:
+                self.params_list_deepcopy[0]['args'] = json.dumps(self.splicing_param())
+                return self.params_list_deepcopy[0]
+            elif len(self.params_list_deepcopy) == 3:
+                self.params_list_deepcopy[1]['search'] = self.splicing_param()
+                self.params_list_deepcopy[0]['args'] = json.dumps(self.params_list_deepcopy[1])
+                return self.params_list_deepcopy[0]
 
 # 拼接接口参数
 def splicing_params_new(params_key1='search', params_key2='args'):
