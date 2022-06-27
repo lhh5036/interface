@@ -6,10 +6,7 @@
 @Author:majiaqin 170479
 @Desc:threeLevelEmployee用例实际出参和期望出参拼接
 '''
-
-import pprint
 from loggerUtils import MyLog
-from apps.AllSystemData.UsermgtSystem.usermgt_api.usermgt_api_ware.threeLevelEmployee import threeLevelEmployeeApi
 from apps.AllSystemData.UsermgtSystem.usermgt_common_setting import Usermgt_Common_Setting
 from apps.utils.mySql_database_util import get_data, convert_list
 from apps.utils.search_subordinate_deptid import Search_Subordinate_Deptid
