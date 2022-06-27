@@ -53,8 +53,8 @@ AND dept_id = '{1}';".format(self.paramMap[1], deptid_tuple[0])
             return sql
         else:
             sql = "SELECT employee_no FROM employee \
-    WHERE service_platform LIKE '%{0}%' \
-    AND dept_id in {1};".format(self.paramMap[1], deptid_tuple)
+WHERE service_platform LIKE '%{0}%' \
+AND dept_id in {1};".format(self.paramMap[1], deptid_tuple)
             logger.info(sql)
             return sql
 
