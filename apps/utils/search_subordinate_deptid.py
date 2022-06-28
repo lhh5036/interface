@@ -53,8 +53,11 @@ WHERE id = '{0}';".format(self.deptId)
                 self.get_superdeptId(deptIdList)
             else:
                 continue
-        return self.deptid_list
-
+        dept_list = []
+        for i in self.deptid_list:
+            if i not in dept_list:
+                dept_list.append(i)
+        return dept_list
 
 if __name__ == '__main__':
     pprint.pprint(Search_Subordinate_Deptid([143236066]).search_subordinate_deptid())
