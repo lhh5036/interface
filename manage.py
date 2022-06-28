@@ -4,6 +4,7 @@
 @Author:quanliu 181324
 @Desc: 总入口
 '''
+from functools import wraps
 from apps import create_app
 from flask import render_template,request,redirect,url_for,session,flash
 from flask_wtf import FlaskForm
@@ -40,6 +41,7 @@ class RegisterForm(FlaskForm):
 
 # 登录装饰器
 def admin_login_req(func):
+    @wraps(func)
     def demo(*args):
         if not session.get("username"):
             return redirect(url_for("login"))
