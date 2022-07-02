@@ -71,7 +71,7 @@ def register():
     if not os.path.exists(ACCOUNTS_FILE):  # 判断是否存在指定文件
         return {"data": None, "status_code": "NotFound", "message": "not found accounts file"}
     # 先读取文件
-    with open("D:\\InterfaceAutoTest\\accounts.json", "r+") as f:
+    with open("accounts.json", "r+") as f:
         accounts = json.load(f)
     for account in accounts:
         if account["username"] == username:  # 判断是否用户已存在
@@ -82,7 +82,7 @@ def register():
             pass
     # 先注册
     accounts.append(newDict)
-    with open("D:\\InterfaceAutoTest\\accounts.json", "w") as f:
+    with open("accounts.json", "w") as f:
         json.dump(accounts, f)
     message = {"data": username, "status_code": "OK", "message": "register username successfully"}
     return redirect(url_for("login")) # redirect直接是url，就是app.route的路径参数；url_for()是对函数进行操作
