@@ -85,7 +85,7 @@ def register():
     with open("accounts.json", "w") as f:
         json.dump(accounts, f)
     message = {"data": username, "status_code": "OK", "message": "register username successfully"}
-    return redirect(url_for("login")) # redirect直接是url，就是app.route的路径参数；url_for()是对函数进行操作
+    return redirect(url_for("login")) # redirect直接是url，就是app.route的路径参数；url_for()是对函数进行操作,如果函数使用endpoint则可以直接用url_for('endpoint')
 
 # GET request.args.get("name")
 # POST request.form['name']
