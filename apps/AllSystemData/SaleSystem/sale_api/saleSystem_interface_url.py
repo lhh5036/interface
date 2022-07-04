@@ -18,3 +18,6 @@ class SaleApiUrl:
 
     # 同步追踪号
     syncLogisticsTracking_url = InterfaceCommonInfo.common_url + "/sale/customerOrder/isAllocateProducts/true"
+
+    # SMT-《平台订单》地址
+    aliexpressOrderQuery_url = InterfaceCommonInfo.common_url + "/sale/aliexpressOrder"
