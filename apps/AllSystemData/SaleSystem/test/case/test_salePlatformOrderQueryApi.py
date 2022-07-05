@@ -15,7 +15,7 @@ from apps.AllSystemData.SaleSystem.sale_api.platOrder.salePlatformOrderQueryApi 
 @ddt.ddt
 class Test_salePlatformOrderQueryApi(unittest.TestCase):
     @controlDatebase(Sale_Common_Setting.sale_mysql)
-    def getSMTPlatformOrderCountNumer(self):
+    def testCase01(self):
         # 预期达到的结果
         expected_resultsCode = 200
         expected_resultsValue = "select count(id) from aliexpress_order where order_status = 'WAIT_SELLER_SEND_GOODS';"
