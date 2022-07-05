@@ -100,9 +100,11 @@ def api_assemble_new(login_method="new", api_method="post", api_header="", emplo
             resp = get_page_content_by_requests(api_url, api_header_use, api_param, api_method)
             if resp.status_code == 200:
                 logger.info("接口请求的地址:{0}".format(api_url))
+                logger.info("接口请求头: {0}".format(api_header_use))
                 logger.info("接口请求参数:{0}".format(api_param))
             else:
                 logger.error("接口请求的地址:{0}".format(api_url))
+                logger.error("接口请求头: {0}".format(api_header_use))
                 logger.error("接口请求参数:{0}".format(api_param))
             return [resp.status_code, resp.json()] # 返回接口状态码和响应结果
         return demo
