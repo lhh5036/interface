@@ -9,16 +9,17 @@
 import unittest
 import ddt
 from apps.AllSystemData.SaleSystem.sale_common_setting import Sale_Common_Setting
-from apps.utils.mySql_database_util import controlDatebase
+from apps.utils.mySql_database_util import Mysql_handleOperator
 from apps.AllSystemData.SaleSystem.sale_api.platOrder.salePlatformOrderQueryApi import salePlatformOrderApi
 
 @ddt.ddt
 class Test_salePlatformOrderQueryApi(unittest.TestCase):
-    @controlDatebase(Sale_Common_Setting.sale_mysql)
     def testCase01(self):
         # 预期达到的结果
         expected_resultsCode = 200
-        expected_resultsValue = "select count(id) from aliexpress_order where order_status = 'WAIT_SELLER_SEND_GOODS';"
+        sql = "select count(id) from aliexpress_order where order_status = 'WAIT_SELLER_SEND_GOODS';"
+        expected_resultsValue = Mysql_handleOperator(Sale_Common_Setting.sale_mysql).data_sql("select", sql)
+
 
         # api返回json结果提取
         api_retest = salePlatformOrderApi("WAIT_SELLER_SEND_GOODS")
@@ -27,7 +28,7 @@ class Test_salePlatformOrderQueryApi(unittest.TestCase):
 
         api_test = [api_reCode,api_reJsonValue] # 接口返回的code码以及对应字段的值
         expected_test = [expected_resultsCode,expected_resultsValue] # 预期返回200以及数据库查询到的数据
-        print(api_test,expected_test)
+        print("api返回结果：",api_test,"\n预期结果:",expected_test)
         return api_test,expected_test
 
 if __name__ == '__main__':
