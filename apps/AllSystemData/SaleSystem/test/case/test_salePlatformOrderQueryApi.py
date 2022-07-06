@@ -1,7 +1,8 @@
 # -*- coding:utf-8 -*-
 #!/usr/bin/python3
 '''
-@File:
+@File:saleSystem_interface_url.py(请求URL) saleSystem_interface_param.py(入参)
+ salePlatformOrderQueryApi.py(入参拼接) test_salePlatformOrderQueryApi.py(设置断言)
 @time:2022/7/4
 @Author:lu 10338
 @Desc: 销售系统-平台订单查询接口
@@ -20,7 +21,6 @@ class Test_salePlatformOrderQueryApi(unittest.TestCase):
         sql = "select count(id) from aliexpress_order where order_status = 'WAIT_SELLER_SEND_GOODS';"
         expected_resultsValue = Mysql_handleOperator(Sale_Common_Setting.sale_mysql).data_sql("select", sql)
 
-
         # api返回json结果提取
         api_retest = salePlatformOrderApi("WAIT_SELLER_SEND_GOODS")
         api_reCode = api_retest[0]
@@ -28,7 +28,7 @@ class Test_salePlatformOrderQueryApi(unittest.TestCase):
 
         api_test = [api_reCode,api_reJsonValue] # 接口返回的code码以及对应字段的值
         expected_test = [expected_resultsCode,expected_resultsValue] # 预期返回200以及数据库查询到的数据
-        print("api返回结果：",api_test,"\n预期结果:",expected_test)
+        print("\napi返回结果：",api_test,"\n预期结果:",expected_test)
         return api_test,expected_test
 
 if __name__ == '__main__':
