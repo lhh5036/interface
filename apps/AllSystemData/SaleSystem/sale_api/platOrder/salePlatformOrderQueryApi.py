@@ -1,7 +1,8 @@
 # -*- coding:utf-8 -*-
 #!/usr/bin/python3
 '''
-@File:salePlatformOrderApi
+@File:  saleSystem_interface_url.py(请求URL)  saleSystem_interface_param.py(入参)
+salePlatformOrderQueryApi.py(入参拼接)   test_salePlatformOrderQueryApi.py(设置断言)
 @time:2022/7/4
 @Author:lu 10338
 @Desc: 销售系统-平台订单查询接口
