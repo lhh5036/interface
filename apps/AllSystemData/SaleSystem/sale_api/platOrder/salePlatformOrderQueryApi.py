@@ -14,22 +14,10 @@ from apps.Common_Config.operate_api_data import api_assemble_new, Common_TokenHe
 from loggerUtils import MyLog
 
 
-# # logger = MyLog("salePlatformOrderApi").getlog()
-# @api_assemble_new()
-# def salePlatformOrderApi(orderStatus):
-#     # logger.info("salePlatformOrderApi ---->start!")
-#     url = SaleApiUrl.aliexpressOrderQuery_url
-#     param01 = SaleApiInputParam.smtQueryStatus_param01
-#     param02 = SaleApiInputParam.smtQueryStatus_param02
-#     param03 = SaleApiInputParam.smtQueryStatus_param03
-#     param03["orderStatus"] = orderStatus
-#     param02["search"] = param03
-#     param01["args"] = json.dumps(param02)
-#     reqParam = json.dumps(param01)
-#     return url, reqParam
+logger = MyLog("salePlatformOrderApi").getlog()
 @api_assemble_new(api_header=Common_TokenHeader().token_header('new', '10338'))
 def salePlatformOrderApi(orderStatus):
-    # logger.info("salePlatformOrderApi ---->start!")
+    logger.info("salePlatformOrderApi ---->start!")
     url = SaleApiUrl.aliexpressOrderQuery_url
     param01 = SaleApiInputParam.smtQueryStatus_param01
     param02 = SaleApiInputParam.smtQueryStatus_param02
