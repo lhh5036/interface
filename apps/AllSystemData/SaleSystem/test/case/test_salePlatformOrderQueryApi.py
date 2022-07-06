@@ -26,8 +26,9 @@ class Test_salePlatformOrderQueryApi(unittest.TestCase):
         api_reCode = api_retest[0]
         api_reJsonValue = api_retest[1]["total"]
 
-        api_test = [api_reCode,api_reJsonValue] # 接口返回的code码以及对应字段的值
-        expected_test = [expected_resultsCode,expected_resultsValue] # 预期返回200以及数据库查询到的数据
+        # 将预期结果和api结果返回——方便进行下一步比较
+        api_test = [api_reCode,api_reJsonValue] # 接口返回的code码以及‘total’字段的值
+        expected_test = [expected_resultsCode,expected_resultsValue] # 预期返回200以及数据库查询到的总计条数
         print("\napi返回结果：",api_test,"\n预期结果:",expected_test)
         return api_test,expected_test
 
