@@ -14,3 +14,6 @@ class ProductApiUrl:
 
     # 查询最近七天的sku信息
     getEnrollDateBySkus_url = InterfaceCommonInfo.common_url + "/product/api/order/getEnrollDateBySkus?day=7"
+
+    # 查询多个货号对应状态
+    getStatusBySkus_url = InterfaceCommonInfo.common_url + "/product/api/order/getStatusBySkus"

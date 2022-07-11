@@ -7,10 +7,9 @@
 
 import unittest
 from apps.AllSystemData.ProductSystem.product_api.provideSaleApi.getEnrollDateBySkusApi import getEnrollDateBySkusApi
-from apps.utils.assert_new_utils import new_assert_utils, concat_assert_data
 
 
-class Test_productSingleItemSelectApi(unittest.TestCase):
+class Test_getEnrollDateBySkusApi(unittest.TestCase):
     def testCase01(self):
         '''查询最近七天的sku信息'''
         responseResult01 = getEnrollDateBySkusApi()

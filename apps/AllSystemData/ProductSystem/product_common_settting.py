@@ -9,7 +9,7 @@
 
 from apps.Common_Config.db_config import Mysql_Db_Config
 
-class Fmis_Common_Setting:
+class Product_Common_Setting:
     # 测试环境MySQL数据库配置
     product_mysql = Mysql_Db_Config("erp_product_test")
 
