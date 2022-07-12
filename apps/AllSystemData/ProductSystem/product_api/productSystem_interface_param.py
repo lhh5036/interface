@@ -12,3 +12,6 @@ class ProductApiInputParam:
                                 "isRefreshSale":0,"sequence":"DESC","tag":[],"itemLastStatus":[],"exceptSalesProhibition":[],"isInfringement":"","qualificationName":[],"isSeason":[],
                                 "isSeasonArr":[],"finishInfringement":"","infringementUser":[],"isPrice":"null","isBrandNew":"","rateCountBegin":"","rateCountEnd":"","newState":"",
                                 "enterSingeTime":"","publishAndSaleCountVO":[]}
+
+    # 查询多个货号对应状态
+    getStatusBySkus_param01 = []

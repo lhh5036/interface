@@ -11,3 +11,9 @@ from apps.Common_Config.interface_common_info import InterfaceCommonInfo
 class ProductApiUrl:
     # 管理单品
     singleItemSelect_url = InterfaceCommonInfo.common_url + "/product/singleItem/getinfo"
+
+    # 查询最近七天的sku信息
+    getEnrollDateBySkus_url = InterfaceCommonInfo.common_url + "/product/api/order/getEnrollDateBySkus?day=7"
+
+    # 查询多个货号对应状态
+    getStatusBySkus_url = InterfaceCommonInfo.common_url + "/product/api/order/getStatusBySkus"
