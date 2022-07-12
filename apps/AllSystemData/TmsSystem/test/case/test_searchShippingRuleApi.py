@@ -18,6 +18,6 @@ class Test_searchShippingRuleApi(unittest.TestCase):
         '''物流规则-物流自定义规则-查询(有参)'''
         responseResult02 = searchShippingRuleApi({"statusList":["10"]})
         print(responseResult02)
-    
+
 if __name__ == '__main__':
     unittest.main()
