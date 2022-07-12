@@ -10,3 +10,9 @@ class TmsApiInputParam:
     developerAccountSelect_param01 = {"method":"searchDeveloperAccounts","args":"{0}"}
     developerAccountSelect_param02 = {"search":{0},"pageReqired":"true","limit":10,"offset":0,"sort":"id","order":"desc"}
     developerAccountSelect_param03 = {"shippingCompanyId":"","developerAccount":"","saleAccounts":""}
+
+
+    # 物流规则-物流自定义规则-查询物流规则列表
+    shippingruleSelect_param01 = {"method":"searchShippingRule","args":"{0}"}
+    shippingruleSelect_param02 = {"search":{0},"pageReqired":"true","limit":10,"offset":0,"sort":"id","order":"desc"}
+    shippingruleSelect_param03 = {"ruleNo":"","ruleName":"","statusList":[]}
