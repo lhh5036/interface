@@ -13,7 +13,7 @@ from apps.Common_Config.operate_api_data import api_assemble_new
 @api_assemble_new(api_method='get')
 def getOaccountCodeAndNamesApi(paramMap=None):
     url = FmisApiUrl.getOaccountCodeAndNames_url
-    return url, None
+    return url, paramMap
 
 if __name__ == '__main__':
     pprint.pprint(getOaccountCodeAndNamesApi())
