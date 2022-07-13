@@ -156,65 +156,68 @@ class FmisApiUrl:
 
     '''绩效管理'''
     # Amazon员工绩效-获取公司&部别&组别数据接口&获取列表数据接口
-    amazonStaffPerformance_url = InterfaceCommonInfo.common_url + "fmis/amazonStaffPerformance"
+    amazonStaffPerformance_url = InterfaceCommonInfo.common_url + "/fmis/amazonStaffPerformance"
 
     # Amazon&SMT&eBay&wish&joom&shopee&lazada绩效明细&部门绩效汇总-获取表头&平台&部门&组织架构&组长&组员&列表信息接口
-    departmentPerformance_url = InterfaceCommonInfo.common_url + "fmis/departmentPerformance"
+    departmentPerformance_url = InterfaceCommonInfo.common_url + "/fmis/departmentPerformance"
 
     # 产品开发新品转化绩效-获取产品开发信息&获取列表数据接口
-    transformPerformance_url = InterfaceCommonInfo.common_url + "fmis/transformPerformance"
+    transformPerformance_url = InterfaceCommonInfo.common_url + "/fmis/transformPerformance"
 
     '''交易数据'''
     # 销售结汇明细-获取列表数据接口
-    settlementExchange_url = InterfaceCommonInfo.common_url + "fmis/settlementExchange"
+    settlementExchange_url = InterfaceCommonInfo.common_url + "/fmis/settlementExchange"
 
     '''交易数据-平台账单'''
     # 平台账单-SMT-账单数据&退款详情&支付宝报告-获取账号接口
-    smtPlatformBill_getSmtSellerAccount_url = InterfaceCommonInfo.common_url + "fmis/smtPlatformBill/getSmtSellerAccount"
+    smtPlatformBill_getSmtSellerAccount_url = InterfaceCommonInfo.common_url + "/fmis/smtPlatformBill/getSmtSellerAccount"
     # 平台账单-SMT-账单数据-获取销售接口
-    smtPlatformBill_selectSmtSellers_url = InterfaceCommonInfo.common_url + "fmis/smtPlatformBill/selectSmtSellers"
+    smtPlatformBill_selectSmtSellers_url = InterfaceCommonInfo.common_url + "/fmis/smtPlatformBill/selectSmtSellers"
     # 平台账单-SMT-账单数据-获取列表数据接口
-    smtPlatformBill_getSmtPlatFormBill_url = InterfaceCommonInfo.common_url + "fmis/smtPlatformBill/getSmtPlatFormBill"
+    smtPlatformBill_getSmtPlatFormBill_url = InterfaceCommonInfo.common_url + "/fmis/smtPlatformBill/getSmtPlatFormBill"
 
     # 平台账单-SMT-退款详情-获取列表数据接口
-    smtRefundInfoDetail_getSmtRefundInfoDetail_url = InterfaceCommonInfo.common_url + "fmis/smtRefundInfoDetail/getSmtRefundInfoDetail"
+    smtRefundInfoDetail_getSmtRefundInfoDetail_url = InterfaceCommonInfo.common_url + "/fmis/smtRefundInfoDetail/getSmtRefundInfoDetail"
 
     # 平台账单-SMT-支付宝报告-获取下载链接接口
-    fileStore_export_smt_alipay_file_url = InterfaceCommonInfo.common_url + "fmis/fileStore/selectFileListByType/export_smt_alipay_file"
+    fileStore_export_smt_alipay_file_url = InterfaceCommonInfo.common_url + "/fmis/fileStore/selectFileListByType/export_smt_alipay_file"
     # 平台账单-SMT-支付宝报告-获取列表数据接口
-    smtAlipayReport_getSmtAlipayReport_url = InterfaceCommonInfo.common_url + "fmis/smtAlipayReport/getSmtAlipayReport"
+    smtAlipayReport_getSmtAlipayReport_url = InterfaceCommonInfo.common_url + "/fmis/smtAlipayReport/getSmtAlipayReport"
 
     # 平台账单-WISH-账单数据&交易退款汇总-获取账号接口
-    wishPlatformBill_selectWishAccounts_url = InterfaceCommonInfo.common_url + "fmis/wishPlatformBill/selectWishAccounts"
+    wishPlatformBill_selectWishAccounts_url = InterfaceCommonInfo.common_url + "/fmis/wishPlatformBill/selectWishAccounts"
     # 平台账单-WISH-账单数据&交易退款汇总-获取销售接口
-    wishPlatformBill_selectSellers_url = InterfaceCommonInfo.common_url + "fmis/wishPlatformBill/selectSellers"
+    wishPlatformBill_selectSellers_url = InterfaceCommonInfo.common_url + "/fmis/wishPlatformBill/selectSellers"
     # 平台账单-WISH-账单数据-获取列表数据接口
-    wishPlatformBill_selectWishPlatformBill_url = InterfaceCommonInfo.common_url + "fmis/wishPlatformBill/selectWishPlatformBill"
+    wishPlatformBill_selectWishPlatformBill_url = InterfaceCommonInfo.common_url + "/fmis/wishPlatformBill/selectWishPlatformBill"
 
     # 平台账单-WISH-交易退款汇总-获取列表数据接口
-    wishPlatformRefund_selectWishRefundDetail_url = InterfaceCommonInfo.common_url + "fmis/wishPlatformRefund/selectWishRefundDetail"
+    wishPlatformRefund_selectWishRefundDetail_url = InterfaceCommonInfo.common_url + "/fmis/wishPlatformRefund/selectWishRefundDetail"
 
     '''成本管理'''
     # 在途明细表-获取列表数据接口
-    cost_list_url = InterfaceCommonInfo.common_url + "fmis/cost/list"
+    cost_list_url = InterfaceCommonInfo.common_url + "/fmis/cost/list"
     # 在途明细表-获取汇总数据接口
-    cost_sum_url = InterfaceCommonInfo.common_url + "fmis/cost/sum"
+    cost_sum_url = InterfaceCommonInfo.common_url + "/fmis/cost/sum"
 
     '''系统设置'''
     # 加班提成比例配置&阶梯底薪配置-获取部门&创建人&列表数据接口
-    newRatioSetting_url = InterfaceCommonInfo.common_url + "fmis/newRatioSetting"
+    newRatioSetting_url = InterfaceCommonInfo.common_url + "/fmis/newRatioSetting"
 
     # 阶梯底薪配置-获取公司&列表数据接口
-    salarySetting_url = InterfaceCommonInfo.common_url + "fmis/salarySetting"
+    salarySetting_url = InterfaceCommonInfo.common_url + "/fmis/salarySetting"
 
     # 产品开发转化目标配置-获取创建人接口
-    newProductTarget_getCreateList_url = InterfaceCommonInfo.common_url + "fmis/tranParam/newProductTarget/getCreateList"
+    newProductTarget_getCreateList_url = InterfaceCommonInfo.common_url + "/fmis/tranParam/newProductTarget/getCreateList"
     # 产品开发转化目标配置-获取新品目标值列表数据接口
     tranParam_newProductTarget_list_url = InterfaceCommonInfo.common_url + "/fmis/tranParam/newProductTarget/list"
     # 产品开发转化目标配置-获取高价值目标值列表数据接口
     tranParam_highValueTarget_list_url = InterfaceCommonInfo.common_url + "fmis/tranParam/highValueTarget/list"
     # 产品开发转化目标配置-获取操作日志列表数据接口
     tranParam_targetLog_list_url = InterfaceCommonInfo.common_url + "fmis/tranParam/targetLog/list"
+
+    # 获取付款单供应商账户列表
+    getOaccountCodeAndNames_url = InterfaceCommonInfo.common_url + "/fmis/paymentRecord/getOaccountCodeAndNames"
 
 if __name__ == '__main__':
     pass
