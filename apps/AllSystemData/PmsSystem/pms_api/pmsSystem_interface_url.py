@@ -13,3 +13,6 @@ class PmsApiUrl:
 
     # 需求管理-采购建议
     purchaseSuggestion_url = InterfaceCommonInfo.common_url + "/newpms/purchaseSuggestion"
+
+    # 需求管理-采购需求
+    purchaseRequire_url = InterfaceCommonInfo.common_url + "/newpms/purchaseRequire"
