@@ -6,6 +6,9 @@
 '''
 
 class SaleApiInputParam:
+    true = True
+    null = None
+    false = False
     # 系统订单接口入参
     systemOrder_query_param01 = {"args": "{0}", "method": "listCustomerOrder"}
     systemOrder_query_param02 = {"search": {0}, "offset": 0, "limit": 200}
@@ -31,6 +34,11 @@ class SaleApiInputParam:
     smtAccountNumber_param01 = {"args":"{0}","method":"listAliexpressOrder"}
     smtAccountNumber_param02 = {"search":{0},"pageReqired":"true","limit":200,"offset":0,"sort":"gmt_create","order":"desc"}
     smtAccountNumber_param03 = {"accountNumber":"{accountNumber}","orderStatus":"{orderStatus}","orderAmountStart":"null","orderAmountEnd":"null"}
+
+    # 查询资费国家
+    tariffCountry_param01 = {"args": "", "method": "getCountry"}
+    tariffCountry_param02 = {"search": {0}, "limit": 20, "offset": 0, "pageReqired": true, "sort": "id", "order": "desc"}
+    tariffCountry_param03 = {"name": "chineseName", "inputText": ""}
 
     # # SMT平台查询订单——查询平台订单号
     # smtPlatformOrder_param01 = {"args":"{0}","method": "listAliexpressOrder"}

@@ -21,3 +21,6 @@ class SaleApiUrl:
 
     # SMT-《平台订单》地址
     aliexpressOrderQuery_url = InterfaceCommonInfo.common_url + "/sale/aliexpressOrder"
+
+    # 查询资费国家
+    tariffCountry_url = InterfaceCommonInfo.common_url + "/sale/country"
