@@ -53,7 +53,7 @@ def run_fmisTestcaseExecute():
                   report_dir=fmis_report_path)
     # 远程连接192.168.3.10服务器(需要先设置免密ssh-copy-id ip)
     os.popen("ssh {0} 'rm -rf /data/interfaceAutoTest_file/result_fmis_*'".format(InterfaceCommonInfo.server_ip))
-    os.popen('scp -r /home/InterfaceAutoTest/apps/FmisSystem/report/{0} \
+    os.popen('scp -r /home/InterfaceAutoTest/apps/AllSystemData/FmisSystem/report/{0} \
              root@{1}:/data/interfaceAutoTest_file/'.format(filename, InterfaceCommonInfo.server_ip))
     download_file_url = "http://{0}:81/interfaceAutoTest_file/{1}".format(InterfaceCommonInfo.server_ip,
                                                                           filename)
