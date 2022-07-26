@@ -58,11 +58,11 @@ def run_fmisTestcaseExecute():
     download_file_url = "http://{0}:81/interfaceAutoTest_file/{1}".format(InterfaceCommonInfo.server_ip,
                                                                           filename)
     fmis_url = urlparse(download_file_url).geturl()
-    msg = "新用户测试报告地址:{0}".format(fmis_url)
+    msg = "财务测试报告地址:{0}".format(fmis_url)
 
     # 存在则更新，不存在则插入
     insterOrUpdateData("fmis", "财务系统", runner.testsRun, runner.success_count, runner.failure_count, fmis_url)
-    return render_template("system_report.html",fmis_report_url=fmis_url,urlname='fmis')
+    return render_template("system_report.html", fmis_report_url=fmis_url, urlname='fmis')
 
 
 if __name__ == '__main__':
