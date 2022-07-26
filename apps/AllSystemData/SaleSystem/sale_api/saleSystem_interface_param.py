@@ -40,6 +40,12 @@ class SaleApiInputParam:
     tariffCountry_param02 = {"search": {0}, "limit": 20, "offset": 0, "pageReqired": true, "sort": "id", "order": "desc"}
     tariffCountry_param03 = {"name": "chineseName", "inputText": ""}
 
+    # 查询黑名单买家
+    blackedBuyer_param01 = {"args": "", "method": "getBlackedBuyerList"}
+    blackedBuyer_param02 = {"search": {0}, "offset": 0, "limit": 10}
+    blackedBuyer_param03 = {"saleChannel": "", "accountNumber": "", "customerName": "",
+                            "blackedType": "", "recipientName": ""}
+
     # # SMT平台查询订单——查询平台订单号
     # smtPlatformOrder_param01 = {"args":"{0}","method": "listAliexpressOrder"}
     # smtPlatformOrder_param02 = {"search":{0},"pageReqired": "true", "limit": 200,"offset": 0,"sort":"gmt_create","order":"desc"}

@@ -24,3 +24,6 @@ class SaleApiUrl:
 
     # 查询资费国家
     tariffCountry_url = InterfaceCommonInfo.common_url + "/sale/country"
+
+    # 查询黑名单买家
+    blackedBuyer_url = InterfaceCommonInfo.common_url + "/sale/blackedBuyer"
