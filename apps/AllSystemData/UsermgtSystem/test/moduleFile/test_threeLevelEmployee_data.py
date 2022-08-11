@@ -61,7 +61,7 @@ AND dept_id in {1};".format(self.paramMap[1], deptid_tuple)
     '''拼接实际出参code，实际出参和期望结果'''
     def expect_data(self):
         expect_dict = {'employeeNo': []}
-        if self.expect_json() == 0:
+        if self.expect_json() == []:
             expect_dict['employeeNo'] = [self.paramMap[0]]
         else:
             expect_dict['employeeNo'] = self.expect_json()
