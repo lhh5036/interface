@@ -88,3 +88,7 @@ class UsermgtApiInputParam:
     # 三级查询组织架构
     threeLevelEmployee_param01 = {"servicePlatform": "",
                                   "employeeNo": ""}
+
+    # 根据工号获取用户钉钉id
+    getEmplUserIdByEmplNo_param01 = {"idList": [],
+                                     "employeeNoList": []}

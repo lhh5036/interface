@@ -85,6 +85,9 @@ class UsermgtApiUrl:
     # 三级查询组织架构
     threeLevelEmployee_url = InterfaceCommonInfo.common_url + \
                              '/usermgt-n/sys/orgstruct/threeLevelEmployee'
+    # 根据工号获取用户钉钉id
+    getEmplUserIdByEmplNo_url = InterfaceCommonInfo.common_url + \
+                                '/hr/empl/getEmplUserIdByEmplNo'
 
 if __name__ == '__main__':
     pass
