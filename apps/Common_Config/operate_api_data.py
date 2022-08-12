@@ -122,14 +122,15 @@ def api_assemble(api_url, api_method='post', params=True):
             form = func(*args)
             logger.info(form)
             if api_method == 'post':
-                url = api_url
                 if params == True:
+                    url = api_url
                     resp = requests.post(url, headers=header,
                                          data=json.dumps(form))
                     result = [resp.status_code, resp.json()]
                     print(result)
                     return result
                 elif params == False:
+                    url = api_url.format(form)
                     resp = requests.post(url, headers=header)
                     result = [resp.status_code, resp.json()]
                     return result
